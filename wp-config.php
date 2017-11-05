@@ -17,6 +17,7 @@
  *
  * @package WordPress
  */
+define('WP_CACHE', TRUE);
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
@@ -32,7 +33,7 @@ define('DB_PASSWORD', getenv('DB_PASSWORD'));
 define('DB_HOST', getenv('DB_HOST'));
 
 /** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8mb4');
+define('DB_CHARSET', 'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
@@ -63,7 +64,7 @@ define('DB_COLLATE', '');
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix  = 'wp_wo1o76_';
+$table_prefix  = getenv('DB_TABLE_PREFIX');
 
 /**
  * For developers: WordPress debugging mode.
@@ -86,8 +87,6 @@ define('WP_ALLOW_REPAIR', false);
 define('WP_MEMORY_LIMIT', '256M');
 
 define('RELOCATE',true);
-define('WP_HOME','http://Mbird-env.efp2pjx4t4.us-east-1.elasticbeanstalk.com');
-define('WP_SITEURL','http://Mbird-env.efp2pjx4t4.us-east-1.elasticbeanstalk.com');
 
 
 /* That's all, stop editing! Happy blogging. */
