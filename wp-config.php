@@ -78,15 +78,13 @@ $table_prefix  = 'wp_wo1o76_';
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', false);
-
-define('WP_DEBUG', false);
 define('WP_DEBUG_DISPLAY', false);
 define('WP_DEBUG_LOG', true);
 define('SCRIPT_DEBUG', false);
 define('SAVEQUERIES', false);
-
 define('WP_ALLOW_REPAIR', false);
 define('WP_MEMORY_LIMIT', '256M');
+define('RELOCATE',true);
 
 /* That's all, stop editing! Happy blogging. */
 
