@@ -63,7 +63,7 @@ define('DB_COLLATE', '');
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix  = 'wp_';
+$table_prefix  = 'wp_wo1o76_';
 
 /**
  * For developers: WordPress debugging mode.
@@ -78,6 +78,15 @@ $table_prefix  = 'wp_';
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', false);
+
+define('WP_DEBUG', false);
+define('WP_DEBUG_DISPLAY', false);
+define('WP_DEBUG_LOG', true);
+define('SCRIPT_DEBUG', false);
+define('SAVEQUERIES', false);
+
+define('WP_ALLOW_REPAIR', false);
+define('WP_MEMORY_LIMIT', '256M');
 
 /* That's all, stop editing! Happy blogging. */
 

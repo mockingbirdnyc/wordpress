@@ -1,0 +1,20 @@
+.chained_products_admin_settings .chained_products_quantity {
+    width: 4em;
+    margin: 0 1em;
+}
+.add_chained_products_row {
+    background: url(../../../../../wp-includes/images/admin-bar-sprite-2x.png) no-repeat -6px -369px;
+    float: left;
+    width: 24px;
+    height: 24px;
+    text-indent: -9999px;
+}
+.remove_chained_products_row {
+    background: url(../../../../../wp-includes/images/xit-2x.gif) no-repeat;
+    float: left;
+    width: 20px;
+    height: 20px;
+    text-indent: -9999px;
+    margin: 2px;
+}
+.chained_products_admin_settings a { cursor: pointer }

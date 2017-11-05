@@ -1,0 +1,1138 @@
+# Translation of Stable (latest release) in Russian
+# This file is distributed under the same license as the Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-06-02 12:54:45+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: GlotPress/2.1.0-alpha\n"
+"Project-Id-Version: Stable (latest release)\n"
+
+#: includes/class-ssp-admin.php:665
+msgid "Upload the primary podcast file or paste the file URL here."
+msgstr "Загрузите главный файл подкаста или вставьте сюда ссылку на него."
+
+#: includes/class-ssp-settings.php:271
+msgid "oEmbed Excerpt"
+msgstr "Цитата oEmbed"
+
+#: includes/class-ssp-settings.php:224
+msgid "Medicine"
+msgstr "Медицина"
+
+#: includes/class-ssp-settings.php:225
+msgid "Natural Sciences"
+msgstr "Естественные науки"
+
+#: includes/class-ssp-settings.php:226
+msgid "Social Sciences"
+msgstr "Общественные науки"
+
+#: includes/class-ssp-admin.php:664
+msgid "Podcast file:"
+msgstr "Файл подкаста:"
+
+#: includes/class-ssp-admin.php:709
+msgid "Block:"
+msgstr "Блокировать:"
+
+#: includes/class-ssp-admin.php:710
+msgid "Block this episode from appearing in the iTunes & Google Play podcast libraries."
+msgstr "Не показывать этот выпуск в библиотеках подкастов в iTunes и Google Play."
+
+#: includes/class-ssp-admin.php:657
+msgid "Video"
+msgstr "Видео"
+
+#: includes/class-ssp-admin.php:506
+msgid "Choose a file"
+msgstr "Выбирете файл"
+
+#: includes/class-ssp-admin.php:506
+msgid "Insert podcast file"
+msgstr "Добавьте файл подкаста"
+
+#: includes/class-ssp-admin.php:653
+msgid "Episode type:"
+msgstr "Тип выпуска:"
+
+#: includes/class-ssp-admin.php:657
+msgid "Audio"
+msgstr "Аудио"
+
+#: includes/class-ssp-admin.php:758
+msgid "Add-ons"
+msgstr "Дополнения"
+
+#: includes/class-ssp-admin.php:436
+msgid "Customise the size of your episode embed below, then copy the HTML to your clipboard."
+msgstr "Настройте размеры встраиваемого выпуска ниже, и затем скопируйте HTML-код в буфер обмена."
+
+#: includes/class-ssp-admin.php:437
+msgid "Width:"
+msgstr "Длина"
+
+#: includes/class-ssp-admin.php:437
+msgid "Height:"
+msgstr "Высота:"
+
+#: includes/class-ssp-settings.php:442
+msgid "Complete"
+msgstr "Завершено"
+
+#: includes/class-ssp-settings.php:443
+msgid "Mark if this podcast is complete or not. Only do this if no more episodes are going to be added to this feed."
+msgstr "Отметьте, если больше не планируете добавлять новых выпусков в этот RSS-поток."
+
+#: includes/class-ssp-settings.php:1034
+msgid "It looks like your server has FastCGI enabled, which will prevent the feed password protection feature from working. You can fix this by following %1$sthis quick guide%2$s."
+msgstr "Похоже, на вашем сервере включен FastCGI, который блокирует возможность использования паролей RSS-потоков. Вы можете исправить это, воспользовавшись следующей %1$sинструкцией%2$s."
+
+#: includes/class-ssp-admin.php:155
+msgid "Filter %s list"
+msgstr "Фильтрация списка %s"
+
+#: includes/class-ssp-admin.php:156
+msgid "%s list navigation"
+msgstr "Навигация по списку %s"
+
+#: includes/class-ssp-admin.php:157
+msgid "%s list"
+msgstr "Список %s"
+
+#: includes/class-ssp-admin.php:216
+msgid "Series list navigation"
+msgstr "Навигация по списку серии"
+
+#: includes/class-ssp-admin.php:217
+msgid "Series list"
+msgstr "Список серий"
+
+#: includes/class-ssp-admin.php:417
+msgid "Episode Embed Code"
+msgstr "Код встраивания выпуска"
+
+#: includes/class-ssp-settings.php:331
+msgid "Your podcast's primary sub-category (if available) - must be a sub-category of the primary category selected above."
+msgstr "Основная подкатегория для вашего подкаста (если доступна) - должна быть подкатегорией из выбранной выше категории."
+
+#: includes/class-ssp-settings.php:349
+msgid "Your podcast's secondary sub-category (if available) - must be a sub-category of the secondary category selected above."
+msgstr "Дополнительная подкатегория для вашего подкаста (если доступна) - должна быть подкатегорией из выбранной выше дополнительной категории."
+
+#: includes/class-ssp-settings.php:321
+msgid "Primary Category"
+msgstr "Основная категория"
+
+#: includes/class-ssp-settings.php:322
+msgid "Your podcast's primary category."
+msgstr "Основная тематика вашего подкаста."
+
+#: includes/class-ssp-settings.php:330
+msgid "Primary Sub-Category"
+msgstr "Основная подкатегория"
+
+#: includes/class-ssp-settings.php:339
+msgid "Secondary Category"
+msgstr "Дополнительная категория"
+
+#: includes/class-ssp-settings.php:340
+msgid "Your podcast's secondary category."
+msgstr "Дополнительная тематика вашего подкаста."
+
+#: includes/class-ssp-settings.php:348
+msgid "Secondary Sub-Category"
+msgstr "Дополнительная подкатегория"
+
+#: includes/class-ssp-settings.php:357
+msgid "Tertiary Category"
+msgstr "Ещё одна категория"
+
+#: includes/class-ssp-settings.php:358
+msgid "Your podcast's tertiary category."
+msgstr "Ещё одна дополнительная тема подкаста"
+
+#: includes/class-ssp-settings.php:366
+msgid "Tertiary Sub-Category"
+msgstr "Ещё одна подкатегория"
+
+#: includes/class-ssp-admin.php:205
+msgid "Edit Series"
+msgstr "Изменить серию"
+
+#: includes/class-ssp-admin.php:206
+msgid "Update Series"
+msgstr "Обновить серию"
+
+#: includes/class-ssp-admin.php:207
+msgid "Add New Series"
+msgstr "Добавить новую серию"
+
+#: includes/class-ssp-admin.php:208
+msgid "New Series Name"
+msgstr "Название новой серии"
+
+#: includes/class-ssp-admin.php:210
+msgid "View Series"
+msgstr "Показать серию"
+
+#: includes/class-ssp-admin.php:211
+msgid "Popular Series"
+msgstr "Популярные серии"
+
+#: includes/class-ssp-admin.php:212
+msgid "Separate series with commas"
+msgstr "Серии разделяются запятыми"
+
+#: includes/class-ssp-admin.php:213
+msgid "Add or remove Series"
+msgstr "Добавить или удалить серии"
+
+#: includes/class-ssp-admin.php:214
+msgid "Choose from the most used Series"
+msgstr "Выберите из часто используемых серий"
+
+#: includes/class-ssp-admin.php:215
+msgid "No Series Found"
+msgstr "Серий не найдено"
+
+#: includes/class-ssp-admin.php:274
+msgid "Image"
+msgstr "Изображение"
+
+#: includes/class-ssp-admin.php:323
+msgid "Series feed URL"
+msgstr "URL RSS-потока серии"
+
+#: includes/class-ssp-admin.php:377
+msgid "Episode updated. %sView episode%s."
+msgstr "Выпуск обновлён. %sView episode%s."
+
+#: includes/class-ssp-admin.php:378
+msgid "Custom field updated."
+msgstr "Настраиваемое поле обновлено."
+
+#: includes/class-ssp-admin.php:379
+msgid "Custom field deleted."
+msgstr "Настраиваемое поле удалено."
+
+#: includes/class-ssp-admin.php:380
+msgid "Episode updated."
+msgstr "Выпуск обновлён."
+
+#: includes/class-ssp-admin.php:381
+msgid "Episode restored to revision from %s."
+msgstr "Выпуск восстановлен до %s."
+
+#: includes/class-ssp-admin.php:382
+msgid "Episode published. %sView episode%s."
+msgstr "Выпуск опубликован. %sView episode%s."
+
+#: includes/class-ssp-admin.php:383
+msgid "Episode saved."
+msgstr "Выпуск сохранён."
+
+#: includes/class-ssp-admin.php:384
+msgid "Episode submitted. %sPreview episode%s."
+msgstr "Выпуск отправлен. %sPreview episode%s."
+
+#: includes/class-ssp-admin.php:385
+msgid "Episode scheduled for: %1$s. %2$sPreview episode%3$s."
+msgstr "Выпуск запланирован на %1$s. %2$sPreview episode%3$s."
+
+#: includes/class-ssp-admin.php:385
+msgid "M j, Y @ G:i"
+msgstr "d.m.Y G:i"
+
+#: includes/class-ssp-admin.php:386
+msgid "Episode draft updated. %sPreview episode%s."
+msgstr "Черновик выпуска обновлён. %sPreview episode%s."
+
+#: includes/class-ssp-admin.php:414
+msgid "Podcast Episode Details"
+msgstr "Свойства выпуска подкаста"
+
+#: includes/class-ssp-admin.php:506
+msgid "Upload File"
+msgstr "Загрузить файл"
+
+#: includes/class-ssp-admin.php:673
+msgid "Duration:"
+msgstr "Длительность:"
+
+#: includes/class-ssp-admin.php:674
+msgid "Duration of podcast file for display (calculated automatically if possible)."
+msgstr "Длительность выпуска (по возможности вычисляется автоматически)."
+
+#: includes/class-ssp-admin.php:682
+msgid "File size:"
+msgstr "Размер файла"
+
+#: includes/class-ssp-admin.php:683
+msgid "Size of the podcast file for display (calculated automatically if possible)."
+msgstr "Размер аудиофайла для отображения (по возможности вычисляется автоматически)."
+
+#: includes/class-ssp-admin.php:691
+msgid "Date recorded:"
+msgstr "Дата записи:"
+
+#: includes/class-ssp-admin.php:692
+msgid "The date on which this episode was recorded."
+msgstr "Дата записи выпуска."
+
+#: includes/class-ssp-admin.php:700
+msgid "Explicit:"
+msgstr "Ограничения:"
+
+#: includes/class-ssp-admin.php:701
+msgid "Mark this episode as explicit."
+msgstr "Выпуск содержит ненормативную лексику."
+
+#: includes/class-ssp-admin.php:731
+msgid "%s Episode"
+msgid_plural "%s Episodes"
+msgstr[0] "%s выпуск"
+msgstr[1] "%s выпуски"
+msgstr[2] "%s выпуски"
+
+#: includes/class-ssp-admin.php:757
+msgid "Documentation"
+msgstr "Документация (англ.)"
+
+#: includes/class-ssp-admin.php:759
+msgid "Write a review"
+msgstr "Оставить отзыв"
+
+#: includes/class-ssp-admin.php:771
+msgid "Enter episode title here"
+msgstr "Введите название этого выпуска"
+
+#: includes/class-ssp-admin.php:999
+msgid "If you like %1$sSeriously Simple Podcasting%2$s please leave a %3$s&#9733;&#9733;&#9733;&#9733;&#9733;%4$s rating. A huge thank you in advance!"
+msgstr "Если вам нравится %1$sSeriously Simple Podcasting%2$s, пожалуйста, поставьте нам %3$s&#9733;&#9733;&#9733;&#9733;&#9733;%4$s. Заранее большое спасибо!"
+
+#: includes/class-ssp-admin.php:999
+msgid "Thanks!"
+msgstr "Спасибо!"
+
+#: includes/class-ssp-admin.php:1007
+msgid "%1$sThank you for publishing with %2$sSeriously Simple Podcasting%3$s.%4$s"
+msgstr "%1$sСпасибо за использование плагина %2$sSeriously Simple Podcasting%3$s.%4$s"
+
+#: includes/class-ssp-frontend.php:365
+msgid "Download file"
+msgstr "Скачать файл"
+
+#: includes/class-ssp-frontend.php:370
+msgid "Play in new window"
+msgstr "Воспроизвести в новом окне"
+
+#: includes/class-ssp-frontend.php:374
+msgid "Duration"
+msgstr "Длительность"
+
+#: includes/class-ssp-frontend.php:378
+msgid "Size"
+msgstr "Размер"
+
+#: includes/class-ssp-frontend.php:382
+msgid "Recorded on"
+msgstr "Записано"
+
+#: includes/class-ssp-frontend.php:1042
+msgid "Podcast RSS feed"
+msgstr "RSS-поток подкаста"
+
+#: includes/class-ssp-frontend.php:1057
+msgid "%s RSS feed"
+msgstr "%s RSS-поток"
+
+#: includes/class-ssp-settings.php:72 includes/class-ssp-settings.php:978
+msgid "Podcast Settings"
+msgstr "Настройки подкаста"
+
+#: includes/class-ssp-settings.php:72 includes/class-ssp-settings.php:119
+msgid "Settings"
+msgstr "Настройки"
+
+#: includes/class-ssp-settings.php:156 includes/class-ssp-settings.php:178
+msgid "-- None --"
+msgstr "-- Нет --"
+
+#: includes/class-ssp-settings.php:157 includes/class-ssp-settings.php:180
+#: includes/class-ssp-settings.php:181 includes/class-ssp-settings.php:182
+#: includes/class-ssp-settings.php:183 includes/class-ssp-settings.php:184
+#: includes/class-ssp-settings.php:185
+msgid "Arts"
+msgstr "Искусство"
+
+#: includes/class-ssp-settings.php:158 includes/class-ssp-settings.php:187
+#: includes/class-ssp-settings.php:188 includes/class-ssp-settings.php:189
+#: includes/class-ssp-settings.php:190 includes/class-ssp-settings.php:191
+msgid "Business"
+msgstr "Бизнес"
+
+#: includes/class-ssp-settings.php:159
+msgid "Comedy"
+msgstr "Комедия"
+
+#: includes/class-ssp-settings.php:160 includes/class-ssp-settings.php:193
+#: includes/class-ssp-settings.php:194 includes/class-ssp-settings.php:195
+#: includes/class-ssp-settings.php:196 includes/class-ssp-settings.php:197
+#: includes/class-ssp-settings.php:198
+msgid "Education"
+msgstr "Образование"
+
+#: includes/class-ssp-settings.php:161 includes/class-ssp-settings.php:200
+#: includes/class-ssp-settings.php:201 includes/class-ssp-settings.php:202
+#: includes/class-ssp-settings.php:203 includes/class-ssp-settings.php:204
+msgid "Games & Hobbies"
+msgstr "Игры и хобби"
+
+#: includes/class-ssp-settings.php:162 includes/class-ssp-settings.php:206
+#: includes/class-ssp-settings.php:207 includes/class-ssp-settings.php:208
+#: includes/class-ssp-settings.php:209
+msgid "Government & Organizations"
+msgstr "Организации и правительство"
+
+#: includes/class-ssp-settings.php:163 includes/class-ssp-settings.php:211
+#: includes/class-ssp-settings.php:212 includes/class-ssp-settings.php:213
+#: includes/class-ssp-settings.php:214
+msgid "Health"
+msgstr "Здоровье"
+
+#: includes/class-ssp-settings.php:164
+msgid "Kids & Family"
+msgstr "Семья и дети"
+
+#: includes/class-ssp-settings.php:165
+msgid "Music"
+msgstr "Музыка"
+
+#: includes/class-ssp-settings.php:166
+msgid "News & Politics"
+msgstr "Новости и политика"
+
+#: includes/class-ssp-settings.php:167 includes/class-ssp-settings.php:216
+#: includes/class-ssp-settings.php:217 includes/class-ssp-settings.php:218
+#: includes/class-ssp-settings.php:219 includes/class-ssp-settings.php:220
+#: includes/class-ssp-settings.php:221 includes/class-ssp-settings.php:222
+msgid "Religion & Spirituality"
+msgstr "Религия и духовность"
+
+#: includes/class-ssp-settings.php:168 includes/class-ssp-settings.php:224
+#: includes/class-ssp-settings.php:225 includes/class-ssp-settings.php:226
+msgid "Science & Medicine"
+msgstr "Наука и медицина"
+
+#: includes/class-ssp-settings.php:169 includes/class-ssp-settings.php:228
+#: includes/class-ssp-settings.php:229 includes/class-ssp-settings.php:230
+#: includes/class-ssp-settings.php:231
+msgid "Society & Culture"
+msgstr "Общество и культура"
+
+#: includes/class-ssp-settings.php:170 includes/class-ssp-settings.php:233
+#: includes/class-ssp-settings.php:234 includes/class-ssp-settings.php:235
+#: includes/class-ssp-settings.php:236
+msgid "Sports & Recreation"
+msgstr "Спорт и отдых"
+
+#: includes/class-ssp-settings.php:171 includes/class-ssp-settings.php:238
+#: includes/class-ssp-settings.php:239 includes/class-ssp-settings.php:240
+#: includes/class-ssp-settings.php:241
+msgid "Technology"
+msgstr "Технологии"
+
+#: includes/class-ssp-settings.php:172
+msgid "TV & Film"
+msgstr "Кино и телевидение"
+
+#: includes/class-ssp-settings.php:180
+msgid "Design"
+msgstr "Дизайн"
+
+#: includes/class-ssp-settings.php:181
+msgid "Fashion & Beauty"
+msgstr "Мода и красота"
+
+#: includes/class-ssp-settings.php:182
+msgid "Food"
+msgstr "Еда"
+
+#: includes/class-ssp-settings.php:183
+msgid "Literature"
+msgstr "Литература"
+
+#: includes/class-ssp-settings.php:184
+msgid "Performing Arts"
+msgstr "Исполнительское искусство"
+
+#: includes/class-ssp-settings.php:185
+msgid "Visual Arts"
+msgstr "Визуальное искусство"
+
+#: includes/class-ssp-settings.php:187
+msgid "Business News"
+msgstr "Бизнес-новости"
+
+#: includes/class-ssp-settings.php:188
+msgid "Careers"
+msgstr "Карьера"
+
+#: includes/class-ssp-settings.php:189
+msgid "Investing"
+msgstr "Инвестиции"
+
+#: includes/class-ssp-settings.php:190
+msgid "Management & Marketing"
+msgstr "Менеджмент и маркетинг"
+
+#: includes/class-ssp-settings.php:191
+msgid "Shopping"
+msgstr "Торговля"
+
+#: includes/class-ssp-settings.php:194
+msgid "Education Technology"
+msgstr "Образовательные технологии"
+
+#: includes/class-ssp-settings.php:195
+msgid "Higher Education"
+msgstr "Высшее образование"
+
+#: includes/class-ssp-settings.php:196
+msgid "K-12"
+msgstr "Среднее образование"
+
+#: includes/class-ssp-settings.php:197
+msgid "Language Courses"
+msgstr "Языковые курсы"
+
+#: includes/class-ssp-settings.php:198
+msgid "Training"
+msgstr "Трэнинги"
+
+#: includes/class-ssp-settings.php:200
+msgid "Automotive"
+msgstr "Автомобили"
+
+#: includes/class-ssp-settings.php:201
+msgid "Aviation"
+msgstr "Авиация"
+
+#: includes/class-ssp-settings.php:202
+msgid "Hobbies"
+msgstr "Хобби"
+
+#: includes/class-ssp-settings.php:203
+msgid "Other Games"
+msgstr "Прочие игры"
+
+#: includes/class-ssp-settings.php:204
+msgid "Video Games"
+msgstr "Видеоигры"
+
+#: includes/class-ssp-settings.php:206
+msgid "Local"
+msgstr "Местные"
+
+#: includes/class-ssp-settings.php:207
+msgid "National"
+msgstr "Национальные"
+
+#: includes/class-ssp-settings.php:208
+msgid "Non-Profit"
+msgstr "Некоммерческие"
+
+#: includes/class-ssp-settings.php:209
+msgid "Regional"
+msgstr "Региональные"
+
+#: includes/class-ssp-settings.php:211
+msgid "Alternative Health"
+msgstr "Нетрадиционная медицина"
+
+#: includes/class-ssp-settings.php:212
+msgid "Fitness & Nutrition"
+msgstr "Фитнесс и здоровое питание"
+
+#: includes/class-ssp-settings.php:213
+msgid "Self-Help"
+msgstr "Самопомощь"
+
+#: includes/class-ssp-settings.php:214
+msgid "Sexuality"
+msgstr "Сексуальность"
+
+#: includes/class-ssp-settings.php:216
+msgid "Buddhism"
+msgstr "Буддизм"
+
+#: includes/class-ssp-settings.php:217
+msgid "Christianity"
+msgstr "Христианство"
+
+#: includes/class-ssp-settings.php:218
+msgid "Hinduism"
+msgstr "Индуизм"
+
+#: includes/class-ssp-settings.php:219
+msgid "Islam"
+msgstr "Ислам"
+
+#: includes/class-ssp-settings.php:220
+msgid "Judaism"
+msgstr "Иудаизм"
+
+#: includes/class-ssp-settings.php:221
+msgid "Other"
+msgstr "Прочие"
+
+#: includes/class-ssp-settings.php:222
+msgid "Spirituality"
+msgstr "Духовность"
+
+#: includes/class-ssp-settings.php:228
+msgid "History"
+msgstr "История"
+
+#: includes/class-ssp-settings.php:229
+msgid "Personal Journals"
+msgstr "Личные дневники"
+
+#: includes/class-ssp-settings.php:230
+msgid "Philosophy"
+msgstr "Философия"
+
+#: includes/class-ssp-settings.php:231
+msgid "Places & Travel"
+msgstr "Путешествия"
+
+#: includes/class-ssp-settings.php:233
+msgid "Amateur"
+msgstr "Для взрослых"
+
+#: includes/class-ssp-settings.php:234
+msgid "College & High School"
+msgstr "Колледж и высшая школа"
+
+#: includes/class-ssp-settings.php:235
+msgid "Outdoor"
+msgstr "На свежем воздухе"
+
+#: includes/class-ssp-settings.php:236
+msgid "Professional"
+msgstr "Профессиональный"
+
+#: includes/class-ssp-settings.php:238
+msgid "Gadgets"
+msgstr "Гаджеты"
+
+#: includes/class-ssp-settings.php:239
+msgid "Tech News"
+msgstr "Новости техники"
+
+#: includes/class-ssp-settings.php:240
+msgid "Podcasting"
+msgstr "Подкастинг"
+
+#: includes/class-ssp-settings.php:241
+msgid "Software How-To"
+msgstr "Руководства по софту"
+
+#: includes/class-ssp-settings.php:248
+msgid "General"
+msgstr "Основные"
+
+#: includes/class-ssp-settings.php:253
+msgid "Podcast post types"
+msgstr "Типы публикаций подкастов"
+
+#: includes/class-ssp-settings.php:254
+msgid "Use this setting to enable podcast functions on any post type - this will add all podcast posts from the specified types to your podcast feed."
+msgstr "Эта настройка добавляет функционал подкастов для любого типа публикаций. Все публикации с подкастами из выбранных типов публикаций будут включены в RSS-поток подкаста."
+
+#: includes/class-ssp-settings.php:261
+msgid "Include podcast in main blog"
+msgstr "Добавить подкасты в основной блог"
+
+#: includes/class-ssp-settings.php:262
+msgid "This setting may behave differently in each theme, so test it carefully after activation - it will add the 'podcast' post type to your site's main query so that your podcast episodes appear on your home page along with your blog posts."
+msgstr "Эта настройка может вести себя по-разному в зависимости от используемой темы, по этому проверьте её работу после включения. Настройка добавляет записи из типа публикации 'podcast' в общий поток публикаций блога."
+
+#: includes/class-ssp-settings.php:268
+msgid "Media player locations"
+msgstr "Места для проигрывателя"
+
+#: includes/class-ssp-settings.php:269
+msgid "Select where to show the podcast media player along with the episode data (download link, duration and file size)"
+msgstr "Выберите, где показывать аудиоплеер для подкаста со сведениями о выпуске (ссылка на скачивание, длительность и размер файла)."
+
+#: includes/class-ssp-settings.php:271
+msgid "Full content"
+msgstr "в полной публикации"
+
+#: includes/class-ssp-settings.php:271
+msgid "Excerpt"
+msgstr "в кратком описании публикации"
+
+#: includes/class-ssp-settings.php:276
+msgid "Media player position"
+msgstr "Расположение аудиоплеера"
+
+#: includes/class-ssp-settings.php:277
+msgid "Select whether to display the media player above or below the full post content."
+msgstr "Выберите, где необходимо разместить аудиоплеер: до или после основного содержимого публикации."
+
+#: includes/class-ssp-settings.php:279
+msgid "Above content"
+msgstr "Над контентом"
+
+#: includes/class-ssp-settings.php:279
+msgid "Below content"
+msgstr "Под контентом"
+
+#: includes/class-ssp-settings.php:286
+msgid "Feed details"
+msgstr "Свойства RSS-потока"
+
+#: includes/class-ssp-settings.php:287
+msgid "This data will be used in the feed for your podcast so your listeners will know more about it before they subscribe.%1$sAll of these fields are optional, but it is recommended that you fill in as many of them as possible. Blank fields will use the assigned defaults in the feed.%2$s"
+msgstr "Эти данные используются при формировании RSS-потока. Благодаря им слушатели могут узнать сведения о подкасте до того, как подпишутся на него.%1$sЗаполнение всех полей не является обязательным, но настоятельно рекомендуется. Для пустых полей в файле RSS-потока будут использованы значения по-умолчанию.%2$s"
+
+#: includes/class-ssp-settings.php:291
+msgid "Title"
+msgstr "Название"
+
+#: includes/class-ssp-settings.php:292
+msgid "Your podcast title."
+msgstr "Название подкаста."
+
+#: includes/class-ssp-settings.php:301
+msgid "Subtitle"
+msgstr "Подзаголовок"
+
+#: includes/class-ssp-settings.php:302
+msgid "Your podcast subtitle."
+msgstr "Подзаголовок подкаста."
+
+#: includes/class-ssp-settings.php:311
+msgid "Author"
+msgstr "Автор"
+
+#: includes/class-ssp-settings.php:312
+msgid "Your podcast author."
+msgstr "Автор подкаста."
+
+#: includes/class-ssp-settings.php:367
+msgid "Your podcast's tertiary sub-category (if available) - must be a sub-category of the tertiary category selected above."
+msgstr "Выберите ещё одну подкатегорию (если доступно). Это должна быть подкатегория из выбранной выше ещё одной категории."
+
+#: includes/class-ssp-settings.php:375
+msgid "Description/Summary"
+msgstr "Описание"
+
+#: includes/class-ssp-settings.php:376
+msgid "A description/summary of your podcast - no HTML allowed."
+msgstr "Описание подкаста. Без использования HTML."
+
+#: includes/class-ssp-settings.php:385
+msgid "Cover Image"
+msgstr "Обложка подкаста"
+
+#: includes/class-ssp-settings.php:386
+msgid "Your podcast cover image - must have a minimum size of 1400x1400 px."
+msgstr "Обложка подкаста - должна иметь размер не менее 1400x1400 px."
+
+#: includes/class-ssp-settings.php:394
+msgid "Owner name"
+msgstr "Имя автора"
+
+#: includes/class-ssp-settings.php:395
+msgid "Podcast owner's name."
+msgstr "Имя автора (или владельца) подкаста."
+
+#: includes/class-ssp-settings.php:404
+msgid "Owner email address"
+msgstr "Адрес автора"
+
+#: includes/class-ssp-settings.php:405
+msgid "Podcast owner's email address."
+msgstr "Адрес email автора подкаста."
+
+#: includes/class-ssp-settings.php:414
+msgid "Language"
+msgstr "Язык"
+
+#: includes/class-ssp-settings.php:415
+msgid "Your podcast's language in %1$sISO-639-1 format%2$s."
+msgstr "Язык подкаста в формате %1$sISO-639-1 format%2$s."
+
+#: includes/class-ssp-settings.php:424
+msgid "Copyright"
+msgstr "Копирайт"
+
+#: includes/class-ssp-settings.php:425
+msgid "Copyright line for your podcast."
+msgstr "Строка с информацией об авторских правах."
+
+#: includes/class-ssp-settings.php:434
+msgid "Explicit"
+msgstr "Ненормативная лексика"
+
+#: includes/class-ssp-settings.php:435
+msgid "Mark if your podcast is explicit or not."
+msgstr "Отметьте здесь, если в вашем подкасте присутствует ненормативная лексика или содержимое, неприемлемое для лиц младше 18 лет."
+
+#: includes/class-ssp-settings.php:450
+msgid "Redirect this feed to new URL"
+msgstr "Включить перенаправление"
+
+#: includes/class-ssp-settings.php:451
+msgid "Redirect your feed to a new URL (specified below)."
+msgstr "Перенаправить все запросы RSS-потока на новый URL (задаётся ниже)."
+
+#: includes/class-ssp-settings.php:458 includes/class-ssp-settings.php:528
+msgid "New podcast feed URL"
+msgstr "Новый URL RSS-потока"
+
+#: includes/class-ssp-settings.php:459 includes/class-ssp-settings.php:529
+msgid "Your podcast feed's new URL."
+msgstr "Новый URL RSS-потока вашего подкаста."
+
+#: includes/class-ssp-settings.php:462 includes/class-ssp-settings.php:532
+msgid "New feed URL"
+msgstr "URL RSS-потока"
+
+#: includes/class-ssp-settings.php:470
+msgid "Security"
+msgstr "Доступ по паролю"
+
+#: includes/class-ssp-settings.php:471
+msgid "Change these settings to ensure that your podcast feed remains private. This will block feed readers (including iTunes) from accessing your feed."
+msgstr "Измените эти настройки, чтобы закрыть свободный доступ к RSS-потоку подкаста. Учтите, что сетевые службы (включая iTunes) в этом случае не смогут получить RSS-поток."
+
+#: includes/class-ssp-settings.php:475
+msgid "Password protect your podcast feed"
+msgstr "Пароль доступа к RSS-потоку"
+
+#: includes/class-ssp-settings.php:476
+msgid "Mark if you would like to password protect your podcast feed - you can set the username and password below. This will block all feed readers (including iTunes) from accessing your feed."
+msgstr "Отметьте, чтобы сделать RSS-поток подкаста доступным только по паролю. Эта настройка заблокирует доступ всем сетевым службам, включая iTunes."
+
+#: includes/class-ssp-settings.php:483
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: includes/class-ssp-settings.php:484
+msgid "Username for your podcast feed."
+msgstr "Имя пользователя для доступа к RSS-потоку."
+
+#: includes/class-ssp-settings.php:487
+msgid "Feed username"
+msgstr "Логин для RSS-потока"
+
+#: includes/class-ssp-settings.php:493
+msgid "Password"
+msgstr "Пароль"
+
+#: includes/class-ssp-settings.php:494
+msgid "Password for your podcast feed. Once saved, the password is encoded and secured so it will not be visible on this page again."
+msgstr "Пароль для доступа к RSS-потоку. Пароль сохраняется в зашифрованном виде (его нельзя будет увидеть на этой странице)."
+
+#: includes/class-ssp-settings.php:497
+msgid "Feed password"
+msgstr "Пароль для RSS-потока"
+
+#: includes/class-ssp-settings.php:503
+msgid "No access message"
+msgstr "Сообщение о запрете доступа"
+
+#: includes/class-ssp-settings.php:504
+msgid "This message will be displayed to people who are not allowed access to your podcast feed. Limited HTML allowed."
+msgstr "Это сообщение будет выводиться всем, у кого нет доступа к RSS-потоку подкаста. Разрешены простые теги HTML."
+
+#: includes/class-ssp-settings.php:506 templates/feed-podcast.php:28
+msgid "You are not permitted to view this podcast feed."
+msgstr "Вы не можете просматривать RSS-поток этого подкаста."
+
+#: includes/class-ssp-settings.php:507
+msgid "Message displayed to users who do not have access to the podcast feed"
+msgstr "Сообщение для пользователей, у которых нет доступа на чтение RSS-потока подкаста."
+
+#: includes/class-ssp-settings.php:515
+msgid "Redirection"
+msgstr "Перенаправление"
+
+#: includes/class-ssp-settings.php:516
+msgid "Use these settings to safely move your podcast to a different location. Only do this once your new podcast is setup and active."
+msgstr "Используйте эти настройки для безопасного перемещения подкаста на новое место."
+
+#: includes/class-ssp-settings.php:520
+msgid "Redirect podcast feed to new URL"
+msgstr "Перенести RSS-поток на новый URL"
+
+#: includes/class-ssp-settings.php:521
+msgid "Redirect your feed to a new URL (specified below).%1$sThis will inform all podcasting services that your podcast has moved and 48 hours after you have saved this option it will permanently redirect your feed to the new URL."
+msgstr "Все, кто запрашивает RSS-поток, будут уведомлены, что подкаст перемещён на новый адрес.%1$sНа разных сервисах подкастинга процесс переноса может занимать до 48 часов."
+
+#: includes/class-ssp-settings.php:540
+msgid "Publishing"
+msgstr "Публикация"
+
+#: includes/class-ssp-settings.php:541
+msgid "Use these URLs to share and publish your podcast feed. These URLs will work with any podcasting service (including iTunes)."
+msgstr "Используйте эти адреса для публикации RSS-потоков ваших подкастов. Они будут работать в любом сервисе подкастинга, например, в iTunes."
+
+#: includes/class-ssp-settings.php:545 includes/class-ssp-settings.php:549
+msgid "External feed URL"
+msgstr "Внешний URL RSS-потока"
+
+#: includes/class-ssp-settings.php:546
+msgid "If you are syndicating your podcast using a third-party service (like Feedburner) you can insert the URL here, otherwise this must be left blank."
+msgstr "Если вы хотите распространять подкаст через сторонний сервис (например, Feedburner), вы можете вставить URL его RSS-потока сюда. В остальных случаях оставьте поле пустым."
+
+#: includes/class-ssp-settings.php:555
+msgid "Complete feed"
+msgstr "Обобщённый RSS-поток"
+
+#: includes/class-ssp-settings.php:562
+msgid "Feed for a specific series"
+msgstr "RSS-поток для отдельной серии"
+
+#: includes/class-ssp-settings.php:569
+msgid "Podcast page"
+msgstr "Страница подкастов"
+
+#: includes/class-ssp-settings.php:684
+msgid "View feed"
+msgstr "Показать RSS-поток"
+
+#: includes/class-ssp-settings.php:760
+msgid "Password stored securely"
+msgstr "Пароль хранится в зашифрованном виде"
+
+#: includes/class-ssp-settings.php:833
+msgid "Upload new image"
+msgstr "Закачать новое изображение"
+
+#: includes/class-ssp-settings.php:834
+msgid "Remove image"
+msgstr "Убрать изображение"
+
+#: includes/class-ssp-settings.php:1026
+msgid "%1$s settings updated."
+msgstr "%1$s настройки обновлены."
+
+#: includes/class-ssp-settings.php:1056
+msgid "Toggle series list display"
+msgstr "Показывать список выпусков в серии"
+
+#: includes/class-ssp-settings.php:1059
+msgid "Default feed"
+msgstr "RSS-поток по-умолчанию"
+
+#: includes/class-ssp-settings.php:1097
+msgid "Save Settings"
+msgstr "Сохранить настройки"
+
+#: includes/ssp-functions.php:145
+msgid " episodes"
+msgstr " выпуски"
+
+#: includes/widgets/class-ssp-widget-recent-episodes.php:29
+msgid "Display a list of your most recent podcast episodes."
+msgstr "Отображает список свежих выпусков подкаста."
+
+#: includes/widgets/class-ssp-widget-recent-episodes.php:31
+msgid "Podcast: Recent Episodes"
+msgstr "Свежие выпуски подкаста"
+
+#: includes/widgets/class-ssp-widget-recent-episodes.php:71
+msgid "Recent Episodes"
+msgstr "Свежие выпуски"
+
+#: includes/widgets/class-ssp-widget-recent-episodes.php:137
+#: includes/widgets/class-ssp-widget-series.php:162
+#: includes/widgets/class-ssp-widget-single-episode.php:177
+msgid "Title:"
+msgstr "Заголовок:"
+
+#: includes/widgets/class-ssp-widget-recent-episodes.php:140
+msgid "Number of episodes to show:"
+msgstr "Количество отображаемых выпусков:"
+
+#: includes/widgets/class-ssp-widget-recent-episodes.php:144
+#: includes/widgets/class-ssp-widget-series.php:182
+msgid "Display episode date?"
+msgstr "Показывать дату записи выпуска?"
+
+#: includes/widgets/class-ssp-widget-series.php:29
+msgid "Display a list of episodes from a single series."
+msgstr "Отобразить список выпусков выбранной серии."
+
+#: includes/widgets/class-ssp-widget-series.php:31
+msgid "Podcast: Series"
+msgstr "Серия подкастов"
+
+#: includes/widgets/class-ssp-widget-series.php:163
+msgid "Use series title"
+msgstr "Использовать название серии подкастов"
+
+#: includes/widgets/class-ssp-widget-series.php:165
+msgid "Series:"
+msgstr "Серия:"
+
+#: includes/widgets/class-ssp-widget-series.php:176
+msgid "Display series title inside widget?"
+msgstr "Показывать название серии внутри виджета?"
+
+#: includes/widgets/class-ssp-widget-series.php:179
+msgid "Display series description?"
+msgstr "Показывать описание серии?"
+
+#: includes/widgets/class-ssp-widget-single-episode.php:29
+msgid "Display a single podcast episode."
+msgstr "Отобразить выпуск подкаста."
+
+#: includes/widgets/class-ssp-widget-single-episode.php:31
+msgid "Podcast: Single Episode"
+msgstr "Выпуск подкаста"
+
+#: includes/widgets/class-ssp-widget-single-episode.php:178
+msgid "Use episode title"
+msgstr "Использовать заголовок выпуска"
+
+#: includes/widgets/class-ssp-widget-single-episode.php:180
+msgid "Episode:"
+msgstr "Выпуск:"
+
+#: includes/widgets/class-ssp-widget-single-episode.php:182
+msgid "- Latest episode -"
+msgstr "- Свежий выпуск -"
+
+#: includes/widgets/class-ssp-widget-single-episode.php:192
+msgid "Display episode title inside widget?"
+msgstr "Показывать в виджете заголовок выпуска?"
+
+#: includes/widgets/class-ssp-widget-single-episode.php:195
+msgid "Display episode excerpt?"
+msgstr "Показывать описание выпуска?"
+
+#: includes/widgets/class-ssp-widget-single-episode.php:198
+msgid "Display full episode content?"
+msgstr "Показывать содержание страницы выпуска?"
+
+#: includes/widgets/class-ssp-widget-single-episode.php:201
+msgid "Display episode audio player?"
+msgstr "Показывать аудиоплеер для выпуска?"
+
+#: includes/widgets/class-ssp-widget-single-episode.php:204
+msgid "Display episode details?"
+msgstr "Показывать подробности о выпуске?"
+
+#. Plugin Name of the plugin/theme
+msgid "Seriously Simple Podcasting"
+msgstr "Seriously Simple Podcasting"
+
+#. Description of the plugin/theme
+msgid "Podcasting the way it's meant to be. No mess, no fuss - just you and your content taking over the world."
+msgstr "Подкастинг - такой, каким он и должен быть. Без сложностей и головной боли: только вы и ваши записи, готовые отправиться в любую точку мира."
+
+#. Author of the plugin/theme
+msgid "Hugh Lashbrooke"
+msgstr "Хью Лэшбрук"
+
+#: includes/class-ssp-admin.php:142
+msgctxt "post type general name"
+msgid "Podcast"
+msgstr "Подкаст"
+
+#: includes/class-ssp-admin.php:143
+msgctxt "post type singular name"
+msgid "Podcast"
+msgstr "Подкасты"
+
+#: includes/class-ssp-admin.php:144
+msgctxt "podcast"
+msgid "Add New"
+msgstr "Добавить новый"
+
+#: includes/class-ssp-admin.php:145
+msgid "Add New %s"
+msgstr "Добавить новый %s"
+
+#: includes/class-ssp-admin.php:145 includes/class-ssp-admin.php:146
+#: includes/class-ssp-admin.php:147 includes/class-ssp-admin.php:149
+#: includes/class-ssp-admin.php:155 includes/class-ssp-admin.php:156
+#: includes/class-ssp-admin.php:157
+msgid "Episode"
+msgstr "Выпуск"
+
+#: includes/class-ssp-admin.php:146
+msgid "Edit %s"
+msgstr "Редактировать %s"
+
+#: includes/class-ssp-admin.php:147
+msgid "New %s"
+msgstr "Новый %s"
+
+#: includes/class-ssp-admin.php:148
+msgid "All %s"
+msgstr "Все выпуски"
+
+#: includes/class-ssp-admin.php:148 includes/class-ssp-admin.php:150
+#: includes/class-ssp-admin.php:151 includes/class-ssp-admin.php:152
+#: includes/class-ssp-admin.php:324
+msgid "Episodes"
+msgstr "Выпуски"
+
+#: includes/class-ssp-admin.php:149
+msgid "View %s"
+msgstr "Просмотр %s"
+
+#: includes/class-ssp-admin.php:150
+msgid "Search %a"
+msgstr "Поиск по выпускам"
+
+#: includes/class-ssp-admin.php:151
+msgid "No %s Found"
+msgstr "%s не найдено"
+
+#: includes/class-ssp-admin.php:152
+msgid "No %s Found In Trash"
+msgstr "%s в корзине не найдено"
+
+#: includes/class-ssp-admin.php:154
+msgid "Podcast"
+msgstr "Подкасты"
+
+#: includes/class-ssp-admin.php:160 includes/class-ssp-settings.php:866
+msgid "podcast"
+msgstr "podcast"
+
+#: includes/class-ssp-admin.php:199
+msgid "Podcast Series"
+msgstr "Серия подкастов"
+
+#: includes/class-ssp-admin.php:200 includes/class-ssp-admin.php:209
+#: includes/class-ssp-admin.php:274
+msgid "Series"
+msgstr "Серия"
+
+#: includes/class-ssp-admin.php:201
+msgid "Search Series"
+msgstr "Искать серию"
+
+#: includes/class-ssp-admin.php:202
+msgid "All Series"
+msgstr "Все серии"
+
+#: includes/class-ssp-admin.php:203
+msgid "Parent Series"
+msgstr "Родительская серия"
+
+#: includes/class-ssp-admin.php:204
+msgid "Parent Series:"
+msgstr "Родительская серия:"

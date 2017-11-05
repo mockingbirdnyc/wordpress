@@ -1,0 +1,1844 @@
+# Translation of Plugins - WP Super Cache - Stable (latest release) in Romanian
+# This file is distributed under the same license as the Plugins - WP Super Cache - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-10-04 14:24:53+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: ro\n"
+"Project-Id-Version: Plugins - WP Super Cache - Stable (latest release)\n"
+
+#: wp-cache.php:2498
+msgid "Not allowed to edit %s per configuration."
+msgstr "Nu ai voie să editezi %s per configurare."
+
+#: wp-cache.php:1328
+msgid "<strong>Warning</strong>! Due to the way WordPress upgrades plugins, the ones you upload to the WP Super Cache folder (wp-super-cache/plugins/) will be deleted when you upgrade WP Super Cache. To avoid this loss, load your cache plugins from a different location. When you set <strong>$wp_cache_plugins_dir</strong> to the new location in wp-config.php, WP Super Cache will look there instead. <br />You can find additional details in the <a href=\"%s\">developer documentation</a>."
+msgstr "<strong>Avertizare</strong>! Datorită modului în care WordPress actualizează modulele, cele pe care le încarci în dosarul WP Super Cache (wp-super-cache/plugins/) vor fi șterse când actualizezi WP Super Cache. Pentru a evita această pierdere, încarcă-ți modulele de cache dintr-o altă locație. Când setezi <strong>$wp_cache_plugins_dir</strong> în noua locație în wp-config.php, WP Super Cache va căuta acolo în schimb. <br />Poți găsi detalii suplimentare în <a href=\"%s\">documentația pentru dezvoltatori</a>."
+
+#: wp-cache.php:1327
+msgid "Keep in mind that cache plugins are for advanced users only. To create and manage them, you'll need extensive knowledge of both PHP and WordPress actions."
+msgstr "Reține că modulele cache sunt doar pentru utilizatorii avansați. Pentru a le crea și administra, vei avea nevoie de cunoștințe ample atât despre acțiunile PHP cât și despre cele WordPress."
+
+#: wp-cache.php:1326
+msgid "Cache plugins are PHP scripts you'll find in a dedicated folder inside the WP Super Cache folder (wp-super-cache/plugins/). They load at the same time as WP Super Cache, and before regular WordPress plugins."
+msgstr "Modulele cache sunt scripturi PHP pe care le vei găsi într-un dosar dedicat în interiorul dosarului WP Super Cache (wp-super-cache/plugins/). Ele se încarcă în același timp cu WP Super Cache și înaintea modulelor obișnuite WordPress."
+
+#: plugins/wptouch.php:128
+msgid "Provides support for WPTouch mobile theme and plugin."
+msgstr "Oferă suport pentru tema și modulul pentru mobil WPTouch."
+
+#: plugins/searchengine.php:123
+msgid "Provides support for No Adverts for Friends plugin."
+msgstr "Oferă suport pentru modulul No Adverts for Friends."
+
+#: plugins/jetpack.php:84
+msgid "Provides support for the Jetpack mobile theme and plugin. PHP caching mode and mobile support will be enabled too."
+msgstr "Oferă suport pentru tema și modulul pentru mobil Jetpack. De asemenea, cache mod PHP și suportul pentru mobil vor fi activate."
+
+#: plugins/domain-mapping.php:118
+msgid "Provides support for Domain Mapping plugin to map multiple domains to a blog."
+msgstr "Oferă suport pentru modulul Domain Mapping pentru a mapa mai multe domenii pe un blog."
+
+#: plugins/badbehaviour.php:93
+msgid "Support for Bad Behavior. (Only WPCache caching supported, disabled compression and requires Bad Behavior in \"%s/plugins/bad-behavior/\") "
+msgstr "Suport pentru Bad Behavior. (Numai cache-ul WPCache este suportat, compresia este dezactivată și necesită Bad Behavior în „%s/plugins/bad-behavior/”)"
+
+#: wp-cache.php:855
+msgid "Preload Active"
+msgstr "Pre-încărcare activă"
+
+#: ossdl-cdn.php:185
+msgid "The URL of your site. No trailing <code>/</code> please."
+msgstr "URL-ul sitului tău. Te rog fără bară oblică <code>/</code> la sfârșit."
+
+#: ossdl-cdn.php:182
+msgid "Site URL"
+msgstr "URL sit"
+
+#: wp-cache.php:1177
+msgid "Note: if you use Cloudflare or other transparent front-end proxy service this test may fail.<ol><li> If you have Cloudflare minification enabled this plugin may detect differences in the pages and report an error.</li><li> Try using the development mode of Cloudflare to perform the test. You can disable development mode afterwards if the test succeeds.</li></ol>"
+msgstr "Notă: dacă folosești Cloudflare sau un alt serviciu proxy transparent pentru partea din față, acest test poate eșua.<ol><li> Dacă ai activată minificarea Cloudflare, acest modul poate detecta diferențe între pagini și raportează o eroare.</li><li> Încearcă să folosești modul dezvoltare al Cloudflare pentru a efectua testul. Pe urmă poți dezactiva modul dezvoltare dacă testul reușește.</li></ol>"
+
+#: ossdl-cdn.php:168
+msgid "<strong style=\"color: red\">WARNING:</strong> Your siteurl and homeurl are different. The plugin is using %s as the homepage URL of your site but if that is wrong please use the filter \"ossdl_off_blog_url\" to fix it."
+msgstr "<strong style=\"color: red\">AVERTIZARE:</strong> URL-ul sitului și URL-ul primei pagini sunt diferite. Modulul folosește %s ca URL al primei pagini a sitului tău, dar dacă este greșit te rog folosește filtrul „ossdl_off_blog_url” pentru a corecta asta."
+
+#: wp-cache.php:2821
+msgid "Preload mode is enabled. Supercache files will never be expired."
+msgstr "Modul pre-încărcare este activat. Fișierele super-cache nu vor expira niciodată."
+
+#: wp-cache.php:2791
+msgid "Files"
+msgstr "Fișiere"
+
+#: wp-cache.php:2790
+msgid "%s %s Files"
+msgstr "Fișiere %s %s"
+
+#: wp-cache.php:2784
+msgid "Full Cache Files"
+msgstr "Fișiere cache complet"
+
+#: wp-cache.php:2784
+msgid "Super Cached Files"
+msgstr "Fișiere super-cache"
+
+#: wp-cache.php:2700
+msgid "Warning! You are not allowed to delete that file"
+msgstr "Avertizare! Nu ai voie să ștergi acel fișier"
+
+#: wp-cache.php:2085
+msgid "Disable Logging"
+msgstr "Dezactivează jurnalizarea"
+
+#: wp-cache.php:2082
+msgid "Enable Logging"
+msgstr "Activează jurnalizarea"
+
+#: wp-cache.php:2074
+msgid "Username/Password: %s"
+msgstr "Nume utilizator/parolă: %s"
+
+#: wp-cache.php:2072
+msgid "Last Logged to: %s"
+msgstr "Ultima autentificare în: %s"
+
+#: wp-cache.php:1789
+msgid "Checking for and deleting expired files is expensive, but it&#8217;s expensive leaving them there too. On a very busy site, you should set the expiry time to <em>600 seconds</em>. Experiment with different values and visit this page to see how many expired files remain at different times during the day."
+msgstr "Verificarea și ștergerea fișierelor expirate costă mult, dar costă mult și dacă le lași acolo. Pe un sit foarte aglomerat, ar trebuie să setezi timpul de expirare la <em>600 de secunde</em>. Încearcă diferite valori și vizitează această pagină pentru a vedea câte fișiere expirate rămân la diverse ore în timpul zilei."
+
+#: wp-cache.php:1422
+msgid "New Rules"
+msgstr "Reguli noi"
+
+#: wp-cache.php:1422
+msgid "Current Rules"
+msgstr "Reguli actuale"
+
+#: wp-cache.php:1422
+msgid "Rewrite Rules"
+msgstr "Rescrie regulile"
+
+#: wp-cache.php:1407
+msgid "The plugin could not update %1$s.htaccess file: %2$s.<br /> The new rules go above the regular WordPress rules as shown in the code below:"
+msgstr "Modulul nu a putut actualiza %1$sfișierul .htaccess: %2$s.<br /> Noile reguli trec peste regulile WordPress obișnuite așa cum se arată în codul de mai jos:"
+
+#: wp-cache.php:1384
+msgid "When Expert cache delivery is enabled a file called <em>.htaccess</em> is modified. It should probably be in the same directory as your wp-config.php. This file has special rules that serve the cached files very quickly to visitors without ever executing PHP. The .htaccess file can be updated automatically, but if that fails, the rules will be displayed here and it can be edited by you. You will not need to update the rules unless a warning shows here."
+msgstr "Când livrarea cache expert este activată este modificat un fișier numit <em>.htaccess</em>. Probabil ar trebui să fie în același director ca și wp-config.php. Acest fișier are reguli speciale care servesc rapid vizitatorilor fișiere cache, fără a executa vreodată PHP-ul. Fișierul .htaccess poate fi actualizat automat, dar dacă actualizarea eșuează, regulile vor fi afișate aici și pot fi editate. Nu va trebui să actualizezi regulile decât dacă apare o avertizare aici."
+
+#: wp-cache.php:1293
+msgid "Please <a href=\"%s\">rate us</a> and give feedback."
+msgstr "Te rog <a href=\"%s\">evaluează-ne</a> și trimite impresii."
+
+#: wp-cache.php:1290
+msgid "Try out the <a href=\"%1$s\">development version</a> for the latest fixes (<a href=\"%2$s\">changelog</a>)."
+msgstr "Încearcă <a href=\"%1$s\">versiunea de dezvoltare</a> cu ultimele corecții (<a href=\"%2$s\">istoric modificări</a>)."
+
+#: wp-cache.php:1289
+msgid "Visit the <a href=\"%1$s\">plugin homepage</a>."
+msgstr "Vizitează <a href=\"%1$s\">prima pagină a modulului</a>."
+
+#: wp-cache.php:1288
+msgid "Check out the <a href=\"%1$s\">support forum</a> and <a href=\"%2$s\">FAQ</a>."
+msgstr "Verifică <a href=\"%1$s\">forumul pentru suport</a> și <a href=\"%2$s\">întrebările frecvente</a>."
+
+#: wp-cache.php:1287
+msgid "Use the <a href=\"%1$s\">Debug tab</a> for diagnostics."
+msgstr "Folosește <a href=\"%1$s\">fila Depanare</a> pentru diagnosticare."
+
+#: wp-cache.php:1283
+msgid "Fast video hosting (paid)"
+msgstr "Găzduire rapidă video (plătită)"
+
+#: wp-cache.php:1282
+msgid "Speed up images and photos (free)"
+msgstr "Accelerează imaginile și fotografiile (gratuit)"
+
+#: wp-cache.php:1280
+msgid "More Site Speed Tools"
+msgstr "Mai multe instrumente de viteză pentru sit"
+
+#: wp-cache.php:1265
+msgid "<a href=\"%s\">Jetpack</a> provides everything you need to build a successful WordPress website including an image/photo CDN (free) and a video hosting service (paid)."
+msgstr "<a href=\"%s\">Jetpack</a> oferă tot ceea ce ai nevoie pentru a construi un sit web WordPress de succes, inclusiv un CDN imagine/fotografie (gratuit) și un serviciu de găzduire video (plătit)."
+
+#: wp-cache.php:1237
+msgid "<strong>Warning!</strong> Cache comments are currently disabled. Please go to the Debug page and enable Cache Status Messages there. You should clear the cache before testing."
+msgstr "<strong>Avertizare!</strong> Comentariile cache sunt în prezent dezactivate. Te rog mergi la pagina de Depanare și activează acolo mesajele de stare cache. Ar trebui să ștergi cache-ul înainte de testare."
+
+#: wp-cache.php:1207
+msgid "<strong>Errors:</strong> %s"
+msgstr "<strong>Erori:</strong> %s"
+
+#: wp-cache.php:1081
+msgid "Late init. Display cached files after WordPress has loaded."
+msgstr "Inițializare întârziată. Afișează fișierele cache după ce WordPress s-a încărcat."
+
+#: wp-cache.php:1041
+msgid "Cache HTTP headers with page content."
+msgstr "Memorează în cache antete HTTP cu conținut de pagină."
+
+#: wp-cache.php:1021
+msgid "Expert caching requires changes to important server files and may require manual intervention if enabled."
+msgstr "Cache expert necesită modificări în fișierele importante ale serverului și poate fi nevoie de o intervenție manuală dacă este activat."
+
+#: wp-cache.php:1020
+msgid "<acronym title=\"Use mod_rewrite to serve cached files\">Expert</acronym>"
+msgstr "<acronym title=\"Folosește mod_rescriere pentru a servi fișiere cache\">Expert</acronym>"
+
+#: wp-cache.php:1019
+msgid "<acronym title=\"Use PHP to serve cached files\">Simple</acronym>"
+msgstr "<acronym title=\"Folosește PHP pentru a servi fișiere cache\">Simplu</acronym>"
+
+#: wp-cache.php:1017
+msgid "Cache Delivery Method"
+msgstr "Metodă de livrare cache"
+
+#: wp-cache.php:1012
+msgid "Enable Caching"
+msgstr "Activează cache"
+
+#: wp-cache.php:991
+msgid "Preloading of cache disabled. Please make sure simple or expert mode is enabled or talk to your host administrator."
+msgstr "Pre-încărcarea cache-ului dezactivată. Te rog asigură-te că modul simplu sau expert este activat sau ia legătura cu administratorul gazdei tale."
+
+#: wp-cache.php:965
+msgid "No Emails"
+msgstr "Fără emailuri"
+
+#: wp-cache.php:957
+msgid "Preload mode (garbage collection disabled. Recommended.)"
+msgstr "Mod pre-încărcare (colectare gunoi dezactivată. Recomandat.)"
+
+#: wp-cache.php:920
+msgid "In &#8217;Preload Mode&#8217; regular garbage collection will be disabled so that old cache files are not deleted. This is a recommended setting when the cache is preloaded."
+msgstr "În „Modul pre-încărcare” colectarea obișnuită a gunoiului va fi dezactivată, deci fișierele cache vechi nu sunt șterse. Aceasta este o setare recomandată când cache-ul este preîncărcat."
+
+#: rest/class.wp-super-cache-rest-update-settings.php:317
+msgid "You attempted to enable compression but `zlib.output_compression` is enabled. See #21 in the Troubleshooting section of the readme file."
+msgstr "Ai încercat să activezi compresia dar `zlib.output_compression` este activată. Vezi #21 în secțiunea de depanare a fișierului readme."
+
+#: rest/class.wp-super-cache-rest-test-cache.php:66
+msgid "Timestamps do not match"
+msgstr "Datările nu se potrivesc"
+
+#: rest/class.wp-super-cache-rest-test-cache.php:46
+msgid "Timestamps not found"
+msgstr "Datări negăsite"
+
+#: wp-cache.php:1079
+msgid "Coarse file locking. You do not need this as it will slow down your website."
+msgstr "Blocare fișier grosier. Nu ai nevoie de acest lucru, deoarece îți va încetini situl web."
+
+#: wp-cache.php:1052
+msgid "Warning! 304 browser caching is only supported when mod_rewrite caching is not used."
+msgstr "Avertizare! 304 cache pentru navigator este acceptată când nu se folosește cache în mod_rescriere."
+
+#: wp-cache.php:2310
+msgid "Logout"
+msgstr "Dezautentificare"
+
+#: wp-cache.php:2306
+msgid "The logout link will log out all WordPress users on this site except you. Your authentication cookie will be updated, but you will not be logged out."
+msgstr "Legătura de dezautentificare va dezautentifica toți utilizatorii WordPress pe acest sit, în afară de tine. Cookie-ul tău de autentificare va fi actualizat, dar tu nu vei fi dezautentificat."
+
+#: wp-cache.php:2304
+msgid "Your site is using a very old version of WordPress. When you update to the latest version everyone will be logged out and cookie information updated."
+msgstr "Situl tău utilizează o versiune WordPress foarte veche. Când actualizezi la versiunea cea mai recentă toată lumea va fi deconectată și informațiile cookie actualizate."
+
+#: wp-cache.php:2301
+msgid "If you just installed WP Super Cache for the first time, you can dismiss this message. Otherwise, you should probably refresh the login cookies of all logged in WordPress users here by clicking the logout link below."
+msgstr "Dacă doar ce ai instalat pentru prima dată WP Super Cache, nu lua în considerație acest mesaj. În caz contrar, probabil ar trebui să reîmprospătezi aici cookie-urile de autentificare ale tuturor utilizatorilor WordPress autentificați dând clic pe legătura de dezautentificare de mai jos."
+
+#: wp-cache.php:2299
+msgid "Your server is configured to show files and directories, which may expose sensitive data such as login cookies to attackers in the cache directories. That has been fixed by adding a file named index.html to each directory. If you use simple caching, consider moving the location of the cache directory on the Advanced Settings page."
+msgstr "Serverul tău este configurat pentru a arăta fișiere și directori, care pot expune date sensibile din directorii cache pentru atacatori, cum ar fi cookie-uri de autentificare. Acest lucru este corectat prin adăugarea unui fișier numit index.html în fiecare director. Dacă folosești cache simplu, ia în considerare mutarea locației directorului cache pe pagina Setări avansate."
+
+#: wp-cache.php:2293
+msgid "All users of this site have been logged out to refresh their login cookies."
+msgstr "Toți utilizatorii acestui sit au fost dezautentificați pentru a le împrospăta cookie-urile de autentificare."
+
+#: wp-cache.php:2292 wp-cache.php:2298
+msgid "WP Super Cache Warning!"
+msgstr "Avertizare WP Super Cache!"
+
+#: wp-cache.php:1529
+msgid "Cannot delete directory"
+msgstr "Nu pot șterge directorul"
+
+#: wp-cache.php:1112
+msgid "Since you are using mod_rewrite to serve cache files, you must choose a directory in your web root which is <q>%s</q> and update the mod_rewrite rules in the .htaccess file."
+msgstr "Din moment ce utilizezi mod_rescriere pentru a servi fișiere cache, trebuie să alegi un director în rădăcina ta web care este <q>%s</q> și să actualizezi regulile mod_rescriere în fișierul .htaccess."
+
+#: wp-cache.php:1105
+msgid "index.html files have been added in key directories, but unless directory indexes are disabled, it is probably better to store the cache files outside of the web root of %s"
+msgstr "Fișierele index.html au fost adăugate în directorii principali, dar dacă indexările directorilor sunt dezactivate, probabil este mai bine să stochezi fișierele cache în afara rădăcinii web a %s"
+
+#: wp-cache.php:1103
+msgid "You are using expert mode to serve cache files so the plugin has added <q>Options -Indexes</q> to the .htaccess file in the cache directory to disable indexes. However, if that does not work, you should contact your system administrator or support and ask for them to be disabled, or use simple mode and move the cache outside of the web root."
+msgstr "Folosești modul expert pentru a servi fișiere cache, deci modulul a adăugat <q>Opțiuni - Indexări</q> în fișierul .htaccess din directorul cache pentru a dezactiva indexările. Cu toate acestea, dacă asta nu funcționează, ar trebui să contactezi administratorul de sistem și să ceri să fie dezactivate sau folosește modul simplu și mută cache-ul în afara rădăcinii web."
+
+#: wp-cache.php:1101
+msgid "The plugin detected a bare directory index in your cache directory, which would let visitors see your cache files directly and might expose private posts."
+msgstr "Modulul a detectat un director neindexat în directorul tău cache, ceea ce ar putea permite vizitatorilor să-ți vadă direct fișierele cache și ți-ar expune articolele private."
+
+#: wp-cache.php:1099
+msgid "Submit a blank entry to set it to the default directory, WP_CONTENT_DIR . /cache/."
+msgstr "Lasă necompletat pentru a-l seta către directorul implicit, WP_CONTENT_DIR . /cache/."
+
+#: wp-cache.php:1098
+msgid "If the new cache directory does not exist, it will be created and the contents of the old cache directory will be moved there. Otherwise, the old cache directory will be left where it is."
+msgstr "Dacă noul director cache nu există, el va fi creat și conținuturile din directorul cache vechi vor fi mutate acolo. Altfel, directorul vechi cache va fi lăsat acolo unde este."
+
+#: wp-cache.php:1097
+msgid "If the directory does not exist, it will be created. Please make sure your web server user has write access to the parent directory. The parent directory must exist."
+msgstr "Dacă directorul nu există, el va fi creat. Te rog asigură-te că utilizatorul serverului tău web are acces la scriere în directorul părinte. Directorul părinte trebuie să existe."
+
+#: wp-cache.php:1096
+msgid "You must give the full path to the directory."
+msgstr "Trebuie să scrii calea completă către director."
+
+#: wp-cache.php:1095
+msgid "Change the location of your cache files. The default is WP_CONTENT_DIR . /cache/ which translates to %s."
+msgstr "Schimbă locația fișierelor tale cache. Locația implicită este WP_CONTENT_DIR . /cache/ care înseamnă %s."
+
+#: wp-cache.php:1090
+msgid "Cache Location"
+msgstr "Locație cache"
+
+#. Author URI of the plugin/theme
+msgid "https://automattic.com/"
+msgstr "https://automattic.com/"
+
+#. Author of the plugin/theme
+msgid "Automattic"
+msgstr "Automattic"
+
+#. Description of the plugin/theme
+msgid "Very fast caching plugin for WordPress."
+msgstr "Un modul WordPress foarte rapid pentru cache."
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/wp-super-cache/"
+msgstr "https://wordpress.org/plugins/wp-super-cache/"
+
+#. Plugin Name of the plugin/theme
+msgid "WP Super Cache"
+msgstr "WP Super Cache"
+
+#: wp-cache.php:3686
+msgid "Delete cache of the current page"
+msgstr "Șterge cache din pagina curentă"
+
+#: wp-cache.php:3649
+msgid ""
+"Dear User,\n"
+"\n"
+"WP Super Cache was removed from your blog but the mod_rewrite rules\n"
+"in your .htaccess were not.\n"
+"\n"
+"Please edit the following file and remove the code\n"
+"between 'BEGIN WPSuperCache' and 'END WPSuperCache'. Please backup the file first!\n"
+"\n"
+"%s\n"
+"\n"
+"Regards,\n"
+"WP Super Cache Plugin\n"
+"http://wordpress.org/plugins/wp-super-cache/"
+msgstr ""
+"Stimate utilizator,\n"
+"\n"
+"WP Super Cache a fost eliminat din blogul tău, dar regulile mod_rescriere\n"
+"din fișierul .htaccess încă nu.\n"
+"\n"
+"Te rog să editezi fișierul următor și să elimini codul\n"
+"dintre 'BEGIN WPSuperCache' și 'END WPSuperCache'. Mai întâi, fă-ți o copie de rezervă!\n"
+"\n"
+"%s\n"
+"\n"
+"Salutări,\n"
+"Modulul WP Super Cache\n"
+"http://wordpress.org/plugins/wp-super-cache/"
+
+#: wp-cache.php:3649
+msgid "Supercache Uninstall Problems"
+msgstr "Probleme dezinstalare super-cache"
+
+#: wp-cache.php:3596
+msgid ""
+"Preload has been restarted.\n"
+"%s"
+msgstr ""
+"Pre-încărcarea a fost repornită.\n"
+"%s"
+
+#: wp-cache.php:3596
+msgid "[%s] Preload may have stalled."
+msgstr "[%s] Pre-încărcarea poate avea întreruperi."
+
+#: wp-cache.php:3554
+msgid "Cleaning up old supercache files."
+msgstr "Ștergerea fișierelor super-cache vechi."
+
+#: wp-cache.php:3554
+msgid "[%s] Cache Preload Completed"
+msgstr "[%s] Pre-încărcare cache finalizată"
+
+#: wp-cache.php:3543
+msgid "Scheduling next preload refresh in %d minutes."
+msgstr "Programez următoarea reîmprospătare pre-încărcată în %d minute."
+
+#: wp-cache.php:3533
+msgid "Refreshed the following posts:"
+msgstr "S-au reîmprospătat următoarele articole:"
+
+#: wp-cache.php:3533
+msgid "[%1$s] %2$d posts refreshed"
+msgstr "[%1$s] %2$d articole reîmprospătate"
+
+#: wp-cache.php:3464 wp-cache.php:3523
+msgid "[%1$s] Cache Preload Stopped"
+msgstr "[%1$s] Pre-încărcare cache oprită"
+
+#: wp-cache.php:3497
+msgid "[%1$s] Refreshing posts from %2$d to %3$d"
+msgstr "[%1$s] Reîmprospătez articole de la %2$d la %3$d"
+
+#: wp-cache.php:3440
+msgid "[%1$s] Refreshing %2$s taxonomy from %3$d to %4$d"
+msgstr "[%1$s] Reîmprospătez taxonomia %2$s de la %3$d la %4$d"
+
+#: wp-cache.php:3410
+msgid "[%1$s] Cache Preload Started"
+msgstr "[%1$s] Pre-încărcare pornită"
+
+#: wp-cache.php:3222
+msgid "Update Mod_Rewrite Rules"
+msgstr "Actualizează regulile mod_rescriere"
+
+#: wp-cache.php:3210
+msgid " Make sure they appear before any existing WordPress rules. "
+msgstr "Asigură-te că ele apar înainte de orice alte reguli WordPress existente."
+
+#: wp-cache.php:3209
+msgid "You can edit the file yourself. Add the following rules."
+msgstr "Poți edita chiar tu fișierul. Adaugă regulile următoare."
+
+#: wp-cache.php:3208
+msgid "To serve static html files your server must have the correct mod_rewrite rules added to a file called <code>%s.htaccess</code>"
+msgstr "Pentru a servi fișiere HTML statice, serverul trebuie să aibă reguli corecte pentru mod_rescriere adăugate într-un fișier numit <code>%s.htaccess</code>"
+
+#: wp-cache.php:3204
+msgid "Alternatively, you can edit your <code>%s.htaccess</code> file manually and add the following code (before any WordPress rules):"
+msgstr "Alternativ, poți edita fișierul tău <code>%s.htaccess</code> manual și să adaugi următorul cod (înainte de orice reguli WordPress):"
+
+#: wp-cache.php:3204
+msgid "Refresh this page when the file permissions have been modified."
+msgstr "Reîmprospătează această pagină când permisiunile pentru fișiere au fost modificate."
+
+#: wp-cache.php:3204
+msgid "The file <code>%s.htaccess</code> cannot be modified by the web server. Please correct this using the chmod command or your ftp client."
+msgstr "Fișierul <code>%s.htaccess</code> nu poate fi modificat de către serverul web. Te rog să corectezi acest lucru folosind comanda chmod sau prin FTP."
+
+#: wp-cache.php:3204
+msgid "Cannot update .htaccess"
+msgstr "Nu se poate actualiza .htaccess"
+
+#: wp-cache.php:3167
+msgid "WP Super Cache has checked the front page of your blog. Please visit %s if you would like to disable this."
+msgstr "WP Super Cache a verificat pagina din față a blogului tău. Te rog accesează %s dacă dorești să dezactivezi acest lucru."
+
+#: wp-cache.php:3167
+msgid "[%s] Front page check!"
+msgstr "[%s] Verificare pagina din față!"
+
+#: wp-cache.php:3162
+msgid "The cache on your blog has been cleared because the front page of your site is missing the text \"%2$s\". Please visit %1$s to verify the cache has been cleared."
+msgstr "Cache-ul a fost șters din blogul tău deoarece pagina din față a sitului are text lipsă „%2$s”. Te rog accesează %1$s pentru a verifica dacă cache-ul a fost șters."
+
+#: wp-cache.php:3162
+msgid "[%s] Front page is not correct! Cache Cleared!"
+msgstr "[%s] Pagina din față nu este corespunzătoare! Cache șters!"
+
+#: wp-cache.php:3159
+msgid "Please visit %1$s to clear the cache as the front page of your site is not correct and missing the text, \"%2$s\"!"
+msgstr "Te rog accesează %1$s pentru a șterge cache-ul deoarece pagina din față a sitului tău nu este corespunzătoare și are text lipsă, „%2$s”!"
+
+#: wp-cache.php:3159
+msgid "[%s] Front page is not correct! Please clear cache!"
+msgstr "[%s] Pagina din față nu este corespunzătoare! Te rog șterge cache!"
+
+#: wp-cache.php:3152
+msgid "The cache on your blog has been cleared because the front page of your site is now downloading. Please visit %s to verify the cache has been cleared."
+msgstr "Cache-ul a fost șters din blogul tău deoarece pagina din față a sitului se descărcă acum. Te rog accesează %s pentru a verifica dacă cache-ul a fost șters."
+
+#: wp-cache.php:3152
+msgid "[%s] Front page is gzipped! Cache Cleared!"
+msgstr "[%s] Pagina din față este comprimată cu gzip. Cache șters!"
+
+#: wp-cache.php:3149
+msgid "Please visit %s to clear the cache as the front page of your site is now downloading!"
+msgstr "Te rog accesează %s pentru a șterge cache-ul, ca pagina din față a sitului tău să fie descărcată acum!"
+
+#: wp-cache.php:3149
+msgid "[%s] Front page is gzipped! Please clear cache!"
+msgstr "[%s] Pagina din față este comprimată cu gzip. Te rog șterge cache!"
+
+#: wp-cache.php:3128
+msgid "Warning! WP Super Cache caching <strong>was</strong> broken but has been <strong>fixed</strong>! The script advanced-cache.php could not load wp-cache-phase1.php.<br /><br />The file %1$s/advanced-cache.php has been recreated and WPCACHEHOME fixed in your wp-config.php. Reload to hide this message."
+msgstr "Avertizare! WP Super Cache <strong>a fost</strong> întrerupt, dar este <strong>restabilit</strong>! Scriptul advanced-cache.php nu a putut încărca wp-cache-phase1.php.<br /><br />Fișierul %1$s/advanced-cache.php a fost recreat și WPCACHEHOME restabilit în wp-config.php. Reîncarcă pentru a ascunde acest mesaj."
+
+#: wp-cache.php:3125
+msgid "WP Super Cache is disabled. Please go to the <a href=\"%s\">plugin admin page</a> to enable caching."
+msgstr "WP Super Cache este dezactivat. Te rog mergi la <a href=\"%s\">pagina de administrare a modulului</a> pentru a activa cache."
+
+#: wp-cache.php:3115
+msgid "Settings"
+msgstr "Setări"
+
+#: wp-cache.php:3109
+msgid "WP Super Cache must be configured. Go to <a href=\"%s\">the admin page</a> to enable and configure the plugin."
+msgstr "WP Super Cache trebuie să fie configurat. Mergi la <a href=\"%s\">pagina de administrare</a> pentru a activa și configura modulul."
+
+#: wp-cache.php:3076
+msgid "%1$s is Stephen Fry proof thanks to caching by %2$s"
+msgstr "%1$s este dovada lui Stephen Fry datorită memoriei cache prin %2$s"
+
+#: wp-cache.php:2857
+msgid "Delete Super Cache cached files (opens in new window)"
+msgstr "Șterge fișierele super-cache din cache (se deschide într-o fereastră nouă)"
+
+#: wp-cache.php:2832
+msgid "Delete Expired"
+msgstr "Șterge expirate"
+
+#: wp-cache.php:2819
+msgid "Expired files are files older than %s seconds. They are still used by the plugin and are deleted periodically."
+msgstr "Fișierele expirate sunt fișierele mai vechi de %s de secunde. Ele sunt încă utilizate de către modul și se șterg periodic."
+
+#: wp-cache.php:2816
+msgid "List all cached files"
+msgstr "Listează toate fișierele cache"
+
+#: wp-cache.php:2814
+msgid "Too many cached files, no listing possible."
+msgstr "Prea multe fișiere cache, nicio listare posibilă."
+
+#: wp-cache.php:2812
+msgid "Hide file list"
+msgstr "Ascunde listă fișiere"
+
+#: wp-cache.php:2078 wp-cache.php:2791
+msgid "Delete"
+msgstr "Șterge"
+
+#: wp-cache.php:2791
+msgid "Age"
+msgstr "Vechime"
+
+#: wp-cache.php:2791
+msgid "URI"
+msgstr "URI"
+
+#: wp-cache.php:2775
+msgid "WP-Super-Cache"
+msgstr "WP-Super-Cache"
+
+#: wp-cache.php:2769 wp-cache.php:2781
+msgid "%s Expired Pages"
+msgstr "%s pagini expirate"
+
+#: wp-cache.php:2768 wp-cache.php:2776
+msgid "%s Cached Pages"
+msgstr "%s pagini cache"
+
+#: wp-cache.php:2767
+msgid "WP-Cache"
+msgstr "WP-Cache"
+
+#: wp-cache.php:2760
+msgid "Cache stats last generated: %s minutes ago."
+msgstr "Ultima regenerare a statisticilor cache: acum %s de minute."
+
+#: wp-cache.php:2758
+msgid "Regenerate cache stats"
+msgstr "Regenerează statistici cache"
+
+#: wp-cache.php:2757
+msgid "Cache stats are not automatically generated. You must click the link below to regenerate the stats on this page."
+msgstr "Statisticile cache nu sunt generate automat. Trebuie să dai clic pe legătura de mai jos pentru a regenera statisticile pe această pagină."
+
+#: wp-cache.php:2718
+msgid "Deleting wp-cache file: <strong>%s</strong><br />"
+msgstr "Ștergerea fișierului wp-cache: <strong>%s</strong><br />"
+
+#: wp-cache.php:2695
+msgid "Deleting supercache file: <strong>%s</strong><br />"
+msgstr "Ștergerea fișierului super-cache: <strong>%s</strong><br />"
+
+#: wp-cache.php:2672
+msgid "Object cache in use. No cache listing available."
+msgstr "Cache obiect în uz. Nicio listare cache disponibilă."
+
+#: wp-cache.php:2669
+msgid "Cache Contents"
+msgstr "Conținuturi cache"
+
+#: wp-cache.php:2575
+msgid "<h3>WP_CACHE constant added to wp-config.php</h3><p>If you continue to see this warning message please see point 5 of the <a href=\"http://wordpress.org/plugins/wp-super-cache/faq/\">Troubleshooting Guide</a>. The WP_CACHE line must be moved up."
+msgstr "<h3>Constanta WP_CACHE a fost adăugată la wp-config.php</h3><p>Dacă vezi în continuare acest mesaj de avertizare te rog să consultați punctul 5 din <a href=\"http://wordpress.org/plugins/wp-super-cache/faq/\">Ghidul de depanare</a>. Linia WP_CACHE ar trebui mutată în sus."
+
+#: wp-cache.php:2571
+msgid "Edit <code>%s</code> and add the following line:<br /> <code>define('WP_CACHE', true);</code><br />Otherwise, <strong>WP-Cache will not be executed</strong> by WordPress core. "
+msgstr "Editează <code>%s</code> și adaugă următoarea linie:<br /> <code>define('WP_CACHE', true);</code><br />În caz contrar, <strong>WP-Cache nu va fi executabil</strong> din WordPress."
+
+#: wp-cache.php:2570
+msgid "<strong>Error: WP_CACHE is not enabled</strong> in your <code>wp-config.php</code> file and I couldn&#8217;t modify it."
+msgstr "<strong>Eroare: WP_CACHE nu este activată</strong> în fișierul <code>wp-config.php</code> și nu s-a putut modifica."
+
+#: wp-cache.php:2568
+msgid "<h3>WP_CACHE constant set to false</h3><p>The WP_CACHE constant is used by WordPress to load the code that serves cached pages. Unfortunately, it is set to false. Please edit your wp-config.php and add or edit the following line above the final require_once command:<br /><br /><code>define('WP_CACHE', true);</code></p>"
+msgstr "<h3>Constanta WP_CACHE este setată la fals</h3><p>Constanta WP_CACHE este folosită de WordPress pentru a încărca codul care servește pagini cache. Din păcate, este setată la fals. Te rog editează wp-config.php și adaugă sau editează următoarea linie de deasupra comenzii finale require_once:<br /><br /><code>define('WP_CACHE', true);</code></p>"
+
+#: wp-cache.php:2544
+msgid "<li>Open <em>%1$s</em> in a text editor.</li><li>Change the text <em>CACHEHOME</em> to <em>%2$s</em></li><li> Save the file and copy it to <em>%3$s</em> and refresh this page.</li>"
+msgstr "<li>Deschide <em>%1$s</em> într-un editor de text.</li><li>Schimbă textul <em>CACHEHOME</em> cu <em>%2$s</em></li><li> Salvează fișierul și copiază-l în <em>%3$s</em> și reîmprospătează această pagină.</li>"
+
+#: wp-cache.php:2543
+msgid "If that doesn&#8217;t work, make sure the file <em>%s/advanced-cache.php</em> doesn&#8217;t exist:"
+msgstr "Dacă acest lucru nu funcționează, asigură-te că <em>%s/advanced-cache.php</em> nu există:"
+
+#: wp-cache.php:2542
+msgid "Refresh this page to update <em>%s/advanced-cache.php</em>"
+msgstr "Reîmprospătează această pagină pentru a actualiza <em>%s/advanced-cache.php</em>"
+
+#: wp-cache.php:2541
+msgid "Make %1$s writable using the chmod command through your ftp or server software. (<em>chmod 777 %1$s</em>) and refresh this page. This is only a temporary measure and you&#8217;ll have to make it read only afterwards again. (Change 777 to 755 in the previous command)"
+msgstr "Fă %1$s să poate fi scris folosind comanda chmod prin ftp sau software-ul serverului. (<em>chmod 777 %1$s</em>) și reîmprospătează această pagină. Aceasta este doar o măsură temporară și va trebui să-l faci numai pentru citit din nou după aceea. (Schimbă 777 la 755 în comanda anterioară)"
+
+#: wp-cache.php:2540
+msgid "If it already exists, please delete the file first."
+msgstr "Dacă deja există, te rog șterge mai întâi fișierul."
+
+#: wp-cache.php:2539
+msgid "%s/advanced-cache.php</em> does not exist or cannot be updated."
+msgstr "%s/advanced-cache.php</em> nu există sau nu poate fi actualizat."
+
+#: wp-cache.php:2503
+msgid "Could not update %s!</em> WPCACHEHOME must be set in config file."
+msgstr "Nu s-a putut actualiza %s!</em> WPCACHEHOME trebuie setat în fișierul de configurare."
+
+#: wp-cache.php:2464
+msgid "Sample WP-Cache config file (<strong>%s</strong>) does not exist. Verify your installation."
+msgstr "Exemplul pentru fișierul de configurare WP-Cache (<strong>%s</strong>) nu există. Te rog verifică modul de instalare."
+
+#: wp-cache.php:2458
+msgid "Configuration file missing and %1$s  directory (<strong>%2$s</strong>) is not writable by the web server. Check its permissions."
+msgstr "Fișierul de configurare lipsește și directorul %1$s (<strong>%2$s</strong>) nu poate fi scris de către serverul web. Verifică-i permisiunile."
+
+#: wp-cache.php:2453
+msgid "Your WP-Cache config file (<strong>%s</strong>) is out of date and not writable by the Web server. Please delete it and refresh this page."
+msgstr "Fișierul tău de configurare WP-Cache (<strong>%s</strong>) este neactualizat și nu poate fi scris de către serverul web. Te rog șterge-l și reîncarcă această pagină."
+
+#: wp-cache.php:2419
+msgid "Your cache directory (<strong>%1$s</strong>) or <strong>%2$s</strong> need to be writable for this plugin to work. Double-check it."
+msgstr "Directorul tău cache (<strong>%1$s</strong>) sau <strong>%2$s</strong> trebuie să poată fi scris pentru ca acest modul să funcționeze. Fă-i o dublă verificare."
+
+#: wp-cache.php:2414
+msgid "Your cache directory (<strong>%1$s</strong>) did not exist and couldn&#8217;t be created by the web server. Check %1$s permissions."
+msgstr "Directorul tău cache (<strong>%1$s</strong>) nu există și nu a putut fi creat de serverul web. Verifică permisiunile pentru %1$s."
+
+#: wp-cache.php:2414 wp-cache.php:2419 wp-cache.php:2453 wp-cache.php:2458
+#: wp-cache.php:2464
+msgid "Error"
+msgstr "Eroare"
+
+#: wp-cache.php:2176
+msgid "GZIP compression is enabled in WordPress, wp-cache will be bypassed until you disable gzip compression."
+msgstr "Compresia GZIP este activată în WordPress, wp-cache va fi ocolit până când dezactivezi compresia gzip."
+
+#: wp-cache.php:2176 wp-cache.php:2498 wp-cache.php:2503 wp-cache.php:2539
+msgid "Warning"
+msgstr "Avertizare"
+
+#: wp-cache.php:2109
+msgid "Email the blog admin when checks are made. (useful for testing)"
+msgstr "Trimite email administratorului blogului când se fac verificări. (util pentru testare)"
+
+#: wp-cache.php:2108
+msgid "Clear cache on error."
+msgstr "Șterge cache la eroare."
+
+#: wp-cache.php:2107
+msgid "Text to search for on your front page. If this text is missing, the cache will be cleared. Leave blank to disable."
+msgstr "Text de căutat în pagina ta din față. Dacă acest text lipsește, cache-ul va fi șters. Lasă necompletat pentru a dezactiva."
+
+#: wp-cache.php:2107
+msgid "Front page text"
+msgstr "Text pagina din față"
+
+#: wp-cache.php:2106
+msgid "Check front page every 5 minutes."
+msgstr "Verifică pagina din față la fiecare 5 minute."
+
+#: wp-cache.php:2104
+msgid "I&#8217;m 99% certain that they aren&#8217;t bugs in WP Super Cache and they only happen in very rare cases but you can run a simple check once every 5 minutes to verify that your site is ok if you&#8217;re worried. You will be emailed if there is a problem."
+msgstr "Sunt sigur în proporție de 99% că acestea nu sunt erori în WP Super Cache și se întâmplă numai în cazuri foarte rare, dar, dacă ești îngrijorat, poți rula o verificare simplă o dată la 5 minute pentru a verifica dacă situl tău este în regulă. Vei primi un email în cazul în care apare o problemă."
+
+#: wp-cache.php:2103
+msgid "In very rare cases two problems may arise on some blogs:<ol><li> The front page may start downloading as a zip file.</li><li> The wrong page is occasionally cached as the front page if your blog uses a static front page and the permalink structure is <em>/%category%/%postname%/</em>.</li></ol>"
+msgstr "În cazuri foarte rare pot apărea două probleme pe unele bloguri:<ol><li> Pagina din față poate începe descărcarea ca un fișier zip.</li><li> Ocazional, pagina din față poate fi memorată greșit într-un fișier cache dacă blogul tău utilizează o pagină din față statică și structura legăturilor permanente este <em>/%category%/%postname%/</em>.</li></ol>"
+
+#: wp-cache.php:2097
+msgid "Display comments at the end of every page like this:"
+msgstr "Afișează comentarii la sfârșitul fiecărei pagini așa:"
+
+#: wp-cache.php:2096
+msgid "Cache Status Messages"
+msgstr "Mesaje stare cache"
+
+#: wp-cache.php:2095
+msgid "(only log requests from this IP address. Your IP is %s)"
+msgstr "(numai cererile de autentificare de la această adresă IP. IP-ul tău este %s)"
+
+#: wp-cache.php:2095
+msgid "IP Address"
+msgstr "Adresă IP"
+
+#: wp-cache.php:2064
+msgid "Fix problems with the plugin by debugging it here. It will log to a file in your cache directory."
+msgstr "Corectează problemele cu modulul prin depanarea lui aici. El le va înregistra într-un fișier din directorul tău cache."
+
+#: wp-cache.php:2070
+msgid "Currently logging to: %s"
+msgstr "În prezent autentificat ca: %s"
+
+#: wp-cache.php:1950
+msgid "Save Files"
+msgstr "Salvează fișierele"
+
+#: wp-cache.php:1944
+msgid "Add here those filenames that can be cached, even if they match one of the rejected substring specified above."
+msgstr "Adaugă aici acele nume de fișiere care pot fi memorate în cache, chiar dacă ele se potrivesc cu unul dintre subșirurile de caractere respinse mai sus."
+
+#: wp-cache.php:1923
+msgid "Save Strings"
+msgstr "Salvează șiruri de caractere"
+
+#: wp-cache.php:1917
+msgid "Add here strings (not a filename) that forces a page not to be cached. For example, if your URLs include year and you dont want to cache last year posts, it&#8217;s enough to specify the year, i.e. &#8217;/2004/&#8217;. WP-Cache will search if that string is part of the URI and if so, it will not cache that page."
+msgstr "Adaugă aici șiruri de caractere (nu un nume de fișier) care forțează o pagină să nu fie memorată în cache. De exemplu, dacă URL-urile tale includ anul și nu dorești fișiere cache pentru articole de anul trecut, este suficient să precizezi anul, de exemplu &#8217;/2016/&#8217;. WP-Cache va căuta dacă acel șir face parte din URI și, dacă-l va găsi acolo, nu va memora în cache acea pagină."
+
+#: wp-cache.php:1894 wp-cache.php:2113
+msgid "Save"
+msgstr "Salvează"
+
+#: wp-cache.php:1892
+msgid "Author Pages"
+msgstr "Pagini autor"
+
+#: wp-cache.php:1891
+msgid "Search Pages"
+msgstr "Pagini de căutare"
+
+#: wp-cache.php:1890
+msgid "Feeds"
+msgstr "Fluxuri"
+
+#: wp-cache.php:1889
+msgid "Category"
+msgstr "Categorie"
+
+#: wp-cache.php:1888
+msgid "Tags"
+msgstr "Etichete"
+
+#: wp-cache.php:1887
+msgid "Archives"
+msgstr "Arhive"
+
+#: wp-cache.php:1886
+msgid "Home"
+msgstr "Prima pagină"
+
+#: wp-cache.php:1885
+msgid "Front Page"
+msgstr "Pagina din față"
+
+#: wp-cache.php:1884
+msgid "Pages"
+msgstr "Pagini"
+
+#: wp-cache.php:1883
+msgid "Single Posts"
+msgstr "Articole singulare"
+
+#: wp-cache.php:1880
+msgid "Do not cache the following page types. See the <a href=\"http://codex.wordpress.org/Conditional_Tags\">Conditional Tags</a> documentation for a complete discussion on each type."
+msgstr "Nu memora în cache următoarele tipuri de pagină. Vezi documentația <a href=\"http://codex.wordpress.org/Conditional_Tags\">Etichete condiționale</a> pentru o discuție completă despre fiecare tip."
+
+#: wp-cache.php:1851
+msgid "Save UA Strings"
+msgstr "Salvează șiruri agenți utilizator"
+
+#: wp-cache.php:1844
+msgid "Strings in the HTTP &#8217;User Agent&#8217; header that prevent WP-Cache from caching bot, spiders, and crawlers&#8217; requests. Note that super cached files are still sent to these agents if they already exists."
+msgstr "Șiruri de caractere în antetul HTTP „Agent utilizator” care împiedică WP-Cache să memoreze în cache cererile boților, păianjenilor și de accesare cu crawlere. Reține că fișierele super-cache sunt încă trimise către acești agenți dacă ele există deja."
+
+#: wp-cache.php:1843
+msgid "Rejected User Agents"
+msgstr "Agenți utilizator respinși"
+
+#: wp-cache.php:1791
+msgid "Change Expiration"
+msgstr "Schimbă timpul de expirare"
+
+#: wp-cache.php:1790
+msgid "Set the expiry time to 0 seconds to disable garbage collection."
+msgstr "Setează timpul de expirare la 0 secunde pentru a dezactiva colectarea gunoiului."
+
+#: wp-cache.php:1787
+msgid "Sites where an external data source updates at a particular time every day should set the timeout to 86400 seconds and use the Clock scheduler set appropriately."
+msgstr "Siturile în care o sursă de date externă se actualizează la un moment dat în fiecare zi ar trebui să seteze timpul de expirare la 86400 de secunde și să folosească programatorul Oră setat corespunzător."
+
+#: wp-cache.php:1786
+msgid "Sites with lots of static content, no widgets or rss feeds in their sidebar can use a timeout of 86400 seconds or even more and set the timer to something equally long."
+msgstr "Siturile cu foarte mult conținut static, fără piese sau fluxuri RSS în bara lor laterală, pot folosi un timp de expirare cache de 86.400 de secunde sau chiar mai mult și pot seta timpul la o valoare similară."
+
+#: wp-cache.php:1785
+msgid "Sites with widgets and rss feeds in their sidebar should probably use a timeout of 3600 seconds and set the timer to 600 seconds. Stale files will be caught within 10 minutes of going stale."
+msgstr "Siturile cu piese și fluxuri RSS în bara lor laterală probabil ar trebui să folosească un timp de expirare de 3600 de secunde și să seteze timpul la 600 de secunde. Fișierele vechi vor deveni expirate după 10 minute."
+
+#: wp-cache.php:1784
+msgid "Sites that want to serve lots of newly generated data should set the <em>Cache Timeout</em> to 60 and use the <em>Timer</em> scheduler set to 90 seconds."
+msgstr "Siturile care vor să servească o mulțime de date nou create ar trebui să seteze <em>Timpul de expirare cache</em> la 60 de secunde și să folosească programatorul <em>Timp</em> setat la 90 de secunde."
+
+#: wp-cache.php:1782
+msgid "There are no best garbage collection settings but here are a few scenarios. Garbage collection is separate to other actions that clear our cached files like leaving a comment or publishing a post."
+msgstr "Nu există setări optime pentru colectarea gunoiului, dar aici sunt câteva variante. Colectarea gunoiului este separată de alte acțiuni care șterg fișierele noastre cache, precum lăsarea unui comentariu sau publicarea unui articol."
+
+#: wp-cache.php:1780
+msgid "Or, the <em>Clock</em> scheduler allows the garbage collection to run at specific times. If set to run hourly or twice daily, the garbage collector will be first scheduled for the time you enter here. It will then run again at the indicated interval. If set to run daily, it will run once a day at the time specified."
+msgstr "Sau programatorul <em>Oră</em> permite să se ruleze colectarea gunoiului la anumite momente orare. Dacă setezi să ruleze pe oră sau de două ori pe zi, colectorul de gunoi va fi mai întâi programat pentru timpul pe care îl introduci aici. Apoi, el va rula din nou la intervalul indicat. Dacă setezi să ruleze zilnic, el va rula o dată pe zi, la ora specificată."
+
+#: wp-cache.php:1779
+msgid "The <em>Timer</em> scheduler tells the plugin to run the garbage collector at regular intervals. When one garbage collection is done, the next run is scheduled."
+msgstr "Programatorul <em>Timp</em> spune modulului să ruleze colectorul de gunoi la intervale regulate. Când o colectare a gunoiului s-a terminat, următoarea rulare este programată."
+
+#: wp-cache.php:1778
+msgid "Use the <em>Timer</em> or <em>Clock</em> schedulers to define when the garbage collector should run."
+msgstr "Folosește programatoarele <em>Timp</em> sau <em>Oră</em> pentru a defini când colectorul de gunoi ar trebui să ruleze."
+
+#: wp-cache.php:1777
+msgid "Stale cached files are not removed as soon as they become stale. They have to be removed by the garbage collecter. That is why you have to tell the plugin when the garbage collector should run."
+msgstr "Fișiere cache vechi nu sunt înlăturate de îndată ce devin expirate. Ele trebuie să fie înlăturate de către colectorul de gunoi. De aceea trebuie să-i spui modulului când colectorul de gunoi ar trebui să ruleze."
+
+#: wp-cache.php:1776
+msgid "Cached files are fresh for a limited length of time. You can set that time in the <em>Cache Timeout</em> text box on this page."
+msgstr "Fișierele cache sunt proaspete pentru o perioadă limitată de timp. Poți seta acest timp în caseta de lângă textul <em>Timp de expirare cache</em> din această pagină."
+
+#: wp-cache.php:1775
+msgid "<em>Garbage collection</em> is the simple act of throwing out your garbage. For this plugin that would be old or <em>stale</em> cached files that may be out of date. New cached files are described as <em>fresh</em>."
+msgstr "<em>Colectarea gunoiului</em> este simplul act de a arunca la gunoi. Pentru acest modul ar fi fișierele cache <em>vechi</em> care sunt expirate. Fișiere cache noi sunt descrise ca <em>actuale</em>."
+
+#: wp-cache.php:1774
+msgid "Garbage Collection"
+msgstr "Colectare gunoi"
+
+#: wp-cache.php:1772
+msgid "Email me when the garbage collection runs."
+msgstr "Trimite-mi email când rulează colectarea gunoiului."
+
+#: wp-cache.php:1771
+msgid "Notification Emails"
+msgstr "Emailuri de notificare"
+
+#: wp-cache.php:1765
+msgid "Interval:"
+msgstr "Interval:"
+
+#: wp-cache.php:1763
+msgid "Check for stale cached files at this time <strong>(UTC)</strong> or starting at this time every <em>interval</em> below."
+msgstr "Verifică fișierele cache vechi la această oră <strong>(UTC)</strong> sau începând de la această oră la fiecare <em>interval</em> de mai jos."
+
+#: wp-cache.php:1763
+msgid "HH:MM"
+msgstr "HH:MM"
+
+#: wp-cache.php:1762
+msgid "Clock:"
+msgstr "Oră:"
+
+#: wp-cache.php:1761
+msgid "Check for stale cached files every <em>interval</em> seconds."
+msgstr "Verifică fișierele cache vechi la fiecare <em>interval</em> de secunde."
+
+#: wp-cache.php:1760
+msgid "Timer:"
+msgstr "Timp:"
+
+#: wp-cache.php:1760
+msgid "Scheduler"
+msgstr "Programator"
+
+#: wp-cache.php:1759
+msgid "How long should cached pages remain fresh? Set to 0 to disable garbage collection. A good starting point is 3600 seconds."
+msgstr "Cât timp ar trebui să rămână proaspete paginile cache? Setează la 0 pentru a dezactiva colectarea gunoiului. Un punct bun de plecare este 3600 de secunde."
+
+#: wp-cache.php:1758 wp-cache.php:1761
+msgid "seconds"
+msgstr "secunde"
+
+#: wp-cache.php:1757
+msgid "Cache Timeout"
+msgstr "Timp de expirare cache"
+
+#: wp-cache.php:1739
+msgid "Warning! <strong>PRELOAD MODE</strong> activated. Supercache files will not be deleted regardless of age."
+msgstr "Avertizare! <strong>MOD PRE-ÎNCĂRCARE</strong> activat. Fișierele super-cache nu vor fi șterse indiferent de vechime."
+
+#: wp-cache.php:1735
+msgid "Next scheduled garbage collection will be at <strong>%s UTC</strong>"
+msgstr "Următoarea colectare programată a gunoiului va fi la <strong>%s UTC</strong>"
+
+#: wp-cache.php:1731
+msgid "Local time is <code>%1$s</code>"
+msgstr "Ora locală este <code>%1$s</code>"
+
+#: wp-cache.php:1728
+msgid "<abbr title=\"Coordinated Universal Time\">UTC</abbr> time is <code>%s</code>"
+msgstr "Ora <abbr title=\"Coordinated Universal Time\">UTC</abbr> este <code>%s</code>"
+
+#: wp-cache.php:1726
+msgid "Expiry Time &amp; Garbage Collection"
+msgstr "Timp de expirare și colectare gunoi"
+
+#: wp-cache.php:1720
+msgctxt "timezone date format"
+msgid "Y-m-d G:i:s"
+msgstr "d-m-Y G:i:s"
+
+#: wp-cache.php:1617
+msgid "Update Direct Pages"
+msgstr "Actualizează pagini directe"
+
+#: wp-cache.php:1612
+msgid "Make the textbox blank to remove it from the list of direct pages and delete the cached file."
+msgstr "Lasă caseta de text goală pentru a-l înlătura din lista paginilor directe și pentru a șterge fișierul cache."
+
+#: wp-cache.php:1611
+msgid "For example: to cache <em>%1$sabout/</em>, you would enter %1$sabout/ or /about/. The cached file will be generated the next time an anonymous user visits that page."
+msgstr "De exemplu: pentru a memora în cache <em>%1$sdespre/</em> ar trebui să introduci %1$sdespre/ sau /despre/. Fișierul cache va fi generat data viitoare când un utilizator anonim vizitează acea pagină."
+
+#: wp-cache.php:1609
+msgid "Directly cached files are files created directly off %s where your blog lives. This feature is only useful if you are expecting a major Digg or Slashdot level of traffic to one post or page."
+msgstr "Fișierele directe cache sunt fișiere create direct din %s, unde blogul tău este găzduit. Această funcționalitate este utilă numai dacă te aștepți la un nivel mare de trafic Digg sau Slashdot  pentru un articol sau o pagină."
+
+#: wp-cache.php:1607
+msgid "Add direct page:"
+msgstr "Adaugă pagină directă:"
+
+#: wp-cache.php:1602
+msgid "Delete cached file"
+msgstr "Șterge fișierul cache"
+
+#: wp-cache.php:1602
+msgid "Existing direct page"
+msgstr "Pagină directă existentă"
+
+#: wp-cache.php:1587
+msgid "%s is writable. Please make it readonly after your page is generated as this is a security risk."
+msgstr "%s poate fi scris. Te rog fă-l numai pentru citit după ce pagina ta este generată deoarece acesta este un risc de securitate."
+
+#: wp-cache.php:1582
+msgid "You must make %s writable to enable this feature. As this is a security risk, please make it read-only after your page is generated."
+msgstr "Trebuie să faci %s să poată fi scris pentru a activa această funcționalitate. Deoarece acesta este un risc de securitate, te rog fă-l numai pentru citit după ce pagina ta este generată."
+
+#: wp-cache.php:1575
+msgid "Directly Cached Files"
+msgstr "Fișiere cache directe"
+
+#: wp-cache.php:1567
+msgid "Lock Down"
+msgstr "Autoblocare"
+
+#: wp-cache.php:1561
+msgid "WordPress is not locked down. New comments will refresh Super Cache static files as normal."
+msgstr "WordPress nu este auto-blocat. Comentariile noi vor împrospăta fișiere statice super-cache ca de obicei."
+
+#: wp-cache.php:1559
+msgid "WordPress is locked down. Super Cache static files will not be deleted when new comments are made."
+msgstr "WordPress este auto-blocat. Fișierele statice super-cache nu vor fi șterse când sunt făcute comentarii noi."
+
+#: wp-cache.php:1555
+msgid "Sorry. My blog is locked down. Updates will appear shortly"
+msgstr "Regret. Blogul meu este autoblocat. Actualizările vor apărea în scurt timp"
+
+#: wp-cache.php:1553
+msgid "Developers: Make your plugin lock down compatible by checking the \"WPLOCKDOWN\" constant. The following code will make sure your plugin respects the WPLOCKDOWN setting."
+msgstr "Dezvoltatori: fă compatibilă autoblocarea modulului tău prin verificarea constantei \"WPLOCKDOWN\". Codul următor asigură că modulul tău respectă setarea WPLOCKDOWN."
+
+#: wp-cache.php:1552
+msgid "Prepare your server for an expected spike in traffic by enabling the lock down. When this is enabled, new comments on a post will not refresh the cached static files."
+msgstr "Pregătește-ți serverul pentru un vârf de trafic așteptat și permite autoblocarea. Când ea este activată, comentariile noi la un articol nu vor împrospăta fișierele statice cache."
+
+#: wp-cache.php:1551
+msgid "Lock Down:"
+msgstr "Autoblocare:"
+
+#: wp-cache.php:1444
+msgid "Comment moderation is enabled. Your comment may take some time to appear."
+msgstr "Moderarea comentariilor este activată. Poate dura ceva timp până ce comentariul tău va fi aprobat."
+
+#: wp-cache.php:1436
+msgid "Restore Default Configuration"
+msgstr "Restaurează configurarea implicită"
+
+#: wp-cache.php:1433
+msgid "Fix Configuration"
+msgstr "Corectează configurarea"
+
+#: wp-cache.php:1424 wp-cache.php:3214
+msgid "Rules must be added to %s too:"
+msgstr "De asemenea, regulile trebuie adăugate la %s:"
+
+#: wp-cache.php:1418
+msgid "View Mod_Rewrite Rules"
+msgstr "Vezi regulile mod_rescriere"
+
+#: wp-cache.php:1416
+msgid "A difference between the rules in your .htaccess file and the plugin rewrite rules has been found. This could be simple whitespace differences, but you should compare the rules in the file with those below as soon as possible. Click the &#8217;Update Mod_Rewrite Rules&#8217; button to update the rules."
+msgstr "Există o diferență între regulile din fișierul tău .htaccess și regulile mod rescriere ale modulului. Pot fi doar diferențe neînsemnate, precum spații libere, dar ar trebui să compari regulile din fișier cu cele de mai jos cât mai repede. Clic pe butonul &#8217;Actualizare reguli mod_rescriere&#8217; pentru a actualiza regulile."
+
+#: wp-cache.php:1413
+msgid "WP Super Cache mod rewrite rules were detected in your %s.htaccess file.<br /> Click the following link to see the lines added to that file. If you have upgraded the plugin, make sure these rules match."
+msgstr "Au fost detectate reguli mod rescriere WP Super Cache în fișierul tău %s.htaccess.<br /> Dă clic pe legătura următoare pentru a vedea liniile adăugate în fișier. Dacă ai actualizat modulul, asigură-te că aceste reguli se potrivesc."
+
+#: wp-cache.php:1406
+msgid "Mod Rewrite rules must be updated!"
+msgstr "Regulile mod rescriere trebuie actualizate!"
+
+#: wp-cache.php:1403
+msgid "%s.htaccess has been updated with the necessary mod_rewrite rules. Please verify they are correct. They should look like this:"
+msgstr "%s.htaccess a fost actualizat cu regulile mod_rescriere necesare. Te rog să verifici dacă sunt corecte. Ar trebui să arate cam așa: "
+
+#: wp-cache.php:1402
+msgid "Mod Rewrite rules updated!"
+msgstr "Reguli mod rescriere actualizate!"
+
+#: wp-cache.php:1390
+msgid "The mod_rewrite rules changed since you last installed this plugin. Unfortunately, you must remove the old supercache rules before the new ones are updated. Refresh this page when you have edited your .htaccess file. If you wish to manually upgrade, change the following line: %1$s so it looks like this: %2$s The only changes are \"HTTP_COOKIE\" becomes \"HTTP:Cookie\" and \"wordpressuser\" becomes \"wordpress\". This is a WordPress 2.5 change but it&#8217;s backwards compatible with older versions if you&#8217;re brave enough to use them."
+msgstr "Regulile mod_rescriere s-au schimbat de când ai instalat acest modul. Din păcate, trebuie să înlături regulile super-cache vechi înainte ca cele noi să fie actualizate. Reîncarcă această pagină când ți-ai editat fișierul .htaccess. Dacă vrei să  actualizezi manual, modifică următoarea linie: %1$s va arată așa: %2$s Singurele modificări sunt „HTTP_COOKIE” devine „HTTP:Cookie” și „wordpressuser” devine „wordpress”. Aceasta este o modificare WordPress 2.5, dar este compatibilă cu versiuni mai vechi dacă ești destul de curajos să le folosești."
+
+#: wp-cache.php:1390
+msgid "Thank you for upgrading."
+msgstr "Îți mulțumim pentru actualizare."
+
+#: wp-cache.php:1383
+msgid "Mod Rewrite Rules"
+msgstr "Reguli mod rescriere"
+
+#: wp-cache.php:1355
+msgid "Debug"
+msgstr "Depanare"
+
+#: wp-cache.php:1355
+msgid "Plugins"
+msgstr "Module"
+
+#: wp-cache.php:1355
+msgid "Preload"
+msgstr "Pre-încărcare"
+
+#: wp-cache.php:1355
+msgid "Contents"
+msgstr "Conținuturi"
+
+#: wp-cache.php:1355
+msgid "CDN"
+msgstr "CDN"
+
+#: wp-cache.php:1355
+msgid "Easy"
+msgstr "Ușor"
+
+#: wp-cache.php:1338
+msgid "Available Plugins"
+msgstr "Module disponibile"
+
+#: wp-cache.php:1310
+msgid "(may not always be accurate on busy sites)"
+msgstr "(pot să nu fie întotdeauna exacte pe siturile aglomerate)"
+
+#: wp-cache.php:1307
+msgid "Cached %s seconds ago"
+msgstr "Cache cu %s secunde în urmă"
+
+#: wp-cache.php:1303
+msgid "Newest Cached Pages:"
+msgstr "Cele mai noi pagini cache:"
+
+#: wp-cache.php:1302
+msgid "Cached pages since %1$s : <strong>%2$s</strong>"
+msgstr "Paginile cache de la %1$s : <strong>%2$s</strong>"
+
+#: wp-cache.php:1292
+msgid "Rate This Plugin"
+msgstr "Evaluează acest modul"
+
+#: wp-cache.php:1285
+msgid "Need Help?"
+msgstr "Ai nevoie de ajutor?"
+
+#: wp-cache.php:1269
+msgid "<a href=\"%s\">Cron View</a> is a useful plugin to use when trying to debug garbage collection and preload problems."
+msgstr "<a href=\"%s\">Cron View</a> este un modul util care poate fi folosit când încerci să depanezi problemele de colectare a gunoiului și de pre-încărcare."
+
+#: wp-cache.php:1268
+msgid "<strong>Advanced users only:</strong> Install an object cache. Choose from <a href=\"%s\">Memcached</a>, <a href=\"%s\">XCache</a>, <a href=\"%s\">eAcccelerator</a> and others."
+msgstr "<strong>Doar pentru utilizatori avansați:</strong> instalează un cache obiect. Alege dintre <a href=\"%s\">Memcached</a>, <a href=\"%s\">XCache</a>, <a href=\"%s\">eAcccelerator</a> și altele."
+
+#: wp-cache.php:1267
+msgid "<a href=\"%s\">Use Google Libraries</a> allows you to load some commonly used Javascript libraries from Google webservers. Ironically, it may reduce your Yslow score."
+msgstr "Folosirea <a href=\"%s\">Bibliotecilor Google</a> îți permite să încarci unele dintre bibliotecile Javascript frecvent utilizate de către serverele Google. În mod ironic, aceasta ar putea reduce scorul YSlow."
+
+#: wp-cache.php:1266
+msgid "<a href=\"%s\">Yahoo! Yslow</a> is an extension for the Firefox add-on Firebug. It analyzes web pages and suggests ways to improve their performance based on a set of rules for high performance web pages. Also try the performance tools online at <a href=\"%s\">GTMetrix</a>."
+msgstr "<a href=\"%s\">Yahoo! Yslow</a> este o extensie pentru Firefox. Ea analizează paginile web și sugerează modalități de îmbunătățire a performanței lor pe baza unui set de reguli pentru pagini web de înaltă performanță. De asemenea, încearcă instrumentele de performanță online din: <a href=\"%s\">GTMetrix</a>."
+
+#: wp-cache.php:1263
+msgid "Caching is only one part of making a website faster. Here are some other plugins that will help:"
+msgstr "Cache este doar unul dintre modulele care face situl să funcționeze mai rapid. Iată câteva alte module care te pot ajuta:"
+
+#: wp-cache.php:1262
+msgid "Recommended Links and Plugins"
+msgstr "Legături și module recomandate"
+
+#: wp-cache.php:1257 wp-cache.php:2844
+msgid "Delete Cache On All Blogs"
+msgstr "Șterge cache din toate blogurile"
+
+#: wp-cache.php:1250 wp-cache.php:2838 wp-cache.php:2857 wp-cache.php:3100
+#: wp-cache.php:3685
+msgid "Delete Cache"
+msgstr "Șterge cache"
+
+#: wp-cache.php:1247
+msgid "Cached pages are stored on your server as html and PHP files. If you need to delete them, use the button below."
+msgstr "Paginile cache sunt stocate pe serverul tău ca fișiere HTML și PHP. Dacă trebuie să le ștergi, folosește butonul de mai jos."
+
+#: wp-cache.php:1246
+msgid "Delete Cached Pages"
+msgstr "Șterge pagini cache"
+
+#: wp-cache.php:1238 wp-cache.php:1240
+msgid "Test Cache"
+msgstr "Testează cache"
+
+#: wp-cache.php:1234
+msgid "Send non-secure (non https) request for homepage"
+msgstr "Trimite solicitare nesecurizată (nu https) pentru prima pagină"
+
+#: wp-cache.php:1227
+msgid "You should check Page 1 and Page 2 above for errors. Your local server configuration may not allow your website to access itself."
+msgstr "Ar trebui să verifici pentru erori Pagina 1 și Pagina 2 de mai sus. Configurarea serverului tău local poate nu permite sitului tău web să se acceseze."
+
+#: wp-cache.php:1226
+msgid "Enable logging on the Debug page here. That should help you track down the problem."
+msgstr "Activează aici jurnalizarea pe pagina de depanare. Ar trebui să te ajute să urmărești problema."
+
+#: wp-cache.php:1225
+msgid "Load your homepage in a logged out browser, check the timestamp at the end of the html source. Load the page again and compare the timestamp. Caching is working if the timestamps match."
+msgstr "Încarcă prima ta pagină într-un navigator dezautentificat, verifică datarea la sfârșitul sursei HTML. Încarcă pagina din nou și compară datarea. Dacă datările se potrivesc, cache funcționează."
+
+#: wp-cache.php:1224
+msgid "Things you can do:"
+msgstr "Lucruri pe care le poți face:"
+
+#: wp-cache.php:1223
+msgid "The pages do not match! Timestamps differ or were not found!"
+msgstr "Paginile nu se potrivesc! Datările diferă sau nu au fost găsite!"
+
+#: wp-cache.php:1221
+msgid "The timestamps on both pages match!"
+msgstr "Datările de pe ambele pagini se potrivesc!"
+
+#: wp-cache.php:1220
+msgid "Page 2: %s"
+msgstr "Pagina 2: %s"
+
+#: wp-cache.php:1219
+msgid "Page 1: %s"
+msgstr "Pagina 1: %s"
+
+#: wp-cache.php:1213 wp-cache.php:1214
+msgid "Page %d: %d (%s)"
+msgstr "Pagina %d: %d (%s)"
+
+#: wp-cache.php:1182
+msgid "Fetching second copy of %s: "
+msgstr "Preluarea celei de-a doua copii a %s:"
+
+#: wp-cache.php:1197
+msgid "FAILED"
+msgstr "EȘUAT"
+
+#: wp-cache.php:1182
+msgid "Fetching first copy of %s: "
+msgstr "Preluarea primei copii a %s:"
+
+#: wp-cache.php:1193
+msgid "OK"
+msgstr "OK"
+
+#: wp-cache.php:1182
+msgid "Fetching %s to prime cache: "
+msgstr "Preluarea %s pentru primul cache:"
+
+#: wp-cache.php:1176
+msgid "Test your cached website by clicking the test button below."
+msgstr "Testează cum funcționează cache pe situl tău dând clic pe butonul testează de mai jos."
+
+#: wp-cache.php:1175
+msgid "Cache Tester"
+msgstr "Testează cache"
+
+#: wp-cache.php:1170
+msgid "Notice: Simple caching enabled but Supercache mod_rewrite rules from expert mode detected. Cached files will be served using those rules. If your site is working ok, please ignore this message. Otherwise, you can edit the .htaccess file in the root of your install and remove the SuperCache rules."
+msgstr "Observație: cache simplu activat, dar s-au detectat reguli mod-rescriere super-cache din modul expert. Fișierele cache vor fi servite folosind acele reguli. Dacă situl tău funcționează bine, te rog să ignori acest mesaj. În caz contrar, poți edita fișierul .htaccess în rădăcina instalării tale și să înlături regulile super-cache."
+
+#: wp-cache.php:1161
+msgid "Caching Off"
+msgstr "Cache oprit"
+
+#: wp-cache.php:1160
+msgid "Caching On"
+msgstr "Cache pornit"
+
+#: wp-cache.php:1135
+msgid "Accepted Filenames &amp; Rejected URIs"
+msgstr "Nume de fișiere acceptate și URI-uri respinse"
+
+#: wp-cache.php:1128 wp-cache.php:1173
+msgid "Update Status"
+msgstr "Actualizează starea"
+
+#: wp-cache.php:1125
+msgid "Need help? Check the <a href=\"%1$s\">Super Cache readme file</a>. It includes installation documentation, a FAQ and Troubleshooting tips. The <a href=\"%2$s\">support forum</a> is also available. Your question may already have been answered."
+msgstr "Ai nevoie de ajutor? Citește <a href=\"%1$s\">fișierul Super Cache readme</a>. Acesta include documentația de instalare, întrebări frecvente și sfaturi pentru depanare. De asemenea, <a href=\"%2$s\">forumul pentru suport</a> este disponibil. Întrebarea ta poate are deja un răspuns."
+
+#: wp-cache.php:1124
+msgid "Please see the <a href=\"%1$s/wp-super-cache/readme.txt\">readme.txt</a> for instructions on uninstalling this script. Look for the heading, \"How to uninstall WP Super Cache\"."
+msgstr "Te rog citește <a href=\"%1$s/wp-super-cache/readme.txt\">readme.txt</a> pentru instrucțiuni privind dezinstalarea acestui script. Caută rubrica „Cum se dezinstalează WP Super Cache”."
+
+#: wp-cache.php:1123
+msgid "If uninstalling this plugin, make sure the directory <em>%s</em> is writeable by the webserver so the files <em>advanced-cache.php</em> and <em>cache-config.php</em> can be deleted automatically. (Making sure those files are writeable is probably a good idea!)"
+msgstr "Dacă dezinstalezi acest modul, asigură-te că directorul <em>%s</em> poate fi scris de către serverul web astfel încât fișierele <em>advanced-cache.php</em> și <em>cache-config.php</em> să poată fi șterse în mod automat. (Dacă te asiguri că aceste fișiere pot fi scrise este un lucru bun!)"
+
+#: wp-cache.php:1122
+msgid "Uninstall this plugin on the plugins page. It will automatically clean up after itself. If manual intervention is required, then simple instructions are provided."
+msgstr "Dezinstalează acest modul în pagina modulelor. Se va șterge singur în mod automat. Dacă este necesară și o intervenție manuală, sunt oferite instrucțiuni simple."
+
+#: wp-cache.php:1120
+msgid "Note:"
+msgstr "Notă:"
+
+#: wp-cache.php:1085
+msgid "<strong>DO NOT CACHE PAGE</strong> secret key: <a href=\"%s\">%s</a>"
+msgstr "Cheie secretă <strong>NU MEMORA ÎN CACHE PAGINA</strong>: <a href=\"%s\">%s</a>"
+
+#: wp-cache.php:1083
+msgid "(Experimental)"
+msgstr "(Experimental)"
+
+#: wp-cache.php:1083
+msgid "Use object cache to store cached files."
+msgstr "Folosește cache obiect pentru a stoca fișiere cache."
+
+#: wp-cache.php:1077
+msgid "List the newest cached pages on this page."
+msgstr "Listează cele mai noi pagini cache în această pagină."
+
+#: wp-cache.php:1076
+msgid "Only refresh current page when comments made."
+msgstr "Împrospătează numai pagina curentă când s-au făcut comentarii."
+
+#: wp-cache.php:1075
+msgid "Extra homepage checks. (Very occasionally stops homepage caching)"
+msgstr "Verificări suplimentare pe prima pagină. (Foarte rar se oprește cache pe prima pagină)"
+
+#: wp-cache.php:1074
+msgid "Clear all cache files when a post or page is published or updated."
+msgstr "Șterge toate fișierele cache când un articol sau o pagină este publicat(ă) sau actualizat(ă)."
+
+#: wp-cache.php:1073
+msgid "Remove UTF8/blog charset support from .htaccess file. Only necessary if you see odd characters or punctuation looks incorrect. Requires rewrite rules update."
+msgstr "Înlătură suportul pentru setul de caractere UTF8/blog din fișierul .htaccess. Este necesar numai dacă vezi caractere ciudate sau semne de punctuație incorecte. Necesită actualizarea regulilor de rescriere."
+
+#: wp-cache.php:1071
+msgid "Mobile Prefixes"
+msgstr "Prefixe pentru mobil"
+
+#: wp-cache.php:1071
+msgid "Mobile Browsers"
+msgstr "Navigatoare pentru mobil"
+
+#: wp-cache.php:1069
+msgid "Mobile device support. (External plugin or theme required. See the <a href=\"http://wordpress.org/plugins/wp-super-cache/faq/\">FAQ</a> for further details.)"
+msgstr "Suport pentru dispozitiv mobil. (Necesită modul extern sau temă externă. Vezi <a href=\"http://wordpress.org/plugins/wp-super-cache/faq/\">întrebări frecvente</a> pentru detalii suplimentare.)"
+
+#: wp-cache.php:1068
+msgid "Enable dynamic caching. (See <a href=\"http://wordpress.org/plugins/wp-super-cache/faq/\">FAQ</a> or wp-super-cache/plugins/dynamic-cache-test.php for example code.)"
+msgstr "Activează cache dinamic. (Vezi <a href=\"http://wordpress.org/plugins/wp-super-cache/faq/\">întrebări frecvente</a> sau wp-super-cache/plugins/dynamic-cache-test.php pentru exemplu de cod.)"
+
+#: wp-cache.php:1064 wp-cache.php:1355 wp-cache.php:2103
+msgid "Advanced"
+msgstr "Avansat"
+
+#: wp-cache.php:1058
+msgid "Proudly tell the world your server is <a href=\"%s\">Stephen Fry proof</a>! (places a message in your blog&#8217;s footer)"
+msgstr "Spune cu mândrie lumii că serverul tău este <a href=\"%s\">dovada lui Stephen Fry</a>! (plasează un mesaj în subsolul blogului)"
+
+#: wp-cache.php:1042
+msgid "Cache rebuild. Serve a supercache file to anonymous users while a new file is being generated."
+msgstr "Reconstruire cache. Servește un fișier super-cache pentru utilizatori anonimi în timp ce un fișier nou este generat."
+
+#: wp-cache.php:1057
+msgid "Make known users anonymous so they&#8217;re served supercached static files."
+msgstr "Face utilizatorii cunoscuți anonimi ca să li se servească fișiere statice supercache."
+
+#: wp-cache.php:1031
+msgid "Don&#8217;t cache pages with GET parameters. (?x=y at the end of a url)"
+msgstr "Nu memora în cache pagini cu parametri GET. (?x=y la sfârșitul unui URL)"
+
+#: wp-cache.php:1030
+msgid "Don&#8217;t cache pages for <acronym title=\"Logged in users and those that comment\">known users</acronym>."
+msgstr "Nu memora în cache pagini pentru <acronym title=\"Utilizatori autentificați și cei care comentează\">utilizatori cunoscuți</acronym>."
+
+#: wp-cache.php:1054
+msgid "304 support is disabled by default because some hosts have had problems with the headers used in the past."
+msgstr "Suportul 304 este dezactivat în mod implicit deoarece unele gazde au avut probleme cu antetele utilizate în trecut."
+
+#: wp-cache.php:1049
+msgid "304 Not Modified browser caching. Indicate when a page has not been modified since it was last requested."
+msgstr "304 nu a modificat cache în navigator. Indică când o pagină nu a fost modificată de când a fost  cerută ultima dată."
+
+#: wp-cache.php:1037
+msgid "Compression is disabled by default because some hosts have problems with compressed files. Switching it on and off clears the cache."
+msgstr "Comprimarea este dezactivată implicit deoarece unele gazde au probleme cu fișierele comprimate. Comutând pe pornit și oprit se șterge cache-ul."
+
+#: wp-cache.php:1036
+msgid "Compress pages so they&#8217;re served more quickly to visitors."
+msgstr "Comprimă paginile pentru a fi servite mult mai rapid vizitatorilor."
+
+#: wp-cache.php:1034
+msgid "Warning! Compression is disabled as gzencode() function was not found."
+msgstr "Avertizare! Comprimarea este dezactivată, funcția gzencode() nu a fost găsită."
+
+#: wp-cache.php:1026
+msgid "Miscellaneous"
+msgstr "Diverse"
+
+#: wp-cache.php:1019 wp-cache.php:1030 wp-cache.php:1036 wp-cache.php:1042
+#: wp-cache.php:1049 wp-cache.php:1075 wp-cache.php:1160
+msgid "Recommended"
+msgstr "Recomandat"
+
+#: wp-cache.php:1008 wp-cache.php:1011 wp-cache.php:1157
+msgid "Caching"
+msgstr "Cache"
+
+#: wp-cache.php:974
+msgid "Update Settings"
+msgstr "Actualizează setările"
+
+#: wp-cache.php:852
+msgid "<strong>Page last cached:</strong> %s"
+msgstr "<strong>Ultima pagină cache:</strong> %s"
+
+#: wp-cache.php:848
+msgid "Currently caching from post %d to %d."
+msgstr "În prezent, fișiere cache de la articolul %d la articolul %d."
+
+#: wp-cache.php:866
+msgid "Full refresh of cache in %d hours %d minutes and %d seconds."
+msgstr "Împrospătează complet cache în %d ore, %d minute și %d secunde."
+
+#: wp-cache.php:865
+msgid "Refresh of cache in %d hours %d minutes and %d seconds."
+msgstr "Împrospătează cache în %d ore, %d minute și %d secunde."
+
+#: wp-cache.php:968
+msgid "Less emails, 1 at the start and 1 at the end of preloading all posts."
+msgstr "Puține emailuri, 1 la început și 1 la sfârșitul pre-încărcării tuturor articolelor."
+
+#: wp-cache.php:967
+msgid "Medium, 1 email per 100 posts."
+msgstr "Mediu, 1 email pentru 100 de articole."
+
+#: wp-cache.php:966
+msgid "Many emails, 2 emails per 100 posts."
+msgstr "Multe emailuri, 2 emailuri pentru 100 de articole."
+
+#: wp-cache.php:961
+msgid "Send me status emails when files are refreshed."
+msgstr "Trimite-mi emailuri de stare când fișierele sunt reîmprospătate."
+
+#: wp-cache.php:960
+msgid "Preload tags, categories and other taxonomies."
+msgstr "Pre-încarcă etichete, categorii și alte taxonomii."
+
+#: wp-cache.php:950
+msgid "Preload %s posts."
+msgstr "Pre-încarcă articole %s."
+
+#: wp-cache.php:937
+msgid "all"
+msgstr "toate"
+
+#: wp-cache.php:924
+msgid "Refresh preloaded cache files every %s minutes. (0 to disable, minimum %d minutes.)"
+msgstr "Împrospătează fișierele cache pre-încărcate la fiecare %s de minute. (0 pentru a dezactiva, minim %d de minute.)"
+
+#: wp-cache.php:919
+msgid "Preloading creates lots of files however. Caching is done from the newest post to the oldest so please consider only caching the newest if you have lots (10,000+) of posts. This is especially important on shared hosting."
+msgstr "Cu toate acestea, pre-încărcarea creează o mulțime de fișiere. Fișierele cache se crează de la cel mai nou articol până la cel mai vechi, așa că te rog să iei în considerare numai memorarea în cache a celor mai noi articole dacă ai foarte multe (peste 10.000). Acest lucru este important mai ales pe găzduirea partajată."
+
+#: wp-cache.php:918
+msgid "This will cache every published post and page on your site. It will create supercache static files so unknown visitors (including bots) will hit a cached page. This will probably help your Google ranking as they are using speed as a metric when judging websites now."
+msgstr "Se vor crea fișiere cache pentru fiecare articol și pagină publicate pe situl tău. Se vor crea fișiere statice super-cache astfel încât vizitatorii necunoscuți (inclusiv roboții) vor vedea o pagină cache. Probabil, acest lucru va îmbunătăți clasarea sitului tău în căutarea Google, deoarece acum se folosește parametrul de viteză când se analizează siturile web."
+
+#: wp-cache.php:983
+msgid "Preload Cache Now"
+msgstr "Pre-încarcă cache acum"
+
+#: wp-cache.php:3778
+msgid "Scheduled preloading of cache cancelled."
+msgstr "Pre-încărcare programată cache anulată."
+
+#: wp-cache.php:3753
+msgid "Scheduled preloading of cache almost cancelled. It may take up to a minute for it to cancel completely."
+msgstr "Pre-încărcare programată cache aproape anulată. Poate dura până la un minut pentru ca să se anuleze complet."
+
+#: wp-cache.php:859 wp-cache.php:985
+msgid "Cancel Cache Preload"
+msgstr "Anulează pre-încărcare cache"
+
+#: wp-cache.php:915
+msgid "Caching must be enabled to use this feature"
+msgstr "Cache trebuie să fie activat pentru a utiliza această funcționalitate"
+
+#: wp-cache.php:881
+msgid "Configuration file changed, some values might be wrong. Load the page again from the \"Settings\" menu to reset them."
+msgstr "Fișierul de configurare s-a modificat, unele valori ar putea fi greșite. Încarcă pagina din nou din meniul \"Setări\" pentru a le reseta."
+
+#: wp-cache.php:820
+msgid "Notice: <em>Expert mode caching enabled</em>. Showing Advanced Settings Page by default."
+msgstr "Observație: <em>cache mod expert activat</em>. Arăt implicit pagina Setări avansate."
+
+#: wp-cache.php:809
+msgid "WP Super Cache Settings"
+msgstr "Setări WP Super Cache"
+
+#: wp-cache.php:705
+msgid "<strong>Warning!</strong> You attempted to enable compression but <code>zlib.output_compression</code> is enabled. See #21 in the Troubleshooting section of the readme file."
+msgstr "<strong>Avertizare!</strong> Ai încercat să activezi compresia, dar <code>zlib.output_compression</code> este activat. Vezi # 21 în secțiunea de depanare a fișierului readme."
+
+#: wp-cache.php:436
+msgid "It appears you have WordPress installed in a sub directory as described <a href=\"http://codex.wordpress.org/Giving_WordPress_Its_Own_Directory\">here</a>. Unfortunately, WordPress writes to the .htaccess in the install directory, not where your site is served from.<br />When you update the rewrite rules in this plugin you will have to copy the file to where your site is hosted. This will be fixed in the future."
+msgstr "Se pare că WordPress este instalat într-un subdirector, așa cum este descris <a href=\"http://codex.wordpress.org/Giving_WordPress_Its_Own_Directory\">aici</a>. Din păcate, WordPress scrie fișierul .htaccess în directorul de instalare, nu în locul unde situl tău este acum.<br />Când actualizezi regulile de rescriere în acest modul va trebui să copiezi  fișierul în locul unde situl tău este găzduit. Acest lucru va fi remediat în viitor."
+
+#: wp-cache.php:435
+msgid ".htaccess file may need to be moved"
+msgstr "Fișierul .htaccess poate va trebui să fie mutat"
+
+#: wp-cache.php:416
+msgid "The following Apache modules are missing. The plugin will work in simple mode without them but in export mode, your visitors may see corrupted pages or out of date content however."
+msgstr "Următoarele extensii Apache lipsesc. Modulul va lucra în modul simplu fără ele, dar în modul expert vizitatorii tăi pot vedea totuși pagini stricate sau conținut neactualizat."
+
+#: wp-cache.php:415
+msgid "Missing Apache Modules"
+msgstr "Extensii Apache lipsă"
+
+#: wp-cache.php:408
+msgid "Set the expiry date on supercached pages. Visitors may not see new pages when they refresh or leave comments without this module."
+msgstr "Setează data de expirare pe pagini supercache. Vizitatorii nu pot vedea pagini noi când împrospătează sau lasă comentarii, fără această extensie."
+
+#: wp-cache.php:408
+msgid "Required to set caching information on supercache pages. IE7 users will see old pages without this module."
+msgstr "Necesară pentru a seta informații cache în paginile super-cache. Utilizatorii IE7 vor vedea pagini vechi fără această extensie."
+
+#: wp-cache.php:408
+msgid "Required to serve compressed supercache files properly."
+msgstr "Necesar pentru a servi fișiere super-cache comprimate în mod corect."
+
+#: wp-cache.php:395
+msgid "Add the rules yourself. Edit %s.htaccess and find the block of code enclosed by the lines <code># BEGIN WPSuperCache</code> and <code># END WPSuperCache</code>. There are two sections that look very similar. Just below the line <code>%%{HTTP:Cookie} !^.*(comment_author_|%s|wp-postpass_).*$</code> add these lines: (do it twice, once for each section)"
+msgstr "Adaugă-ți regulile singur. Editează %s.htaccess și găsește grupul de coduri cuprins între liniile <code># BEGIN WPSuperCache</code> și <code># END WPSuperCache</code>. Există două secțiuni care arată similar. Imediat sub linia <code>%%{HTTP:Cookie} !^.*(comment_author_|%s|wp-postpass_).*$</code> adaugă aceste linii: (trebuie de două ori, o dată pentru fiecare secțiune)"
+
+#: wp-cache.php:394
+msgid "Delete the plugin mod_rewrite rules in %s.htaccess enclosed by <code># BEGIN WPSuperCache</code> and <code># END WPSuperCache</code> and let the plugin regenerate them by reloading this page."
+msgstr "Șterge regulile mod_rescriere ale modulului în %s.htaccess cuprinse între <code># BEGIN WPSuperCache</code> și <code># END WPSuperCache</code> și lasă modulul să le regenereze prin reîncărcarea acestei pagini."
+
+#: wp-cache.php:393 wp-cache.php:402
+msgid "Scroll down the Advanced Settings page and click the <strong>Update Mod_Rewrite Rules</strong> button."
+msgstr "Derulează în jos pe pagina setări avansate și dă clic pe butonul <strong>Actualizează regulile mod_rescriere</strong>"
+
+#: wp-cache.php:392
+msgid "Set the plugin to simple mode and enable mobile support."
+msgstr "Setează modulul în modul simplu și activează suportul pentru mobil."
+
+#: wp-cache.php:391
+msgid "Mobile support requires extra rules in your .htaccess file, or you can set the plugin to simple mode. Here are your options (in order of difficulty):"
+msgstr "Suportul pentru mobil necesită reguli suplimentare în fișierul tău .htaccess sau poți seta modulul în modul simplu. Aici sunt opțiunile (în ordinea de dificultate):"
+
+#: wp-cache.php:390 wp-cache.php:401
+msgid "The rewrite rules required by this plugin have changed or are missing. "
+msgstr "Regulile de rescriere necesare modulului s-au schimbat sau lipsesc."
+
+#: wp-cache.php:389 wp-cache.php:400
+msgid "Rewrite rules must be updated"
+msgstr "Regulile de rescriere trebuie actualizate"
+
+#: wp-cache.php:383
+msgid "This will have no affect on ordinary users but mobile users will see uncached pages."
+msgstr "Acest lucru nu-i va afecta pe utilizatorii obișnuiți, dar utilizatorii de pe mobil vor vedea pagini fără cache."
+
+#: wp-cache.php:383
+msgid "For best performance you should enable \"Mobile device support\" or delete the mobile rewrite rules in your .htaccess. Look for the 2 lines with the text \"2.0\\ MMP|240x320\" and delete those."
+msgstr "Pentru o mai bună performanță ar trebui să activezi „Suport pentru dispozitiv mobil” sau să ștergi regulile de rescriere pentru mobil în .htaccess. Caută 2 linii cu textul \"2.0\\ MMP|240x320\" și șterge-le."
+
+#: wp-cache.php:382
+msgid "Mobile rewrite rules detected"
+msgstr "Reguli de rescriere pentru mobil detectate"
+
+#: wp-cache.php:364
+msgid "You should change the permissions on %s and make it more restrictive. Use your ftp client, or the following command to fix things:"
+msgstr "Ar trebui să schimbi permisiunile pe %s și să-l faci mai restrictiv. Folosește FTP sau comanda următoare pentru a remedia lucrurile:"
+
+#: wp-cache.php:363
+msgid "Warning! %s is writeable!"
+msgstr "Avertizare! %s poate fi scris!"
+
+#: wp-cache.php:342 wp-cache.php:370 wp-cache.php:441 wp-cache.php:2308
+msgid "Dismiss"
+msgstr "Respinge"
+
+#: wp-cache.php:337
+msgid "Garbage collection by this plugin clears out expired and old cached pages on a regular basis. Use <a href=\"#expirytime\">this form</a> to enable it."
+msgstr "Colectarea gunoiului prin acest modul șterge în mod regulat paginile cache expirate și vechi. Folosește <a href=\"#expirytime\">acest formular</a> pentru a o activa."
+
+#: wp-cache.php:336
+msgid "Warning! Garbage collection is not scheduled!"
+msgstr "Avertizare! Colectarea gunoiului nu este programată!"
+
+#: wp-cache.php:318
+msgid "Read-only:"
+msgstr "Numai pentru citit:"
+
+#: wp-cache.php:317
+msgid "Writeable:"
+msgstr "Poate fi scrisă:"
+
+#: wp-cache.php:316 wp-cache.php:365
+msgid "<a href=\"http://codex.wordpress.org/Changing_File_Permissions\">This page</a> explains how to change file permissions."
+msgstr "<a href=\"http://codex.wordpress.org/Changing_File_Permissions\">Această pagină</a> explică cum se modifică permisiunile de fișier."
+
+#: wp-cache.php:315
+msgid "A simple way of doing that is by changing the permissions temporarily using the CHMOD command or through your ftp client. Make sure it&#8217;s globally writeable and it should be fine."
+msgstr "Cel mai simplu mod de a face acest lucru este schimbarea temporară a permisiunilor folosind comanda CHMOD sau prin intermediul FTP. Asigură-te că poate fi scrisă global și ar trebui să fie bine."
+
+#: wp-cache.php:314
+msgid "The WP Super Cache configuration file is <code>%s/wp-cache-config.php</code> and cannot be modified. That file must be writeable by the web server to make any changes."
+msgstr "Fișierul de configurare WP Super Cache este <code>%s/wp-cache-config.php</code> și nu poate fi modificat. Acest fișier trebuie să poată fi scris de către serverul web pentru a face orice modificări."
+
+#: wp-cache.php:313
+msgid "Read Only Mode. Configuration cannot be changed."
+msgstr "Modul numai pentru citit. Configurarea nu poate fi schimbată."
+
+#: wp-cache.php:307
+msgid "It appears that mod_rewrite is not installed. Sometimes this check isn&#8217;t 100% reliable, especially if you are not using Apache. Please verify that the mod_rewrite module is loaded. It is required for serving Super Cache static files in expert mode. You will still be able to simple mode."
+msgstr "Se pare că mod_rescriere nu este instalat. Uneori această verificare nu este 100% de încredere, mai ales dacă nu folosești Apache. Te rog verifică dacă extensia mod_rescriere este încărcată. Este necesară pentru a servi fișiere statice super-cache în modul expert. Vei putea totuși să folosești modul simplu."
+
+#: wp-cache.php:306
+msgid "Mod rewrite may not be installed!"
+msgstr "Mod rescriere s-ar putea să nu fie instalat!"
+
+#: wp-cache.php:302
+msgid "PHP is compressing the data sent to the visitors of your site. Disabling this is recommended as the plugin caches the compressed output once instead of compressing the same page over and over again. Also see #21 in the Troubleshooting section. See <a href=\"http://php.net/manual/en/zlib.configuration.php\">this page</a> for instructions on modifying your php.ini."
+msgstr "PHP este comprimarea datelor trimise vizitatorilor sitului tău. Dezactivarea este recomandată deoarece modulul memorează în cache ieșirea comprimată o singură dată în loc de comprimarea aceleiași pagini în mod repetat. De asemenea, vezi #21 în secțiunea de Depanare. Vezi și <a href=\"http://php.net/manual/en/zlib.configuration.php\">această pagină</a> pentru instrucțiuni pentru modificarea fișierul php.ini."
+
+#: wp-cache.php:301
+msgid "Zlib Output Compression Enabled!"
+msgstr "Compresia de ieșire Zlib activată!"
+
+#: wp-cache.php:292
+msgid "Cannot continue... fix previous problems and retry."
+msgstr "Nu putem continua... rezolvă problemele anterioare și încearcă din nou."
+
+#: wp-cache.php:278
+msgid "Unfortunately, WordPress cannot find the file wp-cron.php. This script is required for the correct operation of garbage collection by this plugin, WordPress scheduled posts as well as other critical activities."
+msgstr "Din păcate, WordPress nu poate găsi fișierul wp-cron.php. Acest script este necesar pentru funcționarea corectă a operațiunii de colectare a gunoiului prin acest modul, articole programate WordPress precum și pentru alte activități decisive."
+
+#: wp-cache.php:265 wp-cache.php:279
+msgid "Please see entry 16 in the <a href=\"%s\">Troubleshooting section</a> of the readme.txt"
+msgstr "Te rog să consulți punctul 16 în <a href=\"%s\">secțiunea de depanare</a> sau readme.txt "
+
+#: wp-cache.php:264
+msgid "Your server thinks your hostname resolves to %s. Some services such as garbage collection by this plugin, and WordPress scheduled posts may not operate correctly."
+msgstr "Serverul tău crede că numele gazdei determină %s. Unele servicii, cum ar fi colectarea gunoiului prin acest modul și articole programate WordPress, s-ar putea să nu funcționeze corect."
+
+#: wp-cache.php:263
+msgid "Warning! Your hostname \"%s\" resolves to %s"
+msgstr "Avertizare! Numele gazdei tale \"%s\" determină %s"
+
+#: wp-cache.php:251
+msgid "A custom url or permalink structure is required for this plugin to work correctly. Please go to the <a href=\"options-permalink.php\">Permalinks Options Page</a> to configure your permalinks."
+msgstr "Pentru ca acest modul să funcționeze corect, este obligatoriu un URL personalizat sau o structură de legături permanente. Te rog mergi la <a href=\"options-permalink.php\">pagina Setări legături permanente</a> pentru a-ți configura legăturile permanente."
+
+#: wp-cache.php:250
+msgid "Permlink Structure Error"
+msgstr "Eroare structură legături permanente"
+
+#: wp-cache.php:244
+msgid "You or an administrator must disable this. See the <a href=\"http://php.net/features.safe-mode\">safe mode manual page</a> for further details. This cannot be disabled in a .htaccess file unfortunately. It must be done in the php.ini config file."
+msgstr "Tu sau un administrator trebuie să dezactivați asta. Vezi <a href=\"http://php.net/features.safe-mode\">pagina manual mod de siguranță</a> pentru detalii suplimentare. Din păcate, dezactivarea nu se poate face în fișierul .htaccess. Aceasta trebuie făcută în fișierul de configurare php.ini."
+
+#: wp-cache.php:242
+msgid "You or an administrator may be able to make it work by changing the group owner of the plugin scripts to match that of the web server user. The group owner of the %s/cache/ directory must also be changed. See the <a href=\"http://php.net/features.safe-mode\">safe mode manual page</a> for further details."
+msgstr "Tu sau un administrator trebuie să-l faci să funcționeze prin schimbarea proprietarul grupului de scripturi ale modulului pentru a se potrivi cu cel al utilizatorului serverului web. Proprietarul grupului din directorul %s/cache/ trebuie, de asemenea, să fie schimbat. Vezi <a href=\"http://php.net/features.safe-mode\">pagina manual mod de siguranță</a> pentru detalii suplimentare."
+
+#: wp-cache.php:241
+msgid "Your server is set up to check the owner of PHP scripts before allowing them to read and write files."
+msgstr "Serverul este setat pentru a verifica proprietarul scripturilor PHP înainte de a permite citirea și scrierea fișierelor."
+
+#: wp-cache.php:237
+msgid "You may experience problems running this plugin because SAFE MODE is enabled."
+msgstr "Este posibil să apară probleme de funcționare pentru acest modul deoarece MODUL DE SIGURANȚĂ este activat."
+
+#: wp-cache.php:236
+msgid "Warning! PHP Safe Mode Enabled!"
+msgstr "Avertizare! Modul de siguranță PHP activat!"
+
+#: wp-cache.php:121
+msgid "Please create %s /wp-cache-config.php from wp-super-cache/wp-cache-config-sample.php"
+msgstr "Te rog crează %s /wp-cache-config.php din wp-super-cache/wp-cache-config-sample.php"
+
+#: wp-cache-phase2.php:1654
+msgid "[%1$s] WP Super Cache GC Report"
+msgstr "[%1$s] Raport GC WP Super Cache"
+
+#: wp-cache-phase2.php:1645
+msgid "Cache expiry cron job took more than 30 seconds. You should probably run the garbage collector more often."
+msgstr "Sarcina planificată de expirare cache a durat mai mult de 30 de secunde. Probabil ar trebui să rulezi mai des colectorul de gunoi."
+
+#: wp-cache-phase2.php:1641
+msgid "Cache expiry cron job failed. Job will run again in 10 seconds."
+msgstr "Sarcina planificată de expirare cache a eșuat. Sarcina va rula din nou în 10 secunde."
+
+#: plugins/wptouch.php:45
+msgid "WPTouch plugin detected! Please go to the Supercache plugins page and enable the WPTouch helper plugin."
+msgstr "Modulul WPTouch detectat! Te rog mergi la pagina modulelor super-cache și activează asistentul modulului WPTouch."
+
+#: plugins/wptouch.php:31
+msgid "WPTouch support is now %s"
+msgstr "Suport pentru WPTouch la %s"
+
+#: plugins/wptouch.php:25
+msgid "Provides support for <a href=\"http://wordpress.org/extend/plugins/wptouch/\">WPTouch</a> mobile theme and plugin."
+msgstr "Se oferă suport pentru tema pentru mobil și modulul <a href=\"http://wordpress.org/extend/plugins/wptouch/\">WPTouch</a>"
+
+#: plugins/wptouch.php:20 plugins/wptouch.php:127
+msgid "WPTouch"
+msgstr "WPTouch"
+
+#: plugins/searchengine.php:106
+msgid "No Adverts for Friends support is now %s"
+msgstr "Suport pentru No Adverts for Friends la %s"
+
+#: plugins/searchengine.php:100
+msgid "Provides support for <a href=\"https://odd.blog/no-adverts-for-friends/\">No Adverts for Friends</a>."
+msgstr "Se oferă suport pentru  <a href=\"https://odd.blog/no-adverts-for-friends/\">No Adverts for Friends</a>."
+
+#: plugins/searchengine.php:95 plugins/searchengine.php:122
+msgid "No Adverts for Friends"
+msgstr "No Adverts for Friends"
+
+#: plugins/multisite.php:39
+msgid "Caching has been disabled on this blog on the Network Admin Sites page."
+msgstr "Cache a fost dezactivat pe acest blog din pagina Administrare rețea."
+
+#: plugins/multisite.php:33 wp-cache.php:1564
+msgid "Disable"
+msgstr "Dezactivează"
+
+#: plugins/multisite.php:31 wp-cache.php:1564
+msgid "Enable"
+msgstr "Activează"
+
+#: plugins/multisite.php:13
+msgid "Cached"
+msgstr "Cache"
+
+#: plugins/jetpack.php:40
+msgid "Jetpack Mobile Theme support is now %s"
+msgstr "Suportul temei pentru mobil Jetpack este acum %s"
+
+#: plugins/jetpack.php:34
+msgid "Provides support for the <a href=\"http://wordpress.org/extend/plugins/jetpack/\">Jetpack</a> mobile theme and plugin. PHP caching mode and mobile support will be enabled too."
+msgstr "Oferă suport pentru tema și modulul pentru mobil <a href=\"http://wordpress.org/extend/plugins/jetpack/\">Jetpack</a>. De asemenea, cache mod PHP și suportul pentru mobil vor fi activate."
+
+#: plugins/jetpack.php:28
+msgid "Jetpack not found in %s. Install it and enable the mobile theme and this helper plugin to cache visits by mobile visitors."
+msgstr "Jetpack negăsit în %s. Instalează-l și activează tema pentru mobil și acest modul ajutător pentru a memora în cache vizitele vizitatorilor de pe mobil."
+
+#: plugins/jetpack.php:25 plugins/jetpack.php:83
+msgid "Jetpack Mobile Theme"
+msgstr "Temă pentru mobil Jetpack"
+
+#: plugins/domain-mapping.php:98
+msgid "Domain Mapping plugin detected! Please go to the Supercache plugins page and enable the domain mapping helper plugin."
+msgstr "Modulul Domain Mapping detectat! Te rog mergi la pagina modulelor super-cache și activează asistentul modulului Domain Mapping."
+
+#: plugins/domain-mapping.php:84
+msgid "Domain Mapping support is now %s"
+msgstr "Suport pentru Domain Mapping la %s"
+
+#: plugins/domain-mapping.php:78
+msgid "Provides support for <a href=\"http://wordpress.org/extend/plugins/wordpress-mu-domain-mapping/\">Domain Mapping</a> plugin to map multiple domains to a blog."
+msgstr "Se oferă suport pentru modulul <a href=\"http://wordpress.org/extend/plugins/wordpress-mu-domain-mapping/\">Domain Mapping</a> pentru a asocia mai multe domenii la un blog."
+
+#: plugins/domain-mapping.php:73 plugins/domain-mapping.php:117
+msgid "Domain Mapping"
+msgstr "Domain Mapping"
+
+#: plugins/badbehaviour.php:83 wp-cache.php:1582 wp-cache.php:1587
+msgid "Warning!"
+msgstr "Avertizare!"
+
+#: plugins/badbehaviour.php:74
+msgid "Bad Behavior support is now %s"
+msgstr "Suport pentru Bad Behavior la %s"
+
+#: plugins/badbehaviour.php:68
+msgid "(Only WPCache caching supported, disabled compression and requires <a href=\"http://www.bad-behavior.ioerror.us/\">Bad Behavior</a> in \"%s/plugins/bad-behavior/\") "
+msgstr "(Numai cache WPCache este acceptat, compresie dezactivată și necesită <a href=\"http://www.bad-behavior.ioerror.us/\">Bad Behavior</a> în \"%s/plugins/bad-behavior/\")"
+
+#: plugins/badbehaviour.php:63 plugins/badbehaviour.php:92
+msgid "Bad Behavior"
+msgstr "Bad Behavior"
+
+#: plugins/badbehaviour.php:47
+msgid "Bad Behaviour not found. Please check your install."
+msgstr "Bad Behaviour negăsit. Te rog verifică-ți instalarea."
+
+#: plugins/awaitingmoderation.php:45 plugins/badbehaviour.php:76
+#: plugins/domain-mapping.php:86 plugins/jetpack.php:42
+#: plugins/searchengine.php:108 plugins/wptouch.php:33
+msgid "Update"
+msgstr "Actualizează"
+
+#: plugins/awaitingmoderation.php:43
+msgid "Awaiting Moderation is now %s"
+msgstr "Acum așteaptă moderare %s"
+
+#: plugins/awaitingmoderation.php:42 plugins/badbehaviour.php:73
+#: plugins/domain-mapping.php:83 plugins/jetpack.php:39
+#: plugins/searchengine.php:105 plugins/wptouch.php:30
+msgid "disabled"
+msgstr "dezactivat(ă)"
+
+#: plugins/awaitingmoderation.php:40 plugins/badbehaviour.php:71
+#: plugins/domain-mapping.php:81 plugins/jetpack.php:37
+#: plugins/searchengine.php:103 plugins/wptouch.php:28 wp-cache.php:2096
+msgid "enabled"
+msgstr "activat(ă)"
+
+#: plugins/awaitingmoderation.php:36 plugins/awaitingmoderation.php:60
+msgid "Enables or disables plugin to Remove the text \"Your comment is awaiting moderation.\" when someone leaves a moderated comment."
+msgstr "Activează sau dezactivează modulul pentru a elimina textul „Comentariul tău așteaptă moderare.” când cineva lasă un comentariu care trebuie moderat."
+
+#: plugins/awaitingmoderation.php:35 plugins/badbehaviour.php:66
+#: plugins/domain-mapping.php:76 plugins/jetpack.php:32
+#: plugins/searchengine.php:98 plugins/wptouch.php:23 wp-cache.php:1551
+msgid "Disabled"
+msgstr "Dezactivat"
+
+#: plugins/awaitingmoderation.php:34 plugins/badbehaviour.php:65
+#: plugins/domain-mapping.php:75 plugins/jetpack.php:31
+#: plugins/searchengine.php:97 plugins/wptouch.php:22 wp-cache.php:1551
+msgid "Enabled"
+msgstr "Activat"
+
+#: plugins/awaitingmoderation.php:32 plugins/awaitingmoderation.php:59
+msgid "Awaiting Moderation"
+msgstr "Așteaptă moderare"
+
+#: plugins/awaitingmoderation.php:4
+msgid "Your comment is awaiting moderation."
+msgstr "Comentariul tău așteaptă moderare."
+
+#: ossdl-cdn.php:223
+msgid "CDN functionality provided by <a href=\"http://wordpress.org/plugins/ossdl-cdn-off-linker/\">OSSDL CDN Off Linker</a> by <a href=\"http://mark.ossdl.de/\">Mark Kubacki</a>"
+msgstr "Funcționalitatea CDN este furnizată de <a href=\"http://wordpress.org/plugins/ossdl-cdn-off-linker/\">OSSDL CDN Off Linker</a> prin <a href=\"http://mark.ossdl.de/\">Mark Kubacki</a>"
+
+#: ossdl-cdn.php:221
+msgid "Save Changes"
+msgstr "Salvează modificările"
+
+#: ossdl-cdn.php:217
+msgid "Skip https URLs to avoid \"mixed content\" errors"
+msgstr "Omite URL-urile https pentru a evita erorile de „conținut mixt”"
+
+#: ossdl-cdn.php:213
+msgid "These <a href=\"http://en.wikipedia.org/wiki/CNAME_record\">CNAMES</a> will be used in place of %1$s for rewriting (in addition to the off-site URL above). Use a comma as the delimiter. For pages with a large number of static files, this can improve browser performance. CNAMEs may also need to be configured on your CDN.<br />Example: %2$s"
+msgstr "Aceste <a href=\"http://en.wikipedia.org/wiki/CNAME_record\">CNAME-uri</a> vor fi folosite pentru rescriere în loc de %1$s (suplimentar față de URL-ul extern de mai sus). Folosește o virgulă pentru delimitare. Pentru paginile cu un număr mare de fișiere statice, acest lucru poate îmbunătăți performanța navigatorului. De asemenea, CNAME-urile ar putea avea nevoie să fie configurate în CDN.<br />Exemplu: %2$s"
+
+#: ossdl-cdn.php:210
+msgid "Additional CNAMES"
+msgstr "CNAME-uri suplimentare"
+
+#: ossdl-cdn.php:206
+msgid "Excludes something from being rewritten if one of the above strings is found in the URL. Use a comma as the delimiter like this, <code>.php, .flv, .do</code>, and always include <code>.php</code> (default)."
+msgstr "Exclude ceva de a fi rescris dacă unul din șirurile de mai sus este găsit în URL. Folosește o virgulă pentru delimitare, așa <code>.php, .flv, .do</code> și include întotdeauna <code>.php</code> (implicit)."
+
+#: ossdl-cdn.php:203
+msgid "Exclude if substring"
+msgstr "Exclude dacă e subșir"
+
+#: ossdl-cdn.php:199
+msgid "Directories to include in static file matching. Use a comma as the delimiter. Default is <code>wp-content, wp-includes</code>, which will be enforced if this field is left empty."
+msgstr "Directori de inclus în potrivirea fișierului static. Folosește o virgulă pentru delimitare. Calea implicită este <code>wp-content, wp-includes</code>, care va fi impusă dacă acest câmp rămâne necompletat."
+
+#: ossdl-cdn.php:196
+msgid "Include directories"
+msgstr "Include directori"
+
+#: ossdl-cdn.php:192
+msgid "The new URL to be used in place of %1$s for rewriting. No trailing <code>/</code> please.<br />Example: <code>%2$s</code>."
+msgstr "Noul URL care să fie folosit pentru rescriere în loc de %1$s. Niciun <code>/</code>, te rog.<br />Exemplu: <code>%2$s</code>."
+
+#: ossdl-cdn.php:189
+msgid "Off-site URL"
+msgstr "URL extern"
+
+#: ossdl-cdn.php:179
+msgid "Enable CDN Support"
+msgstr "Activează suport CDN"
+
+#: ossdl-cdn.php:171
+msgid "You can define different CDN URLs for each site on a multsite network."
+msgstr "Poți defini URL-uri CDN diferite pentru fiecare sit pe o rețea multi-sit."
+
+#: ossdl-cdn.php:165
+msgid "<strong style=\"color: red\">WARNING:</strong> Test some static urls e.g., %s  to ensure your CDN service is fully working before saving changes."
+msgstr "<strong style=\"color: red\">AVERTIZARE:</strong> Înainte de a salva modificările, testează câteva URL-uri statice, ca de exemplu %s, ca să te asiguri că serviciul tău CDN lucrează perfect."
+
+#: ossdl-cdn.php:164
+msgid "Your website probably uses lots of static files. Image, Javascript and CSS files are usually static files that could just as easily be served from another site or CDN. Therefore, this plugin replaces any links in the <code>wp-content</code> and <code>wp-includes</code> directories (except for PHP files) on your site with the URL you provide below. That way you can either copy all the static content to a dedicated host or mirror the files to a CDN by <a href=\"https://knowledgelayer.softlayer.com/faq/how-does-origin-pull-work\" target=\"_blank\">origin pull</a>."
+msgstr "Probabil, situl tău folosește o mulțime de fișiere statice. De obicei, fișierele imagine, Javascript și CSS sunt fișiere statice care ar putea să fie servite, la fel de ușor, de pe un alt sit sau prin CDN. Prin urmare, acest modul înlocuiește pe situl tău orice legături în directorii <code>wp-content</code> și <code>wp-includes</code> (cu excepția fișierelor PHP) cu URL-ul pe care-l furnizezi mai jos. În acest fel poți să copiezi fie tot conținutul static la o gazdă dedicată sau fie să reflectezi fișierele la un CDN prin <a href=\"https://knowledgelayer.softlayer.com/faq/how-does-origin-pull-work\" target=\"_blank\">origin pull</a>."

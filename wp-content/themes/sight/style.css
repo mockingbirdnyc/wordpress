@@ -1,0 +1,1666 @@
+/*
+Theme Name: (Not by) Sight
+Author URI: http://www.fishwickdesign.com
+Description: Sight is a powerful Wordpress theme, best suited for Magazines and Blogs. The theme was designed in modern minimalistic style with Golden Grid usage.
+Author: WPSHOWER/Fishwick Design
+Version: 1.0
+License: GNU/GPL Version 2 or later. http://www.gnu.org/licenses/gpl.html
+Copyright: (c) 2010 WPSHOWER modified 2011 Fishwick Design
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300|Volkhov:400,400italic);
+
+/*** Reset ***/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+body{line-height:1;text-align:left;}
+ol,ul{list-style:none;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+:focus {outline:0;}
+ins{text-decoration:none;}
+del{text-decoration:line-through;}
+table{border-collapse:collapse;border-spacing:0;}
+
+/*** Main ***/
+
+body {font: 62.5% "Volkhov", Georgia, "Times New Roman", Times, serif; background: #EDEBEC;}
+.clear:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+.left {float: left;}
+img.left {margin: 0 !important; padding-right: 10px}
+.right {float: right;}
+
+.wrapper {width: 1024px; background: #fff; margin: 0 auto;}
+#container {
+  margin-top: 30px;
+  border-top: 1px solid #EDEBEC;
+  padding-top: 30px;
+}
+
+/*** Header ***/
+
+.header {overflow: hidden; padding-right: 30px;}
+
+.logo { padding: 20px 0 12px 30px; overflow: hidden; float: left;}
+.logo img {max-height: 94px; max-width: 500px;}
+
+.site-description {width: 290px; height: 111px; padding: 35px 30px 0; float: left; overflow: hidden;}
+.site-description .textwidget {font-size: 11px; color: #656363; line-height: 1.3;}
+
+div.search {width: 275px; margin-top: 28px; float: right;}
+div.search fieldset {width: 275px; height: 35px; background: #dadada;}
+div.search input {width: 230px; border: none; background: none !important; padding: 8px !important; color: #fff !important; font: 11px "Volkhov", Georgia, "Times New Roman", Times, serif; text-transform: uppercase; vertical-align: middle; height: auto !important; font: inherit !important; border-style: none !important; box-shadow: 0 0 0 #fff !important;  }
+div.search button {width: 16px; height: 16px; background: url("images/search.png") 50% 50% no-repeat; cursor: pointer; border: none; vertical-align: middle;}
+
+/*** Navigation ***/
+.nav {margin-bottom: 24px; width: 800px; float: left; }
+.dd {height: 48px;}
+.dd li {float: left; display: block;  text-align: center; font-size: 16px; text-transform: uppercase; margin: 0 !important; font-family: Lato;}
+.dd li a {color: #000; text-decoration: none; display: block; margin: 9px 12px 0; white-space: nowrap; padding: 5px; font-weight: bold; letter-spacing: 1px}
+.dd li a:hover {text-decoration: none; color: #B0B0B0}
+.dd.dd > li:first-child { margin-left: 15px !important}
+.dd li ul {position: absolute; padding: 4px; visibility: hidden;  z-index: 100;  }
+.dd li ul li {float: none; border: none; font-size: 16px; text-align: left; margin: 5px; padding: 6px 8px; background-color: white; z-index: 200}
+.dd li ul li a { display: inline; margin: 0 2px; white-space: normal; padding-top: 0;}
+.dd li ul li a:hover {text-decoration: underline}
+.dd li.dd_hover {}
+a.dd_hover:hover {text-decoration: none !important;}
+.submenu a:hover, .dd a:hover  {text-decoration: underline;}
+.dd li.parent > a {padding-right: 12px; background: url("images/dd.png") 100%  no-repeat;}
+.dd li.parent > a.dd_hover {background: url("images/dd_hover.png") 100%  no-repeat;  padding-right: 12px;  padding-bottom: 10px;}
+
+.current-menu-item a, .current_page_item a, .current-page-ancestor a,  a.wpsc-current-cat {color: #B0B0B0 !important; letter-spacing: 2px; font-weight: bold !important; }
+
+.blog .menu-item-1426 a {color: #00D6FF !important; letter-spacing: 2px; }
+
+
+.menu ul {
+width: 1024px;
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+text-transform: uppercase;
+
+}
+.menu li { 
+float: left; 
+letter-spacing: 2px;
+margin-left: 2em;
+font-size: 12px;
+}
+
+.tdd li ul {
+position: absolute;
+  visibility: hidden;
+  z-index: 100;
+  width: auto;
+  background-color: white;
+  margin-top: 14px;
+}
+.tdd li ul li {
+  float: none;
+  border: none;
+  font-size: 14px;
+  text-align: left;
+  margin: 0;
+  padding-top: 10px;
+  background-color: white;
+  z-index: 200;
+}
+.tdd li ul li a { display: inline; margin: 0 2px; white-space: normal; padding-top: 0;}
+.tdd li ul li a:hover {text-decoration: underline}
+
+.menu a { text-decoration: none; color: white !important;}
+.menu a:hover {text-decoration: underline;}
+
+.resource_menu .menu li {
+    background-color: #dadada;
+    margin: 0;
+}
+
+@-moz-document url-prefix() {
+    .resource_menu .menu li {
+    margin-left: 1em;
+}
+}
+
+.resource_menu .menu a { 
+
+  font-family: 'Lato';
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: normal;
+  letter-spacing: 2px;
+  clear: both;
+  width: 80%;
+  text-align: center;
+  margin-left: 10%;
+  background-color: white;
+  color: #00D6FF !important;
+  font-weight: bold;
+  padding: 10px;
+  background-color: #EDEBEC;
+}
+
+.resource_menu .current-menu-item a {
+    padding-bottom: 12px;
+    background-color: #fff;
+}
+
+.resource_menu .menu a:hover {
+    text-decoration: none;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+.resource_menu ul {
+  width: 100%;
+  background-color: #dadada;
+  display: table;
+  border: 1px solid grey;
+  padding: 2.5em 0 1em 0;
+  margin-left: .5em;
+}
+
+.menu li ul li a {
+    color: black !important;
+}
+
+.ribbon {
+height: 1em;
+background-color: black;
+
+font-size: 16px;
+line-height: normal;
+color: white;
+padding: 1em;
+}
+
+#newhere {
+        display: none;
+}
+
+#newhere a {
+
+    background-color: #f4ff34;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Lato";
+    text-decoration: none;
+    padding: 1em .5em 1em .5em;
+    left: 166px;
+    position: relative;
+}
+
+#newhere a:before
+{
+	  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 30px;
+  top: 48px;
+  border: 8px solid;
+  border-color: #f4ff34 transparent transparent #f4ff34;
+}
+
+
+ul.wpsc_categories {
+padding: 0 !important;
+margin: 0 !important;
+}
+
+/*** Slideshow ***/
+
+#slideshow, .slideshow {height: 300px; width: 1024px; overflow: hidden; position: relative;}
+.slide {height: 300px; width: 1024px; background: black;}
+.slide img {display: block; float: left; width: 640px; height: 300px; position: relative; top: -20px; left: -30px;} 
+.slide .post {padding: 20px 30px 0; }
+.slide .post-category {font-size: 11px; color: #d9d9d9; text-transform: uppercase; margin-bottom: 5px;}
+.slide .post a {color: #000;}
+.slide .post .post-category a {text-decoration: none;}
+.slide .post .post-category a:hover {text-decoration: underline;}
+.slide .post h2 {margin-bottom: 5px; }
+.slide .post h2, .slide .post h2 a {
+  color: #00D6FF;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: 'Lato';
+  text-transform: uppercase;
+  line-height: 1.5em;
+  letter-spacing: 1px;
+}.slide .post h2 a:hover {text-decoration: underline;}
+.slide .post .post-meta {font-size: 11px; font-style: italic; color: #fecdfb; margin-bottom: 20px;}
+.slide .post .post-meta span, .slide .post .post-meta a {color: white; text-decoration: none; font-family: "Volkhov", Georgia, "Times New Roman", Times, serif; font-style: normal;}
+.slide .post .post-meta a:hover {text-decoration: underline;}
+.slide .post .post-author {text-transform: uppercase; }
+.slide .post .post-author a, slide .post .post-date {color: white}
+.slide .post-content, .slide .post-content p {margin-bottom: 15px; color: white}
+#larr, #rarr {display: block; width: 32px; height: 53px; position: absolute; top: 106px !important; opacity: 0.2; z-index: 99 !important;}
+#larr {background: #000 url("images/larr.png") 8px 50% no-repeat; left: 0 !important;}
+#rarr {background: #000 url("images/rarr.png") 11px 50% no-repeat; right: 0 !important;}
+#larr:hover, #rarr:hover {opacity: 1;}
+
+/*** Content ***/
+
+#content {
+width: 680px; 
+float: left;
+position: relative;
+z-index: 10;
+}
+
+#content.wide {width: 960px}
+#content.wide blockquote {float: right; float: right; padding: 0 15px 15px 15px; background-image: none; display: block; width: 220px;}
+#content.wide blockquote p {font-family: 'Lato'; font-weight: bold; font-style: normal; color: #000; font-size: 16px; text-transform: uppercase; line-height: 2em }
+
+
+.content-title {font-family: 'Lato'; color: #000; font-size: 16px; font-weight: bold; letter-spacing: 1px; padding: 0 0 0 30px; text-transform: uppercase; position: relative;}
+.content-title.sermon {font-family:"Volkhov", Georgia, "Times New Roman", Times, serif; color: #000; font-size: 12px; letter-spacing: 2px; padding: 0 0 15px 30px; border-bottom: 1px solid #d9d9d9; text-transform: uppercase; position: relative;}
+.content-title a {color: #000; text-decoration: none;}
+.content-title a:hover {text-decoration: underline;}
+.content-title span {color: #aaa9a9;}
+.content-title.sermon span {color: #aaa9a9}
+.content-title span a {color: #d9d9d9; text-decoration: none;}
+.content-title span a:hover {color: #000; text-decoration: none;}
+#mode {display: block; width: 37px; height: 14px; background: url("images/mode.png") 0 0 no-repeat; position: absolute; bottom: 14px; right: 0;}
+.flip {background-position: 0 100% !important;}
+
+.list .post, #curauth {padding: 30px 0 0 30px; border-bottom: 1px solid #d9d9d9; margin-right: 1em;}
+#curauth {min-height: 100px}
+.list .post img.thumb {float: left; margin: 0 30px 30px 0; /* width: 290px; height: 290px; */}
+.list .post a {color: #000;}
+.list .post-content .moarplz a {text-decoration: none; font-weight: bold; padding: 5px; font-family: 'Lato'; text-transform: uppercase; color: #aaa9a9; font-size: 10px; letter-spacing: 3px;}
+.list .post-content .moarplz a:hover {text-decoration: underline; color: #00D6FF }
+.list .post .post-category {font-size: 11px; color: #d9d9d9; text-transform: uppercase; margin-bottom: 11px;}
+.list .post .post-category a {text-decoration: none;}
+.list .post .post-category a:hover {text-decoration: underline;}
+.list .post h2 {margin-bottom: 8px;}
+.list .post h2, .list .post h2 a {color: #F54B00; font-size: 18px; font-weight: bold; font-family: 'Lato'; text-decoration: none; text-transform: uppercase; letter-spacing: 2px}
+.list .post h2 a:hover {text-decoration: none; color: #B0B0B0}
+.list .post .post-meta {font-size: 11px; font-style: italic; color: #aaa9a9; margin-bottom: 20px;}
+.list .post .post-meta span, .list .post .post-meta a {color: #000; text-decoration: none; font-family: "Volkhov", Georgia, "Times New Roman", Times, serif; font-style: normal;}
+.list .post .post-meta a:hover {text-decoration: underline;}
+.post-author {text-transform: uppercase;}
+
+.grid {padding: 12px 0 0 12px;}
+.grid .post {width: 154px; height: 154px; background-color: #f5f5f5; padding: 18px; float: left; margin: 19px 0 0 19px; position: relative; overflow: hidden; cursor: pointer;}
+.grid .post .post-category, .grid .post .post-content, .grid .post .post-meta em {display: none;}
+.grid .post h2, .grid .post .post-meta {display: block;}
+.grid .post .thumb {width: 190px; height: 190px; position: absolute; top: 0; left: 0; z-index: 1;}
+.grid .post .thumb img {width: 190px; height: 190px;}
+.grid .post h2, .grid .post h2 a {color: #000; font-size: 16px; font-weight: normal; text-decoration: none;}
+.grid .post h2 {margin-bottom: 5px;}
+.grid .post a {text-decoration: none;}
+.grid .post a:hover {text-decoration: underline;}
+.grid .post .post-meta {font-size: 10px; font-style: italic; color: #656363;}
+.grid .post .post-meta span, .grid .post .post-meta a {color: #000; font-family: "Volkhov", Georgia, "Times New Roman", Times, serif; font-style: normal;}
+.grid .post .post-meta .post-author {text-transform: uppercase;}
+.grid .post .comments_popup_link {position: absolute; bottom: 18px; right: 18px;}
+.grid .post .post-edit-link {position: absolute; bottom: 18px; left: 18px;}
+
+.rollover {opacity: 0; background: #ffea97; width: 154px; height: 154px; padding: 18px; margin: 0; position: absolute; top: 0; left: 0; cursor: pointer;}
+.rollover-title {margin-bottom: 5px;}
+.rollover-title, .rollover-title a {color: #000; font-size: 16px; font-weight: normal; text-decoration: none;}
+.rollover-title a:hover {text-decoration: underline;}
+.rollover-content {color: #262626; font: 12px/1.5 "Volkhov", Georgia, "Times New Roman", Times, serif;}
+.rollover-meta {font-size: 10px; font-style: italic; color: #656363;}
+.rollover-meta span, .rollover-meta a {color: #000; text-decoration: none; font-family: "Volkhov", Georgia, "Times New Roman", Times, serif; font-style: normal;}
+.rollover-author {text-transform: uppercase;}
+.rollover-meta a:hover {text-decoration: underline;}
+
+.pagination {padding: 60px 0 0 30px; color: #aaa9a9; font-size: 12px; clear: both; position: relative;}
+.pagination a {color: #000; text-decoration: none;}
+.pagination a:hover {text-decoration: underline;}
+.pagination .nextpostslink {position: absolute; right: 0; top: 17px; line-height: 21px; text-transform: uppercase; background: url("images/nextpostslink.png") 100% 0 no-repeat; padding-right: 36px;}
+.pagination .previouspostslink {position: absolute; left: 30px; top: 17px; line-height: 21px; text-transform: uppercase; background: url("images/previouspostslink.png") 0 0 no-repeat; padding-left: 36px;}
+#pagination {padding: 20px 0 0 30px;}
+#pagination .nextpostslink {color: #000; text-decoration: none; display: block; padding: 9px 0; text-align: center; font-size: 14px;}
+#pagination .nextpostslink:hover {background-color: #FFEA97; text-decoration: none; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;}
+#pagination .loading {background: url("images/loading.gif") 240px 9px no-repeat; color: #555;}
+#pagination .loading:hover {background-color: transparent !important; cursor: default;}
+
+/*.entry {margin-bottom: 50px;}*/
+.entry .post {border-bottom: 1px solid #d9d9d9; padding-bottom: 15px;}
+.entry .post-meta {padding: 15px 0 15px 30px;  font-size: 11px; font-style: italic; color: #aaa9a9; position: relative;}
+.entry .post-meta h1 {color: #FD5457; font-size: 30px; font-weight: bold; font-family: "Lato"; font-style: normal; margin-bottom: 5px;}
+.entry .post-meta span, .entry .post-meta a {color: #000; text-decoration: none; font-family: "Volkhov", Georgia, "Times New Roman", Times, serif; font-style: normal;}
+.entry .post-meta a:hover {text-decoration: underline;}
+.entry .post-comms {position: absolute; right: 0;}
+.entry .post-content {padding: 15px 0 0 30px;}
+.wide .entry .post-content {padding-top: 0px !important;}
+.entry .post-secondary {padding: 0 0 0 30px;}
+.entry .post-content a {color: #000; text-decoration: underline !important;}
+.entry .post-content a.download {color: #000; text-decoration: none !important;}
+.entry .post-content a:hover {text-decoration: none;}
+.entry .post-footer {padding-left: 30px; font-size: 12px; margin-bottom: 15px; color: #737373}
+.single-ct_sermon  .post-footer  {font-size: 16px}
+.entry .post-footer a {color: #737373; text-decoration: none;}
+.entry .post-footer.author a {color: #79DED8; text-decoration: none; font-weight: bold}
+.entry .post-footer a:hover {text-decoration: underline;}
+.entry .post-footer.author img{float: left}
+.page .post-category {display: none;}
+
+/* social */
+
+#social {
+font-size: 24px;
+float: right;
+padding-right: 1em;
+}
+
+#social span {
+margin-left: .4em;
+background-color: #dadada;
+color: white;
+-moz-border-radius: 50%; 
+   -webkit-border-radius: 50%; 
+   border-radius: 50%; 
+    width: 200px;
+    height: 200px; 
+  text-indent: 5px;
+  padding: 0px;
+    
+}
+
+#social span:hover {
+    background-color: gray;
+}
+
+#social a {
+    text-decoration: none;
+}
+
+.f, .t, .di, .su {width: 16px; height: 15px; position: absolute; bottom: 15px;}
+.f {right: 63px; background: url("images/social.png") 0 0 no-repeat;}
+.t {right: 42px; background: url("images/social.png") -16px 0 no-repeat;}
+.di {right: 21px; background: url("images/social.png") -32px 0 no-repeat;}
+.su {right: 0; background: url("images/social.png") -48px 0 no-repeat;}
+.f:hover {background-position: 0 -15px;}
+.t:hover {background-position: -16px -15px;}
+.di:hover {background-position: -32px -15px;}
+.su:hover {background-position: -48px -15px;}
+
+/*.post-content {margin-bottom: 30px;}*/
+.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5 {color: #000; font-weight: normal; font-family: "Volkhov", Georgia, "Times New Roman", Times, serif; margin: 15px 0;}
+.wide h2, .wide h3, .post-10838 h2, .page-id-65182 h2   {font-family: 'Lato'; margin: 0; line-height: normal; padding-top: 10px}
+.post-content h1 {font-size: 30px; line-height: 35px;}
+.post-content h2 {font-size: 26px;}
+.post-content h3 {font-size: 22px;}
+.post-content h4 {font-size: 20px;}
+.post-content h5 {font-size: 18px;}
+.post-content {color: #090909; font: 14px/1.6 Georgia,sans-serif;}
+.single .post-content {font-size: 16px }
+.post-content p {margin: 13px 0;}
+.post-content ol {list-style: decimal; padding-left: 35px; margin: 15px 0;}
+.post-content ul {list-style: disc; padding-left: 35px; margin: 15px 0;}
+.post-content li {color: #262626 !important; margin: 3px 0;}
+.post-content blockquote {padding: 15px 0 10px 65px; background: url("images/bq.png") 20px 0 no-repeat;}
+.post-content blockquote p {color: #8c8888;}
+
+.post-content .search {float: none; margin-top: 15px; width: auto;}
+.post-content .search fieldset {width: 610px; height: 35px;}
+.post-content .search input {width: 570px; font-size: 16px;}
+
+.post-psuedo-col {padding-left: 320px}
+
+.post-navigation {width: 610px; padding: 15px 0 0 30px; position: relative;}
+.post-navigation a {display: block; color: #000; font: 11px "Volkhov", Georgia, "Times New Roman", Times, serif; text-decoration: none; line-height: 1.5;}
+.post-navigation a:hover {text-decoration: none;}
+.post-navigation a em {display: block; color: #aaa9a9; font: italic 11px "Volkhov", Georgia, "Times New Roman", Times, serif;}
+.post-navigation a:hover span {text-decoration: underline;}
+.post-prev {width: 250px; min-height: 40px; padding-left: 30px; float: left; text-align: left; background: url("/wp-content/plugins/related-posts-slider/formats/h_carousel/styles/plain/prev-horizontal.png") no-repeat scroll -24px 50% transparent;}
+.post-next {width: 250px; min-height: 40px; padding-right: 30px; float: right; text-align: right; background: url("/wp-content/plugins/related-posts-slider/formats/h_carousel/styles/plain/next-horizontal.png") 110% 50% no-repeat;}
+.line {width: 1px; height: 100%; background: #d9d9d9; position: absolute; top: 0; right: 305px;}
+
+.column-list {
+   -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+    margin-bottom: 2em;
+}
+
+.column-list h3 {
+    text-transform: uppercase; 
+    background-color: #e6e6e6;
+    text-align: center;
+    padding-bottom: 10px;
+    opacity: .6;
+}
+
+.break {
+
+   break-before: column; /* W3C */
+-webkit-column-break-before: always; /* Safari & Chrome */
+-moz-column-break-before: always; /* Firefox */
+-ms-column-break-before: always; /* Internet Explorer */
+-o-column-break-before: always; /* Opera */
+}
+
+@-moz-document url-prefix()
+{ 
+  .break
+  {
+    margin-top: 200px !important;
+  } 
+} 
+
+.after {
+
+   break-after: always; /* W3C */
+-webkit-column-break-after: always; /* Safari & Chrome */
+-moz-column-break-after: always; /* Firefox */
+-ms-column-break-after: always; /* Internet Explorer */
+-o-column-break-after: always; /* Opera */
+
+}
+
+@-moz-document url-prefix()
+{ 
+  .after
+  {
+    display: table !important;
+  } 
+} 
+
+.column-list p {
+    background-color: #e6e6e6;
+    padding: 1em 1em 2em;
+    margin-bottom: 2em;
+  
+}
+
+.column-list img {
+    width: 100% !important;
+    object-fit: cover;
+    max-height: 350px;
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+}
+
+.post-65037 h2.center {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 1em;
+}
+
+/*** Images ***/
+
+.post-content img {margin: 0 0 15px; height: auto; max-width: 610px;}
+.post-content h6 {position: relative; left: -30px;}
+.post-content .attachment img {max-width: 610px;}
+.post-content .alignnone, .post-content img.alignnone {clear: both; display: block; margin-bottom: 15px;}
+.post-content .alignleft, .post-content img.alignleft {display: inline; float: left; margin-right: 15px; margin-top: 4px;}
+.post-content .alignright, .post-content img.alignright {display: inline; float: right; margin-left: 15px; margin-top: 4px;}
+.post-content .aligncenter, .post-content img.aligncenter {clear: both; display: block; margin-left: auto; margin-right: auto;}
+.post-content img.alignleft, .post-content img.alignright, .post-content img.aligncenter {margin-bottom: 15px;}
+.post-content .wp-caption {background: #f1f1f1; line-height: 18px; margin-bottom: 20px; padding: 4px; text-align: center;}
+.post-content .wp-caption img {margin: 5px 5px 0;}
+.post-content .wp-caption p.wp-caption-text {color: #888; font-size: 12px; margin: 5px;}
+.post-content .wp-smiley {margin: 0;}
+.post-content .gallery {margin: 0 auto 18px;}
+.post-content .gallery .gallery-item {float: left; margin-top: 0; text-align: center; width: 190px;}
+.post-content .gallery .gallery-item img {max-width: 190px; border: none !important; margin-bottom: 0;}
+.post-content .gallery .gallery-caption {color: #888; font-size: 12px; margin: 0 0 12px;}
+.post-content .gallery dl {margin: 0;}
+.post-content .gallery br+br {display: none;}
+.post-content .attachment img {display: block; margin: 0 auto;}
+
+/*** Comments ***/
+
+.comments h3 {font-size: 18px; font-weight: normal; color: #000; padding: 15px 0 10px 30px; border-bottom: 1px solid #d9d9d9;}
+.comments a {color: #000;}
+#comments {margin-bottom: 30px;}
+.comment {padding: 15px 0 15px 30px; border-bottom: 1px dotted #d9d9d9;}
+.comment td, .pingback td, .trackback td {vertical-align: top;}
+.comment-meta {position: relative; min-height: 70px; font-size: 11px; margin-right: 30px;}
+.avatar {display: block; margin-right: 10px;}
+/* CSS styles for author comments */
+.bypostauthor {color: #aaa9a9; background-color:#fef7d6 !important;}
+.bypostauthor span {color: #000;}
+.bypostauthor a, .bypostauthor span {text-decoration: none; text-transform: uppercase; font-family: "Volkhov", Georgia, "Times New Roman", Times, serif; font-style: normal;}
+.bypostauthor a:hover {text-decoration: underline;}
+.bypostauthor, .comment-date {white-space: nowrap;}
+
+/* CSS styles for registered users comments */
+.byuser {
+
+}
+#avatar {float: left; margin: 15px 15px 0 0;}
+.comment-reply-link {position: absolute; bottom: 1px; text-decoration: none;}
+.comment-reply-link:hover {text-decoration: underline;}
+.comment-text p {color: #4b4b4b; ; font: 12px "Volkhov", Georgia, "Times New Roman", Times, serif; margin-bottom: 15px; white-space: normal !important; padding-right: 10px}
+.children {margin-left: 80px;}
+.children .children {margin-left: 50px;}
+.children .comment {padding-left: 0;}
+
+#respond p, .nopassword {margin: 10px 0; font: 11px "Volkhov", Georgia, "Times New Roman", Times, serif;}
+.nopassword {padding-left: 30px;}
+#respond p a {text-decoration: none;}
+#respond p a:hover {text-decoration: underline;}
+#commentform {padding: 30px 0 0 30px;}
+#commentform table {width: 100%; margin-bottom: 15px;}
+#commentform td {vertical-align: top; width: 33.33%;}
+#commentform td p {font: bold 11px "Volkhov", Georgia, "Times New Roman", Times, serif; color: #333; margin-bottom: 5px;}
+#commentform td p span {color: #aaa9a9; font: italic 11px "Volkhov", Georgia, "Times New Roman", Times, serif;}
+.commform-textarea {border: 1px solid #d9d9d9; }
+/*#comment {width: 100%; height: 120px; padding: 0; margin: 0; border: none; border-color: #fff; overflow: auto;}*/
+.commform-author div {margin-right: 15px; border: 1px solid #d9d9d9; padding: 5px;}
+.commform-email div {border: 1px solid #d9d9d9; padding: 5px;}
+.commform-url p {margin-left: 15px !important;}
+.commform-url div {margin-left: 15px; border: 1px solid #d9d9d9; padding: 5px;}
+#author, #email, #url {width: 100%; margin: 0; padding: 0; border: none; font: 12px "Volkhov", Georgia, "Times New Roman", Times, serif; color: #333;}
+#submit {float: left; border: none; background: #ccc; color: #fff; font: bold 12px "Volkhov", Georgia, "Times New Roman", Times, serif; cursor: pointer; padding: 5px 10px; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px;}
+#submit:hover {background: #000;}
+p#cancel-comment-reply {float: right; line-height: 28px; margin: 0;}
+
+/*** Sidebar ***/
+
+
+.sidebar {
+width: 300px; 
+float: left;
+position: relative;
+z-index: 10;
+  margin-left: 30px;
+}
+.widget {margin-bottom: 35px; background-color:  #dadada; padding-top: 1.5em; }
+.footer-widget .widget {
+background-color: inherit;
+}
+.widget_recentposts_thumbnail { background-color: #DADADA;   padding-top: 2em; }
+.widget-body, .ui-widget-content {background-color: white}
+.widget-small {width: 130px;}
+.widget h3, .widget-small h3 {color: #262626; font-weight: normal; }
+h3.widget-title {font-family: 'Lato';
+ font-size: 16px;
+ text-transform: uppercase;
+ line-height: normal; 
+ letter-spacing:2px; 
+ clear: both;  
+ width: 80%;
+  text-align: center;
+  margin-left: 10%;
+  background-color: white;
+  color: #00D6FF;
+  font-weight: bold;
+  padding: 10px 0;
+  }
+
+.widget_recentposts_thumbnail h3.widget-title { margin-left: 30px; margin-right: 30px; padding-top: .5em; padding-bottom: .5em; }
+.widget a, .widget-small a {color: #000; text-decoration: none;}
+.widget a:hover, .widget-small a:hover {text-decoration: underline;}
+.widget p, .textwidget {color: #262626; font: 12px/1.3 "Volkhov", Georgia, "Times New Roman", Times, serif; }
+.textwidget {padding: 1em}
+.widget p a, .textwidget a {text-decoration: underline; font-style: italic}
+.widget p a:hover, .textwidget a:hover {text-decoration: none;}
+.widget li, .widget-small li {font-size: 12px; color: #262626; margin-bottom: 3px;}
+.widget_categories li { padding-right: 1em}
+.widget_categories ul ul{float: left; width: 40%}
+
+.widget_getconnected {margin-bottom: 20px;}
+.widget_getconnected .widget-body div {width: 50%; float: left; min-height: 40px; padding-bottom: 16px;}
+.widget_getconnected .widget-body div a {display: block; color: #24211f; font-size: 16px; padding-left: 30px;}
+.widget_getconnected .widget-body div span {color: #838383; font: 11px "Volkhov", Georgia, "Times New Roman", Times, serif; padding-left: 25px;}
+.getconnected_rss a {background: url("images/getconnected_rss.png") 0 2px no-repeat;}
+.getconnected_twitter a {background: url("images/getconnected_twitter.png") 0 2px no-repeat;}
+.getconnected_fb a {background: url("images/getconnected_fb.png") 0 2px no-repeat;}
+.getconnected_flickr a {background: url("images/getconnected_flickr.png") 0 2px no-repeat;}
+.getconnected_behance a {background: url("images/getconnected_behance.png") 0 2px no-repeat;}
+.getconnected_delicious a {background: url("images/getconnected_delicious.png") 0 2px no-repeat;}
+.getconnected_stumbleupon a {background: url("images/getconnected_stumbleupon.png") 0 2px no-repeat;}
+.getconnected_tumblr a {background: url("images/getconnected_tumblr.png") 0 2px no-repeat;}
+.getconnected_vimeo a {background: url("images/getconnected_vimeo.png") 0 2px no-repeat;}
+.getconnected_youtube a {background: url("images/getconnected_youtube.png") 0 2px no-repeat;}
+.getconnected_constantcontact a {background: url("images/getconnected_contact_icon.png") 0 2px no-repeat;}
+
+.rpthumb {display: block; padding-bottom: 15px; margin-top: 15px; border-bottom: 1px dotted #d9d9d9;}
+.rpthumb img {width: 50px; width: 50px; margin-right: 15px; float: left;}
+.rpthumb-title {display: block; font: 12px "Volkhov", Georgia, "Times New Roman", Times, serif;; margin-bottom: 6px;}
+.rpthumb-date {display: block; font-size: 11px; color: #aaa9a9;}
+.rpthumb:hover {text-decoration: none !important;}
+.rpthumb:hover .rpthumb-title {text-decoration: underline;}	
+
+.widget_tag_cloud a {margin: 0 2px;}
+.widget_calendar table {width: 100%;}
+.widget_calendar caption {font-size: 13px; padding-bottom: 10px; text-align: left;}
+.widget_calendar th, .widget_calendar td {padding: 5px 0; font-size: 13px;}
+.widget_calendar tbody a {text-decoration: underline;}
+.widget_calendar tbody a:hover {text-decoration: none}
+
+/* -- 18.10 Tabbed widget -- */
+    .tz_tab_widget {padding-top: 0}
+	.tz_tab_widget #tab-items, #sermon-browser-popular.widget .tab-items { list-style-type: none; padding: 0; margin: 0; height: 40px;  /*border-bottom: 1px solid #D9D9D9;*/}
+	.tz_tab_widget #tab-items li, #sermon-browser-popular.widget .tab-items li { float: left; margin: 20px 0 0 0; line-height: 20px !important; padding: 0; !important; background: none !important; }
+    .tz_tab_widget #tab-items li:first-child, #sermon-browser-popular.widget .tab-items li:first-child {margin-left: 10px;}
+	#sermon-browser-popular.widget .tab-items  a, .tz_tab_widget #tab-items li a { font-weight: bold; color: white; padding: 0 10px; display: block; text-transform: uppercase; font-family: 'Lato'; }
+	#sermon-browser-popular.widget .tab-items  a:hover, #sermon-browser-popular.widget .ui-tabs-active a, .tz_tab_widget #tab-items li a:hover, .tz_tab_widget #tab-items li.ui-tabs-selected a, .tz_tab_widget #tab-items li.ui-state-active a { color: #00D6FF !important; text-decoration: none; background-color: white}
+    .tz_tab_widget .ui-tabs-hide { display: none; }
+	.tz_tab_widget #tabs h3, .widget_recentposts_thumbnail h3.entry-title {border: none; text-transform: none}
+	.tz_tab_widget img.mini-thumbnail, .widget_recentposts_thumbnail img.mini-thumbnail {
+    -moz-box-shadow: 0 0 3px rgba(153, 153, 153, 0.1);
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 50%;
+	width: 60px;
+	height: 60px;
+    float: left;
+    margin: 0 10px 0 0;
+    padding: 4px;
+	}
+	.tz_tab_widget .tab ul, .widget_recentposts_thumbnail ul { list-style-type: none; margin: 0; background-color }
+	.tz_tab_widget .tab ul li, .sermon_list .tab ul li, .widget_recentposts_thumbnail ul li {padding: 10px 5px 12px 5px!important; text-shadow: 0 1px 0 #fff; line-height: 20px!important; }
+	.tz_tab_widget .tab-thumb img, .widget_recentposts_thumbnail img { padding: 4px; background: #fff; float: left; margin: 0 10px 0 0; border: 1px solid #ddd; -moz-box-shadow: 0 0 3px rgba(153,153,153,0.1); -webkit-box-shadow: 0 0 3px rgba(153,153,153,0.1); box-shadow: 0 0 3px rgba(153,153,153,0.1); }
+	.tz_tab_widget .tab-thumb img:hover, .widget_recentposts_thumbnail img:hover { background: #333; }
+	 .tz_tab_widget .entry-title, .tz_tab_widget .entry-title a, .widget_recentposts_thumbnail .entry-title, .widget_recentposts_thumbnail .entry-title a { font-size: 12px; line-height: 20px; font-weight: normal; font-family: "Volkhov", Georgia, "Times New Roman", Times, serif; margin-bottom: 1px; padding: 0; }
+	.tz_tab_widget .entry-title a:hover, .widget_recentposts_thumbnail .entry-title a:hover { text-decoration: none; color: #3399cc!important; }
+	.tz_tab_widget .entry-meta, .tz_tab_widget .entry-meta a, .widget_recentposts_thumbnail .entry-meta, .widget_recentposts_thumbnail .entry-meta a { color: #999!important; font-size: 10px; margin: 0; }
+	.tz_tab_widget .entry-meta a:hover, .widget_recentposts_thumbnail .entry-meta a:hover { text-decoration: none; color: #333!important; }
+	
+	.tab-comments .avatar { padding: 4px; background: #fff; float: left; margin: 0 10px 0 0; border: 1px solid #ddd; -moz-box-shadow: 0 0 3px rgba(153,153,153,0.1); -webkit-box-shadow: 0 0 3px rgba(153,153,153,0.1); box-shadow: 0 0 3px rgba(153,153,153,0.1); }
+	.tab-comments .avatar:hover { background: #333; }
+	.tab-comments h3, .tab-comments h3 a { font-size: 12px; line-height: 20px; font-weight: normal; font-style: italic; font-family: "Volkhov", Georgia, "Times New Roman", Times, serif; padding: 0;  }
+	.tab-comments h3 a:hover { text-decoration: none; color: #3399cc; }
+	.tab-tags { padding: 10px 0 0 0; }
+	.tab-tags a { color: #999; background: #fff; padding: 2px 8px; float: left; display: block; margin: 0 3px 3px 0; text-shadow: none!important; }
+	.tab-tags a:hover { color: #fff; text-decoration: none; background: #3399cc; }
+    
+    #tab-items {
+        background-color: #DADADA;
+    }
+
+.sponsors .widget-body {text-align: center;}
+.sponsors .widget-body img {margin-bottom: 20px;}
+
+/* -- 18.4 300x250 Ad Widget -- */
+	.ads-120x240 img { padding: 10px; background: #f4f4f4; max-width: 120px; max-height: 250px }
+	.ads-120x240 img:hover { background: #333; }
+    .ads-120x240 .widget-title { position:absolute; bottom:0; margin-bottom: 0; width: 80%; text-align: center; margin-left: 10%; background-color: white; color: #B0B0B0; font-weight: bold; padding-top: 10px; letter-spacing: 4px; }
+
+	/* -- 18.5 125 Ads Widget -- */
+	.tz_ad_widget .ads-125 { width: 310px; }
+    .tz_ad_widget .widget-title { position:absolute; bottom:0; margin-bottom: 0; width: 80%; text-align: center; margin-left: 10%; background-color: white; color: #B0B0B0; font-weight: bold; padding-top: 10px;letter-spacing: 4px; }
+	.tz_ad_widget ul { list-style-type: none; margin: 0; padding: 0; }
+	.tz_ad_widget ul li { display: block; width: 145px; height: 145px; float: left; margin: 0 10px 10px 0; padding: 0!important; background: none!important; line-height: 20px!important; }
+	#sidebar .ads-125 img { padding: 10px; background: #f4f4f4; max-height: 125px; max-width: 125px }
+	#sidebar .ads-125 img:hover { background: #333; }
+	#footer .ads-125 img { padding: 10px; background: #202020; }
+	#footer .ads-125 img:hover { background: #141414; }
+
+	/* -- 18.6 Twitter Widget -- */
+	.tz_tweet_widget ul { margin: 0 0 20px 0; list-style-type: none; }
+	.tz_tweet_widget ul li { padding: 10px 0!important; }
+	.tz_tweet_widget ul li:first-child { padding: 0 0 10px 0!important; }
+	#footer .tz_tweet_widget ul li { background: url(images/bg-foot-bevel.gif) left bottom repeat-x; }
+	#sidebar .tz_tweet_widget ul li { background: url(images/bg-side-bevel.gif) left bottom repeat-x; }
+
+	/* -- 18.7 Flickr Widget -- */
+	.tz_flickr_widget #flickr_badge_wrapper { width: 310px; }
+	.flickr_badge_image { float: left; margin: 0 8px 8px 0; width: 95px; height: 95px; overflow: hidden; }
+	#footer .flickr_badge_image img { background: #202020; padding: 9px; }
+	#footer .flickr_badge_image img:hover { background: #141414; }
+	#sidebar .flickr_badge_image img { background: #f4f4f4; padding: 9px; }
+	#sidebar .flickr_badge_image img:hover { background: #333; }
+
+	/* -- 18.8 Video Widget -- */
+	.tz_video { padding: 5px; background: #f4f4f4; margin-bottom: 10px; }
+	#sidebar .tz_video_desc { margin: 0; color: #555; text-shadow: 0 1px 0 #fff; }
+	#footer .tz_video { background: #202020; }
+	
+	/* -- 18.9 300x250 Ad Widget -- */
+	.tz_ad300_widget { padding: 0; margin-bottom: 30px; position: relative; }
+	.tz_ad300_widget .widget-title { position:absolute; bottom:0; margin-bottom: 0; width: 80%; text-align: center; margin-left: 10%; background-color: white; color: #B0B0B0; font-weight: bold ; padding-top: 10px; letter-spacing: 4px; }
+	.ads-300, .tz_ad300_widget img { max-width: 300px;  overflow: hidden; }
+
+/*** Footer ***/
+#footer .widget-title {  margin: 0 30px;   padding: .5em 0;}
+#footer .xoxo li, #footer .widget ul li { background: url(images/bg-foot-bevel.gif) left bottom repeat-x; line-height: 20px; padding: 7px 0 9px 0; color: #737373 !important; }
+
+#footer { color: lightgray; }
+#footer p, #footer li {font-size: 12px; line-height: normal }
+#footer p:first-child {margin-top: 0; }
+#footer p {margin: 10px}
+#footer a:hover { text-decoration: underline;}
+
+.widget_twitter_timeline .widget-body {
+    padding: 1em;
+}
+
+	/* -- 19.1 Footer top -- */
+	#footer-top { height: 25px; overflow: hidden; background: url(images/bg-footer-top.gif) repeat-x; text-indent: -9999px; }
+	
+	/* -- 19.2 Footer Inner -- */
+	#footer-inner { width: 1024px; margin: 0 auto; padding: 40px 0 10px 0; background: url(images/bg-light.png) center top no-repeat; }
+	.footer-widget { width: 328px; float: left; margin-right: 20px; }
+	.footer-widget-last { float: right!important; margin: 0!important; }
+	
+	/* -- 19.3 Footer Notes -- */
+	#footer-notes { background: #212121; border-top: 1px solid #373737; height: 20px; padding: 8px 0; font-size: 11px; color: #666; text-shadow: 0 -1px 0 #151515; }
+	#footer-notes a { color: #666; border-bottom: 1px solid #333; }
+	#footer-notes a:hover { color: #999; }
+	#footer-notes-inner { width: 940px; margin: 0 auto; }
+	#footer-notes .credit { margin: 0; float: right; }
+	#footer-notes .copyright { margin: 0; float: left; }
+	
+	/* -- 13.8 Author Bio -- */
+	.author-bio {
+    -moz-box-shadow: 0 0 3px rgba(153, 153, 153, 0.2);
+	 -webkit-box-shadow: 0 0 3px rgba(153,153,153,0.2); box-shadow: 0 0 3px rgba(153,153,153,0.2);
+    background: url("images/bg-author.gif") repeat scroll 0 0 transparent;
+    border: 1px solid #DDDDDD;
+    margin: -5px;
+    padding: 20px;
+    position: relative;
+    text-shadow: 0 1px 0 #FFFFFF;
+    width: 945px;}
+	
+	.author-bio .avatar { padding: 4px; background: #fff; float: left; margin: 0 15px 0 0; border: 1px solid #ddd; -moz-box-shadow: 0 0 3px rgba(153,153,153,0.1); -webkit-box-shadow: 0 0 3px rgba(153,153,153,0.1); box-shadow: 0 0 3px rgba(153,153,153,0.1); }
+	.author-title { font-weight: bold; font-size: 14px; color: #444; margin-bottom: 3px; }
+	.author-bio .fold-left { position: absolute; bottom: -5px; left: -1px; }
+	.author-bio .fold-right { position: absolute; bottom: -5px; right: 1px; }
+	.author-description {margin-top: 10px; font-size: 12px}
+    
+    /* sharing */
+    div.sharedaddy.floated, #content div.sharedaddy.floated, #main div.sharedaddy.floated {
+      clear: both;
+      float: left;
+      position: absolute;
+      right: 680px;
+      background-color: white;
+      padding: .5em;
+      top: 162px;
+    }
+    
+    div.sharedaddy.inlined, #content div.sharedaddy.inlined, #main div.sharedaddy.inlined {
+        clear: both;
+        float: none;
+        position: relative;
+        right: inherit;
+        top: inherit;
+        padding: inherit;
+    } 
+    
+    
+    .sd-content ul {
+        text-align: center;
+    }
+	
+	/* MISC */
+	
+	.cf5_rps {padding: 15px 0 0 30px;}
+	
+	/* new clearfix */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+.rps_sldrtitle {color: #737373}
+
+img#wpstats{width:0px;height:0px;padding:0px;border:none;overflow:hidden}
+
+.share-custom  a, .share-custom  span {
+width: 50px;
+}
+
+/* tooltips */
+
+#tt {position:absolute; display:block;}
+#tttop {display:block; height:5px; margin-left:5px;}
+#ttcont {display:block; padding:2px 12px 3px 7px; margin-left:5px; background:#666; color:#FFF}
+#ttbot {display:block; height:5px; margin-left:5px;}
+
+/* sermonz */
+
+.sermon-browser h2 {
+	clear: both;
+}
+
+#content div.sermon-browser table, #content div.sermon-browser td {
+	border-top: none;
+	border-bottom: none;
+	border-left: none;
+	border-right: none;
+}
+
+#content div.sermon-browser tr td {
+	padding: 4px 0;
+}
+
+#content div.sermon-browser table.podcast table {
+	margin: 0 1em;
+}
+
+#content div.sermon-browser td.sermon-title, #content div.sermon-browser td.sermon-passage {
+	
+}
+
+div.sermon-browser table.sermons {
+	width: 100%;
+	clear:both;
+}
+
+#content div.sermon-browser table.sermons td.sermon-title {
+	font-weight:bold;
+	font-size: 140%;
+	padding-top: 2em;
+}
+
+div.sermon-browser table.sermons td.sermon-passage {
+	font-weight:bold;
+	font-size: 110%;
+}
+
+#content div.sermon-browser table.sermons td.preacher {
+	border-bottom: 1px solid #444444;
+	padding-bottom: 1em;
+}
+
+div.sermon-browser table.sermons td.files img {
+	border: none;
+	margin-right: 24px;
+}
+
+table.sermonbrowser td.fieldname {
+	font-weight:bold;
+	padding-right: 10px;
+	vertical-align:bottom;
+}
+
+table.sermonbrowser td.field input, table.sermonbrowser td.field select{
+	width: 170px;
+}
+
+table.sermonbrowser td.field  #date, table.sermonbrowser td.field #enddate {
+	width: 150px;
+}
+
+table.sermonbrowser td {
+	white-space: nowrap;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+table.sermonbrowser td.rightcolumn {
+	padding-left: 10px;
+}
+
+div.sermon-browser div.floatright {
+	float: right
+}
+
+div.sermon-browser div.floatleft {
+	float: left
+}
+
+img.sermon-icon , img.site-icon {
+	border: none;
+}
+
+table.podcast {
+	margin: 0 0 1em 0;
+}
+
+.podcastall {
+	float:left;
+	background: #fff0c8 url(wp-content/plugins/sermon-browser/sb-includes/icons/podcast_background.png) repeat-x;
+	padding: 0.5em;
+	font-size: 1em;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+}
+
+.podcastcustom {
+	float:right;
+	background: #fce4ff url(wp-content/plugins/sermon-browser/sb-includes/icons/podcast_custom_background.png) repeat-x;
+	padding: 0.5em;
+	font-size: 1em;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+}
+
+td.podcast-icon {
+	padding-right:1em;
+}
+
+div.filtered, div.mainfilter {
+	text-align: left;
+}
+
+div.filter {
+	margin-bottom: 1em;
+}
+
+.filter-heading {
+	font-weight: bold;
+}
+
+
+
+div.sermon-browser-results span.preacher {
+	font-size: 120%;
+}
+
+div.sermon-browser-results span.scripture {
+	font-size: 80%;
+}
+
+div.sermon-browser-results img.preacher {
+	float:right;
+	margin-left: 1em;
+}
+
+div.sermon-browser-results div.preacher-description {
+	margin-top: 0.5em;
+}
+
+div.sermon-browser-results div.preacher-description span.about {
+	font-weight: bold;
+	font-size: 120%;
+}
+
+span.chapter-num {
+	font-weight: bold;
+	font-size: 150%;
+}
+
+span.verse-num {
+	vertical-align:super;
+	line-height: 1em;
+	font-size: 65%;
+}
+
+div.esv span.small-caps {
+	font-variant: small-caps;
+}
+
+div.net p.poetry {
+	font-style: italics;
+	margin: 0
+}
+
+div.sermon-browser #poweredbysermonbrowser {
+	text-align:center;
+}
+div.sermon-browser-results #poweredbysermonbrowser {
+	text-align:right;
+}
+
+table.nearby-sermons {
+	width: 100%;
+	clear:both;
+}
+
+table.nearby-sermons td, table.nearby-sermons th {
+	text-align: center;
+}
+
+table.nearby-sermons .earlier {
+	padding-right: 1em;
+	text-align: left;
+}
+
+table.nearby-sermons .later {
+	padding-left: 1em;
+	text-align:right;
+}
+
+table.nearby-sermons td {
+	width: 33%;
+	vertical-align: top;
+}
+
+ul.sermon-widget {
+	list-style-type:none;
+	margin:0;
+	padding: 0;
+}
+
+ul.sermon-widget li {
+	list-style-type:none;
+	margin:0;
+	padding: 0.25em 0;
+}
+
+ul.sermon-widget li span.sermon-title {
+	font-weight:bold;
+}
+
+p.audioplayer_container {
+	display:inline !important;
+}
+
+div.sb_edit_link {
+	display:inline;
+}
+h2 div.sb_edit_link {
+	font-size: 80%;
+}
+
+.clear {
+	clear:both;
+}
+
+.sermon-browser a.post-next, .sermon-browser a.post-prev {
+text-decoration: none !important;
+}
+
+.sermon-browser a.post-next em, .sermon-browser a.post-prev em {
+padding-top: 10px;
+display: block;
+}
+
+#sb_popular_wrapper_w  li {
+margin-bottom: 10px;
+}
+
+/* donation */
+
+
+/* glossary  */
+
+#glossaryList h4 {
+font-family: 'Lato';
+background-color: #FFEB92;
+padding: 2px;
+width: 1em;
+text-align: center;
+font-weight: bold;
+}
+
+/* related posts */
+
+.related-posts {
+width: 100%;
+display: block;
+overflow: hidden;
+margin-top: 50px;
+padding-left: 30px;
+font-size: 12px;
+color: #737373; 
+}
+.related-posts h3 {
+font-size: larger;
+margin-bottom: 16px;
+}
+.related-posts ul li {
+float: left;
+width: 30%;
+margin: 0 4.3% 3% 0;
+}
+.related-posts ul li:last-child {
+margin-right: 0 !  important;
+}
+h5.related-article {
+margin: 10px 0;
+width: 150px;
+}
+h5.related-article a {
+color: #333333;
+font-size: 12px;
+font-weight: bold;
+line-height: 16px;
+}
+h5.related-article a:hover {
+color: #333333;
+text-decoration: none;
+}
+
+.omc-image-resize {width: 150px; height: 150px}
+
+/* shop */
+
+#content, .sidebar {
+background-color: #fff;
+
+}
+
+.commerce #content {
+padding-left: 20px;
+padding-right: 0px;
+
+}
+
+.commerce {
+font-size: 130% !important;
+}
+
+.commerce .sidebar {
+margin-left: 0px !important;
+}
+
+
+.woocommerce ul.products li.product h3, .woocommerce-page ul.products li.product h3 {
+font-size:: 1.3em;
+}
+
+.woocommerce .related ul li.product img, 
+.woocommerce .related ul.products li.product img, 
+.woocommerce .upsells.products ul li.product img, 
+.woocommerce .upsells.products ul.products li.product img, 
+.woocommerce-page .related ul li.product img, 
+.woocommerce-page .related ul.products li.product img, 
+.woocommerce-page .upsells.products ul li.product img, 
+.woocommerce-page .upsells.products ul.products li.product img, 
+.woocommerce ul.products li.product a img, 
+.woocommerce-page ul.products li.product a img, 
+.woocommerce img, .woocommerce-page img {
+width: auto !important;
+}
+
+.woocommerce .woocommerce-ordering select, .woocommerce-page .woocommerce-ordering select {
+margin-right: 2em;
+}
+
+.woocommerce ul.products, .woocommerce-page ul.products {
+	max-width: 620px;
+}
+
+ul.products li.product a {
+text-decoration: none !important;
+}
+
+.widget_shopping_cart  p.buttons {
+margin-top: 15px !important;
+}
+
+div.product div.images img, #content div.product div.images img {
+width: auto !important;
+max-width: 90%;
+}
+
+div.product div.images, #content div.product div.images {
+width: 40% !important;
+}
+
+div.product div.summary, #content div.product div.summary {
+float: left !important;
+ 
+}
+
+/* Sermon Media */
+.single-ct_sermon .meta {
+	float:left;
+	width:100%;
+}
+.ct_sermon .meta p,
+.single-ct_sermon .meta p {
+	float:left;
+	width:206px;
+}
+.ct_sermon .meta p span,
+.single-ct_sermon .meta p span {
+	font-family: "Volkhov", Georgia, "Times New Roman", Times, serif;
+	font-size:12px;
+	text-transform:uppercase;
+}
+.single-ct_sermon .meta p a {
+	clear:left;
+	float:left;
+}
+.single-ct_sermon .video_player {
+	clear:both;
+	text-shadow:none;
+}
+
+.audio_player {
+	float: left;
+}
+
+.player {
+	width: 250px;
+}
+
+.single-ct_sermon .bible_refs ul li {
+	list-style:none;
+	margin-left:0;
+}
+
+.action {
+clear: both;
+}
+
+.single-ct_sermon .action ul {
+	margin-top:10px;
+}
+.single-ct_sermon .action ul li {
+	display:inline;
+	line-height:50px;
+	list-style:none;
+	margin-left:0;
+	margin-right:10px;
+	white-space:nowrap;
+}
+.single-ct_sermon .action a.button {
+	margin-top:30px;
+}
+.single-ct_sermon .action a img {
+	margin-bottom:-7px;
+	margin-left:-5px;
+}
+
+/* Sermon Filtering */
+#sermon-filter {
+	margin-bottom:50px;
+    clear: both;
+	margin: 1em;
+}
+
+#sermon_filter div {
+	width: 250px;
+	float: left;
+	margin: 5px;
+}
+
+#sermon_filter .sermon_keywords {
+	width:250px;
+	padding:0 10px 0;
+	margin-left: 5px;
+	height: 42px;
+}
+
+.wp-audio-playlist {
+-webkit-user-select: none;  /* Chrome all / Safari all */
+-moz-user-select: none;     /* Firefox all */
+-ms-user-select: none;      /* IE 10+ */
+-o-user-select: none;
+user-select: none;
+}
+
+.audio_player h3, .video_player h3, .action h3 {
+color: #000;
+font-size: 14px;
+font-weight: normal;
+text-decoration: none;
+margin-bottom: 10px;
+font-variant:small-caps;
+}
+
+.sbHolder{
+	background-color: white;
+	border: solid 1px #515151;
+	font-family: "Volkhov", Georgia, "Times New Roman", Times, serif;
+	font-size: 12px;
+	font-weight: normal;
+	height: 30px;
+	position: relative;
+	width: 200px;
+}
+.sbHolder:focus .sbSelector{
+	
+}
+.sbSelector{
+	display: block;
+	height: 30px;
+	left: 0;
+	line-height: 30px;
+	outline: none;
+	overflow: hidden;
+	position: absolute;
+	text-indent: 10px;
+	top: 0;
+	width: 170px;
+}
+.sbSelector:link, .sbSelector:visited, .sbSelector:hover{
+	color: black;
+	outline: none;
+	text-decoration: none;
+}
+.sbToggle{
+	background: url(images/select-icons.png) 0 -116px no-repeat;
+	background-color: gray;
+	display: block;
+	height: 30px;
+	outline: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 30px;
+}
+.sbToggle:hover{
+	background: url(images/select-icons.png) 0 -167px no-repeat;
+	background-color: gray;
+}
+.sbToggleOpen{
+	background: url(images/select-icons.png) 0 -16px no-repeat;
+	background-color: gray;
+}
+.sbToggleOpen:hover{
+	background: url(images/select-icons.png) 0 -66px no-repeat;
+	background-color: gray;
+}
+.sbHolderDisabled{
+	background-color: #3C3C3C;
+	border: solid 1px #515151;
+}
+.sbHolderDisabled .sbHolder{
+	
+}
+.sbHolderDisabled .sbToggle{
+	
+}
+.sbOptions{
+	background-color: white;
+	border: solid 1px #515151;
+	list-style: none;
+	left: -1px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 30px;
+	width: 200px;
+	z-index: 1;
+	overflow-y: auto;
+}
+.sbOptions li{
+	padding: 0 7px;
+}
+.sbOptions a{
+	border-bottom: dotted 1px #515151;
+	display: block;
+	outline: none;
+	padding: 7px 0 7px 3px;
+}
+.sbOptions a:link, .sbOptions a:visited{
+	color: darkgray;
+	text-decoration: none;
+}
+.sbOptions a:hover,
+.sbOptions a:focus,
+.sbOptions a.sbFocus{
+	/* color: #EBB52D; */
+	color: black;
+}
+.sbOptions li.last a{
+	border-bottom: none;
+}
+.sbOptions .sbDisabled{
+	border-bottom: dotted 1px #515151;
+	color: #999;
+	display: block;
+	padding: 7px 0 7px 3px;
+}
+.sbOptions .sbGroup{
+	border-bottom: dotted 1px #515151;
+	color: #EBB52D;
+	display: block;
+	font-weight: bold;
+	padding: 7px 0 7px 3px;
+}
+.sbOptions .sbSub{
+	padding-left: 17px;
+}
+
+.audio_player a.button, .video_player a.button, .action a.button {
+
+margin: 12px 0;
+display: inline-block;
+
+}
+
+.post.ct_sermon {
+padding: 30px 0 0 30px;
+clear: both;
+margin-right: 1em;
+color: #262626;
+font: 12px/1.5 "Volkhov", Georgia, "Times New Roman", Times, serif;
+}
+
+.list .post.ct_sermon .post-meta {
+	font-size: 12px;
+}
+
+.download {
+display: inline-block;
+height: 31px;
+background: #dadada;
+box-sizing: border-box;
+border-color: #848484 #c1c1c1 #e1e1e1;
+color: #848484 !important;
+text-transform: uppercase;
+text-decoration: none;
+vertical-align: middle;
+height: auto !important;
+font-weight: bold;
+box-shadow: 0 0 0 #fff !important;
+padding: 10px 10px 10px 50px !important;
+margin: 10px 0;
+background-position: 10px 50%;
+background-repeat: no-repeat;
+font-style: normal !important;
+}
+
+
+.download:hover {
+color: white;
+}
+
+
+
+.audio {
+background-image: url('/wp-content/themes/sight/images/raster/gray_dark/curved_arrow_24x18.png');
+}
+
+.print {
+background-image: url('/wp-content/themes/sight/images/raster/gray_dark/book_alt2_24x21.png');
+}
+
+.action .podcast {
+background-image: url('/wp-content/themes/sight/images/raster/gray_dark/rss_alt_24x24.png');
+}
+
+.itunes {
+background-image: url('/wp-content/themes/sight/images/raster/gray_dark/iphone_18x24.png');
+}
+
+.type-jep {
+margin: 1em;
+background-color: #fff;
+padding: 1em;
+}
+
+.type-jep h1 {
+font-family: 'Lato';
+color: #000;
+font-size: 20px;
+letter-spacing: 2px;
+padding: 0 0 15px 30px;
+border-bottom: 1px solid #d9d9d9;
+text-transform: uppercase;
+position: relative;
+}
+
+
+.post-content table,
+.comment-content table {
+	border-bottom: 1px solid #ededed;
+	color: #757575;
+	font-size: 12px;
+	font-size: 0.857142857rem;
+	line-height: 2;
+	margin: 0 0 24px;
+	margin: 0 0 1.714285714rem;
+	width: 100%;
+}
+.post-content table caption,
+.comment-content table caption {
+	font-size: 16px;
+	font-size: 1.142857143rem;
+	margin: 24px 0;
+	margin: 1.714285714rem 0;
+}
+.post-content td,
+.comment-content td {
+	border-top: 1px solid #ededed;
+	padding: 6px 10px 6px 0;
+}
+
+.tftable{color:#333;width:100%;border-width:1px;border-color:#729ea5;border-collapse:collapse}
+.tftable th{background-color:#acc8cc;border-width:1px;padding:8px;border-style:solid;border-color:#729ea5;text-align:center !important}
+.tftable tr{background-color:#fff}.tftable td{border-width:1px;padding:8px;border-style:solid;border-color:#729ea5}
+.tftable tr:hover{background-color:#ff9}
+/* iPad [portrait + landscape] */
+
+/*
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px)  {
+	.slideshow  {
+	margin: auto;
+	}
+	
+	img.thumbnail  {max-width: 50% !important}
+
+	#content {
+     padding: 20px;
+     width: auto;
+	 font-size: larger;
+	 float: none;
+	 }
+	 
+	 .wrapper {
+	 width: 100%;
+	 padding-right: 20px;
+	 }
+	 
+	 .post-content {
+	font-size: 14px !important;
+	}
+	
+	.sidebar {
+    float: left;
+    padding: 4px 30px 0 0;
+    width: 100%;
+	}
+	
+	.widget {
+	float:  none;
+    margin: 40px !important;
+    width: auto;
+	}
+	
+	.tz_ad300_widget, #text-6 {
+    display: none;
+	}
+	
+} */
+
+
+@media only screen and (max-width: 767px){
+
+#newhere {
+        display: none;
+}
+
+img {
+	max-width: 100% !important;
+	height: auto !important;
+}
+
+.thumbnail, .thumb {
+	max-width: 45.3125% !important;
+}
+
+.type-ct_sermon .thumbnail {
+	max-width: none !important;
+}
+
+
+.list .post img.thumb {
+    float: left;
+    margin: 0 15px 5px 0;
+}
+
+.header {height: auto}
+
+.logo { height: auto; float: none }
+
+.menu {
+padding-right: 0px;
+float: left;
+}
+
+.nav, .menu {
+width: 50%;
+padding-left: 12px;
+margin-top: 12px;
+}
+
+.search {
+width: auto;
+margin-top: 0;
+float: right;
+clear: both;
+}
+
+ .slideshow  {
+	display: none;
+ }
+ 
+ .post-psuedo-col {
+padding-left: 0;
+}
+
+ #footer-inner {
+	width: auto;
+	float:none;
+ }
+ 
+ .footer-widget, .footer-widget-last  {
+	width: auto;
+	float:none !important;
+	padding: 0 30px;
+ }
+ 
+ #footer-notes-inner {
+	width: auto;
+	padding: 0 12px;
+ }
+ 
+ #content{
+	width: auto;
+	float:none;
+	padding-right: 20px;
+	overflow: hidden;
+	}
+
+#content.wide {
+	width: auto;
+}	
+	
+	.wrapper {
+	 width: 100%;
+	 }
+	 
+ .sidebar {
+	width: auto;
+	float: none;
+	padding: 30px;
+	background-color: #fff;
+	}
+ .tz_ad300_widget {
+	float: left;
+	margin-right: 2.5em;
+	}
+.twitter-timeline-rendered {
+	width: 100%;
+	}	
+.search {
+    clear: both;
+    float: none;
+    margin-top: 0;
+    padding-left: 12px;
+    width: 50%;
+}
+
+.related-posts {
+	display: none;
+}
+
+}

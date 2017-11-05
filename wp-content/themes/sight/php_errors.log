@@ -1,0 +1,8 @@
+[15-Sep-2012 22:31:57 UTC] PHP Fatal error:  Call to undefined function get_header() in /opt/bitnami/apps/wordpress1/htdocs/wp-content/themes/sight/index.php on line 1
+[27-Sep-2012 18:36:26 UTC] PHP Fatal error:  Call to undefined function get_header() in /opt/bitnami/apps/wordpress1/htdocs/wp-content/themes/sight/index.php on line 1
+[26-Oct-2012 17:32:13 UTC] PHP Fatal error:  Call to undefined function get_header() in /opt/bitnami/apps/wordpress1/htdocs/wp-content/themes/sight/index.php on line 1
+[31-Oct-2012 00:05:03 UTC] PHP Fatal error:  Call to undefined function get_header() in /opt/bitnami/apps/wordpress1/htdocs/wp-content/themes/sight/index.php on line 1
+[01-Nov-2012 16:36:33 UTC] PHP Fatal error:  Call to undefined function add_theme_support() in /opt/bitnami/apps/wordpress1/htdocs/wp-content/themes/sight/functions.php on line 15
+[01-Nov-2012 16:36:53 UTC] PHP Fatal error:  Call to undefined function add_theme_support() in /opt/bitnami/apps/wordpress1/htdocs/wp-content/themes/sight/functions.php on line 15
+[01-Nov-2012 16:42:25 UTC] PHP Fatal error:  Call to undefined function add_theme_support() in /opt/bitnami/apps/wordpress1/htdocs/wp-content/themes/sight/functions.php on line 15
+[12-Nov-2012 04:59:57 UTC] PHP Fatal error:  Call to undefined function get_header() in /opt/bitnami/apps/wordpress1/htdocs/wp-content/themes/sight/index.php on line 1

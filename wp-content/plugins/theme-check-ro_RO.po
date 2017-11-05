@@ -1,0 +1,781 @@
+# Translation of Stable (latest release) in Romanian
+# This file is distributed under the same license as the Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-09-01 06:43:22+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);\n"
+"X-Generator: GlotPress/2.1.0-alpha\n"
+"Project-Id-Version: Stable (latest release)\n"
+
+#: checks/deregister.php:19
+msgid "Found wp_deregister_script in %1$s. Themes must not deregister core scripts."
+msgstr "S-a găsit wp_deregister_script în %1$s. Temele nu trebuie să înlăture scripturile nucleului."
+
+#: checks/favicon.php:17
+msgid "Possible Favicon found in %1$s. Favicons are handled by the Site Icon setting in the customizer since version 4.3."
+msgstr "Favicon acceptabil găsit în %1$s. Favicoanele sunt gestionate prin setarea icon sit în personalizator începând cu versiunea 4.3."
+
+#: checks/filenames.php:33
+msgid "Lubith theme generator file"
+msgstr "Fișier generator temă Lubith"
+
+#: checks/included-plugins.php:15
+msgid "Zipped Plugin"
+msgstr "Modul arhivat"
+
+#: checks/included-plugins.php:23
+msgid "<strong>Zip file found.</strong> Plugins are not allowed in themes. The zip file found was <em>%s</em>."
+msgstr "<strong>Fișier zip găsit.</strong> Modulele nu sunt permise în teme. A fost găsit fișierul zip <em>%s</em>."
+
+#: checks/style_tags.php:25
+msgid "Themes that use the tag accessibility-ready will need to undergo an accessibility review."
+msgstr "Temele care folosesc tagul accessibility-ready vor trebui să fie supuse unei examinări de accesibilitate."
+
+#: checks/style_tags.php:25
+msgid "See <a href=\"https://make.wordpress.org/themes/handbook/review/accessibility/\">https://make.wordpress.org/themes/handbook/review/accessibility/</a>"
+msgstr "Vezi <a href=\"https://make.wordpress.org/themes/handbook/review/accessibility/\">https://make.wordpress.org/themes/handbook/review/accessibility/</a>"
+
+#: checks/style_tags.php:30
+msgid "The tag %s has been deprecated, please remove it from your style.css header."
+msgstr "Tagul %s este învechit, te rog elimină-l din antetul style.css."
+
+#: checks/textdomain.php:136
+msgid "This theme text domain does not match the theme's slug. The text domain used: %s"
+msgstr "Acest domeniu-text al temei nu se potrivește cu descriptorul temei. Domeniul-text folosit: %s"
+
+#: checks/textdomain.php:137
+msgid "This theme's correct slug and text-domain is %s."
+msgstr "Descriptorul corect și domeniu text al acestei teme este %s."
+
+#: checks/textdomain.php:143
+msgid "Warning"
+msgstr "Avertizare"
+
+#: checks/title.php:20
+msgid "No reference to <strong>add_theme_support( \"title-tag\" )</strong> was found in the theme."
+msgstr "În temă n-a fost găsită nicio referință la <strong>add_theme_support( \"title-tag\" )</strong>."
+
+#: checks/title.php:28
+msgid "The theme must not used the <strong>&lt;title&gt;</strong> tags."
+msgstr "Tema nu trebuie să folosească taguri <strong>&lt;title&gt;</strong>."
+
+#: checks/title.php:35
+msgid "The theme must not call to <strong>wp_title()</strong>."
+msgstr "Tema nu trebuie să apeleze la <strong>wp_title()</strong>."
+
+#: checks/adminbar.php:20 checks/adminbar.php:32
+msgid "You are not allowed to hide the admin bar."
+msgstr "Nu ai dreptul de a ascunde bara de administrare."
+
+#: checks/filenames.php:58
+msgid "Could not find the file %1$s in the theme. %2$s"
+msgstr "N-am putut găsi fișierul %1$s în temă. %2$s"
+
+#: checks/i18n.php:52
+msgid "Possible variable %1$s found in translation function in %2$s. Translation function calls must NOT contain PHP variables. %3$s"
+msgstr "O posibilă variabilă %1$s găsită în funcția de traducere în %2$s. Apelurile funcției de traducere NU trebuie să conțină variabile PHP. %3$s"
+
+#: checks/iframes.php:20 checks/malware.php:23
+msgid "%1$s was found in the file %2$s %3$s.%4$s"
+msgstr "%1$s a fost găsit în fișierul %2$s %3$s.%4$s"
+
+#: checks/include.php:19
+msgid "%1$s %2$s %3$s"
+msgstr "%1$s %2$s %3$s"
+
+#: checks/links.php:26
+msgid "Possible hard-coded links were found in the file %1$s.%2$s"
+msgstr "Posibile legături hard-codate au fost găsite în fișierul %1$s.%2$s"
+
+#: checks/phpshort.php:14
+msgid "Found PHP short tags in file %1$s.%2$s"
+msgstr "Au fost găsite taguri scurte PHP în fișierul %1$s.%2$s"
+
+#: checks/post-formats.php:27
+msgid "%1$s was found in the file %2$s. However get_post_format and/or has_post_format were not found, and no use of formats in the CSS was detected."
+msgstr "%1$s a fost găsit în fișierul %2$s. Dar get_post_format și/sau  has_post_format n-au fost găsite și n-a fost detectată nicio folosire a formatelor de articol nici în CSS."
+
+#: checks/searchform.php:16
+msgid "%1$s %2$s%3$s"
+msgstr "%1$s %2$s%3$s"
+
+#: checks/style_suggested.php:20
+msgid "%s is missing from your style.css header."
+msgstr "%s lipsește din antetul fișierului tău style.css."
+
+#: checks/style_tags.php:32
+msgid "Found wrong tag, remove %s from your style.css header."
+msgstr "A fost găsit un tag greșit, %s a fost înlăturat din antetul fișierului tău style.css."
+
+#: checks/textdomain.php:133
+msgid "(If this is a child theme, you can ignore this error.)"
+msgstr "(dacă aceasta este o temă copil, poți ignora această eroare.)"
+
+#: checks/textdomain.php:79
+msgid "Found a translation function that has an incorrect number of arguments. Function %1$s, with the arguments %2$s"
+msgstr "Am găsit o funcție de traducere care are un număr greșit de argumente. Funcția %1$s, cu argumentele %2$s"
+
+#: checks/textdomain.php:109
+msgid "Found a translation function that is missing a text-domain. Function %1$s, with the arguments %2$s"
+msgstr "Am găsit o funcție de traducere căreia îi lipsește un domeniu-text. Funcția %1$s, cu argumentele %2$s"
+
+#: checks/textdomain.php:146
+msgid "The domains found are %s"
+msgstr "Domeniile găsite sunt %s"
+
+#: checks/textdomain.php:151
+msgid "The domain found is %s"
+msgstr "Domeniul găsit este %s"
+
+#: checks/time_date.php:22
+msgid "At least one hard coded date was found in the file %1$s. Consider %2$s instead."
+msgstr "Cel puțin o dată hard-codată a fost găsită în fișierul %1$s. Recomandăm în locul ei %2$s."
+
+#: main.php:61
+msgid "This child theme requires at least version %1$s of theme %2$s to be installed. You only have %3$s please update the parent theme."
+msgstr "Această temă copil necesită ca cel puțin versiunea %1$s a temei %2$s să fie instalată. Tu ai doar %3$s te rog actualizează tema părinte."
+
+#: main.php:82
+msgid " Running %1$s tests against %2$s using Guidelines Version: %3$s Plugin revision: %4$s"
+msgstr " Rularea a %1$s teste pentru %2$s folosind versiunea de îndrumări: %3$s Revizie modul: %4$s"
+
+#. Author of the plugin/theme
+msgid "Otto42, pross"
+msgstr "Otto42, pross"
+
+#: checks/badthings.php:29
+msgid "Found %1$s in the file %2$s. %3$s. %4$s"
+msgstr "Am găsit %1$s în fișierul %2$s. %3$s. %4$s"
+
+#: checks/basic.php:34
+msgid "Could not find %1$s. %2$s"
+msgstr "Nu am putut găsi %1$s. %2$s"
+
+#: checks/constants.php:24 checks/more_deprecated.php:52
+msgid "%1$s was found in the file %2$s. Use %3$s instead.%4$s"
+msgstr "%1$s a fost găsit în fișierul %2$s. Folosește mai bine %3$s.%4$s"
+
+#: checks/filenames.php:44
+msgid "%1$s %2$s found."
+msgstr "%1$s %2$s găsite."
+
+#: checks/filenames.php:51
+msgid "Could not find the file %s in the theme."
+msgstr "N-am putut găsi fișierul %s în temă."
+
+#: main.php:136
+msgid "If you have found a bug or would like to make a suggestion or contribution, please leave a post on the <a href=\"%1$s\">WordPress forums</a>, or talk about it with the theme review team on <a href=\"%2$s\">Make WordPress Themes</a> site."
+msgstr "Dacă ai găsit o eroare sau dorești să faci o sugestie sau să cotribui, te rog lasă un mesaj pe <a href=\"%1$s\">forumurile WordPress</a>, sau discută despre acestea cu echipa de evaluare a temelor pe situl <a href=\"%2$s\">Fă teme WordPress</a>."
+
+#: main.php:137
+msgid "The code for Theme Check can be contributed to on <a href=\"%s\">GitHub</a>."
+msgstr "Contribuția cu cod pentru Theme Check se poate face la <a href=\"%s\">GitHub</a>."
+
+#: theme-check.php:50
+msgctxt "title of the main page"
+msgid "Theme Check"
+msgstr "Theme Check"
+
+#: checks/textdomain.php:132
+msgid "Your theme appears to be in the wrong directory for the theme name. The directory name must match the slug of the theme. This theme's correct slug and text-domain is %s."
+msgstr "Tema ta se pare că este într-un director greșit pentru numele temei. Directorul temei trebuie să fie același cu descriptorul temei. Descriptorul și domeniul-text corect pentru acestă temă este %s."
+
+#: checks/textdomain.php:144
+msgid "More than one text-domain is being used in this theme. This means the theme will not be compatible with WordPress.org language packs."
+msgstr "În această temă este folosit mai mult de un domeniu-text. Asta înseamnă că tema nu va fi compatibilă cu pachetele lingvistice WordPress.org."
+
+#: checks/textdomain.php:149
+msgid "Only one text-domain is being used in this theme. Make sure it matches the theme's slug correctly so that the theme will be compatible with WordPress.org language packs."
+msgstr "Doar un domeniu-text este folosit în această temă. Asigură-te că este identic cu descriptorul temei așa încât tema să fie compatibilă cu pachetele lingvistice WordPress.org."
+
+#: checks/style_needed.php:26
+msgid "<strong>.screen-reader-text</strong> css class is needed in your theme css. See See: <a href=\"http://codex.wordpress.org/CSS#WordPress_Generated_Classes\">the Codex</a> for an example implementation."
+msgstr "Clasa css <strong>.screen-reader-text</strong> e necesară în css-ul temei tale. Vezi: <a href=\"http://codex.wordpress.org/CSS#WordPress_Generated_Classes\">Codex-ul</a> pentru un exemplu de implementare."
+
+#: main.php:68
+msgid "This is a child theme. The parent theme is: %s. These files have been included automatically!"
+msgstr "Asta e o temă copil. Tema părinte este: %s. Aceste fișiere au fost incluse automat!"
+
+#: main.php:72
+msgid "Child theme does not have the <strong>Template Version</strong> tag in style.css."
+msgstr "O temă copil nu are eticheta <strong>Template Version</strong> în style.css."
+
+#: main.php:74
+msgid "Child theme is only tested up to version %1$s of %2$s breakage may occur! %3$s installed version is %4$s"
+msgstr "O temă copil e testată doar de la versiunea %1$s a %2$s pot apărea blocaje! Versiunea instalat de %3$s este %4$s"
+
+#: checks/widgets.php:34
+msgid "Sidebars need to be registered in a custom function hooked to the <strong>widgets_init</strong> action. See: %s."
+msgstr "Coloanele laterale (sidebars) trebuie înregistrate într-o funcție personalizată agățată (hook) de acțiunea <strong>widgets_init</strong>.  Vezi: %s."
+
+#. Plugin URI of the plugin/theme
+msgid "http://ottopress.com/wordpress-plugins/theme-check/"
+msgstr "http://ottopress.com/wordpress-plugins/theme-check/"
+
+#. Description of the plugin/theme
+msgid "A simple and easy way to test your theme for all the latest WordPress standards and practices. A great theme development tool!"
+msgstr "Un mod simplu și ușor de a testa tema pentru toate standardele și practicile WordPress recente. Un instrument folositor pentru dezvoltarea temelor!"
+
+#. Author URI of the plugin/theme
+msgid "http://ottopress.com"
+msgstr "http://ottopress.com"
+
+#: theme-check.php:40
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Nu ai permisiuni suficiente pentru a accesa această pagină."
+
+#. Plugin Name of the plugin/theme
+msgid "Theme Check"
+msgstr "Verificare Temă"
+
+#: main.php:150
+msgid "Themes and Templates forum"
+msgstr "Forumul Teme și Șabloane"
+
+#: main.php:151
+msgid "Theme Unit Tests"
+msgstr "Teste unit temă"
+
+#: main.php:170
+msgid "Check it!"
+msgstr "Verific-o!"
+
+#: main.php:171
+msgid "Output in Trac format."
+msgstr "Afișează în format Trac"
+
+#: main.php:172
+msgid "Suppress INFO."
+msgstr "Supresează INFO."
+
+#: main.php:138
+msgid "Testers"
+msgstr "Testeri"
+
+#: main.php:139
+msgid "The WordPress Theme Review Team"
+msgstr "Echipa WordPress de verificare a temelor"
+
+#: main.php:145
+msgid "Now your theme has passed the basic tests you need to check it properly using the test data before you upload to the WordPress Themes Directory."
+msgstr "Acum că tema ta a trecut teste de bază trebuie să o verifici bine folosind datele de test înainte de a o încărca în Directorul de teme WordPress."
+
+#: main.php:146
+msgid "Make sure to review the guidelines at <a href=\"https://codex.wordpress.org/Theme_Review\">Theme Review</a> before uploading a Theme."
+msgstr "Asigură-te că ai parcurs recomandările de la <a href=\"https://codex.wordpress.org/Theme_Review\">Verificare temă</a> înainte de a încărca o temă."
+
+#: main.php:147
+msgid "Codex Links"
+msgstr "Legături"
+
+#: main.php:149
+msgid "Theme Development"
+msgstr "Dezvoltare Temă"
+
+#: main.php:131
+msgid "Contact"
+msgstr "Contact"
+
+#: main.php:132
+msgid "Theme Check is maintained by %1$s and %2$s."
+msgstr "Theme Check este întreținut de %1$s și %2$s."
+
+#: main.php:129
+msgid "About"
+msgstr "Despre"
+
+#: main.php:130
+msgid "The Theme Check plugin is an easy way to test your theme and make sure it's up to date with the latest theme review standards. With it, you can run all the same automated testing tools on your theme that WordPress.org uses for theme submissions."
+msgstr "Modulul de verificare a temei este o modalitate simplă de a-ți testa tema și a te asigura că se ridică la nivelul și specificațiile ultimelor standarde de revizuire a temelor. Cu el poți rula aceleași unelte de testare automată a temei tale pe care le folosește și WordPress.org pentru temele înscrise."
+
+#: main.php:90
+msgid "One or more errors were found for %1$s."
+msgstr "Una sau mai multe erori au fost găsite pentru %1$s."
+
+#: main.php:92
+msgid "%1$s passed the tests"
+msgstr "%1$s a trecut testele"
+
+#: main.php:95
+msgid "<strong>WP_DEBUG is not enabled!</strong> Please test your theme with <a href=\"https://codex.wordpress.org/Editing_wp-config.php\">debug enabled</a> before you upload!"
+msgstr "<strong>WP_DEBUG nu este activat!</strong> Te rog testează tema cu  <a href=\"https://codex.wordpress.org/Editing_wp-config.php\">depanarea activată</a> înainte de încărcare!"
+
+#: main.php:51
+msgid "Author URI"
+msgstr "URI autor"
+
+#: main.php:52
+msgid "Theme URI"
+msgstr "URI temă"
+
+#: main.php:53
+msgid "License"
+msgstr "Licență"
+
+#: main.php:54
+msgid "License URI"
+msgstr "URI Licență"
+
+#: main.php:55
+msgid "Tags"
+msgstr "Etichete"
+
+#: checks/worms.php:12 checks/worms.php:13
+msgid "Symptom of the \"Pharma Hack\" <a href=\"http://blog.sucuri.net/2010/07/understanding-and-cleaning-the-pharma-hack-on-wordpress.html\">[1]</a>"
+msgstr "Simptom de \"Pharma Hack\" <a href=\"http://blog.sucuri.net/2010/07/understanding-and-cleaning-the-pharma-hack-on-wordpress.html\">[1]</a>"
+
+#: main.php:12
+msgid "Parent theme %1$s not found! You have to have parent AND child-theme installed!"
+msgstr "Tema părinte %1$s nu a fost găsită! Trebuie să ai un părinte ȘI o temă copil instalate!"
+
+#: main.php:40
+msgid "Theme Info"
+msgstr "Info Temă"
+
+#: main.php:56
+msgid "Description"
+msgstr "Descriere"
+
+#: main.php:48
+msgid "Title"
+msgstr "Titlu"
+
+#: main.php:49
+msgid "Version"
+msgstr "Versiune"
+
+#: main.php:50
+msgid "Author"
+msgstr "Autor"
+
+#: checks/worms.php:10
+msgid "This may be a script used by hackers to get control of your server"
+msgstr "Ăsta poate fi un script folosit de hackeri pentru a prelua controlul serverului tău"
+
+#: checks/worms.php:11
+msgid "Tells a hacker what operating system your server is running"
+msgstr "Spune unui hacker ce sistem de operare execută serverul tău"
+
+#: checks/worms.php:9
+msgid "This may be a script used by hackers to get control of your server!"
+msgstr "Ăsta poate fi un script folosit de hackeri pentru a prelua controlul serverului tău!"
+
+#: checks/widgets.php:26
+msgid "The theme appears to use <strong>dynamic_sidebars()</strong> but no <strong>register_sidebar()</strong> was found. See: <a href='https://codex.wordpress.org/Function_Reference/register_sidebar'>register_sidebar</a><pre> &lt;?php register_sidebar( $args ); ?&gt;</pre>"
+msgstr "Tema pare să folosească <strong>dynamic_sidebars()</strong> dar n-a fost găsită nicio înregistrare cu <strong>register_sidebar()</strong>. Vezi: <a href='https://codex.wordpress.org/Function_Reference/register_sidebar'>register_sidebar</a><pre> &lt;?php register_sidebar( $args ); ?&gt;</pre>"
+
+#: checks/widgets.php:21
+msgid "The theme appears to use <strong>register_sidebar()</strong> but no <strong>dynamic_sidebar()</strong> was found. See: <a href='https://codex.wordpress.org/Function_Reference/dynamic_sidebar'>dynamic_sidebar</a><pre> &lt;?php dynamic_sidebar( $index ); ?&gt;</pre>"
+msgstr "Tema pare să folosească <strong>register_sidebar()</strong> dar n-a fost găsită nicio definire cu <strong>dynamic_sidebar()</strong>. Vezi: <a href='https://codex.wordpress.org/Function_Reference/dynamic_sidebar'>dynamic_sidebar</a><pre> &lt;?php dynamic_sidebar( $index ); ?&gt;</pre>"
+
+#: checks/widgets.php:16
+msgid "This theme contains no sidebars/widget areas. See <a href='https://codex.wordpress.org/Widgets_API'>Widgets API</a>"
+msgstr "Tema nu conține nicio coloană laterală/zonă de widget-uri. Vezi <a href='https://codex.wordpress.org/Widgets_API'>API pentru Widget-uri</a>"
+
+#: checks/title.php:49
+msgid "The <strong>&lt;title&gt;</strong> tags can only contain a call to <strong>wp_title()</strong>. Use the  <strong>wp_title filter</strong> to modify the output"
+msgstr "Tagurile <strong>&lt;title&gt;</strong> pot conține un apel la <strong>wp_title()</strong>. Folosește <strong>filtrul wp_title</strong> pentru a modifica rezultatul"
+
+#: checks/tags.php:13
+msgid "This theme doesn't seem to display tags. Modify it to display tags in appropriate locations."
+msgstr "Această temă nu pare să prezinte etichete. Modific-o pentru a afișa etichetele la locul lor."
+
+#: checks/style_tags.php:16
+msgid "<strong>Tags:</strong> is either empty or missing in style.css header."
+msgstr "<strong>Tags:</strong> este gol sau lipsește din antetul style.css."
+
+#: checks/style_needed.php:25
+msgid "<strong>.gallery-caption</strong> css class is needed in your theme css."
+msgstr "Propietatea css <strong>.gallery-caption</strong> este necesară în css temei."
+
+#: checks/style_needed.php:17
+msgid "<strong>Text Domain:</strong> is missing from your style.css header."
+msgstr "<strong>Domeniu-text:</strong> lipsește din antetul style.css."
+
+#: checks/style_needed.php:23
+msgid "<strong>.wp-caption</strong> css class is needed in your theme css."
+msgstr "Propietatea css <strong>.wp-caption</strong> este necesară în css temei."
+
+#: checks/style_needed.php:24
+msgid "<strong>.wp-caption-text</strong> css class is needed in your theme css."
+msgstr "Propietatea css <strong>.wp-caption-text</strong> este necesară în css temei."
+
+#: checks/style_needed.php:22
+msgid "<strong>.aligncenter</strong> css class is needed in your theme css."
+msgstr "Propietatea css <strong>.aligncenter</strong> este necesară în css temei."
+
+#: checks/style_needed.php:20
+msgid "<strong>.alignleft</strong> css class is needed in your theme css."
+msgstr "Propietatea css <strong>.alignleft</strong> este necesară în css temei."
+
+#: checks/style_needed.php:21
+msgid "<strong>.alignright</strong> css class is needed in your theme css."
+msgstr "Propietatea css <strong>.alignright</strong> este necesară în css temei."
+
+#: checks/style_needed.php:19
+msgid "<strong>.bypostauthor</strong> css class is needed in your theme css."
+msgstr "Propietatea css <strong>.bypostauthor</strong> este necesară în css temei."
+
+#: checks/style_needed.php:18
+msgid "<strong>.sticky</strong> css class is needed in your theme css."
+msgstr "Propietatea css <strong>.sticky</strong> este necesară în css temei."
+
+#: checks/style_needed.php:16
+msgid "<strong>License URI:</strong> is missing from your style.css header."
+msgstr "<strong>License URI:</strong> lipsește din antetul style.css."
+
+#: checks/style_needed.php:14
+msgid "<strong>Version:</strong> is missing from your style.css header."
+msgstr "<strong>Version:</strong> lipsește din antetul style.css."
+
+#: checks/style_needed.php:15
+msgid "<strong>License:</strong> is missing from your style.css header."
+msgstr "<strong>License:</strong> lipsește din antetul style.css."
+
+#: checks/style_needed.php:12
+msgid "<strong>Description:</strong> is missing from your style.css header."
+msgstr "<strong>Description:</strong> lipsește din antetul style.css."
+
+#: checks/style_needed.php:13
+msgid "<strong>Author:</strong> is missing from your style.css header."
+msgstr "<strong>Author:</strong> lipsește din antetul style.css."
+
+#: checks/style_needed.php:11
+msgid "<strong>Theme name:</strong> is missing from your style.css header."
+msgstr "<strong>Theme name:</strong> lipsește din antetul style.css."
+
+#: checks/searchform.php:9
+msgid "Please use <strong>get_search_form()</strong> instead of including searchform.php directly."
+msgstr "Te rog utilizează <strong>get_search_form()</strong> în loc să incluzi searchform.php direct."
+
+#: checks/screenshot.php:35
+msgid "No screenshot detected! Please include a screenshot.png or screenshot.jpg."
+msgstr "Nicio captură de ecran detectată! Te rog să incluzi un fișier screenshot.png sau screenshot.jpg."
+
+#: checks/screenshot.php:30
+msgid "Screenshot size should be 1200x900, to account for HiDPI displays. Any 4:3 image size is acceptable, but 1200x900 is preferred."
+msgstr "Mărimea capturii de ecran ar trebui să fie de 1200x900, pentru a ține seama și de ecranele HiDPI. Orice mărime de imagine 4:3 este acceptată, dar cea de 1200x900 este preferată."
+
+#: checks/screenshot.php:27
+msgid "Screenshot dimensions are wrong! Ratio of width to height should be 4:3."
+msgstr "Dimensiunile capturii de ecran sunt greșite! Raportul dintre lățime și înălțime ar trebuie să fie 4:3."
+
+#: checks/screenshot.php:24
+msgid "Screenshot is wrong size! Detected: %1$sx%2$spx. Maximum allowed size is 1200x900px."
+msgstr "Dimensiunea capturii de ecran e greșită! Am detectat: %1$sx%2$spx. Dimensiunea maximă permisă este 1200x900px."
+
+#: checks/postthumb.php:19
+msgid "No reference to post-thumbnails was found in the theme. If the theme has a thumbnail like functionality, it should be implemented with <strong>add_theme_support( \"post-thumbnails\" )</strong>in the functions.php file."
+msgstr "În temă nu s-a găsit nicio referință la miniaturile pentru articole (post-thimbnails). Dacă tema are funcționalitate de tip miniaturi (thumbnails), ea trebuie implementată cu <strong>add_theme_support( \"post-thumbnails\" )</strong>în fișierul functions.php."
+
+#: checks/postthumb.php:15
+msgid "No reference to <strong>the_post_thumbnail()</strong> was found in the theme. It is recommended that the theme implement this functionality instead of using custom fields for thumbnails."
+msgstr "Nu a fost găsită nicio referire către <strong>the_post_thumbnail()</strong> în temă. Se recomandă ca tema să implementeze această funcționalitate decât să utilizeze câmpuri personalizate pentru miniaturi."
+
+#: checks/postsnav.php:19
+msgid "The theme doesn't have post pagination code in it. Use <strong>posts_nav_link()</strong> or <strong>paginate_links()</strong> or <strong>the_posts_pagination()</strong> or <strong>the_posts_navigation()</strong> or <strong>next_posts_link()</strong> and <strong>previous_posts_link()</strong> to add post pagination."
+msgstr "Tema nu are în ea cod pentru paginare articole. Folosește <strong>posts_nav_link()</strong> sau <strong>paginate_links()</strong> sau <strong>the_posts_pagination()</strong> sau <strong>the_posts_navigation()</strong> sau <strong>next_posts_link()</strong> și <strong>previous_posts_link()</strong> pentru a adăuga paginarea articolelor."
+
+#: checks/plugin-territory.php:32
+msgid "The theme uses the %s function. Custom post-content shortcodes are plugin-territory functionality."
+msgstr "Tema folosește funcția %s. scurtcodurile personalizate (custom shortcodes) pentru conținut în articol sunt o funcționalitate ce ține de domeniul modulelor."
+
+#: checks/plugin-territory.php:24
+msgid "The theme uses the %s function, which is plugin-territory functionality."
+msgstr "Tema folosește funcția %s, funcționalitate de domeniul modulelor."
+
+#: checks/nonprintable.php:16
+msgid "Non-printable characters were found in the %1$s file. You may want to check this file for errors.%2$s"
+msgstr "Caractere non-imprimabile au fost găsite în fișierul %1$s. Poate vrei să verifici acest fișier pentru erori.%2$s"
+
+#: checks/malware.php:9
+msgid "File operations should use the WP_Filesystem methods instead of direct PHP filesystem calls"
+msgstr "Operațiile cu fișiere ar trebui să folosească metodele WP_Filesystem în loc de apeluri PHP directe la sistemul de fișiere"
+
+#: checks/navmenu.php:14
+msgid "No reference to nav_menu's was found in the theme. Note that if your theme has a menu bar, it is required to use the WordPress nav_menu functionality for it."
+msgstr "Nu a fost găsită nicio referire către nav_menu în temă. Reține că dacă tema ta are o bară de meniu, este necesar să utilizezi funcționalitatea nav_menu WordPress pentru ea."
+
+#: checks/lineendings.php:11 checks/lineendings.php:20
+#: checks/lineendings.php:31
+msgid "Both DOS and UNIX style line endings were found in the file %1$s. This causes a problem with SVN repositories and must be corrected before the theme can be accepted. Please change the file to use only one style of line endings."
+msgstr "Au fost găsite terminații de linie atât în stil DOS cât și UNIX în fișierul %1$s. Asta ridică probleme cu depozitarele SVN și trebuie corectate înainte ca tema să poată fi acceptată. Te rog schimbă fișierul pentru a folosi doar un stil de terminator de linie."
+
+#: checks/gravatar.php:15
+msgid "This theme doesn't seem to support the standard avatar functions. Use <strong>get_avatar</strong> or <strong>wp_list_comments</strong> to add this support."
+msgstr "Această temă nu pare să aibă suport pentru funcțiile standard de avatar. Folosește <strong>get_avatar</strong> sau <strong>wp_list_comments</strong> pentru a adăuga acest suport."
+
+#: checks/include.php:10
+msgid "The theme appears to use include or require. If these are being used to include separate sections of a template from independent files, then <strong>get_template_part()</strong> should be used instead."
+msgstr "Tema pare să folosească <code>include</code> sau <code>require</code>. Dacă acestea sunt folosite pentru a include secțiuni separate de șabloane din diferite fișiere , atunci ar trebui folosită în schimb funcția <strong>get_template_part()</strong>."
+
+#: checks/iframes.php:9
+msgid "iframes are sometimes used to load unwanted adverts and code on your site"
+msgstr "iframe-urile sunt uneori folosite pentru a încărca reclame sau programe nedorite pe situl tăuv "
+
+#: checks/filenames.php:37
+msgid "Please see <a href=\"https://codex.wordpress.org/Theme_Review#Theme_Documentation\">Theme_Documentation</a> for more information."
+msgstr "Te rog să consulți <a href=\"https://codex.wordpress.org/Theme_Review#Theme_Documentation\">Theme_Documentation</a> pentru mai multe informații."
+
+#: checks/filenames.php:30
+msgid "Server settings file"
+msgstr "Fișier configurare server"
+
+#: checks/filenames.php:31
+msgid "SQL dump file"
+msgstr "Fișier SQL dump"
+
+#: checks/filenames.php:32
+msgid "OSX system file"
+msgstr "Fișier sistem OSX"
+
+#: checks/filenames.php:28
+msgid "Dreamweaver project file"
+msgstr "Fișier proiect Dreamweaver"
+
+#: checks/filenames.php:29
+msgid "PHP error log"
+msgstr "Jurnal erori PHP"
+
+#: checks/filenames.php:23 checks/filenames.php:24
+msgid "NetBeans Project File"
+msgstr "Fișier proiect NetBeans"
+
+#: checks/filenames.php:25
+msgid "Komodo Project File"
+msgstr "Fișier proiect Komodo"
+
+#: checks/filenames.php:26
+msgid "Hidden Files or Folders"
+msgstr "Fișiere sau directoare ascunse"
+
+#: checks/filenames.php:27
+msgid "PHP server settings file"
+msgstr "Fișier configurare server PHP"
+
+#: checks/filenames.php:21
+msgid "Windows thumbnail store"
+msgstr "Magazin miniatură Windows"
+
+#: checks/filenames.php:22
+msgid "windows system file"
+msgstr "fișier sistem windows "
+
+#: checks/editorstyle.php:13
+msgid "No reference to <strong>add_editor_style()</strong> was found in the theme. It is recommended that the theme implement editor styling, so as to make the editor content match the resulting post output in the theme, for a better user experience."
+msgstr "În temă n-a fost găsită nicio referință la <strong>add_editor_style()</strong>. E recomandat ca tema să implementeze suport pentru utilizarea de stiluri în editor, pentru a face conținutul editorului să se potrivească cu ceea ce tema afișează live, pentru o mai bună experiență oferită utilizatorului."
+
+#: checks/dep_recommend.php:51 checks/deprecated.php:289
+msgid "Use %s instead."
+msgstr "Folosește %s în schimb."
+
+#: checks/directories.php:27
+msgid "Please remove any extraneous directories like .git or .svn from the ZIP file before uploading it."
+msgstr "Te rog să înlături orice directoare străine ca .git sau .svn din fișierul ZIP înainte de încărcare."
+
+#: checks/dep_recommend.php:43 checks/deprecated.php:281
+msgid "%1$s found in the file %2$s. Deprecated since version %3$s."
+msgstr "%1$s a fost găsit în fișierul %2$s. Depreciat de la versiunea %3$s."
+
+#: checks/customs.php:14
+msgid "No reference to <strong>add_theme_support( \"custom-header\", $args )</strong> was found in the theme. It is recommended that the theme implement this functionality if using an image for the header."
+msgstr "Nu a fost găsită nicio referire către <strong>add_theme_support( \"custom-header\", $args )</strong> în temă. Se recomandă ca tema să implementeze această funcționalitate dacă utilizează o imagine pentru antet."
+
+#: checks/customs.php:18
+msgid "No reference to <strong>add_theme_support( \"custom-background\", $args )</strong> was found in the theme. If the theme uses background images or solid colors for the background, then it is recommended that the theme implement this functionality."
+msgstr "Nu a fost găsită nicio referire către <strong>add_theme_support( \"custom-background\", $args )</strong> în temă. În cazul în care tema folosește imagini sau culori solide pentru fundal, se recomandă ca tema să implementeze această funcționalitate."
+
+#: checks/customizer.php:31
+msgid "Found a Customizer setting that had an empty value passed as sanitization callback. You need to pass a function name as sanitization callback."
+msgstr "Am găsit o setare de Personalizator care are o valoare goală transmisă ca un apel invers de igienizare (sanitization callback). Trebuie să transmiți un nume de funcție pentru ca apel invers de igienizare."
+
+#: checks/customizer.php:26
+msgid "Found a Customizer setting that did not have a sanitization callback function. Every call to the <strong>add_setting()</strong> method needs to have a sanitization callback function passed."
+msgstr "Am găsit o setare de Personalizator care nu are o funcție de apel invers de igienizare (sanitization callback function). Orice apel la metoda <strong>add_setting()</strong> trebuie să transmită și funcție de apel invers de igienizare."
+
+#: checks/content-width.php:14
+msgid "No content width has been defined. Example: <pre>if ( ! isset( $content_width ) ) $content_width = 900;</pre>"
+msgstr "Nu a fost definită nicio lățime de conținut. Exemplu: <pre>if ( ! isset( $content_width ) ) $content_width = 900;</pre>"
+
+#: checks/commpage.php:17
+msgid "The theme doesn't have comment pagination code in it. Use <strong>paginate_comments_links()</strong> or <strong>the_comments_navigation</strong> or <strong>the_comments_pagination</strong> or <strong>next_comments_link()</strong> and <strong>previous_comments_link()</strong> to add comment pagination."
+msgstr "Tema nu are codul pentru paginația comentariilor. Folosește <strong>paginate_comments_links()</strong> sau <strong>the_comments_navigation</strong> sau <strong>the_comments_pagination</strong> sau <strong>next_comments_link()</strong> și <strong>previous_comments_link()</strong> pentru a adăuga paginație comentarii."
+
+#: checks/comment_reply.php:18
+msgid "Could not find the <strong>comment-reply</strong> script enqueued, however a reference to 'comment-reply' was found. Make sure that the comment-reply script is being enqueued properly on singular pages."
+msgstr "Nu am găsit scriptul <strong>comment-reply</strong> înlănțuit (enqueued), cu toate că am găsit o referință la 'comment-reply'. Asigură-te că scriptul de comment-reply este înlănțuit corect pe pagini singulare."
+
+#: checks/comment_reply.php:15
+msgid "Could not find the <strong>comment-reply</strong> script enqueued. %1$s"
+msgstr "Nu am găsit scriptul <strong>comment-reply</strong> înlănțuit (enqueued). %1$s"
+
+#: checks/comment_reply.php:18 checks/favicon.php:17 checks/iframes.php:20
+#: checks/include.php:19 checks/links.php:26 checks/nonprintable.php:16
+#: checks/style_tags.php:25 checks/textdomain.php:148 checks/time_date.php:22
+msgid "INFO"
+msgstr "INFO"
+
+#: checks/comment_reply.php:14
+msgid "See: <a href=\"https://codex.wordpress.org/Migrating_Plugins_and_Themes_to_2.7/Enhanced_Comment_Display\">Migrating Plugins and Themes to 2.7/Enhanced Comment Display</a><pre> &lt;?php if ( is_singular() ) wp_enqueue_script( \"comment-reply\" ); ?&gt;</pre>"
+msgstr "Vezi: <a href=\"https://codex.wordpress.org/Migrating_Plugins_and_Themes_to_2.7/Enhanced_Comment_Display\">Migrating Plugins and Themes to 2.7/Enhanced Comment Display</a><pre> &lt;?php if ( is_singular() ) wp_enqueue_script( \"comment-reply\" ); ?&gt;</pre>"
+
+#: checks/cdn.php:34 checks/customs.php:14 checks/customs.php:18
+#: checks/dep_recommend.php:58 checks/editorstyle.php:13
+#: checks/filenames.php:58 checks/i18n.php:52 checks/navmenu.php:14
+#: checks/postthumb.php:15 checks/postthumb.php:19 checks/screenshot.php:24
+#: checks/screenshot.php:27 checks/screenshot.php:30
+#: checks/style_suggested.php:20 checks/style_tags.php:16 checks/widgets.php:16
+msgid "RECOMMENDED"
+msgstr "RECOMANDAT"
+
+#: checks/cdn.php:34
+msgid "Found the URL of a CDN in the code: %s. You should not load CSS or Javascript resources from a CDN, please bundle them with the theme."
+msgstr "Am găsit URL-ul unui CDN în cod: %s. Nu ar trebui să încarci resurse de tip CSS sau Javascript din CDN, te rog împachetează-le cu tema."
+
+#: checks/basic.php:32
+msgid "body_class call in body tag"
+msgstr "apelare body_class în eticheta body"
+
+#: checks/basic.php:31
+msgid "add_theme_support( 'automatic-feed-links' )"
+msgstr "add_theme_support( 'automatic-feed-links' )"
+
+#: checks/basic.php:23
+msgid "See: <a href=\"https://codex.wordpress.org/Template_Tags/body_class\">body_class</a><pre> &lt;?php body_class( $class ); ?&gt;</pre>"
+msgstr "Vezi: <a href=\"https://codex.wordpress.org/Template_Tags/body_class\">body_class</a><pre> &lt;?php body_class( $class ); ?&gt;</pre>"
+
+#: checks/basic.php:24
+msgid "See: <a href=\"https://codex.wordpress.org/Function_Reference/wp_link_pages\">wp_link_pages</a><pre> &lt;?php wp_link_pages( $args ); ?&gt;</pre>"
+msgstr "Vezi: <a href=\"https://codex.wordpress.org/Function_Reference/wp_link_pages\">wp_link_pages</a><pre> &lt;?php wp_link_pages( $args ); ?&gt;</pre>"
+
+#: checks/basic.php:25
+msgid "See: <a href=\"https://codex.wordpress.org/Template_Tags/post_class\">post_class</a><pre> &lt;div id=\"post-&lt;?php the_ID(); ?&gt;\" &lt;?php post_class(); ?&gt;&gt;</pre>"
+msgstr "Vezi: <a href=\"https://codex.wordpress.org/Template_Tags/post_class\">post_class</a><pre> &lt;div id=\"post-&lt;?php the_ID(); ?&gt;\" &lt;?php post_class(); ?&gt;&gt;</pre>"
+
+#: checks/basic.php:21
+msgid "See: <a href=\"https://codex.wordpress.org/Template_Tags/wp_list_comments\">wp_list_comments</a><pre> &lt;?php wp_list_comments( $args ); ?&gt;</pre>"
+msgstr "Vezi: <a href=\"https://codex.wordpress.org/Template_Tags/wp_list_comments\">wp_list_comments</a><pre> &lt;?php wp_list_comments( $args ); ?&gt;</pre>"
+
+#: checks/basic.php:22
+msgid "See: <a href=\"https://codex.wordpress.org/Template_Tags/comment_form\">comment_form</a><pre> &lt;?php comment_form(); ?&gt;</pre>"
+msgstr "Vezi: <a href=\"https://codex.wordpress.org/Template_Tags/comment_form\">comment_form</a><pre> &lt;?php comment_form(); ?&gt;</pre>"
+
+#: checks/basic.php:18
+msgid "There must be a charset defined in the Content-Type or the meta charset tag in the head."
+msgstr "Ar trebui să fie un set de caractere (charset) definit în eticheta Content-Type sau într-un meta-tag din <code>head</code>."
+
+#: checks/basic.php:20
+msgid "See: <a href=\"https://codex.wordpress.org/Template_Tags/comments_template\">comments_template</a><pre> &lt;?php comments_template( $file, $separate_comments ); ?&gt;</pre>"
+msgstr "Vezi: <a href=\"https://codex.wordpress.org/Template_Tags/comments_template\">comments_template</a><pre> &lt;?php comments_template( $file, $separate_comments ); ?&gt;</pre>"
+
+#: checks/basic.php:19
+msgid "See: <a href=\"https://codex.wordpress.org/Function_Reference/add_theme_support\">add_theme_support</a><pre> &lt;?php add_theme_support( $feature ); ?&gt;</pre>"
+msgstr "Vezi: <a href=\"https://codex.wordpress.org/Function_Reference/add_theme_support\">add_theme_support</a><pre> &lt;?php add_theme_support( $feature ); ?&gt;</pre>"
+
+#: checks/basic.php:15
+msgid "See: <a href=\"https://codex.wordpress.org/Function_Reference/wp_footer\">wp_footer</a><pre> &lt;?php wp_footer(); ?&gt;</pre>"
+msgstr "Vezi: <a href=\"https://codex.wordpress.org/Function_Reference/wp_footer\">wp_footer</a><pre> &lt;?php wp_footer(); ?&gt;</pre>"
+
+#: checks/basic.php:17
+msgid "See: <a href=\"https://codex.wordpress.org/Function_Reference/language_attributes\">language_attributes</a><pre>&lt;html &lt;?php language_attributes(); ?&gt;</pre>"
+msgstr "Vezi: <a href=\"https://codex.wordpress.org/Function_Reference/language_attributes\">language_attributes</a><pre>&lt;html &lt;?php language_attributes(); ?&gt;</pre>"
+
+#: checks/basic.php:14
+msgid "See: <a href=\"https://codex.wordpress.org/HTML_to_XHTML\">https://codex.wordpress.org/HTML_to_XHTML</a><pre>&lt;!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"<br />\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\"?&gt;</pre>"
+msgstr "Vezi: <a href=\"https://codex.wordpress.org/HTML_to_XHTML\">https://codex.wordpress.org/HTML_to_XHTML</a><pre>&lt;!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"<br />\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\"?&gt;</pre>"
+
+#: checks/basic.php:16
+msgid "See: <a href=\"https://codex.wordpress.org/Function_Reference/wp_head\">wp_head</a><pre> &lt;?php wp_head(); ?&gt;</pre>"
+msgstr "Vezi: <a href=\"https://codex.wordpress.org/Function_Reference/wp_head\">wp_head</a><pre> &lt;?php wp_head(); ?&gt;</pre>"
+
+#: checks/badthings.php:17 checks/badthings.php:38
+msgid "Google advertising code detected"
+msgstr "Cod de publicitate Google detectat"
+
+#: checks/badthings.php:48
+msgid "<span class=\"tc-lead tc-warning\">WARNING</span>: Found <strong>%1$s</strong> in the file <strong>%2$s</strong>. %3$s.%4$s"
+msgstr "<span class=\"tc-lead tc-warning\">AVERTIZARE</span>: <strong>%1$s</strong găsit în fișierul <strong>%2$s</strong>. %3$s.%4$s"
+
+#: checks/badthings.php:16 checks/badthings.php:37
+msgid "Google search code detected"
+msgstr "Cod de căutare Google detectat"
+
+#: checks/badthings.php:15
+msgid "str_rot13() is not allowed"
+msgstr "str_rot13() nu este permis"
+
+#: checks/admin_menu.php:23 checks/badthings.php:29 checks/deregister.php:19
+#: checks/filenames.php:44 checks/filenames.php:51 checks/generated.php:33
+#: checks/lineendings.php:11 checks/lineendings.php:20
+#: checks/lineendings.php:31 checks/malware.php:23 checks/phpshort.php:14
+#: checks/plugin-territory.php:32 checks/screenshot.php:35
+#: checks/style_tags.php:30 checks/style_tags.php:32 checks/textdomain.php:77
+#: checks/textdomain.php:107 checks/textdomain.php:131 checks/worms.php:23
+#: main.php:95
+msgid "WARNING"
+msgstr "AVERTIZARE"
+
+#: checks/badthings.php:9
+msgid "eval() is not allowed."
+msgstr "eval() nu este permis."
+
+#: checks/badthings.php:10
+msgid "PHP system calls are often disabled by server admins and should not be in themes"
+msgstr "Apelurile de sistem PHP sunt dezactivate adesea de administratorii de server și nu ar trebui să fie în teme"
+
+#: checks/badthings.php:11
+msgid "Themes should not change server PHP settings"
+msgstr "Temele nu ar trebui să schimbe setările PHP de pe server"
+
+#: checks/badthings.php:12
+msgid "base64_decode() is not allowed"
+msgstr "base64_decode() nu este permis"
+
+#: checks/badthings.php:13
+msgid "base64_encode() is not allowed"
+msgstr "base64_encode() nu este permis"
+
+#: checks/badthings.php:14
+msgid "uudecode() is not allowed"
+msgstr "uudecode() nu este permis"
+
+#: checks/generated.php:33
+msgid "This theme appears to have been auto-generated. Generated themes are not allowed in the themes directory."
+msgstr "Această temă pare să fie auto-generată. Temele generate nu sunt permise în directorul de teme."
+
+#: checks/admin_menu.php:34
+msgid "Themes should use <strong>add_theme_page()</strong> for adding admin pages."
+msgstr "Temele ar trebui să utilizeze <strong>add_theme_page()</strong> pentru a adăuga pagini admin."
+
+#: checks/admin_menu.php:49 checks/adminbar.php:20 checks/adminbar.php:32
+#: checks/basic.php:34 checks/comment_reply.php:15 checks/commpage.php:17
+#: checks/constants.php:24 checks/content-width.php:14 checks/customizer.php:26
+#: checks/customizer.php:31 checks/deprecated.php:296 checks/directories.php:27
+#: checks/gravatar.php:15 checks/included-plugins.php:23
+#: checks/more_deprecated.php:52 checks/plugin-territory.php:24
+#: checks/post-formats.php:27 checks/postsnav.php:19 checks/searchform.php:16
+#: checks/style_needed.php:32 checks/tags.php:13 checks/textdomain.php:135
+#: checks/title.php:20 checks/title.php:28 checks/title.php:35
+#: checks/title.php:49 checks/widgets.php:21 checks/widgets.php:26
+#: checks/widgets.php:34
+msgid "REQUIRED"
+msgstr "NECESAR"
+
+#: checkbase.php:94 checkbase.php:119
+msgid "Line "
+msgstr "Linia"
+
+#: checkbase.php:260
+msgid "Visit author homepage"
+msgstr "Vizitează pagina autorului"
+
+#: checkbase.php:263
+msgid "Anonymous"
+msgstr "Anonim"
+
+#: checks/admin_menu.php:13 checks/admin_menu.php:14
+msgid "User levels were deprecated in <strong>2.0</strong>. Please see <a href=\"https://codex.wordpress.org/Roles_and_Capabilities\">Roles_and_Capabilities</a>"
+msgstr "Nivelele de utilizator au fost abandonate în <strong>2.0</strong>. Te rog consultă <a href=\"https://codex.wordpress.org/Roles_and_Capabilities\">Roluri și capabilități</a>"
