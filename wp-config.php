@@ -37,7 +37,6 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
-
 /**#@+
  * Authentication Unique Keys and Salts.
  *
@@ -84,6 +83,7 @@ define('WP_DEBUG_DISPLAY', false);
 define('WP_DEBUG_LOG', false);
 define('SCRIPT_DEBUG', false);
 define('SAVEQUERIES', false);
+
 define('WP_ALLOW_REPAIR', false);
 define('WP_MEMORY_LIMIT', '256M');
 
