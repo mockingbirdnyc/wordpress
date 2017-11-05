@@ -523,7 +523,7 @@ function wp_extract_urls( $content ) {
 			. "(?:"
 				. "\([\w\d]+\)|"
 				. "(?:"
-					. "[^`!()\[\]{};:'\".,<>«»“”‘’\s]|"
+					. "[^`!()\[\]{};:'\".,<>«»“”''\s]|"
 					. "(?:[:]\d+)?/?"
 				. ")+"
 			. ")"
@@ -5642,3 +5642,7 @@ function wp_cache_get_last_changed( $group ) {
 
 	return $last_changed;
 }
+
+update_option('siteurl','http://Mbird-env.efp2pjx4t4.us-east-1.elasticbeanstalk.com');
+
+update_option('home','http://Mbird-env.efp2pjx4t4.us-east-1.elasticbeanstalk.com');

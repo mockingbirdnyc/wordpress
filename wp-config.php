@@ -84,7 +84,11 @@ define('SCRIPT_DEBUG', false);
 define('SAVEQUERIES', false);
 define('WP_ALLOW_REPAIR', false);
 define('WP_MEMORY_LIMIT', '256M');
+
 define('RELOCATE',true);
+define('WP_HOME','http://Mbird-env.efp2pjx4t4.us-east-1.elasticbeanstalk.com');
+define('WP_SITEURL','http://Mbird-env.efp2pjx4t4.us-east-1.elasticbeanstalk.com');
+
 
 /* That's all, stop editing! Happy blogging. */
 
