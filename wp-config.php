@@ -17,7 +17,10 @@
  *
  * @package WordPress
  */
-define('WP_CACHE', TRUE);
+//define('WP_CACHE', TRUE);
+@ini_set('log_errors','On'); // enable or disable php error logging (use 'On' or 'Off')
+error_log("DB_NAME", 0);
+error_log(getenv('DB_NAME'), 0);
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
@@ -37,6 +40,7 @@ define('DB_CHARSET', 'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
+
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -78,8 +82,8 @@ $table_prefix  = getenv('DB_TABLE_PREFIX');
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', false);
-define('WP_DEBUG_DISPLAY', false);
+define('WP_DEBUG', true);
+define('WP_DEBUG_DISPLAY', true);
 define('WP_DEBUG_LOG', true);
 define('SCRIPT_DEBUG', false);
 define('SAVEQUERIES', false);
