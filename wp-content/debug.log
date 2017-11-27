@@ -1,0 +1,327 @@
+[26-Nov-2017 17:26:31 UTC] PHP Warning:  include(/var/www/html/wp-content/advanced-cache.php): failed to open stream: No such file or directory in /var/www/html/wp-settings.php on line 84
+[26-Nov-2017 17:26:31 UTC] PHP Stack trace:
+[26-Nov-2017 17:26:31 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:26:31 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:26:31 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:26:31 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:26:31 UTC] PHP   5. require_once() /var/www/html/wp-config.php:99
+[26-Nov-2017 17:26:31 UTC] PHP Warning:  include(): Failed opening '/var/www/html/wp-content/advanced-cache.php' for inclusion (include_path='.:/usr/local/lib/php') in /var/www/html/wp-settings.php on line 84
+[26-Nov-2017 17:26:31 UTC] PHP Stack trace:
+[26-Nov-2017 17:26:31 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:26:31 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:26:31 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:26:31 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:26:31 UTC] PHP   5. require_once() /var/www/html/wp-config.php:99
+[26-Nov-2017 17:26:31 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:26:31 UTC] PHP Stack trace:
+[26-Nov-2017 17:26:31 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:26:31 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:26:31 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:26:31 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:26:31 UTC] PHP   5. require_once() /var/www/html/wp-config.php:99
+[26-Nov-2017 17:26:31 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:26:31 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:26:31 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:26:31 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 17:27:11 UTC] PHP Warning:  include(/var/www/html/wp-content/advanced-cache.php): failed to open stream: No such file or directory in /var/www/html/wp-settings.php on line 84
+[26-Nov-2017 17:27:11 UTC] PHP Stack trace:
+[26-Nov-2017 17:27:11 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:27:11 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:27:11 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:27:11 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:27:11 UTC] PHP   5. require_once() /var/www/html/wp-config.php:99
+[26-Nov-2017 17:27:11 UTC] PHP Warning:  include(): Failed opening '/var/www/html/wp-content/advanced-cache.php' for inclusion (include_path='.:/usr/local/lib/php') in /var/www/html/wp-settings.php on line 84
+[26-Nov-2017 17:27:11 UTC] PHP Stack trace:
+[26-Nov-2017 17:27:11 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:27:11 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:27:11 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:27:11 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:27:11 UTC] PHP   5. require_once() /var/www/html/wp-config.php:99
+[26-Nov-2017 17:27:11 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:27:11 UTC] PHP Stack trace:
+[26-Nov-2017 17:27:11 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:27:11 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:27:11 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:27:11 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:27:11 UTC] PHP   5. require_once() /var/www/html/wp-config.php:99
+[26-Nov-2017 17:27:11 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:27:11 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:27:11 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:27:11 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 17:28:35 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:28:35 UTC] PHP Stack trace:
+[26-Nov-2017 17:28:35 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:28:35 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:28:35 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:28:35 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:28:35 UTC] PHP   5. require_once() /var/www/html/wp-config.php:99
+[26-Nov-2017 17:28:35 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:28:35 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:28:35 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:28:35 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 17:37:54 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:37:54 UTC] PHP Stack trace:
+[26-Nov-2017 17:37:54 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:37:54 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:37:54 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:37:54 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:37:54 UTC] PHP   5. require_once() /var/www/html/wp-config.php:101
+[26-Nov-2017 17:37:54 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:37:54 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:37:54 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:37:54 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 17:37:57 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:37:57 UTC] PHP Stack trace:
+[26-Nov-2017 17:37:57 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:37:57 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:37:57 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:37:57 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:37:57 UTC] PHP   5. require_once() /var/www/html/wp-config.php:101
+[26-Nov-2017 17:37:57 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:37:57 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:37:57 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:37:57 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 17:38:22 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:38:22 UTC] PHP Stack trace:
+[26-Nov-2017 17:38:22 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:38:22 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:38:22 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:38:22 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:38:22 UTC] PHP   5. require_once() /var/www/html/wp-config.php:101
+[26-Nov-2017 17:38:22 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:38:22 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:38:22 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:38:22 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 17:38:43 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:38:43 UTC] PHP Stack trace:
+[26-Nov-2017 17:38:43 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:38:43 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:38:43 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:38:43 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:38:43 UTC] PHP   5. require_once() /var/www/html/wp-config.php:101
+[26-Nov-2017 17:38:43 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:38:43 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:38:43 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:38:43 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 17:39:39 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:39:39 UTC] PHP Stack trace:
+[26-Nov-2017 17:39:39 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:39:39 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:39:39 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:39:39 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:39:39 UTC] PHP   5. require_once() /var/www/html/wp-config.php:101
+[26-Nov-2017 17:39:39 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:39:39 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:39:39 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:39:39 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 17:41:43 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:41:43 UTC] PHP Stack trace:
+[26-Nov-2017 17:41:43 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:41:43 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:41:43 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:41:43 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:41:43 UTC] PHP   5. require_once() /var/www/html/wp-config.php:102
+[26-Nov-2017 17:41:43 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:41:43 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:41:43 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:41:43 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 17:41:44 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:41:44 UTC] PHP Stack trace:
+[26-Nov-2017 17:41:44 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:41:44 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:41:44 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:41:44 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:41:44 UTC] PHP   5. require_once() /var/www/html/wp-config.php:102
+[26-Nov-2017 17:41:44 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:41:44 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:41:44 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:41:44 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 17:41:47 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:41:47 UTC] PHP Stack trace:
+[26-Nov-2017 17:41:47 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:41:47 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:41:47 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:41:47 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:41:47 UTC] PHP   5. require_once() /var/www/html/wp-config.php:102
+[26-Nov-2017 17:41:47 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:41:47 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:41:47 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:41:47 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 17:42:47 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:42:47 UTC] PHP Stack trace:
+[26-Nov-2017 17:42:47 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:42:47 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:42:47 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:42:47 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:42:47 UTC] PHP   5. require_once() /var/www/html/wp-config.php:102
+[26-Nov-2017 17:42:47 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:42:47 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:42:47 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:42:47 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 17:43:07 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:43:07 UTC] PHP Stack trace:
+[26-Nov-2017 17:43:07 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:43:07 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:43:07 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:43:07 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:43:07 UTC] PHP   5. require_once() /var/www/html/wp-config.php:102
+[26-Nov-2017 17:43:07 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:43:07 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:43:07 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:43:07 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 17:43:13 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:43:13 UTC] PHP Stack trace:
+[26-Nov-2017 17:43:13 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:43:13 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:43:13 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:43:13 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:43:13 UTC] PHP   5. require_once() /var/www/html/wp-config.php:102
+[26-Nov-2017 17:43:13 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:43:13 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:43:13 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:43:13 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 17:43:58 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:43:58 UTC] PHP Stack trace:
+[26-Nov-2017 17:43:58 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:43:58 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:43:58 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:43:58 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:43:58 UTC] PHP   5. require_once() /var/www/html/wp-config.php:102
+[26-Nov-2017 17:43:58 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:43:58 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:43:58 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:43:58 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 17:47:37 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:47:37 UTC] PHP Stack trace:
+[26-Nov-2017 17:47:37 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:47:37 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:47:37 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:47:37 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:47:37 UTC] PHP   5. require_once() /var/www/html/wp-config.php:102
+[26-Nov-2017 17:47:37 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:47:37 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:47:37 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:47:37 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 17:47:58 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:47:58 UTC] PHP Stack trace:
+[26-Nov-2017 17:47:58 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:47:58 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:47:58 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:47:58 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:47:58 UTC] PHP   5. require_once() /var/www/html/wp-config.php:101
+[26-Nov-2017 17:47:58 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:47:58 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:47:58 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:47:58 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 17:49:18 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:49:18 UTC] PHP Stack trace:
+[26-Nov-2017 17:49:18 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:49:18 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:49:18 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:49:18 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:49:18 UTC] PHP   5. require_once() /var/www/html/wp-config.php:102
+[26-Nov-2017 17:49:18 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:49:18 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:49:18 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:49:18 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 17:49:40 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:49:40 UTC] PHP Stack trace:
+[26-Nov-2017 17:49:40 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:49:40 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:49:40 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:49:40 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:49:40 UTC] PHP   5. require_once() /var/www/html/wp-config.php:102
+[26-Nov-2017 17:49:40 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:49:40 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:49:40 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:49:40 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 17:49:42 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:49:42 UTC] PHP Stack trace:
+[26-Nov-2017 17:49:42 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:49:42 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:49:42 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:49:42 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:49:42 UTC] PHP   5. require_once() /var/www/html/wp-config.php:102
+[26-Nov-2017 17:49:42 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:49:42 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:49:42 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:49:42 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 17:49:43 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:49:43 UTC] PHP Stack trace:
+[26-Nov-2017 17:49:43 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:49:43 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:49:43 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:49:43 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:49:43 UTC] PHP   5. require_once() /var/www/html/wp-config.php:102
+[26-Nov-2017 17:49:43 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:49:43 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:49:43 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:49:43 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 17:49:43 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:49:43 UTC] PHP Stack trace:
+[26-Nov-2017 17:49:43 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:49:43 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:49:43 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:49:43 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:49:43 UTC] PHP   5. require_once() /var/www/html/wp-config.php:102
+[26-Nov-2017 17:49:43 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:49:43 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:49:43 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:49:43 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 17:54:55 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:54:55 UTC] PHP Stack trace:
+[26-Nov-2017 17:54:55 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:54:55 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:54:55 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:54:55 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:54:55 UTC] PHP   5. require_once() /var/www/html/wp-config.php:102
+[26-Nov-2017 17:54:55 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:54:55 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:54:55 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:54:55 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 17:57:26 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 17:57:26 UTC] PHP Stack trace:
+[26-Nov-2017 17:57:26 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 17:57:26 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 17:57:26 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 17:57:26 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 17:57:26 UTC] PHP   5. require_once() /var/www/html/wp-config.php:102
+[26-Nov-2017 17:57:26 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 17:57:26 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 17:57:26 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 17:57:26 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 18:01:36 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 18:01:36 UTC] PHP Stack trace:
+[26-Nov-2017 18:01:36 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 18:01:36 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 18:01:36 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 18:01:36 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 18:01:36 UTC] PHP   5. require_once() /var/www/html/wp-config.php:103
+[26-Nov-2017 18:01:36 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 18:01:36 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 18:01:36 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 18:01:36 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 18:59:50 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 18:59:50 UTC] PHP Stack trace:
+[26-Nov-2017 18:59:50 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 18:59:50 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 18:59:50 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 18:59:50 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 18:59:50 UTC] PHP   5. require_once() /var/www/html/wp-config.php:103
+[26-Nov-2017 18:59:50 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 18:59:50 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 18:59:50 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 18:59:50 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[26-Nov-2017 18:59:55 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /var/www/html/wp-includes/wp-db.php on line 1548
+[26-Nov-2017 18:59:55 UTC] PHP Stack trace:
+[26-Nov-2017 18:59:55 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[26-Nov-2017 18:59:55 UTC] PHP   2. require() /var/www/html/index.php:17
+[26-Nov-2017 18:59:55 UTC] PHP   3. require_once() /var/www/html/wp-blog-header.php:13
+[26-Nov-2017 18:59:55 UTC] PHP   4. require_once() /var/www/html/wp-load.php:37
+[26-Nov-2017 18:59:55 UTC] PHP   5. require_once() /var/www/html/wp-config.php:103
+[26-Nov-2017 18:59:55 UTC] PHP   6. require_wp_db() /var/www/html/wp-settings.php:106
+[26-Nov-2017 18:59:55 UTC] PHP   7. wpdb->__construct() /var/www/html/wp-includes/load.php:404
+[26-Nov-2017 18:59:55 UTC] PHP   8. wpdb->db_connect() /var/www/html/wp-includes/wp-db.php:658
+[26-Nov-2017 18:59:55 UTC] PHP   9. mysqli_real_connect() /var/www/html/wp-includes/wp-db.php:1548
+[27-Nov-2017 01:48:00 UTC] WP_Community_Events::maybe_log_events_response: Valid response received. Details: {"api_url":"https:\/\/api.wordpress.org\/events\/1.0\/","request_args":{"body":{"number":5,"ip":"172.18.0.0","locale":"en_US","timezone":"America\/New_York"}},"response_code":200,"response_body":{"location":{"ip":"216.197.76.67"},"events":"2 events trimmed."}}
+[27-Nov-2017 15:31:25 UTC] WP_Community_Events::maybe_log_events_response: Valid response received. Details: {"api_url":"https:\/\/api.wordpress.org\/events\/1.0\/","request_args":{"body":{"number":5,"ip":"172.18.0.0","locale":"en_US","timezone":"America\/New_York"}},"response_code":200,"response_body":{"location":{"ip":"216.197.76.67"},"events":"2 events trimmed."}}

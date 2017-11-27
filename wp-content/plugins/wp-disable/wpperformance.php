@@ -2,10 +2,10 @@
 /**
  * Plugin Name: WP Disable
  * Plugin URI: https://optimisation.io
- * Description: Improve WordPress performance by disabling unused items.
- * Author: pigeonhut, Jody Nesbitt, optimisation.io
+ * Description: Improve WordPress performance by disabling unused items. <a href="admin.php?page=optimisationio-dashboard">Open Settings</a>
+ * Author:  optimisation.io, hosting.io
  * Author URI:https://optimisation.io
- * Version: 1.5.12
+ * Version: 1.5.14
  *
  * Copyright (C) 2017 Optimisation.io
  */

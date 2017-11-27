@@ -50,7 +50,11 @@ class WC_Connect_TaxJar_Integration {
 		$this->setup_environment();
 
 		// Calculate Taxes at Cart / Checkout
-		add_action( 'woocommerce_calculate_totals', array( $this, 'calculate_totals' ), 20 );
+		if ( class_exists( 'WC_Cart_Totals' ) ) { // Woo 3.2+
+			add_action( 'woocommerce_after_calculate_totals', array( $this, 'calculate_totals' ), 20 );
+		} else {
+			add_action( 'woocommerce_calculate_totals', array( $this, 'calculate_totals' ), 20 );
+		}
 
 		// Calculate Taxes for Backend Orders (Woo 2.6+)
 		add_action( 'woocommerce_before_save_order_items', array( $this, 'calculate_backend_totals' ), 20 );
@@ -203,9 +207,9 @@ class WC_Connect_TaxJar_Integration {
 			$product = $cart_item['data'];
 			$id = $product->get_id();
 			$quantity = $cart_item['quantity'];
-			$unit_price = $product->get_price();
-			$line_subtotal = $cart_item['line_subtotal'];
-			$discount = $line_subtotal - $cart_item['line_total'];
+			$unit_price = wc_format_decimal( $product->get_price() );
+			$line_subtotal = wc_format_decimal( $cart_item['line_subtotal'] );
+			$discount = wc_format_decimal( $cart_item['line_subtotal'] - $cart_item['line_total'] );
 			$tax_class = explode( '-', $product->get_tax_class() );
 			$tax_code = '';
 
@@ -236,6 +240,10 @@ class WC_Connect_TaxJar_Integration {
 			'shipping_amount' => $woocommerce->shipping->shipping_total,
 			'line_items' => $line_items,
 		) );
+
+		if ( class_exists( 'WC_Cart_Totals' ) ) { // Woo 3.2+
+			new WC_Cart_Totals( $wc_cart_object );
+		}
 
 		foreach ( $this->line_items as $product_id => $line_item ) {
 			if ( isset( $cart_taxes[ $this->rate_ids[ $product_id ] ] ) ) {
@@ -290,12 +298,12 @@ class WC_Connect_TaxJar_Integration {
 			if ( is_object( $item ) ) { // Woo 3.0+
 				$id = $item->get_product_id();
 				$quantity = $item->get_quantity();
-				$discount = floatval( wc_format_decimal( ( $item->get_subtotal() - $item->get_total() ) / $quantity ) );
+				$discount = wc_format_decimal( $item->get_subtotal() - $item->get_total() );
 				$tax_class = explode( '-', $item->get_tax_class() );
 			} else { // Woo 2.6
 				$id = $item['product_id'];
 				$quantity = $item['qty'];
-				$discount = floatval( wc_format_decimal( ( $item['line_subtotal'] - $item['line_total'] ) / $quantity ) );
+				$discount = wc_format_decimal( $item['line_subtotal'] - $item['line_total'] );
 				$tax_class = explode( '-', $item['tax_class'] );
 			}
 
@@ -422,7 +430,6 @@ class WC_Connect_TaxJar_Integration {
 		$this->freight_taxable      = 1;
 		$this->line_items           = array();
 		$this->has_nexus            = 0;
-		$this->tax_source           = 'origin';
 		$this->rate_ids             = array();
 
 		// Strict conditions to be met before API call can be conducted
@@ -468,7 +475,6 @@ class WC_Connect_TaxJar_Integration {
 
 			// Update Properties based on Response
 			$this->has_nexus          = (int) $taxjar_response->has_nexus;
-			$this->tax_source         = empty( $taxjar_response->tax_source ) ? 'origin' : $taxjar_response->tax_source;
 			$this->amount_to_collect  = $taxjar_response->amount_to_collect;
 			$this->tax_rate           = $taxjar_response->rate;
 			$this->freight_taxable    = (int) $taxjar_response->freight_taxable;
@@ -495,18 +501,11 @@ class WC_Connect_TaxJar_Integration {
 			$wc_cart_object->remove_taxes();
 		} elseif ( $this->has_nexus ) {
 			// Use Woo core to find matching rates for taxable address
-			$source_zip = 'destination' == $this->tax_source ? $to_zip : $from_zip;
-			$source_city = 'destination' == $this->tax_source ? $to_city : $from_city;
-
-			if ( strtoupper( $to_city ) == strtoupper( $from_city ) ) {
-				$source_city = $to_city;
-			}
-
 			$location = array(
 				'to_country' => $to_country,
 				'to_state' => $to_state,
-				'to_zip' => $source_zip,
-				'to_city' => $source_city,
+				'to_zip' => $to_zip,
+				'to_city' => $to_city,
 			);
 
 			// Add line item tax rates

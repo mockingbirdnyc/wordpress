@@ -1,9 +1,9 @@
 === Reduce HTTP Requests, Disable Emojis & Disable Embeds, Speedup WooCommerce ===
-Contributors: pigeonhut, Jody Nesbitt, optimisation.io
-Tags: Disable Emoji, Disable Embeds, Disable Gravatars, Remove Querystrings, Reduce HTTP Requests, speedup WooCommerce, Close comments
+Contributors: optimisation.io, hosting.io
+Tags: Disable Emoji, Disable Embeds, Disable Gravatars, Remove Querystrings, Reduce HTTP Requests, speedup WooCommerce, Close comments, Optimization
 Requires at least: 4.5
-Tested up to: 4.8.1
-Stable tag: 1.5.12
+Tested up to: 4.9
+Stable tag: 1.5.14
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,11 @@ General Performance improvements: Added support for : disable ping/trackbacks, c
 
 <b>Have an idea ?</b><br>
 <a href="https://github.com/hosting-io/wp-disable">Public repo on GitHub</a> if you would like to contribute or have any ideas to add.
+
+<b>Docs & Support</b><br>
+<a href="https://optimisation.io/faq/">The documentation is an on-going project, so please bare with us as we update.  If you would like to help with the documentation, please get in touch.
+
+
 
 == Installation ==
 
@@ -69,14 +74,32 @@ We will soon be adding a free CDN for css/js for all users that is integrated wi
 You can try our <a href="https://wordpress.org/plugins/wp-image-compression/">Free Image Compression plugin</a> which has really good compression ratios with little to no loss of image quality.
 
 == Screenshots ==
-1. Full site, 16 HTTP requests, 0.5MB
-2. What's Possible with some hard work (Clean install)
-3. Pingdom Report
+1. Plugin Interface
+2. Pingdom Report
 4. Fast Hosting Servers make a difference to overall performance
-5. Because Speed Matters (tm)
+4. Because Speed Matters (tm)
 
 
 == Changelog ==
+= 1.5.14 =
+* Started on Documentation (can be found here https://optimisation.io/faq/)
+* Added donation button - help us make this the best optimisation suite available on the repo.  Every $ donated helps.
+* Added SEO Tab
+* Added ability to remove Duplicate names in breadcrumbs
+* Added Remove Yoast SEO comments
+* Tested on Gutenberg
+* Tested on WP 4.9
+* Remove Dequeue from some functions
+* Disabled Dashicons in Customizer
+* Minor bug fixes as per support forum
+
+
+= 1.5.13 =
+* Added Settings link on main Installed Plugin view
+* General code tidy up
+* PHP 7.1 compatabile
+* WP 4.8.2 tested
+
 = 1.5.12 =
 * WooCommerce bugs fixed
 * Syntax error fixed
