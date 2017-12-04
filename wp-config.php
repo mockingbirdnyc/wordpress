@@ -17,11 +17,8 @@
  *
  * @package WordPress
  */
-//define('WP_CACHE', TRUE);
-@ini_set('log_errors','On'); // enable or disable php error logging (use 'On' or 'Off')
-error_log("DB_NAME", 0);
-error_log(getenv('DB_NAME'), 0);
-
+define('WP_CACHE', TRUE);
+//@ini_set('log_errors','On'); // enable or disable php error logging (use 'On' or 'Off')
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', getenv('DB_NAME'));
