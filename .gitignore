@@ -1,5 +1,4 @@
 *.log
-wp-config.php
 wp-content/advanced-cache.php
 wp-content/backup-db/
 wp-content/backups/
@@ -24,3 +23,4 @@ wp-content/plugins/hello.php
 # intellij
 **/.idea/workspace.xml
 **/.idea/tasks.xml
+**/.idea/vcs.xml

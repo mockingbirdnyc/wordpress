@@ -87,6 +87,7 @@ define('SAVEQUERIES', false);
 define('WP_ALLOW_REPAIR', false);
 define('WP_MEMORY_LIMIT', '256M');
 
+//change debugging and relocation into env vars
 define('RELOCATE',true);
 
 
