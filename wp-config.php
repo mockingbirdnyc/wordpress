@@ -18,7 +18,6 @@
  * @package WordPress
  */
 define('WP_CACHE', TRUE);
-//@ini_set('log_errors','On'); // enable or disable php error logging (use 'On' or 'Off')
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', getenv('DB_NAME'));
@@ -79,9 +78,10 @@ $table_prefix  = getenv('DB_TABLE_PREFIX');
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', true);
-define('WP_DEBUG_DISPLAY', true);
-define('WP_DEBUG_LOG', true);
+//@ini_set('log_errors','On'); // enable or disable php error logging (use 'On' or 'Off')
+define('WP_DEBUG', false);
+define('WP_DEBUG_DISPLAY', false);
+define('WP_DEBUG_LOG', false);
 define('SCRIPT_DEBUG', false);
 define('SAVEQUERIES', false);
 define('WP_ALLOW_REPAIR', false);
