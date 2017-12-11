@@ -1,4 +1,5 @@
 <?php
+define('WP_POST_REVISIONS', 2); // Added by WP Disable
 /**
  * The base configuration for WordPress
  *
@@ -17,7 +18,64 @@
  *
  * @package WordPress
  */
-define('WP_CACHE', TRUE);
+
+// Define Environments
+$environments = array(
+    'development' => 'localhost',
+    'production' => 'mbird.com',
+);
+// Get Server name
+$server_name = $_SERVER['SERVER_NAME'];
+
+foreach($environments AS $key => $env){
+    if(strstr($server_name, $env)){
+        define('ENVIRONMENT', $key);
+        break;
+    }
+    else{ define('ENVIRONMENT', 'ec2'); }
+}
+
+define( 'WP_CACHE', true );
+define( 'WPCACHEHOME', '/var/www/html/wp-content/plugins/wp-super-cache/' );
+// Define different DB connection details depending on environment
+switch(ENVIRONMENT){
+
+    case 'development':
+//        define('DB_NAME', 'DBNAME');
+//        define('DB_USER', 'DBUSER');
+//        define('DB_PASSWORD', 'PASSWORD');
+//        define('DB_HOST', 'localhost');
+        define('WP_SITEURL', 'http://localhost');
+        define('WP_HOME', 'http://localhost');
+        define('WP_DEBUG', true);
+        define('WP_CACHE', false);
+        @ini_set('log_errors','On'); // enable or disable php error logging (use 'On' or 'Off')
+        define('WP_DEBUG_DISPLAY', false);
+        define('WP_DEBUG_LOG', true);
+        define('SCRIPT_DEBUG', true);
+        define('SAVEQUERIES', true);
+        define('WP_ALLOW_REPAIR', true);
+        break;
+    case 'production':
+
+//        define('DB_NAME', 'DBNAME');
+//        define('DB_USER', 'DBUSER');
+//        define('DB_PASSWORD', 'PASSWORD');
+//        define('DB_HOST', '127.0.0.1');
+//        define('DB_HOST_SLAVE', '127.0.0.1' );
+        define('WP_SITEURL', 'http://mbird.com/');
+        define('WP_HOME', 'http://mbird.com/');
+        define('WP_DEBUG', false);
+
+        break;
+    case 'ec2':
+        define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST']);
+        define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']);
+}
+
+// If no environment is set default to production
+if(!defined('ENVIRONMENT')) define('ENVIRONMENT', 'ec2');
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', getenv('DB_NAME'));
@@ -79,19 +137,8 @@ $table_prefix  = getenv('DB_TABLE_PREFIX');
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-//@ini_set('log_errors','On'); // enable or disable php error logging (use 'On' or 'Off')
-define('WP_DEBUG', false);
-define('WP_DEBUG_DISPLAY', false);
-define('WP_DEBUG_LOG', false);
-define('SCRIPT_DEBUG', false);
-define('SAVEQUERIES', false);
 
-define('WP_ALLOW_REPAIR', false);
 define('WP_MEMORY_LIMIT', '256M');
-
-//change debugging and relocation into env vars
-define('RELOCATE',true);
-
 
 /* That's all, stop editing! Happy blogging. */
 
