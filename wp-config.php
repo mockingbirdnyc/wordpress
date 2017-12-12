@@ -18,7 +18,8 @@ define('WP_POST_REVISIONS', 2); // Added by WP Disable
  *
  * @package WordPress
  */
-
+define( 'WP_CACHE', true );
+define( 'WPCACHEHOME', '/var/www/html/wp-content/plugins/wp-super-cache/' );
 // Define Environments
 $environments = array(
     'development' => 'localhost',
@@ -34,9 +35,6 @@ foreach($environments AS $key => $env){
     }
     else{ define('ENVIRONMENT', 'ec2'); }
 }
-
-define( 'WP_CACHE', true );
-define( 'WPCACHEHOME', '/var/www/html/wp-content/plugins/wp-super-cache/' );
 // Define different DB connection details depending on environment
 switch(ENVIRONMENT){
 

@@ -113,7 +113,7 @@ $addons = Optimisationio_Dashboard::$addons;
 						<button class="close"><span>x</span></button>
 					</div>
 				</div>
-			</div>
+			</div>	
 		</div><!-- // .donation-overlay-wrap -->
 
 	</div>

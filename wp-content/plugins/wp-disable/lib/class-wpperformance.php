@@ -176,7 +176,7 @@ class WpPerformance {
 		if ( ! is_admin() ) {
 			$this->add_ga_header_script();
 			$this->check_pages_disable();
-			$this->check_dns_prefetch();
+			add_action('wp_head', array( $this, 'check_dns_prefetch') );
 		}
 		else{
 			$this->check_admin_notices_display();
@@ -184,6 +184,7 @@ class WpPerformance {
 
 		$this->check_comments_disable();
 		$this->check_feeds_disable();
+		$this->check_gravatars_in_comments();
 
 		add_action( 'wp_print_styles', array( $this, 'enqueue_scripts' ), -1 );
 		add_action( 'wp_print_styles', array( $this, 'dequeue_styles'), -1 );
@@ -199,7 +200,7 @@ class WpPerformance {
 	public function enqueue_scripts() {
 		$async_links = $this->check_googlefonts_fontawesome_styles();
 		if ( ! empty( $async_links ) ) {
-			wp_enqueue_script( 'wp-disable-css-lazy-load',  plugin_dir_url( dirname( __FILE__ ) ) . 'js/css-lazy-load.js' );
+			wp_enqueue_script( 'wp-disable-css-lazy-load',  plugin_dir_url( dirname( __FILE__ ) ) . 'js/css-lazy-load.min.js' );
 			wp_localize_script( 'wp-disable-css-lazy-load', 'WpDisableAsyncLinks', $async_links );
 		}
 	}
@@ -219,9 +220,11 @@ class WpPerformance {
 
 	public function dequeue_scripts() {
 
+		global $wp;
+
 		$settings = $this->get_settings_values();
 
-		$invalid_disable = is_page('lost_password');
+		$invalid_disable = isset( $wp->query_vars['lost-password'] ) || ( isset($_GET['action']) && 'lostpassword' === $_GET['action'] ) || is_page('lost_password');
 
 		$wc_invalid_disable = ! WpPerformance::is_woocommerce_enabled() || $invalid_disable || is_account_page() || is_checkout();
 
@@ -332,7 +335,7 @@ class WpPerformance {
 				$this->update_saved_font_awesome_requests(0);
 				$this->update_saved_google_fonts_request(0);
 			}
-		}// End if().
+		}
 
 		return $ret;
 	}
@@ -523,7 +526,8 @@ class WpPerformance {
 	}
 
 	public static function synchronize_discussion_data($settings){
-		if ( isset( $settings['disable_gravatars'] ) && 1 === (int) $settings['disable_gravatars'] ) {
+
+		if ( isset( $settings['disable_gravatars'] ) && 1 === (int) $settings['disable_gravatars'] && ( ! isset( $settings['disable_gravatars_only_comments'] ) || 1 !== (int) $settings['disable_gravatars_only_comments'] ) ) {
 			update_option( 'show_avatars', false );
 		} else {
 			update_option( 'show_avatars', true );
@@ -591,10 +595,10 @@ class WpPerformance {
 		remove_menu_page('edit-comments.php');
 	}
 
-	private function check_dns_prefetch(){
+	public function check_dns_prefetch(){
 		
 		$settings = $this->get_settings_values();
-		
+
 		if( ! isset( $settings['dns_prefetch'] ) || ! $settings['dns_prefetch'] ) {
 			return;
 		}
@@ -617,6 +621,18 @@ class WpPerformance {
 				echo "<link rel=\"dns-prefetch\" href=\"" . $val . "\" />\n";
 			}
 		}
+	}
+
+	private function check_gravatars_in_comments(){
+		$settings = $this->get_settings_values();
+		if ( isset( $settings['disable_gravatars'] ) && 1 === (int) $settings['disable_gravatars'] && isset( $settings['disable_gravatars_only_comments'] ) && 1 === (int) $settings['disable_gravatars_only_comments'] ) {
+			add_filter("get_avatar" , array( $this, "disable_gravatars_in_comments" ) , 1, 5);
+		}
+	}
+
+	public function disable_gravatars_in_comments($avatar, $id_or_email, $size, $default, $alt){
+		global $in_comment_loop;
+		return $in_comment_loop ? '' : $avatar;
 	}
 
 	private function check_comments_disable() {

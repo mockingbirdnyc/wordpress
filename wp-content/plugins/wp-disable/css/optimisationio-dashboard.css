@@ -1077,3 +1077,23 @@
 .donation-overlay-inner  button.close:hover span {
   color: rgba(255, 255, 255, 0.9);
 }
+
+.optimising-images-icon{
+	position:relative;
+	float:right;
+	width:34px;
+	height:34px;
+	display:none;
+	background:#ffcc26 url(../images/addon-load.gif) no-repeat center;
+	-moz-border-radius: 9999px;
+	-webkit-border-radius: 9999px;
+	border-radius: 9999px;
+}
+
+.is-executing > .optimising-images-icon{
+	display:inline-block;
+}
+
+.is-executing > .not-while-exe{
+	display:none;
+}

@@ -1,4 +1,6 @@
 <?php
+if( class_exists('Optimisationio_Dashboard') ){ return; }
+
 class Optimisationio_Dashboard {
 
 	private static $instance = null;

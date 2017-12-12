@@ -482,6 +482,10 @@ var Optimisationio_Dashbord_WP_Disable = (function($){
 		$('.dns-prefetch-group').css('display', $toogle_el.dnsPrefetch.is(":checked") ? '' : 'none');
 	}
 
+	function on_change_disableGravatars(ev){
+		$('.disable-gravatars-only-comments').css('display', $toogle_el.disableGravatars.is(":checked") ? '' : 'none');
+	}
+
 	function init(){
 		$toogle_el = {
 			feeds: $('input[name="disable_rss"]'),
@@ -490,6 +494,7 @@ var Optimisationio_Dashbord_WP_Disable = (function($){
 			spamCommentsCleaner: $('input[name="spam_comments_cleaner"]'),
 			certainPostsComments: $('input[name="disable_comments_on_certain_post_types"]'),
 			dnsPrefetch: $('input[name="dns_prefetch"]'),
+			disableGravatars: $('input[name="disable_gravatars"]'),
 		};
 		
 		if( $toogle_el.feeds.length ){
@@ -520,6 +525,11 @@ var Optimisationio_Dashbord_WP_Disable = (function($){
 		if( $toogle_el.dnsPrefetch.length ){
 			$toogle_el.dnsPrefetch.on('change', on_change_dnsPrefetch);
 			on_change_dnsPrefetch();
+		}
+
+		if( $toogle_el.disableGravatars.length ){
+			$toogle_el.disableGravatars.on('change', on_change_disableGravatars);
+			on_change_disableGravatars();
 		}
 	}
 
@@ -663,6 +673,8 @@ var Optimisationio_Dashboard_Cache_Performance = (function($){
 
 var Optimisationio_Dashboard_Image_Compression = (function($){
 
+	var while_optimising_images = false;
+
 	var $toogle_el = {
 		quality_auto: null,
 		custom_cloudinary_account: null,
@@ -676,6 +688,85 @@ var Optimisationio_Dashboard_Image_Compression = (function($){
 		var isChecked = $toogle_el.custom_cloudinary_account.is(":checked");
 		$('.custom-cloudinary-group').css('display', isChecked ? '' : 'none');
 		$('.auto-cloudinary-group').css('display', isChecked ? 'none' : '');
+	}
+
+	function init_bulk_images_optimisation(){
+
+		var $bulk_optimisation_button = jQuery("#bulk_optimisation_button");
+
+		if(  $bulk_optimisation_button.length ){
+			
+			var page_leave_on_img_optimising = function(ev){
+				var msg;
+			    if ( while_optimising_images ) {
+			        msg = "Leaving the page while executing images bulk optimisation, may be canceled a part or the whole proccess.";
+			        ev.returnValue = msg;
+			        return msg;
+			    }
+			}
+
+			var on_bulk_optimisation_click = function(ev){
+
+				ev.preventDefault();
+				ev.stopPropagation();
+
+				if( while_optimising_images ){ return; }
+
+				while_optimising_images = true;
+
+				var $parent = $(this).parent();
+				var error_msg = "There was a problem with the images optimization process and ended incomplete.";
+
+				$parent.addClass("is-executing");
+
+				$.ajax({
+		            type: 'post',
+		            url: ajaxurl,
+		            data:{
+		            	action: 'wpimages_optimise_all_images',
+		            	nonce: $('#optimisationio_cloudinary_api_settings').val(),
+		            },
+		            dataType: 'json',
+		            success: function (data, textStatus, XMLHttpRequest) {
+
+		            	var alert_msg = null;
+		            	
+		            	if( 0 === parseInt( data.error, 10 ) ){
+		            		if( 1 < data.optimised_num ){
+		            			alert_msg = "Images bulk optimisation completed.\n " + data.optimised_num + " images have been successfully optimized.";
+		            		}
+		            		else{
+		            			alert_msg = "Images bulk optimisation completed.\n " + data.optimised_num + " image has been successfully optimized.";
+		            		}
+		            	}
+		            	else{
+		            		
+		            		alert_msg = error_msg;
+
+		            		if( 'undefined' !== typeof data.msg ) {
+		        				console.info( data.msg );
+		        			}
+		        		}
+
+		        		while_optimising_images = false;
+		        		$parent.removeClass("is-executing");
+		        		
+		        		if( alert_msg ){
+		        			alert( alert_msg );
+		        		}
+		            },
+		            error: function (data, textStatus, XMLHttpRequest) {
+		            	console.error(data);
+		            	while_optimising_images = false;
+		            	$parent.removeClass("is-executing");
+		            	alert( error_msg );
+		            }
+		        });
+			};
+
+			$bulk_optimisation_button.on('click', on_bulk_optimisation_click);
+			$(window).bind('beforeunload', page_leave_on_img_optimising );
+		}
 	}
 
 	function init(){
@@ -699,6 +790,8 @@ var Optimisationio_Dashboard_Image_Compression = (function($){
 				$(this).remove();
 			});
 		});
+
+		init_bulk_images_optimisation();
 	}
 
 	return {

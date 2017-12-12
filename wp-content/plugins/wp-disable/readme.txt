@@ -3,7 +3,7 @@ Contributors: optimisation.io, hosting.io
 Tags: Disable Emoji, Disable Embeds, Disable Gravatars, Remove Querystrings, Reduce HTTP Requests, speedup WooCommerce, Close comments, Optimization
 Requires at least: 4.5
 Tested up to: 4.9
-Stable tag: 1.5.14
+Stable tag: 1.5.15
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,7 +37,7 @@ General Performance improvements: Added support for : disable ping/trackbacks, c
 <a href="https://github.com/hosting-io/wp-disable">Public repo on GitHub</a> if you would like to contribute or have any ideas to add.
 
 <b>Docs & Support</b><br>
-<a href="https://optimisation.io/faq/">The documentation is an on-going project, so please bare with us as we update.  If you would like to help with the documentation, please get in touch.
+The <a href="https://optimisation.io/faq/">documentation is an on-going project</a>, so please bare with us as we update.  If you would like to help with the documentation, please get in touch.
 
 
 
@@ -81,6 +81,13 @@ You can try our <a href="https://wordpress.org/plugins/wp-image-compression/">Fr
 
 
 == Changelog ==
+= 1.5.15 =
+* Minor CSS _updates
+* Bug fix with DNS-prefetch
+* Fixed conflicts with other optimisation.io Plugins
+* New fetaure - Disable Gravatars only in Comments
+
+
 = 1.5.14 =
 * Started on Documentation (can be found here https://optimisation.io/faq/)
 * Added donation button - help us make this the best optimisation suite available on the repo.  Every $ donated helps.

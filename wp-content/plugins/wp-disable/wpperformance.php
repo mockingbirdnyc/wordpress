@@ -5,7 +5,7 @@
  * Description: Improve WordPress performance by disabling unused items. <a href="admin.php?page=optimisationio-dashboard">Open Settings</a>
  * Author:  optimisation.io, hosting.io
  * Author URI:https://optimisation.io
- * Version: 1.5.14
+ * Version: 1.5.15
  *
  * Copyright (C) 2017 Optimisation.io
  */
@@ -85,7 +85,7 @@ function wpperformance_init_wp_filesystem() {
  */
 function wpperformance_disable_google_maps_ob_end( $html ) {
 	global $post;
-	$exclude_ids = [];
+	$exclude_ids = array();
 	$settings = get_option( WpPerformance::OPTION_KEY . '_settings', array() );
 	if ( isset( $settings['exclude_from_disable_google_maps'] ) && '' !== $settings['exclude_from_disable_google_maps'] ) {
 		$exclude_ids = array_map( 'intval', explode(',', $settings['exclude_from_disable_google_maps']) );

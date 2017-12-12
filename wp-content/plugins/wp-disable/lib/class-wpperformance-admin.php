@@ -429,6 +429,7 @@ class WpPerformance_Admin {
 
 					$options = array(
 						'disable_gravatars'                  => isset( $post_req['disable_gravatars'] ) ? 1 : 0,
+						'disable_gravatars_only_comments' 	 => isset( $post_req['disable_gravatars_only_comments'] ) ? 1 : 0,
 						'disable_referral_spam' 			 => isset( $post_req['disable_referral_spam'] ) ? 1 : 0,
 						'remove_jquery_migrate'				 => isset( $post_req['remove_jquery_migrate'] ) ? 1 : 0,
 						'dns_prefetch'						 => isset( $post_req['dns_prefetch'] ) ? 1 : 0,
@@ -553,6 +554,7 @@ class WpPerformance_Admin {
 
 		$default_values = array(
 			'disable_gravatars' 					=> 0,
+			'disable_gravatars_only_comments' 		=> 0,
 			'disable_referral_spam'					=> 0,
 			'remove_jquery_migrate'					=> 0,
 			'dns_prefetch'						 	=> 0,
@@ -622,6 +624,7 @@ class WpPerformance_Admin {
 						<li data-tab-setting="admin"><?php esc_html_e('Admin', 'optimisationio'); ?></li>
 						<li data-tab-setting="seo"><?php esc_html_e('SEO', 'optimisationio'); ?></li>
 						<li data-tab-setting="others"><?php esc_html_e('Others', 'optimisationio'); ?></li>
+						<li data-tab-setting="rest-api"><?php esc_html_e('REST API', 'optimisationio'); ?></li>
 					</ul>
 				</div>
 
@@ -928,9 +931,13 @@ class WpPerformance_Admin {
 							<div class="field-left"><?php esc_attr_e('Disable XML-RPC', 'optimisationio'); ?></div>
 							<div class="field-right"><?php Optimisationio_Dashboard::checkbox_component('disable_xmlrpc', isset( $sett['disable_xmlrpc'] ) && 1 === (int) $sett['disable_xmlrpc']); ?></div>
 						</div>
-						<div class="field">
+						<div class="field comments-group">
 							<div class="field-left"><?php esc_attr_e('Disable Gravatars', 'optimisationio'); ?></div>
 							<div class="field-right"><?php Optimisationio_Dashboard::checkbox_component('disable_gravatars', isset( $sett['disable_gravatars'] ) && 1 === (int) $sett['disable_gravatars']); ?></div>
+						</div>
+						<div class="field sub-field disable-gravatars-only-comments comments-group">
+							<div class="field-left"><?php esc_attr_e('Disable Gravatars ONLY in comments', 'optimisationio'); ?></div>
+							<div class="field-right"><?php Optimisationio_Dashboard::checkbox_component('disable_gravatars_only_comments', isset( $sett['disable_gravatars_only_comments'] ) && 1 === (int) $sett['disable_gravatars_only_comments'] ); ?></div>
 						</div>
 						<div class="field comments-group">
 							<div class="field-left"><?php esc_attr_e('Enable spam comments cleaner', 'optimisationio'); ?></div>
@@ -972,6 +979,12 @@ class WpPerformance_Admin {
 							<div class="field-right">
 								<?php echo submit_button( __( 'Delete spam comments now', 'optimisationio' ) , 'large submit', 'delete_spam_comments_now', false ); ?>
 							</div>
+						</div>
+					</div>
+
+					<div data-tab-setting="rest-api" class="addon-settings-content auto-table-layout">
+						<div class="cdn-comming-soon" style="margin-bottom:0; background:none">
+							<div><strong>REST API</strong>Coming Soon</div>
 						</div>
 					</div>
 				</div>
