@@ -1122,8 +1122,8 @@ function feedcount($feedurl='http://feeds.feedburner.com/wpshower') {
     }
 }
 
-function twittercount($twitter_url='https://twitter.com/users/show/mockingbirdnyc') {
-    $url = "https://twitter.com/users/show/mockingbirdnyc";
+function twittercount($twitter_url='https://twitter.com/users/show/mockingbirdmin') {
+    $url = "https://twitter.com/users/show/mockingbirdmin";
 	$response = file_get_contents ( $url );
 	$t_profile = new SimpleXMLElement ( $response );
 	$count = $t_profile->followers_count;
