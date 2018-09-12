@@ -127,6 +127,22 @@ class SSP_Settings {
 		// process the import form submission
 		add_action( 'admin_init', array( $this, 'submit_import_form' ) );
 
+		add_action( 'update_option_' . $this->settings_base . 'podmotor_disconnect', array( $this, 'maybe_disconnect_from_castos' ), 10, 2 );
+
+		// Quick and dirty colour picker implementation
+		// If we do not have the WordPress core colour picker field, then we don't break anything
+		add_action( 'admin_footer', function () {
+			?>
+            <script>
+                jQuery(document).ready(function ($) {
+                    if ("function" === typeof $.fn.wpColorPicker) {
+                        $('.ssp-color-picker').wpColorPicker();
+                    }
+                });
+            </script>
+			<?php
+		}, 99 );
+
 	}
 
 	/**
@@ -151,6 +167,12 @@ class SSP_Settings {
 			$this,
 			'settings_page',
 		) );
+
+		/* @todo Add Back In When Doing New Analytics Pages */
+		/* add_submenu_page( 'edit.php?post_type=podcast', __( 'Analytics', 'seriously-simple-podcasting' ), __( 'Analytics', 'seriously-simple-podcasting' ), 'manage_podcast', 'podcast_settings&view=analytics', array(
+			 $this,
+			 'settings_page',
+		 ) );*/
 
 		add_submenu_page( null, __( 'Upgrade', 'seriously-simple-podcasting' ), __( 'Upgrade', 'seriously-simple-podcasting' ), 'manage_podcast', 'upgrade', array(
 			$this,
@@ -232,6 +254,17 @@ class SSP_Settings {
 		if ( in_array( $pagenow, $pages, true ) || ( ! empty( $page ) && 'podcast_settings' === $page ) ) {
 			wp_enqueue_media();
 		}
+
+		// // @todo add back for analytics launch
+		// wp_enqueue_script( 'jquery-ui-datepicker' );
+		// wp_register_style( 'jquery-ui', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css' );
+		// wp_enqueue_style( 'jquery-ui' );
+
+		wp_enqueue_style( 'wp-color-picker' );
+		wp_enqueue_script( 'wp-color-picker' );
+
+		// wp_enqueue_script( 'plotly', 'https://cdn.plot.ly/plotly-latest.min.js', SSP_VERSION, true );
+
 	}
 
 	/**
@@ -569,6 +602,55 @@ class SSP_Settings {
 						'membersonly' => __( 'Only logged in users', 'seriously-simple-podcasting' ),
 					),
 					'default'     => 'all',
+				),
+				array(
+					'id'          => 'itunes_fields_enabled',
+					'label'       => __( 'Enable iTunes fields ', 'seriously-simple-podcasting' ),
+					'description' => __( 'Turn this on to enable the iTunes iOS11 specific fields on each episode.', 'seriously-simple-podcasting' ),
+					'type'        => 'checkbox',
+					'default'     => '',
+				),
+				array(
+					'id'          => 'player_meta_data_enabled',
+					'label'       => __( 'Enable Player meta data ', 'seriously-simple-podcasting' ),
+					'description' => __( 'Turn this on to enable player meta data underneath the player. (download link, episode duration and date recorded).', 'seriously-simple-podcasting' ),
+					'type'        => 'checkbox',
+					'default'     => 'on',
+				),
+				array(
+					'id'          => 'player_style',
+					'label'       => __( 'Media player style', 'seriously-simple-podcasting' ),
+					'description' => __( 'Select the style of media player you wish to display on your site.', 'seriously-simple-podcasting' ),
+					'type'        => 'radio',
+					'options'     => array(
+						'standard' => __( 'Standard Compact Player', 'seriously-simple-podcasting' ),
+						'larger'   => __( 'HTML5 Player With Album Art', 'seriously-simple-podcasting' ),
+					),
+					'default'     => 'all',
+				),
+				array(
+					'id'          => 'player_background_skin_colour',
+					'label'       => __( 'Background skin colour', 'seriously-simple-podcasting' ),
+					'description' => '<br>' . __( 'Only applicable if using the new HTML5 player', 'seriously-simple-podcasting' ),
+					'type'        => 'colour-picker',
+					'default'     => '#222222',
+					'class'       => 'ssp-color-picker'
+				),
+				array(
+					'id'          => 'player_wave_form_colour',
+					'label'       => __( 'Player progress bar colour', 'seriously-simple-podcasting' ),
+					'description' => '<br>' . __( 'Only applicable if using the new HTML5 player', 'seriously-simple-podcasting' ),
+					'type'        => 'colour-picker',
+					'default'     => '#fff',
+					'class'       => 'ssp-color-picker'
+				),
+				array(
+					'id'          => 'player_wave_form_progress_colour',
+					'label'       => __( 'Player progress bar progress colour', 'seriously-simple-podcasting' ),
+					'description' => '<br>' . __( 'Only applicable if using the new HTML5 player', 'seriously-simple-podcasting' ),
+					'type'        => 'colour-picker',
+					'default'     => '#00d4f7',
+					'class'       => 'ssp-color-picker'
 				),
 			),
 		);
@@ -917,15 +999,30 @@ class SSP_Settings {
 				),
 			),
 		);
+// @todo add back for analytics launch
+//		$settings['analytics'] = array(
+//			'title'       => __( 'Analytics', 'seriously-simple-podcasting' ),
+//			'description' => sprintf( __( 'Connect your %s analytics application with your podcast site' ), '<a target="_blank" href=" ' . SSP_PODMOTOR_APP_URL . '">Seriously Simple Hosting</a>' ),
+//			'fields'      => array(
+//				array(
+//					'id'          => 'ssp_analytics_token',
+//					'label'       => __( 'Analytics Token', 'seriously-simple-podcasting' ),
+//					'description' => '',
+//					'type'        => 'text',
+//					'callback'    => 'esc_url_raw',
+//					'class'       => 'regular-text',
+//				),
+//			),
+//		);
 
-		$settings['podcastmotor-connect'] = array(
+		$settings['castos-hosting'] = array(
 			'title'       => __( 'Hosting', 'seriously-simple-podcasting' ),
-			'description' => sprintf( __( 'Connect your blog to your %s account.', 'seriously-simple-podcasting' ), '<a target="_blank" href="' . SSP_PODMOTOR_APP_URL . '">Seriously Simple Hosting</a>' ),
+			'description' => sprintf( __( 'Connect your WordPress site to your %s account.', 'seriously-simple-podcasting' ), '<a target="_blank" href="' . SSP_PODMOTOR_APP_URL . '">Castos</a>' ),
 			'fields'      => array(
 				array(
 					'id'          => 'podmotor_account_email',
-					'label'       => __( 'Seriously Simple Hosting email', 'seriously-simple-podcasting' ),
-					'description' => __( 'The email address you used to register your Seriously Simple Hosting account.', 'seriously-simple-podcasting' ),
+					'label'       => __( 'Your email', 'seriously-simple-podcasting' ),
+					'description' => __( 'The email address you used to register your Castos account.', 'seriously-simple-podcasting' ),
 					'type'        => 'text',
 					'default'     => '',
 					'placeholder' => __( 'email@domain.com', 'seriously-simple-podcasting' ),
@@ -934,8 +1031,8 @@ class SSP_Settings {
 				),
 				array(
 					'id'          => 'podmotor_account_api_token',
-					'label'       => __( 'Seriously Simple Hosting api token', 'seriously-simple-podcasting' ),
-					'description' => __( 'Your Seriously Simple Hosting api token. Available from your Seriously Simple Hosting account dashboard.', 'seriously-simple-podcasting' ),
+					'label'       => __( 'Castos API token', 'seriously-simple-podcasting' ),
+					'description' => __( 'Your Castos API token. Available from your Castos account dashboard.', 'seriously-simple-podcasting' ),
 					'type'        => 'text',
 					'default'     => '',
 					'placeholder' => __( 'Enter your api token', 'seriously-simple-podcasting' ),
@@ -947,13 +1044,27 @@ class SSP_Settings {
 					'type'    => 'hidden',
 					'default' => '',
 				),
+				array(
+					'id'              => 'podmotor_disconnect',
+					'label'           => __( 'Disconnect Castos', 'seriously-simple-podcasting' ),
+					'description'     => __( 'Disconnect your Castos account.', 'seriously-simple-podcasting' ),
+					'type'            => 'checkbox',
+					'default'         => '',
+					'callback'        => 'wp_strip_all_tags',
+					'class'           => 'disconnect-castos',
+				),
 			),
 		);
 
+		// @todo there has to be a better way to do this
+		if ( !ssp_is_connected_to_podcastmotor() ) {
+			$settings['castos-hosting']['fields'][3]['container_class'] = 'hidden';
+		}
+
 		if ( ssp_is_connected_to_podcastmotor() ) {
 			$settings['import'] = array(
-				'title'       => __( 'Podcast Import', 'seriously-simple-podcasting' ),
-				'description' => sprintf( __( 'Import and upload your externally hosted podcast files to your %s account.', 'seriously-simple-podcasting' ), '<a href="' . SSP_PODMOTOR_APP_URL . '">Seriously Simple Hosting</a>' ),
+				'title'       => __( 'Import', 'seriously-simple-podcasting' ),
+				'description' => sprintf( __( 'Import and upload your externally hosted podcast files to your %s account.', 'seriously-simple-podcasting' ), '<a href="' . SSP_PODMOTOR_APP_URL . '">Castos</a>' ),
 				'fields'      => array(),
 			);
 		}
@@ -1045,6 +1156,11 @@ class SSP_Settings {
 							continue;
 						}
 
+						$container_class = '';
+						if ( isset( $field['container_class'] ) && ! empty( $field['container_class'] ) ) {
+							$container_class = $field['container_class'];
+						}
+
 						// Add field to page.
 						add_settings_field( $field['id'], $field['label'],
 							array(
@@ -1057,6 +1173,7 @@ class SSP_Settings {
 								'field'       => $field,
 								'prefix'      => $this->settings_base,
 								'feed-series' => $series_id,
+								'class'       => $container_class
 							)
 						);
 					}
@@ -1178,6 +1295,9 @@ class SSP_Settings {
 			case 'password':
 			case 'number':
 				$html .= '<input id="' . esc_attr( $field['id'] ) . '" type="' . $field['type'] . '" name="' . esc_attr( $option_name ) . '" placeholder="' . esc_attr( $field['placeholder'] ) . '" value="' . esc_attr( $data ) . '" class="' . $class . '"/>' . "\n";
+				break;
+			case 'colour-picker':
+				$html .= '<input id="' . esc_attr( $field['id'] ) . '" type="' . $field['type'] . '" name="' . esc_attr( $option_name ) . '" value="' . esc_attr( $data ) . '" class="' . $class . '"/>' . "\n";
 				break;
 
 			case 'text_secret':
@@ -1423,6 +1543,25 @@ class SSP_Settings {
 	 */
 	public function settings_page() {
 
+		$q_args = wp_parse_args( $_GET, array(
+			'post_type' => null,
+			'page'      => null,
+			'view'      => null,
+			'tab'       => null
+		) );
+
+		array_walk( $q_args, function ( &$entry ) {
+			$entry = sanitize_title( $entry );
+		} );
+
+		/* @todo Add Back For Stats Later On */
+		/*if( "analytics" === $q_args['view'] ){
+			ob_start();
+			include SSP_PLUGIN_PATH . 'includes/views/ssp-analytics.php';
+			echo ob_get_clean();
+			return;
+		}*/
+
 		// Build page HTML
 		$html = '<div class="wrap" id="podcast_settings">' . "\n";
 
@@ -1560,7 +1699,7 @@ class SSP_Settings {
 			$html .= '<input type="hidden" name="feed-series" value="' . esc_attr( $current_series ) . '" />' . "\n";
 		}
 
-		if ( isset( $tab ) && 'podcastmotor-connect' == $tab ) {
+		if ( isset( $tab ) && 'castos-hosting' == $tab ) {
 			$podmotor_account_id = get_option( 'ss_podcasting_podmotor_account_id', '' );
 			$html .= '<input id="podmotor_account_id" type="hidden" name="ss_podcasting_podmotor_account_id" placeholder="" value="' . $podmotor_account_id . '" class="regular-text disabled" readonly="">' . "\n";
 		}
@@ -1573,7 +1712,7 @@ class SSP_Settings {
 		do_settings_sections( 'ss_podcasting' );
 		$html .= ob_get_clean();
 
-		if ( isset( $tab ) && 'podcastmotor-connect' == $tab ) {
+		if ( isset( $tab ) && 'castos-hosting' == $tab ) {
 			// Validate button
 			$html .= '<p class="submit">' . "\n";
 			$html .= '<input id="validate_api_credentials" type="button" class="button-primary" value="' . esc_attr( __( 'Validate Credentials', 'seriously-simple-podcasting' ) ) . '" />' . "\n";
@@ -1665,10 +1804,24 @@ class SSP_Settings {
 			wp_mail( $to, $subject, $message, $from );
 			?>
 			<div class="notice notice-info is-dismissible">
-				<p><?php esc_attr_e( 'Thanks, someone from Seriously Simple Hosting will be in touch. to assist with importing your podcast', 'seriously-simple-podcasting' ); ?></p>
+				<p><?php esc_attr_e( 'Thanks, someone from Castos will be in touch. to assist with importing your podcast', 'seriously-simple-podcasting' ); ?></p>
 			</div>
 			<?php
 		}
+	}
+
+	/**
+	 * Disconnects a user from the Castos Hosting service by deleting their API keys
+	 * Triggered by the update_option_ss_podcasting_podmotor_disconnect action hook
+	 */
+	public function maybe_disconnect_from_castos( $old_value, $new_value ) {
+		if ( 'on' != $new_value ) {
+			return;
+		}
+		delete_option( $this->settings_base . 'podmotor_account_email' );
+		delete_option( $this->settings_base . 'podmotor_account_api_token' );
+		delete_option( $this->settings_base . 'podmotor_account_id' );
+		delete_option( $this->settings_base . 'podmotor_disconnect' );
 	}
 
 	public function render_seriously_simple_sidebar() {
@@ -1683,10 +1836,10 @@ class SSP_Settings {
 		$image_dir  = $this->assets_url . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR;
 		$extensions = array(
 			'connect'     => array(
-				'title'       => 'NEW - ***Premium*** Seriously Simple Hosting',
-				'image'       => $image_dir . 'ssp-PM-connect.jpg',
+				'title'       => 'NEW - Castos Podcast Hosting',
+				'image'       => $image_dir . 'castos-icon-extension.jpg',
 				'url'         => SSP_PODMOTOR_APP_URL,
-				'description' => 'Host your podcast media files safely and securely in a CDN-powered cloud platform designed specifically to connect beautifully with Seriously Simple Podcasting.  Faster downloads, better live streaming, and take back security for your web server with Seriously Simple Hosting.',
+				'description' => 'Host your podcast media files safely and securely in a CDN-powered cloud platform designed specifically to connect beautifully with Seriously Simple Podcasting.  Faster downloads, better live streaming, and take back security for your web server with Castos.',
 				'new_window'  => true,
 			),
 			'stats'       => array(

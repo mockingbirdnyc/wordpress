@@ -1,6 +1,6 @@
 <?php
 /**
- * @package WP Smush
+ * @package WP_Smush
  * @subpackage Admin
  * @version 2.3
  *
@@ -91,7 +91,7 @@ if ( ! class_exists( 'WpSmushDB' ) ) {
 					while ( $get_posts ) {
 
 						//Remove the Filters added by WP Media Folder
-						$wpsmush_db->remove_filters();
+						$this->remove_filters();
 
 						$query = new WP_Query( $args );
 
@@ -193,7 +193,7 @@ if ( ! class_exists( 'WpSmushDB' ) ) {
 			$limit  = $wpsmushit_admin->query_limit();
 
 			$mime  = implode( "', '", $wpsmushit_admin->mime_types );
-			$query = "SELECT ID FROM $wpdb->posts WHERE post_type = 'attachment' AND post_status != 'trash' AND post_mime_type IN ('$mime') ORDER BY `ID` DESC LIMIT %d, %d";
+			$query = "SELECT ID FROM $wpdb->posts WHERE post_type = 'attachment' AND post_status = 'inherit' AND post_mime_type IN ('$mime') ORDER BY `ID` DESC LIMIT %d, %d";
 			//Remove the Filters added by WP Media Folder
 			$this->remove_filters();
 
@@ -263,6 +263,11 @@ if ( ! class_exists( 'WpSmushDB' ) ) {
 				if ( ! empty( $wpsmushit_admin->total_count ) && $wpsmushit_admin->total_count <= $offset ) {
 					$query_next = false;
 				}
+			}
+
+			//Remove resmush ids from the list
+			if ( ! empty( $wpsmushit_admin->resmush_ids ) && is_array( $wpsmushit_admin->resmush_ids ) ) {
+				$posts = array_diff( $posts, $wpsmushit_admin->resmush_ids );
 			}
 
 			return $return_ids ? $posts : count( $posts );
@@ -443,22 +448,19 @@ if ( ! class_exists( 'WpSmushDB' ) ) {
 		}
 
 		/**
-		 * Get the savings from image resizing, And force update if set to true
+		 * Get the savings from image resizing, And force update if set to true.
 		 *
-		 * @param bool $force_update , Whether to Re-Calculate all the stats or not
-		 *
-		 * @param bool $format Format the Bytes in readable format
-		 *
-		 * @param bool $return_count Return the resized image count, Set to false by default
+		 * @param bool $force_update , Whether to Re-Calculate all the stats or not.
+		 * @param bool $format Format the Bytes in readable format.
+		 * @param bool $return_count Return the resized image count, Set to false by default.
 		 *
 		 * @return array|bool|mixed|string Array of {
 		 *      'bytes',
 		 *      'before_size',
 		 *      'after_size'
 		 * }
-		 *
 		 */
-		function resize_savings( $force_update = true, $format = false, $return_count =  false ) {
+		function resize_savings( $force_update = true, $format = false, $return_count = false ) {
 			$savings = '';
 
 			if ( ! $force_update ) {
@@ -467,15 +469,15 @@ if ( ! class_exists( 'WpSmushDB' ) ) {
 
 			$count = wp_cache_get( WP_SMUSH_PREFIX . 'resize_count', 'wp-smush' );
 
-			//If resize image count is not stored in db, recalculate
-			if( $return_count && !$count ) {
+			// If resize image count is not stored in db, recalculate.
+			if ( $return_count && false === $count ) {
 				$count = 0;
 				$force_update = true;
 			}
 
 			global $wpsmushit_admin;
 
-			//If nothing in cache, Calculate it
+			// If nothing in cache, calculate it.
 			if ( empty( $savings ) || $force_update ) {
 				$savings = array(
 					'bytes'       => 0,
@@ -494,7 +496,7 @@ if ( ! class_exists( 'WpSmushDB' ) ) {
 
 					if ( ! empty( $resize_data ) ) {
 						foreach ( $resize_data as $data ) {
-							//Skip resmush ids
+							// Skip resmush ids.
 							if ( ! empty( $wpsmushit_admin->resmush_ids ) && in_array( $data->post_id, $wpsmushit_admin->resmush_ids ) ) {
 								continue;
 							}
@@ -509,14 +511,14 @@ if ( ! class_exists( 'WpSmushDB' ) ) {
 							$count++;
 						}
 					}
-					//Update the offset
+					// Update the offset.
 					$offset += $limit;
 
-					//Compare the Offset value to total images
-					if ( ! empty( $wpsmushit_admin->total_count ) && $wpsmushit_admin->total_count < $offset ) {
+					// Compare the offset value to total images.
+					if ( ! empty( $wpsmushit_admin->total_count ) && $wpsmushit_admin->total_count <= $offset ) {
 						$query_next = false;
 					} elseif ( ! $resize_data ) {
-						//If we didn' got any results
+						// If we didn't get any results.
 						$query_next = false;
 					}
 				}
@@ -830,7 +832,7 @@ if ( ! class_exists( 'WpSmushDB' ) ) {
 		 *
 		 *
 		 */
-		function get_savings_for_attachments( $attachments = array() ) {
+		function get_stats_for_attachments( $attachments = array() ) {
 			//@todo: Add image_count, lossy count, count_smushed
 			$stats = array(
 				'size_before'        => 0,
@@ -839,7 +841,9 @@ if ( ! class_exists( 'WpSmushDB' ) ) {
 				'savings_conversion' => 0,
 				'count_images'       => 0,
 				'count_supersmushed' => 0,
-				'count_smushed'      => 0
+				'count_smushed'      => 0,
+				'count_resize'       => 0,
+				'count_remaining'    => 0
 			);
 
 			//If we don't have any attachments, return empty array
@@ -847,11 +851,11 @@ if ( ! class_exists( 'WpSmushDB' ) ) {
 				return $stats;
 			}
 
-			global $WpSmush, $wpsmush_helper;
+			global $wp_smush, $wpsmush_helper;
 
 			//Loop over all the attachments to get the cummulative savings
 			foreach ( $attachments as $attachment ) {
-				$smush_stats        = get_post_meta( $attachment, $WpSmush->smushed_meta_key, true );
+				$smush_stats        = get_post_meta( $attachment, $wp_smush->smushed_meta_key, true );
 				$resize_savings     = get_post_meta( $attachment, WP_SMUSH_PREFIX . 'resize_savings', true );
 				$conversion_savings = $wpsmush_helper->get_pngjpg_savings( $attachment );
 
@@ -868,8 +872,9 @@ if ( ! class_exists( 'WpSmushDB' ) ) {
 				if ( ! empty( $resize_savings ) ) {
 					//Add resize and conversion savings
 					$stats['savings_resize'] += ! empty( $resize_savings['bytes'] ) ? $resize_savings['bytes'] : 0;
-					$stats['size_before']    += ! empty( $resize_savings['size_before'] ) ? ! empty( $resize_savings['size_before'] ) : 0;
-					$stats['size_after']     += ! empty( $resize_savings['size_after'] ) ? ! empty( $resize_savings['size_after'] ) : 0;
+					$stats['size_before']    += ! empty( $resize_savings['size_before'] ) ? $resize_savings['size_before'] : 0;
+					$stats['size_after']     += ! empty( $resize_savings['size_after'] ) ? $resize_savings['size_after'] : 0;
+					$stats['count_resize']   += 1;
 				}
 
 				//Add conversion saving stats

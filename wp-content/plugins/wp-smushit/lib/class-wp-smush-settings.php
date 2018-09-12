@@ -13,15 +13,58 @@ if ( ! class_exists( 'WpSmushSettings' ) ) {
 			'auto'        => 1,
 			'lossy'       => 0,
 			'original'    => 0,
-			'keep_exif'   => 0,
+			'strip_exif'  => 1,
 			'resize'      => 0,
 			'backup'      => 0,
 			'png_to_jpg'  => 0,
 			'nextgen'     => 0,
-			's3'          => 0
+			's3'          => 0,
+			'detection'   => 0,
+			'gutenberg'   => 0,
 		);
 
+		/**
+		 * List of fields in bulk smush form.
+		 *
+		 * @var array
+		 */
+		var $bulk_fields = array(
+			'networkwide',
+			'auto',
+			'lossy',
+			'original',
+			'strip_exif',
+			'resize',
+			'backup',
+			'png_to_jpg',
+			'detection',
+		);
+
+		/**
+		 * List of fields in integration form.
+		 *
+		 * @var array
+		 */
+		var $integration_fields = array(
+			'gutenberg',
+			'nextgen',
+			's3',
+		);
+
+		/**
+		 * List of fields in CDN form.
+		 *
+		 * @var array
+		 */
+		var $cdn_fields = array();
+
 		function __construct() {
+
+			//Do not initialize if not in admin area
+			#wp_head runs specifically in the frontend, good check to make sure we're accidentally not loading settings on required pages
+			if ( ! is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) && did_action('wp_head') ) {
+				return null;
+			}
 
 			//Save Settings
 			add_action( 'wp_ajax_save_settings', array( $this, 'save_settings' ) );
@@ -36,15 +79,25 @@ if ( ! class_exists( 'WpSmushSettings' ) ) {
 		 */
 		function init_settings() {
 
+			#See if we've got serialised settings stored already
 			$last_settings = $this->get_setting( WP_SMUSH_PREFIX . 'last_settings', array() );
-			if( empty( $last_settings ) ) {
+			if ( empty( $last_settings ) ) {
+				#Nope - No serialised settings, We populate it and store it in db
 				$last_settings = $this->get_serialised_settings();
+				if ( ! empty( $last_settings ) ) {
+					//Store Last Settings in db
+					$this->update_setting( WP_SMUSH_PREFIX . 'last_settings', $last_settings );
+				}
 			}
-			$last_settings = maybe_unserialize( $last_settings );
-			//Merge with the existing settings
-			$this->settings = array_merge( $this->settings, $last_settings );
-			return $this->settings;
 
+			#Store it in class variable
+			$last_settings = maybe_unserialize( $last_settings );
+			if ( ! empty( $last_settings ) && is_array( $last_settings ) ) {
+				//Merge with the existing settings
+				$this->settings = array_merge( $this->settings, $last_settings );
+			}
+
+			return $this->settings;
 		}
 
 		/**
@@ -69,7 +122,12 @@ if ( ! class_exists( 'WpSmushSettings' ) ) {
 		function get_serialised_settings() {
 			$settings = array();
 			foreach ( $this->settings as $key => $val ) {
-				$settings[ $key ] = $this->get_setting( WP_SMUSH_PREFIX . $key );
+				$value = $this->get_setting( WP_SMUSH_PREFIX . $key );
+				if ( 'auto' == $key && $value === false ) {
+					$settings[ $key ] = 1;
+				} else {
+					$settings[ $key ] = $value;
+				}
 			}
 			$settings = maybe_serialize( $settings );
 
@@ -98,38 +156,45 @@ if ( ! class_exists( 'WpSmushSettings' ) ) {
 		 * @return null
 		 */
 		function process_options() {
-
 			if ( ! is_user_logged_in() ) {
+				return false;
+			}
+
+			$pages_with_settings = array( 'bulk', 'integration', 'cdn' );
+
+			// Continue only if form name is set.
+			if ( ! isset( $_POST['setting_form'] ) || ! in_array( $_POST['setting_form'], $pages_with_settings, true ) ) { // Input var ok.
 				return false;
 			}
 
 			global $wpsmushit_admin;
 
-			//Store that we need not redirect again on plugin activation
+			// Store that we need not redirect again on plugin activation.
 			update_site_option( 'wp-smush-hide_smush_welcome', true );
 
-			// var to temporarily assign the option value
+			// Var to temporarily assign the option value.
 			$setting = null;
 
-			//Check the last settings stored in db
+			// Check the last settings stored in db.
 			$settings = $this->get_setting( WP_SMUSH_PREFIX . 'last_settings', array() );
+			$settings = maybe_unserialize( $settings );
 
-			//If not saved earlier, get it from stored options
-			if ( empty( $settings ) || 0 == sizeof( $settings ) ) {
+			// If not saved earlier, get it from stored options.
+			if ( empty( $settings ) || 0 === count( $settings ) ) {
 				$settings = $this->get_serialised_settings();
 			}
 
-			$settings = !is_array( $settings ) ? maybe_unserialize( $settings ) : $settings ;
+			$settings = ! is_array( $settings ) ? maybe_unserialize( $settings ) : $settings ;
 
-			//Save whether to use the settings networkwide or not ( Only if in network admin )
-			if ( ! empty( $_POST['action'] ) && 'save_settings' == $_POST['action'] ) {
-				if ( ! isset( $_POST['wp-smush-networkwide'] ) ) {
+			// Save whether to use the settings networkwide or not ( Only if in network admin ).
+			if ( isset( $_POST['action'] ) && 'save_settings' === $_POST['action'] ) { // Input var ok.
+				if ( ! isset( $_POST['wp-smush-networkwide'] ) ) { // Input var ok.
 					$settings['networkwide'] = 0;
-					//Save the option to disable nwtwork wide settings and return
+					// Save the option to disable nwtwork wide settings and return.
 					update_site_option( WP_SMUSH_PREFIX . 'networkwide', 0 );
 				} else {
 					$settings['networkwide'] = 1;
-					//Save the option to disable nwtwork wide settings and return
+					// Save the option to disable nwtwork wide settings and return.
 					update_site_option( WP_SMUSH_PREFIX . 'networkwide', 1 );
 				}
 			}
@@ -139,55 +204,64 @@ if ( ! class_exists( 'WpSmushSettings' ) ) {
 				delete_site_option( 'wp-smush-hide_s3support_alert' );
 			}
 
-			// process each setting and update options
-			foreach ( $wpsmushit_admin->settings as $name => $text ) {
+			// Current form fields.
+			$setting_form = $_POST['setting_form'] . '_fields';
+			$form_fields = $this->{$setting_form};
 
-				// formulate the index of option
+			// Process each setting and update options.
+			foreach ( $wpsmushit_admin->settings as $name => $text ) {
+				// Do not update if field is not available in current form.
+				if ( ! in_array( $name, $form_fields, true ) ) {
+					continue;
+				}
+
+				// Formulate the index of option.
 				$opt_name = WP_SMUSH_PREFIX . $name;
 
-				// get the value to be saved
-				$setting = isset( $_POST[ $opt_name ] ) ? 1 : 0;
+				// Get the value to be saved.
+				$setting = isset( $_POST[ $opt_name ] ) ? 1 : 0; // Input var ok.
 
 				$settings[ $name ] = $setting;
 
-				// update the new value
+				// Update the new value.
 				$this->update_setting( $opt_name, $setting );
 
-				// unset the var for next loop
+				// Unset the var for next loop.
 				unset( $setting );
 			}
 
-			//Save serialised settings
+			// Save serialised settings.
 			$resp = $this->update_setting( WP_SMUSH_PREFIX . 'last_settings', $settings );
 
-			//Update initialised settings
+			// Update initialised settings.
 			$this->settings = $settings;
 
-			//Save the selected image sizes
-			$image_sizes = ! empty( $_POST['wp-smush-image_sizes'] ) ? $_POST['wp-smush-image_sizes'] : array();
-			$image_sizes = array_filter( array_map( "sanitize_text_field", $image_sizes ) );
-			$this->update_setting( WP_SMUSH_PREFIX . 'image_sizes', $image_sizes );
+			// Settings that are specific to a page.
+			if ( 'bulk_fields' === $setting_form ) {
+				// Save the selected image sizes.
+				$image_sizes = ! empty( $_POST['wp-smush-image_sizes'] ) ? $_POST['wp-smush-image_sizes'] : array(); // Input var ok.
+				$image_sizes = array_filter( array_map( 'sanitize_text_field', $image_sizes ) );
+				$this->update_setting( WP_SMUSH_PREFIX . 'image_sizes', $image_sizes );
 
-			//Update Resize width and height settings if set
-			$resize_sizes['width']  = isset( $_POST['wp-smush-resize_width'] ) ? intval( $_POST['wp-smush-resize_width'] ) : 0;
-			$resize_sizes['height'] = isset( $_POST['wp-smush-resize_height'] ) ? intval( $_POST['wp-smush-resize_height'] ) : 0;
+				// Update Resize width and height settings if set.
+				$resize_sizes['width']  = isset( $_POST['wp-smush-resize_width'] ) ? intval( $_POST['wp-smush-resize_width'] ) : 0; // Input var ok.
+				$resize_sizes['height'] = isset( $_POST['wp-smush-resize_height'] ) ? intval( $_POST['wp-smush-resize_height'] ) : 0; // Input var ok.
+				$this->update_setting( WP_SMUSH_PREFIX . 'resize_sizes', $resize_sizes );
 
-			// update the resize sizes
-			$this->update_setting( WP_SMUSH_PREFIX . 'resize_sizes', $resize_sizes );
+			}
 
-			//Store the option in table
+			// Store the option in table.
 			$this->update_setting( 'wp-smush-settings_updated', 1 );
 
-			if( $resp ) {
-				//Run a re-check on next page load
+			if ( $resp ) {
+				// Run a re-check on next page load.
 				update_site_option( WP_SMUSH_PREFIX . 'run_recheck', 1 );
 			}
 
-			//Delete Show Resmush option
-			if ( isset( $_POST['wp-smush-keep_exif'] ) && ! isset( $_POST['wp-smush-original'] ) && ! isset( $_POST['wp-smush-lossy'] ) ) {
+			// Delete show resmush option.
+			if ( isset( $_POST['wp-smush-strip_exif'] ) && ! isset( $_POST['wp-smush-original'] ) && ! isset( $_POST['wp-smush-lossy'] ) ) {
 				//@todo: Update Resmush ids
 			}
-
 		}
 
 		/**
@@ -213,7 +287,7 @@ if ( ! class_exists( 'WpSmushSettings' ) ) {
 		 * @return bool|mixed|void
 		 *
 		 */
-		function get_setting( $name = '', $default = '' ) {
+		function get_setting( $name = '', $default = false ) {
 
 			if( empty( $name ) ) {
 				return false;
@@ -231,7 +305,6 @@ if ( ! class_exists( 'WpSmushSettings' ) ) {
 		 * @return bool If the setting was updated or not
 		 */
 		function update_setting( $name = '', $value = '' ) {
-
 			if( empty( $name ) ) {
 				return false;
 			}

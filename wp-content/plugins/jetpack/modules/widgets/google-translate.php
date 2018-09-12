@@ -44,11 +44,38 @@ class Jetpack_Google_Translate_Widget extends WP_Widget {
 	 * Enqueue frontend JS scripts.
 	 */
 	public function enqueue_scripts() {
-		wp_register_script( 'google-translate-init', plugins_url( 'google-translate/google-translate.js', __FILE__ ) );
+		wp_register_script(
+			'google-translate-init',
+			Jetpack::get_file_url_for_environment(
+				'_inc/build/widgets/google-translate/google-translate.min.js',
+				'modules/widgets/google-translate/google-translate.js'
+			)
+		);
 		wp_register_script( 'google-translate', '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit', array( 'google-translate-init' ) );
 		// Admin bar is also displayed on top of the site which causes google translate bar to hide beneath.
+		// Overwrite position of body.admin-bar
 		// This is a hack to show google translate bar a bit lower.
-		wp_add_inline_style( 'admin-bar', '.goog-te-banner-frame { top:32px !important }' );
+		$lowerTranslateBar = '
+			.admin-bar {
+				position: inherit !important;
+				top: auto !important;
+			}
+			.admin-bar .goog-te-banner-frame {
+				top: 32px !important
+			}
+			@media screen and (max-width: 782px) {
+				.admin-bar .goog-te-banner-frame {
+					top: 46px !important;
+				}
+			}
+			@media screen and (max-width: 480px) {
+				.admin-bar .goog-te-banner-frame {
+					position: absolute;
+				}
+			}
+		';
+		wp_add_inline_style( 'admin-bar', $lowerTranslateBar );
+		wp_add_inline_style( 'wpcom-admin-bar', $lowerTranslateBar );
 	}
 
 	/**
@@ -82,14 +109,14 @@ class Jetpack_Google_Translate_Widget extends WP_Widget {
 			 *
 			 * @param string $layout layout of the Google Translate Widget.
 			 */
-			$button_layout = apply_filters( 'jetpack_google_translate_widget_layout', 2 );
+			$button_layout = apply_filters( 'jetpack_google_translate_widget_layout', 0 );
 
 			if (
 				! is_int( $button_layout )
 				|| 0 > $button_layout
 				|| 2 < $button_layout
 			) {
-				$button_layout = 2;
+				$button_layout = 0;
 			}
 
 			wp_localize_script(

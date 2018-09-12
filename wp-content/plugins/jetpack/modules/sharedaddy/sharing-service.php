@@ -221,8 +221,17 @@ class Sharing_Service {
 		}
 
 		// Cleanup after any filters that may have produced duplicate services
-		$enabled['visible'] = array_unique( $enabled['visible'] );
-		$enabled['hidden']  = array_unique( $enabled['hidden'] );
+		if ( is_array( $enabled['visible'] ) ) {
+			$enabled['visible'] = array_unique( $enabled['visible'] );
+		} else {
+			$enabled['visible'] = array();
+		}
+
+		if ( is_array( $enabled['hidden'] ) ) {
+			$enabled['hidden']  = array_unique( $enabled['hidden'] );
+		} else {
+			$enabled['hidden'] = array();
+		}
 
 		// Form the enabled services
 		$blog = array( 'visible' => array(), 'hidden' => array() );
@@ -230,7 +239,10 @@ class Sharing_Service {
 		foreach ( $blog AS $area => $stuff ) {
 			foreach ( (array)$enabled[$area] AS $service ) {
 				if ( isset( $services[$service] ) ) {
-					$blog[$area][$service] = new $services[$service]( $service, array_merge( $global, isset( $options[$service] ) ? $options[$service] : array() ) );
+					if ( ! isset( $options[ $service ] ) || ! is_array( $options[ $service ] ) ) {
+						$options[ $service ] = array();
+					}
+					$blog[ $area ][ $service ] = new $services[ $service ]( $service, array_merge( $global, $options[ $service ] ) );
 				}
 			}
 		}
@@ -339,10 +351,11 @@ class Sharing_Service {
 		if ( $this->global === false ) {
 			$options = get_option( 'sharing-options' );
 
-			if ( is_array( $options ) && isset( $options['global'] ) )
+			if ( is_array( $options ) && isset( $options['global'] ) && is_array( $options['global'] ) ) {
 				$this->global = $options['global'];
-			else
+			} else {
 				$this->global = $this->set_global_options( $options['global'] );
+			}
 		}
 
 		if ( ! isset( $this->global['show'] ) ) {
@@ -676,8 +689,9 @@ function sharing_display( $text = '', $echo = false ) {
 	// Disabled for this post?
 	$switched_status = get_post_meta( $post->ID, 'sharing_disabled', false );
 
-	if ( !empty( $switched_status ) )
+	if ( !empty( $switched_status ) ) {
 		$show = false;
+	}
 
 	// Private post?
 	$post_status = get_post_status( $post->ID );
@@ -691,6 +705,7 @@ function sharing_display( $text = '', $echo = false ) {
 		$show = true;
 
 	$sharing_content = '';
+	$enabled = false;
 
 	if ( $show ) {
 		/**
@@ -791,7 +806,15 @@ function sharing_display( $text = '', $echo = false ) {
 			} else {
 				$ver = '20141212';
 			}
-			wp_register_script( 'sharing-js', plugin_dir_url( __FILE__ ).'sharing.js', array( 'jquery' ), $ver );
+			wp_register_script(
+				'sharing-js',
+				Jetpack::get_file_url_for_environment(
+					'_inc/build/sharedaddy/sharing.min.js',
+					'modules/sharedaddy/sharing.js'
+				),
+				array( 'jquery' ),
+				$ver
+			);
 
 			// Enqueue scripts for the footer
 			add_action( 'wp_footer', 'sharing_add_footer' );
@@ -804,10 +827,12 @@ function sharing_display( $text = '', $echo = false ) {
 	 * @module sharedaddy
 	 *
 	 * @since 3.8.0
+	 * @since 6.2.0 Started sending $enabled as a second parameter.
 	 *
 	 * @param string $sharing_content Content markup of the Jetpack sharing links
+	 * @param array  $enabled         Array of Sharing Services currently enabled.
 	 */
-	$sharing_markup = apply_filters( 'jetpack_sharing_display_markup', $sharing_content );
+	$sharing_markup = apply_filters( 'jetpack_sharing_display_markup', $sharing_content, $enabled );
 
 	if ( $echo )
 		echo $text . $sharing_markup;

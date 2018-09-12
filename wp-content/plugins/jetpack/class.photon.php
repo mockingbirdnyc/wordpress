@@ -791,9 +791,9 @@ class Jetpack_Photon {
 			} // foreach ( $multipliers as $multiplier )
 			if ( is_array( $newsources ) ) {
 				if ( function_exists( 'array_replace' ) ) { // PHP 5.3+, preferred
-					$sources = array_replace( $sources, $newsources );
+					$sources = array_replace( $sources, $newsources ); // phpcs:ignore PHPCompatibility
 				} else { // For PHP 5.2 using WP shim function
-					$sources = array_replace_recursive( $sources, $newsources );
+					$sources = array_replace_recursive( $sources, $newsources ); // phpcs:ignore PHPCompatibility -- skipping since `array_replace_recursive` is part of WP core
 				}
 			}
 		} // if ( isset( $image_meta['width'] ) && isset( $image_meta['file'] ) )
@@ -1014,6 +1014,18 @@ class Jetpack_Photon {
 	 * @return null
 	 */
 	public function action_wp_enqueue_scripts() {
-		wp_enqueue_script( 'jetpack-photon', plugins_url( 'modules/photon/photon.js', JETPACK__PLUGIN_FILE ), array( 'jquery' ), 20130122, true );
+		if ( Jetpack_AMP_Support::is_amp_request() ) {
+			return;
+		}
+		wp_enqueue_script(
+			'jetpack-photon',
+			Jetpack::get_file_url_for_environment(
+				'_inc/build/photon/photon.min.js',
+				'modules/photon/photon.js'
+			),
+			array( 'jquery' ),
+			20130122,
+			true
+		);
 	}
 }

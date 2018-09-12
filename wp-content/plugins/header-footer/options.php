@@ -217,16 +217,6 @@ if (isset($_POST['save'])) {
     }
     $options['mobile_user_agents_parsed'] = implode('|', $agents2);
 
-    $script_async_handles1 = explode("\n", $options['script_async_handles']);
-    $script_async_handles2 = array();
-    foreach ($script_async_handles1 as $value) {
-        $value = trim($value);
-        if (empty($value))
-            continue;
-        $script_async_handles2[] = strtolower($value);
-    }
-    $options['script_async_handles'] = $script_async_handles2;
-
     update_option('hefo', $options);
 }
 

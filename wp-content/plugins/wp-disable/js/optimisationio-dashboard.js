@@ -453,6 +453,8 @@ var Optimisationio_Dashbord_WP_Disable = (function($){
 		googleMaps: null,
 		spamCommentsCleaner: null,
 		certainPostsComments: null,
+		enableAsync: null,
+		enableAsyncFonts: null,
 	};
 
 	function on_change_feeds(ev){
@@ -467,6 +469,13 @@ var Optimisationio_Dashbord_WP_Disable = (function($){
 	
 	function on_change_googleMaps(ev){
 		$('.disable-google-maps-group').css('display', $toogle_el.googleMaps.is(":checked") ? '' : 'none');
+	}
+
+	function on_change_async(ev){
+		$('.asynch-urls-group').css('display', $toogle_el.enableAsync.is(":checked") ? '' : 'none');
+	}
+	function on_change_async_fonts(ev){
+		$('.fonts-asynch-urls-group').css('display', $toogle_el.enableAsyncFonts.is(":checked") ? '' : 'none');
 	}
 	
 	function on_change_spamCommentsCleaner(ev){
@@ -495,11 +504,23 @@ var Optimisationio_Dashbord_WP_Disable = (function($){
 			certainPostsComments: $('input[name="disable_comments_on_certain_post_types"]'),
 			dnsPrefetch: $('input[name="dns_prefetch"]'),
 			disableGravatars: $('input[name="disable_gravatars"]'),
+			enableAsync: $('input[name="enable_external_scripts_asynch"]'),
+			enableAsyncFonts: $('input[name="enable_external_fonts_asynch"]')
 		};
 		
 		if( $toogle_el.feeds.length ){
 			$toogle_el.feeds.on('change', on_change_feeds);
 			on_change_feeds();
+		}
+
+		if( $toogle_el.enableAsync.length ){
+			$toogle_el.enableAsync.on('change', on_change_async);
+			on_change_async();
+		}
+
+		if( $toogle_el.enableAsyncFonts.length ){
+			$toogle_el.enableAsyncFonts.on('change', on_change_async_fonts);
+			on_change_async_fonts();
 		}
 
 		if( $toogle_el.comments.length ){

@@ -13,24 +13,27 @@ class WordAds_Params {
 			'wordads_approved'           => false,
 			'wordads_active'             => false,
 			'wordads_house'              => true,
-			'enable_header_ad'           => false,
+			'wordads_unsafe'             => false,
+			'enable_header_ad'           => true,
 			'wordads_second_belowpost'   => true,
 			'wordads_display_front_page' => true,
 			'wordads_display_post'       => true,
 			'wordads_display_page'       => true,
 			'wordads_display_archive'    => true,
+			'wordads_custom_adstxt'      => ''
 		);
 
 		// grab settings, or set as default if it doesn't exist
 		$this->options = array();
 		foreach ( $settings as $setting => $default ) {
 			$option = get_option( $setting, null );
+
 			if ( is_null( $option ) ) {
 				update_option( $setting, $default, true );
 				$option = $default;
 			}
 
-			$this->options[$setting] = (bool) $option;
+			$this->options[$setting] = 'wordads_custom_adstxt' !== $setting ? (bool) $option : $option;
 		}
 
 		$host = 'localhost';
@@ -71,16 +74,12 @@ class WordAds_Params {
 	 * @since 4.5.0
 	 */
 	public static function is_cloudflare() {
-		if ( defined( 'WORDADS_CLOUDFLARE' ) ) {
-			return true;
-		}
-		if ( isset( $_SERVER['HTTP_CF_CONNECTING_IP'] ) ) {
-			return true;
-		}
-		if ( isset( $_SERVER['HTTP_CF_IPCOUNTRY'] ) ) {
-			return true;
-		}
-		if ( isset( $_SERVER['HTTP_CF_VISITOR'] ) ) {
+		if (
+			defined( 'WORDADS_CLOUDFLARE' )
+			|| isset( $_SERVER['HTTP_CF_CONNECTING_IP'] )
+			|| isset( $_SERVER['HTTP_CF_IPCOUNTRY'] )
+			|| isset( $_SERVER['HTTP_CF_VISITOR'] )
+		) {
 			return true;
 		}
 

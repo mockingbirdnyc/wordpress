@@ -120,7 +120,10 @@ jQuery(document).ready(function($){
 		$("#relevanssi_word_boundaries").attr('disabled', !this.checked);
 		$("#relevanssi_show_matches").attr('disabled', !this.checked);
 		$("#relevanssi_show_matches_text").attr('disabled', !this.checked);
-		$("#relevanssi_highlight_docs_external").attr('disabled', !this.checked);
+	});
+
+	$("#relevanssi_searchblogs_all").click(function() {
+		$("#relevanssi_searchblogs").attr('disabled', this.checked);
 	});
 });
 
@@ -163,6 +166,7 @@ jQuery(document).ready(function($) {
 					'total_seconds' : 0,
 					'limit' : 10,
 					'extend' : true,
+					'security' : nonce.indexing_nonce,
 				};
 				process_indexing_step(args);
 			}
@@ -186,6 +190,7 @@ function process_indexing_step(args) {
 			offset: args.offset,
 			limit: args.limit,
 			extend: args.extend,
+			security: args.security,
 		},
 		dataType: 'json',
 		success: function(response) {
@@ -227,16 +232,16 @@ function process_indexing_step(args) {
 					args.limit = args.limit * 2;
 					// current limit can be indexed in less than two seconds; double the limit
 				}
-				if (time_seconds < 5) {
+				else if (time_seconds < 5) {
 					args.limit += 5;
 					// current limit can be indexed in less than five seconds; up the limit
 				}
-				if (time_seconds > 20) {
+				else if (time_seconds > 20) {
 					args.limit = Math.round(args.limit / 2);
 					if (args.limit < 1) args.limit = 1;
 					// current limit takes more than twenty seconds; halve the limit
 				}
-				if (time_seconds > 10) {
+				else if (time_seconds > 10) {
 					args.limit -= 5;
 					if (args.limit < 1) args.limit = 1;
 					// current limit takes more than ten seconds; reduce the limit
@@ -260,6 +265,7 @@ function process_indexing_step(args) {
 					'total_seconds' : args.total_seconds,
 					'limit' : args.limit,
 					'extend' : args.extend,
+					'security' : args.security,
 				};
 
 				process_indexing_step(new_args);

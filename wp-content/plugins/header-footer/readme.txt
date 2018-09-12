@@ -1,8 +1,8 @@
 === Head, Footer and Post Injections ===
 Tags: header, footer, blog, page, single, post, head, tracking, facebook, og meta tag, open graph, ads, adsense, injections, analytics, amp, pixel
 Requires at least: 3.0
-Tested up to: 4.8.2
-Stable tag: 3.1.1
+Tested up to: 4.9.8
+Stable tag: 3.1.2
 Donate link: http://www.satollo.net/donations
 Contributors: satollo
 
@@ -62,7 +62,7 @@ The specific bbPress injections are going to be removed. Switch to my
 
 This plugin cannot change the menu or the footer layout, those features must be covered by your theme!
 
-Offial page: [Header and Footer](http://www.satollo.net/plugins/header-footer).
+Official page: [Header and Footer](http://www.satollo.net/plugins/header-footer).
 
 Other plugins by Stefano Lissa:
 
@@ -92,6 +92,10 @@ FAQs are answered on [Header and Footer](http://www.satollo.net/plugins/header-f
 4. Configurable snippets of code to be recalled on other configurations (to save time)
 
 == Changelog ==
+
+= 3.1.2 =
+
+* Fixed a debug notice
 
 = 3.1.1 =
 

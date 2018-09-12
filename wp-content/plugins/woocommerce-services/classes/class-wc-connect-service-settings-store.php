@@ -59,6 +59,10 @@ if ( ! class_exists( 'WC_Connect_Service_Settings_Store' ) ) {
 			$result['paper_size'] = $this->get_preferred_paper_size();
 			$result = array_merge( $default, $result );
 
+			if ( ! isset( $result['email_receipts'] ) ) {
+				$result['email_receipts'] = true;
+			}
+
 			return $result;
 		}
 
@@ -72,7 +76,7 @@ if ( ! class_exists( 'WC_Connect_Service_Settings_Store' ) ) {
 		public function update_account_settings( $settings ) {
 			// simple validation for now
 			if ( ! is_array( $settings ) ) {
-				$this->logger->debug( 'Array expected but not received', __FUNCTION__ );
+				$this->logger->log( 'Array expected but not received', __FUNCTION__ );
 				return false;
 			}
 
@@ -189,25 +193,7 @@ if ( ! class_exists( 'WC_Connect_Service_Settings_Store' ) ) {
 			return $json;
 		}
 
-		/**
-		 * Returns labels for the specific order ID
-		 *
-		 * @param $order_id
-		 *
-		 * @return array
-		 */
-		public function get_label_order_meta_data( $order_id ) {
-			$label_data = get_post_meta( ( int ) $order_id, 'wc_connect_labels', true );
-			//return an empty array if the data doesn't exist
-			if ( ! $label_data ) {
-				return array();
-			}
-
-			//labels stored as an array, return
-			if ( is_array( $label_data ) ) {
-				return $label_data;
-			}
-
+		public function try_deserialize_labels_json( $label_data ) {
 			//attempt to decode the JSON (legacy way of storing the labels data)
 			$decoded_labels = json_decode( $label_data, true );
 			if ( $decoded_labels ) {
@@ -230,6 +216,28 @@ if ( ! class_exists( 'WC_Connect_Service_Settings_Store' ) ) {
 		}
 
 		/**
+		 * Returns labels for the specific order ID
+		 *
+		 * @param $order_id
+		 *
+		 * @return array
+		 */
+		public function get_label_order_meta_data( $order_id ) {
+			$label_data = get_post_meta( ( int ) $order_id, 'wc_connect_labels', true );
+			//return an empty array if the data doesn't exist
+			if ( ! $label_data ) {
+				return array();
+			}
+
+			//labels stored as an array, return
+			if ( is_array( $label_data ) ) {
+				return $label_data;
+			}
+
+			return $this->try_deserialize_labels_json( $label_data );
+		}
+
+		/**
 		 * Updates the existing label data
 		 *
 		 * @param $order_id
@@ -244,6 +252,11 @@ if ( ! class_exists( 'WC_Connect_Service_Settings_Store' ) ) {
 				if ( $label_data['label_id'] === $new_label_data->label_id ) {
 					$result = array_merge( $label_data, (array) $new_label_data );
 					$labels_data[ $index ] = $result;
+
+					if ( ! isset( $label_data['tracking'] )
+						&& isset( $result['tracking'] ) ) {
+							WC_Connect_Extension_Compatibility::on_new_tracking_number( $order_id, $result['carrier_id'], $result['tracking'] );
+					}
 				}
 			}
 			update_post_meta( $order_id, 'wc_connect_labels', $labels_data );
@@ -317,6 +330,10 @@ if ( ! class_exists( 'WC_Connect_Service_Settings_Store' ) ) {
 		}
 
 		public function get_enabled_services_by_ids( $service_ids ) {
+			if ( empty( $service_ids ) ) {
+				return array();
+			}
+
 			$enabled_services = array();
 
 			// Note: We use esc_sql here instead of prepare because we are using WHERE IN
@@ -430,22 +447,12 @@ if ( ! class_exists( 'WC_Connect_Service_Settings_Store' ) ) {
 			if ( ! empty( $instance ) ) {
 				$service_schema = $this->service_schemas_store->get_service_schema_by_instance_id( $instance );
 				if ( ! $service_schema ) {
-					wp_send_json_error(
-						array(
-							'error' => 'bad_instance_id',
-							'message' => __( 'An invalid service instance was received.', 'woocommerce-services' )
-						)
-					);
+					return new WP_Error( 'bad_instance_id', __( 'An invalid service instance was received.', 'woocommerce-services' ) );
 				}
 			} else {
 				$service_schema = $this->service_schemas_store->get_service_schema_by_method_id( $id );
 				if ( ! $service_schema ) {
-					wp_send_json_error(
-						array(
-							'error' => 'bad_service_id',
-							'message' => __( 'An invalid service ID was received.', 'woocommerce-services' )
-						)
-					);
+					return new WP_Error( 'bad_service_id', __( 'An invalid service ID was received.', 'woocommerce-services' ) );
 				}
 			}
 
@@ -454,13 +461,7 @@ if ( ! class_exists( 'WC_Connect_Service_Settings_Store' ) ) {
 
 			if ( is_wp_error( $response_body ) ) {
 				// TODO - handle multiple error messages when the validation endpoint can return them
-				wp_send_json_error(
-					array(
-						'error'   => 'validation_failure',
-					 	'message' => $response_body->get_error_message(),
-						'data'    => $response_body->get_error_data(),
-					)
-				);
+				return $response_body;
 			}
 
 			// On success, save the settings to the database and exit
@@ -568,7 +569,7 @@ if ( ! class_exists( 'WC_Connect_Service_Settings_Store' ) ) {
 				case 'yd':
 					return __('yd', 'woocommerce-services');
 				default:
-					$this->logger->debug( 'Unexpected measurement unit: ' . $value, __FUNCTION__ );
+					$this->logger->log( 'Unexpected measurement unit: ' . $value, __FUNCTION__ );
 					return $value;
 			}
 		}

@@ -13,7 +13,49 @@ class WpPerformance_Admin {
 		add_action( 'wp_default_scripts', array( $this, 'remove_jquery_migrate' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'wp_performance_dequeue_woocommerce_cart_fragments' ), 11 );
 		add_action( 'wp_loaded', array( $this, 'wp_performance_save_dashboard_settings' ) );
+
 		$this->heartbeat_handler();
+	}
+
+	public function wp_performance_load_external_styles($tag, $handle) {
+		$external_fonts_to_load = $this->get_enternal_fonts_to_load();
+
+		foreach($external_fonts_to_load as $single_external_font_to_load)
+		{
+			wp_enqueue_style($single_external_font_to_load["unique_name"], $single_external_font_to_load["src"], array());
+		}
+	}
+
+	public function wp_performance_load_external_scripts($tag, $handle) {
+		//var_dump($handle);
+		$external_scripts_to_load = $this->get_enternal_scripts_to_load();
+
+		foreach($external_scripts_to_load as $single_external_script_to_load)
+		{
+			wp_enqueue_script($single_external_script_to_load["unique_name"], $single_external_script_to_load["src"], array());
+		}
+	}
+
+	public function wp_performance_make_async_script($tag)
+	{
+		$external_scripts_to_load = $this->get_enternal_scripts_to_load();
+		$async = false;
+
+		foreach($external_scripts_to_load as $single_external_script_to_load)
+		{
+			if(strpos($tag, $single_external_script_to_load["src"]) > 1)
+			{
+				$async = true;
+				break;
+			}
+		}
+
+        if($async)
+        {
+        	return str_replace( ' src', ' async="async" src', $tag );
+        }
+
+    	return $tag;
 	}
 
 	public function wp_performance_yoast_seo_settings(){
@@ -260,6 +302,37 @@ class WpPerformance_Admin {
 		}// End if().
 	}
 
+
+	private function get_enternal_scripts_to_load()
+	{
+		return array(
+			array(
+				"unique_name" => "angular-animate1.6.5",
+				"src" => "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-animate.js",
+				"priority" => 2
+			),
+			array(
+				"unique_name" => "angular-route1.6.5",
+				"src" => "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js",
+				"priority" => 2
+			)
+		);
+	}
+
+	private function get_enternal_fonts_to_load()
+	{
+		return array(
+			array(
+				"unique_name" => "angular-animate1.6.5",
+				"src" => "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-animate.js"
+			),
+			array(
+				"unique_name" => "angular-route1.6.5",
+				"src" => "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"
+			)
+		);
+	}
+
 	private function wp_config_remove_post_revisions() {
 
 		wpperformance_init_wp_filesystem();
@@ -427,6 +500,28 @@ class WpPerformance_Admin {
 
 					$prev_settings = get_option( WpPerformance::OPTION_KEY . '_settings', array() );
 
+/////////////////////////////////
+					if (isset( $post_req['delete_all_comments'] ) || isset( $post_req['delete_all_pending_comments'] )) {
+
+						global $wpdb;
+	    				$c_all = $wpdb->query("SELECT comment_ID FROM $wpdb->comments");
+        				$c_pend = $wpdb->query("SELECT comment_ID FROM $wpdb->comments WHERE comment_approved = '0'");
+
+						if( isset( $post_req['delete_all_comments'] ) ) {
+				            if($wpdb->query("DELETE FROM $wpdb->comments") != FALSE)
+					            {
+				                    $wpdb->query("DELETE FROM $wpdb->comments");
+				                }
+				        } 
+			    
+			    		if (isset( $post_req['delete_all_pending_comments'] )) {
+				            if($wpdb->query("DELETE FROM $wpdb->comments WHERE comment_approved = '0'") != FALSE) {
+				                    $wpdb->query("DELETE FROM $wpdb->comments WHERE comment_approved = '0'");
+				            }
+			        	}
+					}
+////////////////////////////////
+
 					$options = array(
 						'disable_gravatars'                  => isset( $post_req['disable_gravatars'] ) ? 1 : 0,
 						'disable_gravatars_only_comments' 	 => isset( $post_req['disable_gravatars_only_comments'] ) ? 1 : 0,
@@ -473,6 +568,10 @@ class WpPerformance_Admin {
 						'disable_front_dashicons_when_disabled_toolbar' => isset( $post_req['disable_front_dashicons_when_disabled_toolbar'] ) ? 1 : 0,
 						'disable_google_maps'                => isset( $post_req['disable_google_maps'] ) ? 1 : 0,
 						'exclude_from_disable_google_maps'   => isset( $post_req['exclude_from_disable_google_maps'] ) ? trim( $post_req['exclude_from_disable_google_maps'] ) : '',
+						'asynch_urls_to_load'   => isset( $post_req['asynch_urls_to_load'] ) ? trim( $post_req['asynch_urls_to_load'] ) : '',
+						'enable_external_scripts_asynch'   => isset( $post_req['enable_external_scripts_asynch'] ) ? trim( $post_req['enable_external_scripts_asynch'] ) : '',
+						'enable_external_fonts_asynch'   => isset( $post_req['enable_external_fonts_asynch'] ) ? trim( $post_req['enable_external_fonts_asynch'] ) : '',
+						'fonts_asynch_urls_to_load'   => isset( $post_req['fonts_asynch_urls_to_load'] ) ? trim( $post_req['fonts_asynch_urls_to_load'] ) : '',
 					);
 
 					$options['ds_tracking_id'] = isset($prev_settings['ds_tracking_id']) ? $prev_settings['ds_tracking_id'] : null;
@@ -568,6 +667,9 @@ class WpPerformance_Admin {
 			'remove_yoast_breadcrumbs_duplicates'	=> 0,
 			'default_ping_status'                   => 0,
 			'disable_all_comments' 				 	=> 0,
+			'delete_all_comments' 				 	=> 0,
+			'delete_all_pending_comments' 			=> 0,
+			
 			'disable_author_pages'					=> 0,
 			'disable_comments_on_certain_post_types' => 0,
 			'disable_comments_on_post_types' 	 	=> array(),
@@ -604,6 +706,8 @@ class WpPerformance_Admin {
 			'caos_remove_wp_cron'                   => 'off',
 			'disable_wordpress_password_meter'		=> 0,
 			'disable_front_dashicons_when_disabled_toolbar' => 0,
+			'enable_external_scripts_asynch' => 0,
+			'asynch_urls_to_load'		=> ''
 		);
 
 		$sett = get_option( WpPerformance::OPTION_KEY . '_settings', $default_values );
@@ -622,8 +726,7 @@ class WpPerformance_Admin {
 						<?php } ?>
 						<li data-tab-setting="tags"><?php esc_html_e('Tags', 'optimisationio'); ?></li>
 						<li data-tab-setting="admin"><?php esc_html_e('Admin', 'optimisationio'); ?></li>
-						<li data-tab-setting="seo"><?php esc_html_e('SEO', 'optimisationio'); ?></li>
-						<li data-tab-setting="others"><?php esc_html_e('Others', 'optimisationio'); ?></li>
+						<li data-tab-setting="others"><?php esc_html_e('SEO', 'optimisationio'); ?></li>
 						<li data-tab-setting="rest-api"><?php esc_html_e('REST API', 'optimisationio'); ?></li>
 					</ul>
 				</div>
@@ -642,6 +745,28 @@ class WpPerformance_Admin {
 						<div class="field">
 							<div class="field-left"><?php esc_attr_e('Disable Embeds', 'optimisationio'); ?></div>
 							<div class="field-right"><?php Optimisationio_Dashboard::checkbox_component('disable_embeds', isset( $sett['disable_embeds'] ) && 1 === (int) $sett['disable_embeds']); ?></div>
+						</div>
+						<div class="field">
+							<div class="field-left"><?php esc_attr_e('Load External Fonts Asynchronously', 'optimisationio'); ?></div>
+							<div class="field-right"><?php Optimisationio_Dashboard::checkbox_component('enable_external_fonts_asynch', isset( $sett['enable_external_fonts_asynch'] ) && 1 === (int) $sett['enable_external_fonts_asynch']); ?></div>
+						</div>
+						<div class="field sub-field fonts-asynch-urls-group">
+							<div class="field-left" style="vertical-align:top;"><?php printf( __( 'Set external fonts urls to load:', 'optimisationio' ), '<strong>', '</strong>' ); ?></div>
+							<div class="field-right">
+								<textarea type="text" name="fonts_asynch_urls_to_load"><?php if ( isset( $sett['fonts_asynch_urls_to_load'] ) ) { echo $sett['fonts_asynch_urls_to_load']; } ?></textarea><br/>
+								<small style="display:inline-block; padding-top:5px;"><?php printf('%1$s Urls %2$s separated by ', '<strong>', '</strong>', '<strong>', '</strong>' ); ?> <code>,</code></small>
+							</div>
+						</div>
+						<div class="field">
+							<div class="field-left"><?php esc_attr_e('Load External Scripts Asynchronously', 'optimisationio'); ?></div>
+							<div class="field-right"><?php Optimisationio_Dashboard::checkbox_component('enable_external_scripts_asynch', isset( $sett['enable_external_scripts_asynch'] ) && 1 === (int) $sett['enable_external_scripts_asynch']); ?></div>
+						</div>
+						<div class="field sub-field asynch-urls-group">
+							<div class="field-left" style="vertical-align:top;"><?php printf( __( 'Set external scripts urls to load:', 'optimisationio' ), '<strong>', '</strong>' ); ?></div>
+							<div class="field-right">
+								<textarea type="text" name="asynch_urls_to_load"><?php if ( isset( $sett['asynch_urls_to_load'] ) ) { echo $sett['asynch_urls_to_load']; } ?></textarea><br/>
+								<small style="display:inline-block; padding-top:5px;"><?php printf('%1$s Urls %2$s separated by ', '<strong>', '</strong>', '<strong>', '</strong>' ); ?> <code>,</code></small>
+							</div>
 						</div>
 						<div class="field">
 							<div class="field-left"><?php esc_attr_e('Disable Google Maps', 'optimisationio'); ?></div>
@@ -800,10 +925,22 @@ class WpPerformance_Admin {
 							<div class="field-left"><?php esc_attr_e('Disable author pages', 'optimisationio'); ?></div>
 							<div class="field-right"><?php Optimisationio_Dashboard::checkbox_component('disable_author_pages', isset( $sett['disable_author_pages'] ) && 1 === (int) $sett['disable_author_pages']); ?></div>
 						</div>
+
+						<div class="field">
+							<div class="field-left"><?php esc_attr_e('Delete all Comments', 'optimisationio'); ?></div>
+							<div class="field-right"><?php Optimisationio_Dashboard::checkbox_component('delete_all_comments', isset( $sett['delete_all_comments'] ) && 1 === (int) $sett['delete_all_comments']); ?></div>
+						</div>
+
+						<div class="field">
+							<div class="field-left"><?php esc_attr_e('Delete all pending Comments', 'optimisationio'); ?></div>
+							<div class="field-right"><?php Optimisationio_Dashboard::checkbox_component('delete_all_pending_comments', isset( $sett['delete_all_pending_comments'] ) && 1 === (int) $sett['delete_all_pending_comments']); ?></div>
+						</div>
+
 						<div class="field">
 							<div class="field-left"><?php esc_attr_e('Disable all comments', 'optimisationio'); ?></div>
 							<div class="field-right"><?php Optimisationio_Dashboard::checkbox_component('disable_all_comments', isset( $sett['disable_all_comments'] ) && 1 === (int) $sett['disable_all_comments']); ?></div>
 						</div>
+
 						<div class="field sub-field comments-group">
 							<div class="field-left"><?php esc_attr_e('Disable comments on certain post types', 'optimisationio'); ?></div>
 							<div class="field-right"><?php Optimisationio_Dashboard::checkbox_component('disable_comments_on_certain_post_types', isset( $sett['disable_comments_on_certain_post_types'] ) && 1 === (int) $sett['disable_comments_on_certain_post_types']); ?></div>
@@ -894,7 +1031,8 @@ class WpPerformance_Admin {
 						</div>
 					</div>
 
-					<div data-tab-setting="seo" class="addon-settings-content auto-table-layout">
+
+					<div data-tab-setting="others" class="addon-settings-content auto-table-layout">
 						<div class="field">
 							<div class="field-left"><?php esc_attr_e('Remove Yoast SEO comment from head section', 'optimisationio'); ?></div>
 							<div class="field-right"><?php Optimisationio_Dashboard::checkbox_component('remove_yoast_comment', isset( $sett['remove_yoast_comment'] ) && 1 === (int) $sett['remove_yoast_comment']); ?></div>
@@ -903,9 +1041,6 @@ class WpPerformance_Admin {
 							<div class="field-left"><?php esc_attr_e('Remove duplicate names in breadcrumbs WP SEO by Yoast', 'optimisationio'); ?></div>
 							<div class="field-right"><?php Optimisationio_Dashboard::checkbox_component('remove_yoast_breadcrumbs_duplicates', isset( $sett['remove_yoast_breadcrumbs_duplicates'] ) && 1 === (int) $sett['remove_yoast_breadcrumbs_duplicates']); ?></div>
 						</div>
-					</div>
-
-					<div data-tab-setting="others" class="addon-settings-content auto-table-layout">
 						<div class="field">
 							<div class="field-left"><?php esc_attr_e('Disable pingbacks and trackbacks', 'optimisationio'); ?></div>
 							<div class="field-right"><?php Optimisationio_Dashboard::checkbox_component('default_ping_status', isset( $sett['default_ping_status'] ) && 1 === (int) $sett['default_ping_status']); ?></div>

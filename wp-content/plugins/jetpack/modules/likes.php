@@ -2,13 +2,12 @@
 /**
  * Module Name: Likes
  * Module Description: Give visitors an easy way to show they appreciate your content.
- * Jumpstart Description: Give visitors an easy way to show they appreciate your content.
  * First Introduced: 2.2
  * Sort Order: 23
  * Requires Connection: Yes
  * Auto Activate: No
  * Module Tags: Social
- * Feature: Engagement, Jumpstart
+ * Feature: Engagement
  * Additional Search Queries: like, likes, wordpress.com
  */
 
@@ -141,6 +140,20 @@ class Jetpack_Likes {
 		}
 	}
 
+
+	/**
+     * Stub for is_post_likeable, since some wpcom functions call this directly on the class
+	 * Are likes enabled for this post?
+     *
+     * @param int $post_id
+     * @return bool
+	 */
+	static function is_post_likeable( $post_id = 0 ) {
+		_deprecated_function( __METHOD__, 'jetpack-5.4', 'Jetpack_Likes_Settings()->is_post_likeable' );
+		$settings = new Jetpack_Likes_Settings();
+		return $settings->is_post_likeable();
+	}
+
 	/**
 	 * Stub for is_likes_visible, since some themes were calling it directly from this class
 	 *
@@ -162,21 +175,6 @@ class Jetpack_Likes {
 	function configuration_target_area( $html = '' ) {
 		$html = "<tbody id='likes' class='jetpack-targetable'>" . $html;
 		return $html;
-	}
-
-	/**
-	 * WordPress.com: Metabox option for sharing (sharedaddy will handle this on the JP blog)
-	 */
-	function sharing_meta_box_content( $post ) {
-		$post_id = ! empty( $post->ID ) ? (int) $post->ID : get_the_ID();
-		$disabled = get_post_meta( $post_id, 'sharing_disabled', true ); ?>
-		<p>
-			<label for="wpl_enable_post_sharing">
-				<input type="checkbox" name="wpl_enable_post_sharing" id="wpl_enable_post_sharing" value="1" <?php checked( !$disabled ); ?>>
-				<?php _e( 'Show sharing buttons.', 'jetpack' ); ?>
-			</label>
-			<input type="hidden" name="wpl_sharing_status_hidden" value="1" />
-		</p> <?php
 	}
 
 	/**
@@ -260,6 +258,10 @@ class Jetpack_Likes {
 			return;
 		}
 
+		if ( Jetpack_AMP_Support::is_amp_request() ) {
+			return;
+		}
+
 		if ( $this->in_jetpack ) {
 			add_filter( 'the_content', array( &$this, 'post_likes' ), 30, 1 );
 			add_filter( 'the_excerpt', array( &$this, 'post_likes' ), 30, 1 );
@@ -296,7 +298,16 @@ class Jetpack_Likes {
 			JETPACK__VERSION,
 			false
 		);
-		wp_register_script( 'jetpack_likes_queuehandler', plugins_url( 'likes/queuehandler.js' , __FILE__ ), array( 'jquery', 'postmessage', 'jetpack_resize' ), JETPACK__VERSION, true );
+		wp_register_script(
+			'jetpack_likes_queuehandler',
+			Jetpack::get_file_url_for_environment(
+				'_inc/build/likes/queuehandler.min.js',
+				'modules/likes/queuehandler.js'
+			),
+			array( 'jquery', 'postmessage', 'jetpack_resize' ),
+			JETPACK__VERSION,
+			true
+		);
 	}
 
 	/**
@@ -348,8 +359,24 @@ class Jetpack_Likes {
 	function enqueue_admin_scripts() {
 		if ( empty( $_GET['post_type'] ) || 'post' == $_GET['post_type'] || 'page' == $_GET['post_type'] ) {
 			if ( $this->in_jetpack ) {
-				wp_enqueue_script( 'likes-post-count', plugins_url( 'modules/likes/post-count.js', dirname( __FILE__ ) ), array( 'jquery' ), JETPACK__VERSION );
-				wp_enqueue_script( 'likes-post-count-jetpack', plugins_url( 'modules/likes/post-count-jetpack.js', dirname( __FILE__ ) ), array( 'likes-post-count' ), JETPACK__VERSION );
+				wp_enqueue_script(
+					'likes-post-count',
+					Jetpack::get_file_url_for_environment(
+						'_inc/build/likes/post-count.min.js',
+						'modules/likes/post-count.js'
+					),
+					array( 'jquery' ),
+					JETPACK__VERSION
+				);
+				wp_enqueue_script(
+					'likes-post-count-jetpack',
+					Jetpack::get_file_url_for_environment(
+						'_inc/build/likes/post-count-jetpack.min.js',
+						'modules/likes/post-count-jetpack.js'
+					),
+					array( 'likes-post-count' ),
+					JETPACK__VERSION
+				);
 			} else {
 				wp_enqueue_script( 'jquery.wpcom-proxy-request', "/wp-content/js/jquery/jquery.wpcom-proxy-request.js", array('jquery'), NULL, true );
 				wp_enqueue_script( 'likes-post-count', plugins_url( 'likes/post-count.js', dirname( __FILE__ ) ), array( 'jquery' ), JETPACK__VERSION );

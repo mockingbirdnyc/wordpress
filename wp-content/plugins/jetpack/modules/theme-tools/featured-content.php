@@ -114,6 +114,8 @@ class Featured_Content {
 		add_action( 'switch_theme',                       array( __CLASS__, 'switch_theme'       )    );
 		add_action( 'switch_theme',                       array( __CLASS__, 'delete_transient'   )    );
 		add_action( 'wp_loaded',                          array( __CLASS__, 'wp_loaded'          )    );
+		add_action( 'update_option_featured-content',     array( __CLASS__, 'flush_post_tag_cache'    ), 10, 2 );
+		add_action( 'delete_option_featured-content',     array( __CLASS__, 'flush_post_tag_cache'    ), 10, 2 );
 		add_action( 'split_shared_term',                  array( __CLASS__, 'jetpack_update_featured_content_for_split_terms', 10, 4 ) );
 
 
@@ -175,6 +177,7 @@ class Featured_Content {
 			'include'        => $post_ids,
 			'posts_per_page' => count( $post_ids ),
 			'post_type'      => self::$post_types,
+			'suppress_filters' => false,
 		) );
 
 		return $featured_posts;
@@ -230,6 +233,7 @@ class Featured_Content {
 		$featured = get_posts( array(
 			'numberposts' => $quantity,
 			'post_type'   => self::$post_types,
+			'suppress_filters' => false,
 			'tax_query'   => array(
 				array(
 					'field'    => 'term_id',
@@ -263,6 +267,23 @@ class Featured_Content {
 	 */
 	public static function delete_transient() {
 		delete_transient( 'featured_content_ids' );
+	}
+
+	/**
+	 * Flush the Post Tag relationships cache.
+	 *
+	 * Hooks in the "update_option_featured-content" action.
+	 */
+	public static function flush_post_tag_cache( $prev, $opts ) {
+		if ( ! empty( $opts ) && ! empty( $opts['tag-id'] ) ) {
+			$query = new WP_Query( array(
+				'tag_id' => (int) $opts['tag-id'],
+				'posts_per_page' => -1,
+			) );
+			foreach ( $query->posts as $post ) {
+				wp_cache_delete( $post->ID, 'post_tag_relationships' );
+			}
+		}
 	}
 
 	/**
@@ -459,7 +480,7 @@ class Featured_Content {
 	 */
 	public static function customize_register( $wp_customize ) {
 		$wp_customize->add_section( 'featured_content', array(
-			'title'          => __( 'Featured Content', 'jetpack' ),
+			'title'          => esc_html__( 'Featured Content', 'jetpack' ),
 			'description'    => sprintf( __( 'Easily feature all posts with the <a href="%1$s">"featured" tag</a> or a tag of your choice. Your theme supports up to %2$s posts in its featured content area.', 'jetpack' ), admin_url( '/edit.php?tag=featured' ), absint( self::$max_posts ) ),
 			'priority'       => 130,
 			'theme_supports' => 'featured-content',
@@ -487,20 +508,20 @@ class Featured_Content {
 
 		// Add Featured Content controls.
 		$wp_customize->add_control( 'featured-content[tag-name]', array(
-			'label'          => __( 'Tag name', 'jetpack' ),
+			'label'          => esc_html__( 'Tag name', 'jetpack' ),
 			'section'        => 'featured_content',
 			'theme_supports' => 'featured-content',
 			'priority'       => 20,
 		) );
 		$wp_customize->add_control( 'featured-content[hide-tag]', array(
-			'label'          => __( 'Do not display tag in post details and tag clouds.', 'jetpack' ),
+			'label'          => esc_html__( 'Do not display tag in post details and tag clouds.', 'jetpack' ),
 			'section'        => 'featured_content',
 			'theme_supports' => 'featured-content',
 			'type'           => 'checkbox',
 			'priority'       => 30,
 		) );
 		$wp_customize->add_control( 'featured-content[show-all]', array(
-			'label'          => __( 'Also display tagged posts outside the Featured Content area.', 'jetpack' ),
+			'label'          => esc_html__( 'Also display tagged posts outside the Featured Content area.', 'jetpack' ),
 			'section'        => 'featured_content',
 			'theme_supports' => 'featured-content',
 			'type'           => 'checkbox',
@@ -642,7 +663,7 @@ class Featured_Content {
 Featured_Content::setup();
 
 /**
- * Adds the featured content plugin to the set of files for which action 
+ * Adds the featured content plugin to the set of files for which action
  * handlers should be copied when the theme context is loaded by the REST API.
  *
  * @param array $copy_dirs Copy paths with actions to be copied
