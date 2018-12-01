@@ -6,6 +6,9 @@ RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
+
+RewriteCond %{HTTP_HOST} ^(www\.)?mbird\.com$
+RewriteRule ^publications/(.*)$ https://store.mbird.com/$1 [L,QSA,R=301]
 </IfModule>
 
 # END WordPress
