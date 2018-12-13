@@ -5,7 +5,7 @@
  */
 
 import { createTree } from 'jquery.fancytree';
-import Scanner from './directory-scanner';
+import Scanner from '../smush/directory-scanner';
 
 ( function( $ ) {
 	'use strict';
@@ -18,10 +18,18 @@ import Scanner from './directory-scanner';
 		init: function () {
 			const self = this;
 
-			let progress_dialog = $( '#wp-smush-progress-dialog');
+			let progress_dialog = $( '#wp-smush-progress-dialog'),
+				totalSteps = 0,
+				currentScanStep = 0;
+
+			// Make sure directory smush vars are set.
+			if ( typeof wp_smushit_data.dir_smush !== 'undefined' ) {
+				totalSteps = wp_smushit_data.dir_smush.totalSteps;
+				currentScanStep = wp_smushit_data.dir_smush.currentScanStep;
+			}
 
 			// Init image scanner.
-			this.scanner = new Scanner( wp_smushit_data.dir_smush.totalSteps, wp_smushit_data.dir_smush.currentScanStep );
+			this.scanner = new Scanner( totalSteps, currentScanStep );
 
 			/**
 			 * Smush translation strings.
@@ -137,7 +145,7 @@ import Scanner from './directory-scanner';
 			/**
 			 * Cancel scan.
 			 */
-			progress_dialog.on( 'click', '.sui-icon-close, .sui-dialog-close, .wp-smush-cancel-dir', function ( e ) {
+			progress_dialog.on( 'click', '#cancel-directory-smush, .sui-dialog-close, .wp-smush-cancel-dir', function ( e ) {
 				e.preventDefault();
 				// Display the spinner
 				$( this ).parent().find( '.add-dir-loader' ).addClass( 'sui-icon-loader sui-loading' );
@@ -198,6 +206,8 @@ import Scanner from './directory-scanner';
 				debugLevel: 0,      // 0:quiet, 1:errors, 2:warnings, 3:infos, 4:debug
 				selectMode: 3,      // 1:single, 2:multi, 3:multi-hier
 				tabindex: '0',      // Whole tree behaves as one single control
+				keyboard: true,     // Support keyboard navigation
+				quicksearch: true,  // Navigate to next node by typing the first letters
 				source: self.getDirectoryList,
 				lazyLoad: ( event, data ) => data.result = self.getDirectoryList( data.node.key ),
 				loadChildren: ( event, data ) => data.node.fixSelection3AfterClick(), // Apply parent's state to new child nodes:

@@ -33,7 +33,9 @@ class Jetpack {
 	public $HTTP_RAW_POST_DATA = null; // copy of $GLOBALS['HTTP_RAW_POST_DATA']
 
 	/**
-	 * @var array The handles of styles that are concatenated into jetpack.css
+	 * @var array The handles of styles that are concatenated into jetpack.css.
+	 *
+	 * When making changes to that list, you must also update concat_list in tools/builder/frontend-css.js.
 	 */
 	public $concatenated_style_handles = array(
 		'jetpack-carousel',
@@ -44,6 +46,7 @@ class Jetpack {
 		'sharedaddy',
 		'jetpack-slideshow',
 		'presentations',
+		'quiz',
 		'jetpack-subscriptions',
 		'jetpack-responsive-videos-style',
 		'jetpack-social-menu',
@@ -55,11 +58,13 @@ class Jetpack {
 		'jetpack-top-posts-widget',
 		'jetpack_image_widget',
 		'jetpack-my-community-widget',
+		'jetpack-authors-widget',
 		'wordads',
 		'eu-cookie-law-style',
 		'flickr-widget-style',
 		'jetpack-search-widget',
 		'jetpack-simple-payments-widget-style',
+		'jetpack-widget-social-icons-styles',
 	);
 
 	/**
@@ -417,7 +422,7 @@ class Jetpack {
 
 		Jetpack::maybe_set_version_option();
 
-		if ( class_exists( 'Jetpack_Widget_Conditions' ) ) {
+		if ( method_exists( 'Jetpack_Widget_Conditions', 'migrate_post_type_rules' ) ) {
 			Jetpack_Widget_Conditions::migrate_post_type_rules();
 		}
 
@@ -513,6 +518,8 @@ class Jetpack {
 		if ( Jetpack::is_active() ) {
 			require_once JETPACK__PLUGIN_DIR . '_inc/lib/class.jetpack-iframe-embed.php';
 			add_action( 'init', array( 'Jetpack_Iframe_Embed', 'init' ), 9, 0 );
+			require_once JETPACK__PLUGIN_DIR . '_inc/lib/class.jetpack-keyring-service-helper.php';
+			add_action( 'init', array( 'Jetpack_Keyring_Service_Helper', 'init' ), 9, 0 );
 		}
 
 		/*
@@ -526,8 +533,13 @@ class Jetpack {
 			Jetpack_Network::init();
 		}
 
-		// Load Gutenberg editor blocks
-		add_action( 'init', array( $this, 'load_jetpack_gutenberg' ) );
+		/**
+		 * Prepare Gutenberg Editor functionality
+		 */
+		require_once JETPACK__PLUGIN_DIR . 'class.jetpack-gutenberg.php';
+		add_action( 'init', array( 'Jetpack_Gutenberg', 'load_blocks' ) ); // Registers all the Jetpack blocks .
+		add_action( 'enqueue_block_editor_assets', array( 'Jetpack_Gutenberg', 'enqueue_block_editor_assets' ) );
+		add_filter( 'jetpack_set_available_blocks', array( 'Jetpack_Gutenberg', 'jetpack_set_available_blocks' ) );
 
 		add_action( 'set_user_role', array( $this, 'maybe_clear_other_linked_admins_transient' ), 10, 3 );
 
@@ -629,9 +641,6 @@ class Jetpack {
 		add_action( 'wp_enqueue_scripts', array( $this, 'devicepx' ) );
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'devicepx' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'devicepx' ) );
-
-		// gutenberg locale
-		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_gutenberg_locale' ) );
 
 		add_action( 'plugins_loaded', array( $this, 'extra_oembed_providers' ), 100 );
 
@@ -898,6 +907,12 @@ class Jetpack {
 				break;
 			case 'jetpack_configure_modules' :
 				$caps = array( 'manage_options' );
+				break;
+			case 'jetpack_manage_autoupdates' :
+				$caps = array(
+					'manage_options',
+					'update_plugins',
+				);
 				break;
 			case 'jetpack_network_admin_page':
 			case 'jetpack_network_settings_page':
@@ -1514,6 +1529,7 @@ class Jetpack {
 			$supports[] = 'akismet';
 			$supports[] = 'simple-payments';
 			$supports[] = 'vaultpress';
+			$supports[] = 'videopress';
 			$plan['class'] = 'premium';
 		}
 
@@ -1530,6 +1546,7 @@ class Jetpack {
 			$supports[] = 'akismet';
 			$supports[] = 'simple-payments';
 			$supports[] = 'vaultpress';
+			$supports[] = 'videopress';
 			$plan['class'] = 'business';
 		}
 
@@ -2610,7 +2627,7 @@ class Jetpack {
 	 * @return string The locale as JSON
 	 */
 	public static function get_i18n_data_json() {
-		$i18n_json = JETPACK__PLUGIN_DIR . 'languages/json/jetpack-' . jetpack_get_user_locale() . '.json';
+		$i18n_json = JETPACK__PLUGIN_DIR . 'languages/json/jetpack-' . get_user_locale() . '.json';
 
 		if ( is_file( $i18n_json ) && is_readable( $i18n_json ) ) {
 			$locale_data = @file_get_contents( $i18n_json );
@@ -2626,6 +2643,32 @@ class Jetpack {
 				'lang'   => is_admin() ? get_user_locale() : get_locale(),
 			),
 		) );
+	}
+
+	/**
+	 * Add locale data setup to wp-i18n
+	 *
+	 * Any Jetpack script that depends on wp-i18n should use this method to set up the locale.
+	 *
+	 * The locale setup depends on an adding inline script. This is error-prone and could easily
+	 * result in multiple additions of the same script when exactly 0 or 1 is desireable.
+	 *
+	 * This method provides a safe way to request the setup multiple times but add the script at
+	 * most once.
+	 *
+	 * @since 6.7.0
+	 *
+	 * @return void
+	 */
+	public static function setup_wp_i18n_locale_data() {
+		static $script_added = false;
+		if ( ! $script_added ) {
+			$script_added = true;
+			wp_add_inline_script(
+				'wp-i18n',
+				'wp.i18n.setLocaleData( ' . Jetpack::get_i18n_data_json() . ', \'jetpack\' );'
+			);
+		}
 	}
 
 	/**
@@ -3170,10 +3213,14 @@ p {
 	 * @return null              [description]
 	 */
 	public static function do_version_bump( $version, $old_version ) {
-
 		if ( ! $old_version ) { // For new sites
 			// Setting up jetpack manage
 			Jetpack::activate_manage();
+		} else {
+			// If a Jetpack is still active but not connected when updating verion, remind them to connect with the banner.
+			if ( ! Jetpack::is_active() ) {
+				Jetpack_Options::delete_option( 'dismissed_connection_banner' );
+			}
 		}
 	}
 
@@ -3858,13 +3905,6 @@ p {
 		return true;
 	}
 
-	function enqueue_gutenberg_locale() {
-		wp_add_inline_script(
-			'wp-i18n',
-			'wp.i18n.setLocaleData( ' . self::get_i18n_data_json() . ', \'jetpack\' );'
-		);
-	}
-
 	function jetpack_menu_order( $menu_order ) {
 		$jp_menu_order = array();
 
@@ -3911,7 +3951,7 @@ p {
 
 	function plugin_action_links( $actions ) {
 
-		$jetpack_home = array( 'jetpack-home' => sprintf( '<a href="%s">%s</a>', Jetpack::admin_url( 'page=jetpack' ), __( 'Jetpack', 'jetpack' ) ) );
+		$jetpack_home = array( 'jetpack-home' => sprintf( '<a href="%s">%s</a>', Jetpack::admin_url( 'page=jetpack' ), 'Jetpack' ) );
 
 		if( current_user_can( 'jetpack_manage_modules' ) && ( Jetpack::is_active() || Jetpack::is_development_mode() ) ) {
 			return array_merge(
@@ -4812,7 +4852,6 @@ p {
 			<h3>
 			<?php
 				$module = Jetpack::get_module( $module_id );
-				echo '<a href="' . Jetpack::admin_url( 'page=jetpack_modules' ) . '">' . __( 'Jetpack by WordPress.com', 'jetpack' ) . '</a> &rarr; ';
 				printf( __( 'Configure %s', 'jetpack' ), $module['name'] );
 			?>
 			</h3>
@@ -4971,7 +5010,7 @@ p {
 	 */
 	public static function validate_onboarding_token_action( $token, $action ) {
 		// Compare tokens, bail if tokens do not match
-		if ( ! hash_equals( $token, Jetpack_Options::get_option( 'onboarding' ) ) ) { // phpcs:ignore PHPCompatibility -- skipping since `hash_equals` is part of WP core
+		if ( ! hash_equals( $token, Jetpack_Options::get_option( 'onboarding' ) ) ) {
 			return false;
 		}
 
@@ -5441,7 +5480,7 @@ p {
 		}
 
 		$token_check = "$token_key.";
-		if ( ! hash_equals( substr( $token->secret, 0, strlen( $token_check ) ), $token_check ) ) { // phpcs:ignore PHPCompatibility -- skipping since `hash_equals` is part of WP core
+		if ( ! hash_equals( substr( $token->secret, 0, strlen( $token_check ) ), $token_check ) ) {
 			return false;
 		}
 
@@ -5481,7 +5520,7 @@ p {
 			return false;
 		} else if ( is_wp_error( $signature ) ) {
 			return $signature;
-		} else if ( ! hash_equals( $signature, $_GET['signature'] ) ) { // phpcs:ignore PHPCompatibility -- skipping since `hash_equals` is part of WP core
+		} else if ( ! hash_equals( $signature, $_GET['signature'] ) ) {
 			return false;
 		}
 
@@ -5604,25 +5643,6 @@ p {
 			$this->rest_authentication_status = new WP_Error(
 				'rest_invalid_request',
 				__( 'This request method does not support body parameters.', 'jetpack' ),
-				array( 'status' => 400 )
-			);
-			return null;
-		}
-
-		if ( ! empty( $_SERVER['CONTENT_TYPE'] ) ) {
-			$content_type = $_SERVER['CONTENT_TYPE'];
-		} elseif ( ! empty( $_SERVER['HTTP_CONTENT_TYPE'] ) ) {
-			$content_type = $_SERVER['HTTP_CONTENT_TYPE'];
-		}
-
-		if (
-			isset( $content_type ) &&
-			$content_type !== 'application/x-www-form-urlencoded' &&
-			$content_type !== 'application/json'
-		) {
-			$this->rest_authentication_status = new WP_Error(
-				'rest_invalid_request',
-				__( 'This Content-Type is not supported.', 'jetpack' ),
 				array( 'status' => 400 )
 			);
 			return null;
@@ -6105,11 +6125,11 @@ p {
 			wp_die( $die_error );
 		} else if ( is_wp_error( $signature ) ) {
 			wp_die( $die_error );
-		} else if ( ! hash_equals( $signature, $environment['signature'] ) ) { // phpcs:ignore PHPCompatibility -- skipping since `hash_equals` is part of WP core
+		} else if ( ! hash_equals( $signature, $environment['signature'] ) ) {
 			if ( is_ssl() ) {
 				// If we signed an HTTP request on the Jetpack Servers, but got redirected to HTTPS by the local blog, check the HTTP signature as well
 				$signature = $jetpack_signature->sign_current_request( array( 'scheme' => 'http', 'body' => null, 'method' => 'GET' ) );
-				if ( ! $signature || is_wp_error( $signature ) || ! hash_equals( $signature, $environment['signature'] ) ) { // phpcs:ignore PHPCompatibility -- skipping since `hash_equals` is part of WP core
+				if ( ! $signature || is_wp_error( $signature ) || ! hash_equals( $signature, $environment['signature'] ) ) {
 					wp_die( $die_error );
 				}
 			} else {
@@ -7126,27 +7146,39 @@ p {
 	 * @return bool True = Akismet available. False = Aksimet not available.
 	 */
 	public static function is_akismet_active() {
-		if ( method_exists( 'Akismet' , 'http_post' ) ) {
-			$akismet_key = Akismet::get_api_key();
-			if ( ! $akismet_key ) {
-				return false;
-			}
-			$cached_key_verification = get_transient( 'jetpack_akismet_key_is_valid' );
+		static $status = null;
 
-			// We cache the result of the Akismet key verification for ten minutes.
-			if ( in_array( $cached_key_verification, array( 'valid', 'invalid' ) ) ) {
-				$akismet_key_state = $cached_key_verification;
-			} else {
-				$akismet_key_state = Akismet::verify_key( $akismet_key );
-				if ( 'failed' === $akismet_key_state ) {
-					return false;
-				}
-				set_transient( 'jetpack_akismet_key_is_valid', $akismet_key_state, 10 * MINUTE_IN_SECONDS );
-			}
-
-			return ( 'valid' === $akismet_key_state );
+		if ( ! is_null( $status ) ) {
+			return $status;
 		}
-		return false;
+
+		// Check if a modern version of Akismet is active.
+		if ( ! method_exists( 'Akismet', 'http_post' ) ) {
+			$status = false;
+			return $status;
+		}
+
+		// Make sure there is a key known to Akismet at all before verifying key.
+		$akismet_key = Akismet::get_api_key();
+		if ( ! $akismet_key ) {
+			$status = false;
+			return $status;
+		}
+
+		// Possible values: valid, invalid, failure via Akismet. false if no status is cached.
+		$akismet_key_state = get_transient( 'jetpack_akismet_key_is_valid' );
+
+		// Do not used the cache result in wp-admin or REST API requests if the key isn't valid, in case someone is actively renewing, etc.
+		$recheck = ( is_admin() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) ) && 'valid' !== $akismet_key_state;
+		// We cache the result of the Akismet key verification for ten minutes.
+		if ( ! $akismet_key_state || $recheck ) {
+			$akismet_key_state = Akismet::verify_key( $akismet_key );
+			set_transient( 'jetpack_akismet_key_is_valid', $akismet_key_state, 10 * MINUTE_IN_SECONDS );
+		}
+
+		$status = 'valid' === $akismet_key_state;
+
+		return $status;
 	}
 
 	/**
@@ -7157,7 +7189,7 @@ p {
 	 * @return bool
 	 */
 	public static function is_function_in_backtrace( $names ) {
-		$backtrace = debug_backtrace( false ); // phpcs:ignore PHPCompatibility
+		$backtrace = debug_backtrace( false ); // phpcs:ignore PHPCompatibility.PHP.NewFunctionParameters.debug_backtrace_optionsFound
 		if ( ! is_array( $names ) ) {
 			$names = array( $names );
 		}
@@ -7165,7 +7197,7 @@ p {
 
 		//Do check in constant O(1) time for PHP5.5+
 		if ( function_exists( 'array_column' ) ) {
-			$backtrace_functions = array_column( $backtrace, 'function' ); // phpcs:ignore PHPCompatibility
+			$backtrace_functions = array_column( $backtrace, 'function' ); // phpcs:ignore PHPCompatibility.PHP.NewFunctions.array_columnFound
 			$backtrace_functions_as_keys = array_flip( $backtrace_functions );
 			$intersection = array_intersect_key( $backtrace_functions_as_keys, $names_as_keys );
 			return ! empty ( $intersection );
@@ -7270,109 +7302,6 @@ p {
 		if ( $send_state_messages ) {
 			Jetpack::state( 'message', 'authorized' );
 		}
-	}
-
-	/**
-	 * Check if Gutenberg editor is available
-	 *
-	 * @since 6.5.0
-	 *
-	 * @return bool
-	 */
-	public static function is_gutenberg_available() {
-		return function_exists( 'register_block_type' );
-	}
-
-	/**
-	 * Load Gutenberg editor blocks.
-	 *
-	 * This section meant for unstable phase of developing Jetpack's
-	 * Gutenberg extensions. If still around after Sep. 15, 2018 then
-	 * please file an issue to remove it; if nobody responds within one
-	 * week then please delete the code.
-	 *
-	 *
-	 * Loading blocks is disabled by default and enabled via filter:
-	 *   add_filter( 'jetpack_gutenberg', '__return_true', 10 );
-	 *
-	 * When enabled, blocks are loaded from CDN by default. To load locally instead:
-	 *   add_filter( 'jetpack_gutenberg_cdn', '__return_false', 10 );
-	 *
-	 * Note that when loaded locally, you need to build the files yourself:
-	 * - _inc/blocks/jetpack-editor.js
-	 * - _inc/blocks/jetpack-editor.css
-	 *
-	 * CDN cache is busted once a day or when Jetpack version changes. To customize it:
-	 *   add_filter( 'jetpack_gutenberg_cdn_cache_buster', function( $version ) { return time(); }, 10, 1 );
-	 *
-	 * @since 6.5.0
-	 *
-	 * @return void
-	 */
-	public static function load_jetpack_gutenberg() {
-		/**
-		 * Filter to turn on loading Gutenberg blocks
-		 *
-		 * @since 6.5.0
-		 *
-		 * @param bool false Whether to load Gutenberg blocks
-		 */
-		if ( ! Jetpack::is_gutenberg_available() || ! apply_filters( 'jetpack_gutenberg', false ) ) {
-			return;
-		}
-
-		/**
-		 * Filter to turn off serving blocks via CDN
-		 *
-		 * @since 6.5.0
-		 *
-		 * @param bool true Whether to load Gutenberg blocks from CDN
-		 */
-		if ( apply_filters( 'jetpack_gutenberg_cdn', true ) ) {
-			$editor_script = 'https://s0.wp.com/wp-content/mu-plugins/jetpack/_inc/blocks/jetpack-editor.js';
-			$editor_style = 'https://s0.wp.com/wp-content/mu-plugins/jetpack/_inc/blocks/jetpack-editor.css';
-
-			/**
-			 * Filter to modify cache busting for Gutenberg block assets loaded from CDN
-			 *
-			 * @since 6.5.0
-			 *
-			 * @param string
-			 */
-			$version = apply_filters( 'jetpack_gutenberg_cdn_cache_buster', sprintf( '%s-%s', gmdate( 'd-m-Y' ), JETPACK__VERSION ) );
-		} else {
-			$editor_script = plugins_url( '_inc/blocks/jetpack-editor.js', JETPACK__PLUGIN_FILE );
-			$editor_style = plugins_url( '_inc/blocks/jetpack-editor.css', JETPACK__PLUGIN_FILE );
-			$version = Jetpack::is_development_version() ? filemtime( JETPACK__PLUGIN_DIR . '_inc/blocks/jetpack-editor.js' ) : JETPACK__VERSION;
-		}
-
-		wp_register_script(
-			'jetpack-blocks-editor',
-			$editor_script,
-			array(
-				'wp-blocks',
-				'wp-components',
-				'wp-compose',
-				'wp-data',
-				'wp-editor',
-				'wp-element',
-				'wp-i18n',
-				'wp-plugins',
-			),
-			$version
-		);
-
-		wp_register_style(
-			'jetpack-blocks-editor',
-			$editor_style,
-			array(),
-			$version
-		);
-
-		register_block_type( 'jetpack/blocks', array(
-				'editor_script' => 'jetpack-blocks-editor',
-				'editor_style'  => 'jetpack-blocks-editor',
-		) );
 	}
 
 	/**

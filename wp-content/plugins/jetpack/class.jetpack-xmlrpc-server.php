@@ -229,11 +229,11 @@ class Jetpack_XMLRPC_Server {
 		$user = $this->fetch_and_verify_local_user( $request );
 
 		if ( ! $user ) {
-			return $this->error( new WP_Error( 'input_error', __( 'Valid user is required', 'jetpack' ), 400 ), 'jpc_remote_register_fail' );
+			return $this->error( new WP_Error( 'input_error', __( 'Valid user is required', 'jetpack' ), 400 ), 'jpc_remote_provision_fail' );
 		}
 
 		if ( is_wp_error( $user ) || is_a( $user, 'IXR_Error' ) ) {
-			return $this->error( $user, 'jpc_remote_register_fail' );
+			return $this->error( $user, 'jpc_remote_provision_fail' );
 		}
 
 		$site_icon = ( function_exists( 'has_site_icon' ) && has_site_icon() )
@@ -297,7 +297,7 @@ class Jetpack_XMLRPC_Server {
 					__( 'Jetpack is already connected.', 'jetpack' ),
 					400
 				),
-				'jpc_remote_register_fail'
+				'jpc_remote_connect_fail'
 			);
 		}
 
@@ -462,7 +462,7 @@ class Jetpack_XMLRPC_Server {
 			return $this->error( new Jetpack_Error( 'verify_secrets_incomplete', 'Verification secrets are incomplete', 400 ), $tracks_failure_event_name, $user );
 		}
 
-		if ( ! hash_equals( $verify_secret, $secrets['secret_1'] ) ) { // phpcs:ignore PHPCompatibility -- skipping since `hash_equals` is part of WP core
+		if ( ! hash_equals( $verify_secret, $secrets['secret_1'] ) ) {
 			Jetpack::delete_secrets( $action, $state );
 			return $this->error( new Jetpack_Error( 'verify_secrets_mismatch', 'Secret mismatch', 400 ), $tracks_failure_event_name, $user );
 		}
@@ -573,7 +573,7 @@ class Jetpack_XMLRPC_Server {
 			'code'      => (string) $api_user_code,
 		) ), $jetpack_token->secret );
 
-		if ( ! hash_equals( $hmac, $verify ) ) { // phpcs:ignore PHPCompatibility -- skipping since `hash_equals` is part of WP core
+		if ( ! hash_equals( $hmac, $verify ) ) {
 			return false;
 		}
 

@@ -58,7 +58,7 @@ function relevanssi_excerpts_tab() {
 	$highlight_strong      = relevanssi_select( $highlight, 'strong' );
 	$highlight_col         = relevanssi_select( $highlight, 'col' );
 	$highlight_bgcol       = relevanssi_select( $highlight, 'bgcol' );
-	$highlight_style       = relevanssi_select( $highlight, 'style' );
+	$highlight_style       = relevanssi_select( $highlight, 'css' );
 	$highlight_class       = relevanssi_select( $highlight, 'class' );
 
 	$txt_col_display = 'screen-reader-text';
@@ -72,7 +72,7 @@ function relevanssi_excerpts_tab() {
 	if ( 'bgcol' === $highlight ) {
 		$bg_col_display = '';
 	}
-	if ( 'style' === $highlight ) {
+	if ( 'css' === $highlight ) {
 		$css_display = '';
 	}
 	if ( 'class' === $highlight ) {
@@ -97,6 +97,14 @@ function relevanssi_excerpts_tab() {
 			</label>
 		</fieldset>
 		<p class="description"><?php esc_html_e( 'Only enable this if you actually use the custom excerpts.', 'relevanssi' ); ?></p>
+		<?php
+		$theme    = wp_get_theme();
+		$template = $theme->get( 'Template' );
+		if ( 'divi' === strtolower( $template ) ) :
+		?>
+			<?php // Translators: %1$s opens the link, %2$s closes it. ?>
+			<p class="important"><?php printf( esc_html__( 'Looks like you are using Divi. In order to use custom excerpts with Divi, you need to make some changes to your templates. %1$sSee instructions here%2$s.', 'relevanssi' ), '<a href="https://www.relevanssi.com/knowledge-base/divi-page-builder-and-cleaner-excerpts/">', '</a>' ); ?></p>
+		<?php endif; ?>
 		</td>
 	</tr>
 	<tr id="tr_excerpt_length"

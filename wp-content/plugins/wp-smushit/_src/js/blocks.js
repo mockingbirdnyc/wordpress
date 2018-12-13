@@ -25,7 +25,7 @@ function humanFileSize( bytes ) {
 		++u;
 	} while ( Math.abs( bytes ) >= thresh && u < units.length - 1 );
 
-	return bytes.toFixed( 1) + ' ' + units[u];
+	return bytes.toFixed( 1 ) + ' ' + units[u];
 }
 
 /**
@@ -75,11 +75,11 @@ export function smushStats( stats ) {
  * Modify the block’s edit component.
  * Receives the original block BlockEdit component and returns a new wrapped component.
  */
-let smushStatsControl = wp.element.createHigherOrderComponent( function( BlockEdit ) {
+let smushStatsControl = wp.compose.createHigherOrderComponent( function( BlockEdit ) {
 	/**
 	 * Fetch image data. If image is Smushing, update in 3 seconds.
 	 *
-	 * TODO: this could be optimized not to query so much.
+	 * @todo this could be optimized not to query so much.
 	 */
 	function fetch( props ) {
 		let image = new wp.api.models.Media( { id: props.attributes.id } ),
