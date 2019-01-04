@@ -8,7 +8,7 @@ License: GNU/GPL Version 2 or later. http://www.gnu.org/licenses/gpl.html
 Copyright: (c) 2010 WPSHOWER modified 2011 Fishwick Design
 */
 
-@import url(http://fonts.googleapis.com/css?family=Lato:300|Volkhov:400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Lato:300|Volkhov:400,400italic);
 
 /*** Reset ***/
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
@@ -81,8 +81,8 @@ margin-right: auto;
 text-transform: uppercase;
 
 }
-.menu li { 
-float: left; 
+.menu li {
+float: left;
 letter-spacing: 2px;
 margin-left: 2em;
 font-size: 12px;
@@ -123,7 +123,7 @@ position: absolute;
 }
 }
 
-.resource_menu .menu a { 
+.resource_menu .menu a {
 
   font-family: 'Lato';
   font-size: 16px;
@@ -215,7 +215,7 @@ margin: 0 !important;
 
 #slideshow, .slideshow {height: 300px; width: 1024px; overflow: hidden; position: relative;}
 .slide {height: 300px; width: 1024px; background: black;}
-.slide img {display: block; float: left; width: 640px; height: 300px; position: relative; top: -20px; left: -30px;} 
+.slide img {display: block; float: left; width: 640px; height: 300px; position: relative; top: -20px; left: -30px;}
 .slide .post {padding: 20px 30px 0; }
 .slide .post-category {font-size: 11px; color: #d9d9d9; text-transform: uppercase; margin-bottom: 5px;}
 .slide .post a {color: #000;}
@@ -246,7 +246,7 @@ margin: 0 !important;
 /*** Content ***/
 
 #content {
-width: 680px; 
+width: 680px;
 float: left;
 position: relative;
 z-index: 10;
@@ -355,14 +355,14 @@ padding-right: 1em;
 margin-left: .4em;
 background-color: #dadada;
 color: white;
--moz-border-radius: 50%; 
-   -webkit-border-radius: 50%; 
-   border-radius: 50%; 
+-moz-border-radius: 50%;
+   -webkit-border-radius: 50%;
+   border-radius: 50%;
     width: 200px;
-    height: 200px; 
+    height: 200px;
   text-indent: 5px;
   padding: 0px;
-    
+
 }
 
 #social span:hover {
@@ -423,7 +423,7 @@ color: white;
 }
 
 .column-list h3 {
-    text-transform: uppercase; 
+    text-transform: uppercase;
     background-color: #e6e6e6;
     text-align: center;
     padding-bottom: 10px;
@@ -440,12 +440,12 @@ color: white;
 }
 
 @-moz-document url-prefix()
-{ 
+{
   .break
   {
     margin-top: 200px !important;
-  } 
-} 
+  }
+}
 
 .after {
 
@@ -458,18 +458,18 @@ color: white;
 }
 
 @-moz-document url-prefix()
-{ 
+{
   .after
   {
     display: table !important;
-  } 
-} 
+  }
+}
 
 .column-list p {
     background-color: #e6e6e6;
     padding: 1em 1em 2em;
     margin-bottom: 2em;
-  
+
 }
 
 .column-list img {
@@ -561,7 +561,7 @@ p#cancel-comment-reply {float: right; line-height: 28px; margin: 0;}
 
 
 .sidebar {
-width: 300px; 
+width: 300px;
 float: left;
 position: relative;
 z-index: 10;
@@ -578,9 +578,9 @@ background-color: inherit;
 h3.widget-title {font-family: 'Lato';
  font-size: 16px;
  text-transform: uppercase;
- line-height: normal; 
- letter-spacing:2px; 
- clear: both;  
+ line-height: normal;
+ letter-spacing:2px;
+ clear: both;
  width: 80%;
   text-align: center;
   margin-left: 10%;
@@ -622,7 +622,7 @@ h3.widget-title {font-family: 'Lato';
 .rpthumb-title {display: block; font: 12px "Volkhov", Georgia, "Times New Roman", Times, serif;; margin-bottom: 6px;}
 .rpthumb-date {display: block; font-size: 11px; color: #aaa9a9;}
 .rpthumb:hover {text-decoration: none !important;}
-.rpthumb:hover .rpthumb-title {text-decoration: underline;}	
+.rpthumb:hover .rpthumb-title {text-decoration: underline;}
 
 .widget_tag_cloud a {margin: 0 2px;}
 .widget_calendar table {width: 100%;}
@@ -634,7 +634,7 @@ h3.widget-title {font-family: 'Lato';
 /* -- 18.10 Tabbed widget -- */
     .tz_tab_widget {padding-top: 0}
 	.tz_tab_widget #tab-items, #sermon-browser-popular.widget .tab-items { list-style-type: none; padding: 0; margin: 0; height: 40px;  /*border-bottom: 1px solid #D9D9D9;*/}
-	.tz_tab_widget #tab-items li, #sermon-browser-popular.widget .tab-items li { float: left; margin: 20px 0 0 0; line-height: 20px !important; padding: 0; !important; background: none !important; }
+	.tz_tab_widget #tab-items li, #sermon-browser-popular.widget .tab-items li { float: left; margin: 20px 0 0 0; line-height: 20px !important; padding: 0; background: none !important; }
     .tz_tab_widget #tab-items li:first-child, #sermon-browser-popular.widget .tab-items li:first-child {margin-left: 10px;}
 	#sermon-browser-popular.widget .tab-items  a, .tz_tab_widget #tab-items li a { font-weight: bold; color: white; padding: 0 10px; display: block; text-transform: uppercase; font-family: 'Lato'; }
 	#sermon-browser-popular.widget .tab-items  a:hover, #sermon-browser-popular.widget .ui-tabs-active a, .tz_tab_widget #tab-items li a:hover, .tz_tab_widget #tab-items li.ui-tabs-selected a, .tz_tab_widget #tab-items li.ui-state-active a { color: #00D6FF !important; text-decoration: none; background-color: white}
@@ -650,7 +650,7 @@ h3.widget-title {font-family: 'Lato';
     margin: 0 10px 0 0;
     padding: 4px;
 	}
-	.tz_tab_widget .tab ul, .widget_recentposts_thumbnail ul { list-style-type: none; margin: 0; background-color }
+	.tz_tab_widget .tab ul, .widget_recentposts_thumbnail ul { list-style-type: none; margin: 0; }
 	.tz_tab_widget .tab ul li, .sermon_list .tab ul li, .widget_recentposts_thumbnail ul li {padding: 10px 5px 12px 5px!important; text-shadow: 0 1px 0 #fff; line-height: 20px!important; }
 	.tz_tab_widget .tab-thumb img, .widget_recentposts_thumbnail img { padding: 4px; background: #fff; float: left; margin: 0 10px 0 0; border: 1px solid #ddd; -moz-box-shadow: 0 0 3px rgba(153,153,153,0.1); -webkit-box-shadow: 0 0 3px rgba(153,153,153,0.1); box-shadow: 0 0 3px rgba(153,153,153,0.1); }
 	.tz_tab_widget .tab-thumb img:hover, .widget_recentposts_thumbnail img:hover { background: #333; }
@@ -658,7 +658,7 @@ h3.widget-title {font-family: 'Lato';
 	.tz_tab_widget .entry-title a:hover, .widget_recentposts_thumbnail .entry-title a:hover { text-decoration: none; color: #3399cc!important; }
 	.tz_tab_widget .entry-meta, .tz_tab_widget .entry-meta a, .widget_recentposts_thumbnail .entry-meta, .widget_recentposts_thumbnail .entry-meta a { color: #999!important; font-size: 10px; margin: 0; }
 	.tz_tab_widget .entry-meta a:hover, .widget_recentposts_thumbnail .entry-meta a:hover { text-decoration: none; color: #333!important; }
-	
+
 	.tab-comments .avatar { padding: 4px; background: #fff; float: left; margin: 0 10px 0 0; border: 1px solid #ddd; -moz-box-shadow: 0 0 3px rgba(153,153,153,0.1); -webkit-box-shadow: 0 0 3px rgba(153,153,153,0.1); box-shadow: 0 0 3px rgba(153,153,153,0.1); }
 	.tab-comments .avatar:hover { background: #333; }
 	.tab-comments h3, .tab-comments h3 a { font-size: 12px; line-height: 20px; font-weight: normal; font-style: italic; font-family: "Volkhov", Georgia, "Times New Roman", Times, serif; padding: 0;  }
@@ -666,7 +666,7 @@ h3.widget-title {font-family: 'Lato';
 	.tab-tags { padding: 10px 0 0 0; }
 	.tab-tags a { color: #999; background: #fff; padding: 2px 8px; float: left; display: block; margin: 0 3px 3px 0; text-shadow: none!important; }
 	.tab-tags a:hover { color: #fff; text-decoration: none; background: #3399cc; }
-    
+
     #tab-items {
         background-color: #DADADA;
     }
@@ -708,7 +708,7 @@ h3.widget-title {font-family: 'Lato';
 	.tz_video { padding: 5px; background: #f4f4f4; margin-bottom: 10px; }
 	#sidebar .tz_video_desc { margin: 0; color: #555; text-shadow: 0 1px 0 #fff; }
 	#footer .tz_video { background: #202020; }
-	
+
 	/* -- 18.9 300x250 Ad Widget -- */
 	.tz_ad300_widget { padding: 0; margin-bottom: 30px; position: relative; }
 	.tz_ad300_widget .widget-title { position:absolute; bottom:0; margin-bottom: 0; width: 80%; text-align: center; margin-left: 10%; background-color: white; color: #B0B0B0; font-weight: bold ; padding-top: 10px; letter-spacing: 4px; }
@@ -730,12 +730,12 @@ h3.widget-title {font-family: 'Lato';
 
 	/* -- 19.1 Footer top -- */
 	#footer-top { height: 25px; overflow: hidden; background: url(images/bg-footer-top.gif) repeat-x; text-indent: -9999px; }
-	
+
 	/* -- 19.2 Footer Inner -- */
 	#footer-inner { width: 1024px; margin: 0 auto; padding: 40px 0 10px 0; background: url(images/bg-light.png) center top no-repeat; }
 	.footer-widget { width: 328px; float: left; margin-right: 20px; }
 	.footer-widget-last { float: right!important; margin: 0!important; }
-	
+
 	/* -- 19.3 Footer Notes -- */
 	#footer-notes { background: #212121; border-top: 1px solid #373737; height: 20px; padding: 8px 0; font-size: 11px; color: #666; text-shadow: 0 -1px 0 #151515; }
 	#footer-notes a { color: #666; border-bottom: 1px solid #333; }
@@ -743,7 +743,7 @@ h3.widget-title {font-family: 'Lato';
 	#footer-notes-inner { width: 940px; margin: 0 auto; }
 	#footer-notes .credit { margin: 0; float: right; }
 	#footer-notes .copyright { margin: 0; float: left; }
-	
+
 	/* -- 13.8 Author Bio -- */
 	.author-bio {
     -moz-box-shadow: 0 0 3px rgba(153, 153, 153, 0.2);
@@ -755,13 +755,13 @@ h3.widget-title {font-family: 'Lato';
     position: relative;
     text-shadow: 0 1px 0 #FFFFFF;
     width: 945px;}
-	
+
 	.author-bio .avatar { padding: 4px; background: #fff; float: left; margin: 0 15px 0 0; border: 1px solid #ddd; -moz-box-shadow: 0 0 3px rgba(153,153,153,0.1); -webkit-box-shadow: 0 0 3px rgba(153,153,153,0.1); box-shadow: 0 0 3px rgba(153,153,153,0.1); }
 	.author-title { font-weight: bold; font-size: 14px; color: #444; margin-bottom: 3px; }
 	.author-bio .fold-left { position: absolute; bottom: -5px; left: -1px; }
 	.author-bio .fold-right { position: absolute; bottom: -5px; right: 1px; }
 	.author-description {margin-top: 10px; font-size: 12px}
-    
+
     /* sharing */
     div.sharedaddy.floated, #content div.sharedaddy.floated, #main div.sharedaddy.floated {
       clear: both;
@@ -772,7 +772,7 @@ h3.widget-title {font-family: 'Lato';
       padding: .5em;
       top: 162px;
     }
-    
+
     div.sharedaddy.inlined, #content div.sharedaddy.inlined, #main div.sharedaddy.inlined {
         clear: both;
         float: none;
@@ -780,17 +780,17 @@ h3.widget-title {font-family: 'Lato';
         right: inherit;
         top: inherit;
         padding: inherit;
-    } 
-    
-    
+    }
+
+
     .sd-content ul {
         text-align: center;
     }
-	
+
 	/* MISC */
-	
+
 	.cf5_rps {padding: 15px 0 0 30px;}
-	
+
 	/* new clearfix */
 .clearfix:after {
 	visibility: hidden;
@@ -840,7 +840,7 @@ width: 50px;
 }
 
 #content div.sermon-browser td.sermon-title, #content div.sermon-browser td.sermon-passage {
-	
+
 }
 
 div.sermon-browser table.sermons {
@@ -1085,7 +1085,7 @@ overflow: hidden;
 margin-top: 50px;
 padding-left: 30px;
 font-size: 12px;
-color: #737373; 
+color: #737373;
 }
 .related-posts h3 {
 font-size: larger;
@@ -1139,19 +1139,19 @@ margin-left: 0px !important;
 
 
 .woocommerce ul.products li.product h3, .woocommerce-page ul.products li.product h3 {
-font-size:: 1.3em;
+font-size: 1.3em;
 }
 
-.woocommerce .related ul li.product img, 
-.woocommerce .related ul.products li.product img, 
-.woocommerce .upsells.products ul li.product img, 
-.woocommerce .upsells.products ul.products li.product img, 
-.woocommerce-page .related ul li.product img, 
-.woocommerce-page .related ul.products li.product img, 
-.woocommerce-page .upsells.products ul li.product img, 
-.woocommerce-page .upsells.products ul.products li.product img, 
-.woocommerce ul.products li.product a img, 
-.woocommerce-page ul.products li.product a img, 
+.woocommerce .related ul li.product img,
+.woocommerce .related ul.products li.product img,
+.woocommerce .upsells.products ul li.product img,
+.woocommerce .upsells.products ul.products li.product img,
+.woocommerce-page .related ul li.product img,
+.woocommerce-page .related ul.products li.product img,
+.woocommerce-page .upsells.products ul li.product img,
+.woocommerce-page .upsells.products ul.products li.product img,
+.woocommerce ul.products li.product a img,
+.woocommerce-page ul.products li.product a img,
 .woocommerce img, .woocommerce-page img {
 width: auto !important;
 }
@@ -1183,7 +1183,7 @@ width: 40% !important;
 
 div.product div.summary, #content div.product div.summary {
 float: left !important;
- 
+
 }
 
 /* Sermon Media */
@@ -1295,7 +1295,7 @@ font-variant:small-caps;
 	width: 200px;
 }
 .sbHolder:focus .sbSelector{
-	
+
 }
 .sbSelector{
 	display: block;
@@ -1342,10 +1342,10 @@ font-variant:small-caps;
 	border: solid 1px #515151;
 }
 .sbHolderDisabled .sbHolder{
-	
+
 }
 .sbHolderDisabled .sbToggle{
-	
+
 }
 .sbOptions{
 	background-color: white;
@@ -1514,7 +1514,7 @@ position: relative;
 	.slideshow  {
 	margin: auto;
 	}
-	
+
 	img.thumbnail  {max-width: 50% !important}
 
 	#content {
@@ -1523,32 +1523,32 @@ position: relative;
 	 font-size: larger;
 	 float: none;
 	 }
-	 
+
 	 .wrapper {
 	 width: 100%;
 	 padding-right: 20px;
 	 }
-	 
+
 	 .post-content {
 	font-size: 14px !important;
 	}
-	
+
 	.sidebar {
     float: left;
     padding: 4px 30px 0 0;
     width: 100%;
 	}
-	
+
 	.widget {
 	float:  none;
     margin: 40px !important;
     width: auto;
 	}
-	
+
 	.tz_ad300_widget, #text-6 {
     display: none;
 	}
-	
+
 } */
 
 
@@ -1602,7 +1602,7 @@ clear: both;
  .slideshow  {
 	display: none;
  }
- 
+
  .post-psuedo-col {
 padding-left: 0;
 }
@@ -1611,18 +1611,18 @@ padding-left: 0;
 	width: auto;
 	float:none;
  }
- 
+
  .footer-widget, .footer-widget-last  {
 	width: auto;
 	float:none !important;
 	padding: 0 30px;
  }
- 
+
  #footer-notes-inner {
 	width: auto;
 	padding: 0 12px;
  }
- 
+
  #content{
 	width: auto;
 	float:none;
@@ -1632,12 +1632,12 @@ padding-left: 0;
 
 #content.wide {
 	width: auto;
-}	
-	
+}
+
 	.wrapper {
 	 width: 100%;
 	 }
-	 
+
  .sidebar {
 	width: auto;
 	float: none;
@@ -1650,7 +1650,7 @@ padding-left: 0;
 	}
 .twitter-timeline-rendered {
 	width: 100%;
-	}	
+	}
 .search {
     clear: both;
     float: none;
