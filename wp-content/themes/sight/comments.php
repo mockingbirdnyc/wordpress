@@ -37,7 +37,7 @@
         </div>
     <?php endif; // end have_comments() ?>
     </div>
-                
+
     <?php if ('open' == $post->comment_status) : ?>
 
     <div id="respond">
@@ -48,7 +48,7 @@
             <p class="comment_message">You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">logged in</a> to post a comment.</p>
         <?php else : ?>
 
-            <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
+            <form action="/wp-comments-post.php" method="post" id="commentform">
 
                 <?php if ( $user_ID ) : ?>
 
@@ -104,7 +104,7 @@
                     <input name="submit" type="submit" id="submit" tabindex="5" value="Submit" />
                     <p id="cancel-comment-reply"><?php cancel_comment_reply_link() ?></p>
                 </div>
-                    
+
                 <div><?php comment_id_fields(); ?><?php do_action('comment_form', $post->ID); ?></div>
 
             </form>

@@ -61,14 +61,14 @@ switch(ENVIRONMENT){
 //        define('DB_PASSWORD', 'PASSWORD');
 //        define('DB_HOST', '127.0.0.1');
 //        define('DB_HOST_SLAVE', '127.0.0.1' );
-        define('WP_SITEURL', 'https://mbird.com/');
-        define('WP_HOME', 'https://mbird.com/');
+        define('WP_SITEURL', 'http://mbird.com/');
+        define('WP_HOME', 'http://mbird.com/');
         define('WP_DEBUG', false);
 
         break;
     case 'ec2':
-        define('WP_SITEURL', 'https://' . $_SERVER['HTTP_HOST']);
-        define('WP_HOME', 'https://' . $_SERVER['HTTP_HOST']);
+        define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST']);
+        define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']);
 }
 
 // If no environment is set default to production
