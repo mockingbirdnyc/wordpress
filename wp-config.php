@@ -67,8 +67,8 @@ switch(ENVIRONMENT){
 
         break;
     case 'ec2':
-        define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST']);
-        define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']);
+        define('WP_SITEURL', 'https://' . $_SERVER['HTTP_HOST']);
+        define('WP_HOME', 'https://' . $_SERVER['HTTP_HOST']);
 }
 
 // If no environment is set default to production
