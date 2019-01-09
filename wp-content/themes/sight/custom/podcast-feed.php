@@ -75,9 +75,9 @@ if (!$audio_file_size || $audio_file_size === "0" ){
 			<itunes:subtitle><?php echo $subtitle ?></itunes:subtitle>
 			<itunes:summary><?php /* echo strip_tags( get_the_excerpt() ) */?>podcast</itunes:summary>
 <?php if ( $post_image ) : ?>
-			<itunes:image href="<?php echo $post_image ?>" />
+			<itunes:image href="<?php echo esc_url($post_image) ?>" />
 <?php endif; ?>
-			<enclosure url="<?php echo $audio_file ?>" length="<?php echo $audio_file_size ?>" type="audio/mpeg" />
+			<enclosure url="<?php echo esc_url($audio_file) ?>" length="<?php echo $audio_file_size ?>" type="audio/mpeg" />
 			<guid><?php echo $audio_file ?></guid>
 			<pubDate><?php echo get_the_time('D, d M Y H:i:s T') ?></pubDate>
 			<itunes:duration><?php echo esc_html( $audio_duration ) ?></itunes:duration>
