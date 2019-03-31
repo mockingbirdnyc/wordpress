@@ -216,6 +216,10 @@
 	padding-top: 12px;
 }
 
+.menu-location-settings .customize-control-checkbox .theme-location-set {
+	line-height: 1;
+}
+
 .customize-control-nav_menu_auto_add label {
 	vertical-align: top;
 }
@@ -790,7 +794,7 @@ body.adding-menu-items #customize-preview iframe {
 }
 
 #accordion-section-add_menu .customize-add-menu-button {
-	font-weight: normal;
+	font-weight: 400;
 }
 
 #create-new-menu-submit {
@@ -870,13 +874,13 @@ li.assigned-to-menu-location .add-new-menu-item {
 }
 
 
-@media screen and ( max-width: 782px ) {
+@media screen and (max-width: 782px) {
 	#available-menu-items #available-menu-items-search .accordion-section-content {
 		top: 63px;
 	}
 }
 
-@media screen and ( max-width: 640px ) {
+@media screen and (max-width: 640px) {
 	#available-menu-items #available-menu-items-search .accordion-section-content {
 		top: 130px;
 	}
